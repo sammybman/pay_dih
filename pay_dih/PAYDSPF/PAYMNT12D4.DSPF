@@ -1,0 +1,186 @@
+000010151012     A*%%TS  SD  20151012  212605  SBRITTON    REL-V7R1M0  5770-WDS
+000020950909     A* ********************************************************
+000030990617     A*                   C R E A T E D                        *
+000040990617     A*                       B Y                              *
+000050990617     A*          B A N K S   D I H   L I M I T E D             *
+000060950909     A*                                                        *
+000070990617     A*               I.S   D E P A R T M E N T                *
+000080950909     A*                                                        *
+000090990617     A*       DISPLAY FILE  NAME: WENQ001D                     *
+000100990617     A*
+000110950909     A*                                                        *
+000120990617     A*       PROGRAMMER NAME: WINSTON ROBINSON                *
+000130990617     A*       DESIGN DATE....: 1998/10/06                      *
+000140950909     A*                                                        *
+000150950909     A**********************************************************
+000160151012     A*%%EC
+000170151012     A                                      DSPSIZ(24 80 *DS3)
+000180151012     A                                      REF(*LIBL/FLDREF)
+000190151012     A                                      PRINT
+000200151012     A                                      CF03(03)
+000210151012     A                                      CF02(02)
+000220151012     A          R FMT1
+000230151012     A*%%TS  SD  20151012  212605  SBRITTON    REL-V7R1M0  5770-WDS
+000240151012     A                                      CF05(05)
+000250151012     A                                      CF06(06)
+000260151012     A                                      CF04(04)
+000270151012     A                                      CF01(01)
+000280151012     A                                      RTNCSRLOC(*RECNAME &REC &FLD)
+000290151012     A            CONAME        30A  O  1 26DSPATR(UL)
+000300151012     A                                      DSPATR(HI)
+000310151012     A            @TITLE        40A  O  2 21DSPATR(HI)
+000320151012     A            @PGM          10A  O  1  2DSPATR(HI)
+000330151012     A            @USER         10A  O  2  2DSPATR(HI)
+000340151012     A            @DATE         10A  O  1 70DSPATR(HI)
+000350151012     A            @TIME          6Y 0O  2 70DSPATR(HI)
+000360151012     A                                      EDTWRD('  :  :  ')
+000370151012     A                                 23 35'F3 = End'
+000380151012     A                                      DSPATR(HI)
+000390151012     A                                 23 48'F4 = Prompt'
+000400151012     A                                      DSPATR(HI)
+000410151012     A            ERRMSG        75A  O 24  3COLOR(RED)
+000420151012     A                                  8  7'Enter Department Number......:'
+000430151012     A                                      COLOR(BLU)
+000440151012     A                                  8 45'(Optional)'
+000450151012     A                                 23  4'F1 = List Configured Types'
+000460151012     A                                      DSPATR(HI)
+000470151012     A                                  9  7'Enter Commission Item code...:'
+000480151012     A                                      COLOR(BLU)
+000490151012     A            CDRPCOD   R        B  9 38REFFLD(CDRFMT/CDRPCOD *LIBL/PICOMMD-
+000500151012     A                                      R)
+000510151012     A                                      DSPATR(HI)
+000520151012     A  87
+000530151012     AO 88                                  DSPATR(PR)
+000540151012     A                                  9 45'(Optional)'
+000550151012     A            REC           10A  H
+000560151012     A            FLD           10A  H
+000570151012     A                                  7  7'Enter Incentive Type.........:'
+000580151012     A                                      COLOR(BLU)
+000590151012     A                                 11  6'Notes: 1. Configure the less speci-
+000600151012     A                                      fic items first , then move to the'
+000610151012     A                                  7 45'(Optional)'
+000620151012     A                                 12 16'more involved.Start by probably se-
+000630151012     A                                      tting up default ranges'
+000640151012     A                                 13 16'(WITHOUT ENTERING ANY DATA ABOVE).'
+000650151012     A                                 15 16'building the more complex ones.Thi-
+000660151012     A                                      s reduces the amount of'
+000670151012     A                                 16 16'data entry required and hence asso-
+000680151012     A                                      ciated errors.'
+000690151012     A                                 14 13'2. The system uses the lesser spec-
+000700151012     A                                      ific defaults to assist in'
+000710151012     A                                 17 13'3. The configurations done here ar-
+000720151012     A                                      e NOT USED in actual'
+000730151012     A                                 18 16'commission calculations, but are u-
+000740151012     A                                      sed to greatly assist'
+000750151012     A                                 19 16'in the setup of the targets and ra-
+000760151012     A                                      tes when complex P.I.'
+000770151012     A                                 20 16'criteria are specified.'
+000780151012     A            CDRDEPT#  R        B  8 38REFFLD(CDRFMT/CDRDEPT# *LIBL/PICOMM-
+000790151012     A                                      DR)
+000800151012     A                                      DSPATR(HI)
+000810151012     A                                      EDTCDE(4)
+000820151012     A            CDRTYPE   R        B  7 38REFFLD(CDRFMT/CDRTYPE *LIBL/PICOMMD-
+000830151012     A                                      R)
+000840151012     A                                      DSPATR(HI)
+000850151012     A                                      EDTCDE(Z)
+000860151010     A          R FMT2
+000870151010     A*%%TS  SD  20151010  155022  SBRITTON    REL-V7R1M0  5770-WDS
+000880151010     A                                      CF05(05)
+000890151010     A            CONAME        30A  O  1 26DSPATR(UL)
+000900151010     A                                      DSPATR(HI)
+000910151010     A            @TITLE        40A  O  2 21DSPATR(HI)
+000920151010     A            @PGM          10A  O  1  2DSPATR(HI)
+000930151010     A            @USER         10A  O  2  2DSPATR(HI)
+000940151010     A            @DATE         10A  O  1 70DSPATR(HI)
+000950151010     A                                  6  2'Dept#..:'
+000960151010     A                                      COLOR(BLU)
+000970151010     A                                  4 33'Mode.:'
+000980151010     A                                      DSPATR(HI)
+000990151010     A            MODE           6A  O  4 40DSPATR(RI)
+001000151010     A                                      COLOR(RED)
+001010151010     A                                  8  2'Del'
+001020151010     A                                      DSPATR(HI)
+001030151010     A                                  9  3'X'
+001040151010     A                                      DSPATR(HI)
+001050151010     A                                  8 30'Primary'
+001060151010     A                                      DSPATR(HI)
+001070151010     A                                      DSPATR(UL)
+001080151010     A                                  9 48'Rate'
+001090151010     A                                      DSPATR(HI)
+001100151010     A                                      DSPATR(UL)
+001110151010     A                                  9 33'Rate'
+001120151010     A                                      DSPATR(HI)
+001130151010     A                                      DSPATR(UL)
+001140151010     A                                  8 43'Secondary'
+001150151010     A                                      DSPATR(HI)
+001160151010     A                                      DSPATR(UL)
+001170151010     A                                  8 11'PERCENTAGE'
+001180151010     A                                      DSPATR(HI)
+001190151010     A                                      DSPATR(UL)
+001200151010     A                                  9 17'Upper'
+001210151010     A                                      DSPATR(HI)
+001220151010     A                                      DSPATR(UL)
+001230151010     A                                  9 10'Lower'
+001240151010     A                                      DSPATR(HI)
+001250151010     A                                      DSPATR(UL)
+001260151010     A            COMDESC       10A  O  5 36DSPATR(HI)
+001270151010     A                                  6 25'Item..:'
+001280151010     A                                      COLOR(BLU)
+001290151010     A            CDRPCOD   R        O  6 33REFFLD(CDRFMT/CDRPCOD *LIBL/PICOMMD-
+001300151010     A                                      R)
+001310151010     A            CDRDEPT#  R        O  6 11REFFLD(CDRFMT/CDRDEPT# *LIBL/PICOMM-
+001320151010     A                                      DR)
+001330151010     A          R SUB1                      SFL
+001340151010     A*%%TS  SD  20151010  153706  SBRITTON    REL-V7R1M0  5770-WDS
+001350151010     A                                      SFLNXTCHG
+001360151010     A            NEWREC         1A  H
+001370151010     A            DELOPT         1A  I 11  3
+001380051230     A*%%GP UNTITLED   01
+001390151010     A            CDRRATE#1 R        B 11 25REFFLD(CDRFMT/CDRRATE#1 *LIBL/PICOM-
+001400151010     A                                      MDR)
+001410151010     A                                      EDTCDE(1)
+001420151010     A            CDRRATE#2 R        B 11 40REFFLD(CDRFMT/CDRRATE#2 *LIBL/PICOM-
+001430151010     A                                      MDR)
+001440151010     A                                      EDTCDE(1)
+001450151010     A            CDRPER    R        B 11 10REFFLD(CDRFMT/CDRPER *LIBL/PICOMMDR)
+001460151010     A                                      EDTCDE(1)
+001470151010     A            CDRPERU   R        B 11 17REFFLD(CDRFMT/CDRPERU *LIBL/PICOMMD-
+001480151010     A                                      R)
+001490151010     A                                      EDTCDE(1)
+001500060325     A          R SUBCTL1                   SFLCTL(SUB1)
+001510060325     A*%%TS  SD  20060325  163831  SBRITTON    REL-V5R3M0  5722-WDS
+001520060325     A                                      CF15(15)
+001530060325     A                                      CF04(04)
+001540060325     A                                      CF20(22)
+001550060325     A                                      OVERLAY
+001560060325     A                                      PUTRETAIN
+001570060325     A  20                                  SFLDSP
+001580060325     A                                      SFLDSPCTL
+001590060325     A  33                                  SFLCLR
+001600060325     A  55                                  SFLEND(*MORE)
+001610060325     A                                      SFLFOLD(CF05)
+001620060325     A                                      SFLSIZ(0100)
+001630060325     A                                      SFLPAG(0009)
+001640060325     A  76                                  SFLMSG('Invalid Range Sequence  Ent-
+001650060325     A                                      ered !')
+001660060325     A  71
+001670060325     AO 70
+001680060325     AO 74                                  SFLMSGID(DIH0022 *LIBL/DIHMSGF)
+001690060325     A  72
+001700060325     AO 73
+001710060325     AO 75                                  SFLMSGID(DIH0027 *LIBL/DIHMSGF)
+001720060325     A                                 22  3'F3=End'
+001730060325     A                                      DSPATR(HI)
+001740060325     A                                 22 30'F15=Confirm'
+001750060325     A                                      COLOR(RED)
+001760060325     A                                      DSPATR(RI)
+001770060325     A                                 22 13'F4=Add a Line'
+001780060325     A                                      DSPATR(HI)
+001790060325     A            MSGLINE       75A  O 23  3COLOR(RED)
+001800060325     A                                      DSPATR(BL)
+001810060325     A                                 22 47'F20 = Delete'
+001820060325     A                                      DSPATR(HI)
+001830020627     A          R NEW
+001840020627     A*%%TS  SD  20020627  124700  CWILLIAMS   REL-V5R1M0  5722-WDS
+001850020627     A                                      ASSUME
+001860020627     A                                  1  3' '

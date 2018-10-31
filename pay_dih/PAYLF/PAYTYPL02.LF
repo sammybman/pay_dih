@@ -1,0 +1,4 @@
+000100010411     A          R PTYFMT                    PFILE(PAYTYP)
+000200010406     A          K PTYPTYPE
+000300010426     A          S PTYRTYPE                  VALUES('E' 'D')
+000400010426     A            PTYSTS                    VALUES('A' 'F')

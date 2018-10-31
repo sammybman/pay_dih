@@ -1,0 +1,4 @@
+000100010411     A          R PCRSFMT                   PFILE(PAYCROSS)
+000200010405     A          K PCRSPTYPE
+000300010412     A          K PCRSTYPE
+000400010412     A          S PCRSSTS                   COMP(EQ 'A')

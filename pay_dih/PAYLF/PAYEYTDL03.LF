@@ -1,0 +1,22 @@
+000100021030     A          R YTDREC                    JFILE(PAYEYTD EMPMAST)
+000200020118     A          J                           JOIN(1 2)
+000300020118     A                                      JFLD(EMP EMP)
+000400021030     A            EMP       R               JREF(PAYEYTD)
+000500020118     A            DEPT      R
+000600020118     A            SURNAM    R
+000700020118     A            CHRIST    R
+000800060412     A            STATUS    R
+000900060412     A            CLASS     R
+001000090220     A            ADDONE    R
+001100090220     A            ADDTWO    R
+001200090220     A            EMPLY     R
+001300090220     A            IRDNUM    R
+001400090224     A            MARSTA    R
+001500090224     A            SEX       R
+001600090224     A            RESIGN    R
+001700020118     A            YEAR      R
+001800021030     A            YTDAMT    R
+001900021030     A            YTDTYPE   R
+002000021031     A            YTDORG    R
+002100020122     A          K YEAR
+002200010720     A          K EMP

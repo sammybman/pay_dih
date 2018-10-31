@@ -1,0 +1,63 @@
+000100070319     A*%%TS  DD  20070319  112443  Administra  REL-V5.0.1  WDSc
+000200070319     A*%%FD Employee Bank Loan Information dsply
+000300070319     A*%%EC
+000400070319     A                                      DSPSIZ(24 80 *DS3)
+000500070319     A                                      CF03(03)
+000600070308     A          R FMT1
+000700070308     A*%%TS  DD  20070308  175322  David       REL-V5.0.1  WDSc
+000800070308     A                                  2  3USER
+000900070308     A                                      DSPATR(HI)
+001000070308     A            @TITLE        40A  O  2 23DSPATR(HI)
+001100070308     A                                  2 72SYSNAME
+001200070308     A                                      DSPATR(HI)
+001300070308     A            @PGM          10A  O  1  3DSPATR(HI)
+001400070308     A            CONAME        30A  O  1 26DSPATR(HI)
+001500070308     A                                      DSPATR(UL)
+001600070308     A            @DATE         10A  O  1 70DSPATR(HI)
+001700070308     A                                  5  7'Employee Number :'
+001800070308     A                                      COLOR(BLU)
+001900070308     A            EMPNO          6Y 0B  5 26EDTCDE(3)
+002000070308     A                                      DSPATR(UL)
+002100070308     A                                      DSPATR(HI)
+002200070308     A                                 23 33'F3 - End Program'
+002300070308     A                                      COLOR(RED)
+002400070308     A            ERRMSG        75A  O 24  2DSPATR(BL)
+002500070319     A          R FMT2
+002600070319     A*%%TS  DD  20070319  112443  Administra  REL-V5.0.1  WDSc
+002700070319     A                                      CF02(02)
+002800070319     A                                      CF15(15)
+002900070319     A                                      CF20(20)
+003000070319     A            @PGM          10A  O  1  2DSPATR(HI)
+003100070319     A                                  2  2USER
+003200070319     A                                      DSPATR(HI)
+003300070319     A            CONAME        30A  O  1 26DSPATR(HI)
+003400070319     A                                      DSPATR(UL)
+003500070319     A            @TITLE        40A  O  2 21DSPATR(HI)
+003600070319     A            @DATE         10A  O  1 70DSPATR(HI)
+003700070319     A                                  2 72SYSNAME
+003800070319     A                                      DSPATR(HI)
+003900070319     A                                 23  6'F2- Cancel'
+004000070319     A                                      DSPATR(HI)
+004100070319     A                                 23 21'F3 - End Program'
+004200070319     A                                      DSPATR(HI)
+004300070319     A                                 23 41'F15 - Confirm'
+004400070319     A                                      DSPATR(HI)
+004500070319     A  35                             23 59'F20 - Complete Record'
+004600070319     A                                      DSPATR(HI)
+004700070319     A            EMPNAME       40   O  7 30
+004800070319     A                                 10  5'Start Date.....:'
+004900070319     A                                      COLOR(BLU)
+005000070319     A                                 12  5'Completed Date :'
+005100070319     A                                      COLOR(BLU)
+005200070319     A            STRDATE        8Y 0B 10 22EDTCDE(W)
+005300070319     A  35                                  DSPATR(PR)
+005400070319     A  35                                  DSPATR(RI)
+005500070319     A            CMPLDATE       8Y 0B 12 22EDTCDE(W)
+005600070319     A            MODE           5A  O  4 38DSPATR(RI)
+005700070319     A                                  7  5'Employee.......:'
+005800070319     A                                      COLOR(BLU)
+005900070319     A            EMPNO          6Y 0O  7 22EDTCDE(3)
+006000070319     A                                  4 28'Mode...'
+006100070319     A                                      DSPATR(HI)
+006200070319     A            ERRMSG        75A  O 24  2DSPATR(BL)
+006300070319     A*%%GP UNTITLED   01

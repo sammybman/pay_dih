@@ -1,0 +1,81 @@
+000010970711     A*%%TS  SD  19970711  162825  SAMMY       REL-V3R2M0  5763-PW1
+000020970711     A*%%EC
+000030970711     A                                      DSPSIZ(24 80 *DS3)
+000040970711     A                                      PRINT
+000050970711     A                                      HELP
+000060970711     A                                      HLPRCD(HELPREC)
+000070970711     A                                      CA03(03)
+000080950530     A*
+000090970711     A          R FMT1
+000100970711     A*%%TS  SD  19970711  162825  SAMMY       REL-V3R2M0  5763-PW1
+000110970711     A            @PGM          10A  O  1  2
+000120970711     A            UDATE          6Y 0O  2  2EDTCDE(Y)
+000130970711     A                                  1 24'B A N K S   D I H    L T D'
+000140970711     A                                  2 24'O D D S   PAYROLL  SELECTION '
+000150970711     A                                      DSPATR(UL)
+000160970711     A            #MODE          6A  O  1 75DSPATR(RI)
+000170970711     A            @USER         10A  O  2 69
+000180970711     A                                  3  2'Enter date range for Employees for-
+000190970711     A                                       retro payment'
+000200970711     A                                  4  2'From Start Date.(YYMMDD).'
+000210970711     A            SDATE          6Y 0B  4 29EDTCDE(Z)
+000220970711     A                                  4 37'To End Date.(YYMMDD).'
+000230970711     A            EDATE          6Y 0B  4 60EDTCDE(Z)
+000240970711     A                                 23  1'CMD3=End Program'
+000250970711     A                                      DSPATR(HI)
+000260970711     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000270950530     A*
+000280970417     A          R SFLREC                    SFL
+000290970417     A*%%TS  SD  19970417  093735  SAMMY       REL-V3R1M0  5763-PW1
+000300970417     A            NUMB           4Y 0O  7  2EDTCDE(Z)
+000310970417     A            DEPT           3Y 0O  7  7EDTCDE(Z)
+000320970417     A            NAME          28A  O  7 12
+000330970417     A            WEEKS          2Y 0O  7 44EDTCDE(Z)
+000340970417     A            DURA           6Y 0O  7 52EDTCDE(Y)
+000350970417     A                                  7 62'TO'
+000360970417     A            DURB           6Y 0O  7 66EDTCDE(Y)
+000370970417     A                                  7 76'PAID'
+000380970417     A  66                                  DSPATR(HI)
+000390970417     A N66                                  DSPATR(ND)
+000400950530     **
+000410950530     A          R SFLCTL
+000420950530     A                                      CF02(02)
+000430950607     A                                      CF05(05)
+000440950607     A                                      CF07(07)
+000450950530     A                                      SFLCTL(SFLREC)
+000460950628     A                                      SFLSIZ(0180)
+000470950628     A                                      SFLPAG(0015)
+000480950530     A                                      SFLDSP
+000490950530     A                                      OVERLAY
+000500950530     A                                      SFLDSPCTL
+000510950530     A     33                               SFLCLR
+000520950530     A*
+000530950530     A            @PGM          10   O  1  2
+000540950530     A            UDATE          6Y 0O  2  2EDTCDE(Y)
+000550950530     A                                  1 24'B A N K S   D I H    L T D'
+000560950628     A                                  2 24'O D D S   PAYROLL  SELECTION '
+000570950530     A                                          DSPATR(UL)
+000580950530     A            #MODE          6   O  1 75DSPATR(RI)
+000590950605     A            @USER         10   O  2 69
+000600950605     **
+000610950628     A                                  4  2'From Start Date..........'
+000620950628     A            SDATE          6  0O   + 2 EDTCDE(Y)
+000630950628     **
+000640950628     A                                   + 2'To End Date..........'
+000650950628     A            EDATE          6  0O   + 2 EDTCDE(Y)
+000660950628
+000670950628     A                                  5  2'No..' DSPATR(UL)
+000680950628     A                                  5  7'Dept' DSPATR(UL)
+000690950628     A                                  5 12'Name' DSPATR(UL)
+000700950629     A                                  5 42'Weeks'    DSPATR(UL)
+000710950628     A                                  5 52'Leave Duration' DSPATR(UL)
+000720950530     A          R FOOTER
+000730950530     A                                      OVERLAY  PROTECT
+000740950607     A                                 23  1'CMD2=Cancel Entry  CMD5=Print Det+
+000750950628                                            ails  CMD7=Create Pay File'
+000760950530     A                                      DSPATR(HI)
+000770950530     A            ERRMSG        75     24  2DSPATR(HI)
+000780950530     ** HELP TEXT WHEN HELP IS PRESSED
+000790950530     A          R HELPREC
+000800950530     A*                                     OVERLAY
+000810950530     A                                 10 20'NO HELP AVAILABLE YET'

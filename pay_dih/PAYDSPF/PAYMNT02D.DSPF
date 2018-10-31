@@ -1,0 +1,104 @@
+000010050524     A*%%TS  SD  20050524  144130  AFUNG       REL-V5R3M0  5722-WDS
+000020050524     A*%%EC
+000030050524     A                                      DSPSIZ(24 80 *DS3)
+000040050524     A                                      CF03(03)
+000050050524     A          R FMT1
+000060050524     A*%%TS  SD  20050524  144130  AFUNG       REL-V5R3M0  5722-WDS
+000070050524     A                                      CA01(01)
+000080050524     A                                      CA04(04)
+000090050524     A                                      RTNCSRLOC(*RECNAME &REC &FLD)
+000100050524     A                                  1  3USER
+000110050524     A                                      DSPATR(HI)
+000120050524     A                                  1 71SYSNAME
+000130050524     A                                      DSPATR(HI)
+000140050524     A            @PGM          10A  O  2  3DSPATR(HI)
+000150050524     A            CONAME        30A  O  1 26DSPATR(HI)
+000160050524     A                                      DSPATR(UL)
+000170050524     A            @TITLE        40A  O  2 21DSPATR(HI)
+000180050524     A                                  9  6'Enter Employee number....:'
+000190050524     A                                      COLOR(BLU)
+000200050524     A            PYTEMP#   R        B  9 34REFFLD(PYTFMT/PYTEMP *LIBL/PAYTDEF)
+000210050524     A                                      EDTCDE(Z)
+000220050524     A                                      DSPATR(HI)
+000230050524     A  98                                  ERRMSGID(DIH0010 *LIBL/DIHMSGF)
+000240050524     A            PYTDEPT#  R        B  5 34REFFLD(PYTFMT/PYTDEPT *LIBL/PAYTDEF)
+000250050524     A                                      EDTCDE(Z)
+000260050524     A                                      DSPATR(HI)
+000270050524     A  97                                  ERRMSG('Employee Not found in Depar-
+000280050524     A                                      tment entered')
+000290050524     A  99                                  ERRMSGID(DIH0008 *LIBL/DIHMSGF)
+000300050524     A                                  9 42'(Optional)'
+000310050524     A                                 23  7'F3=End Program'
+000320050524     A                                      DSPATR(HI)
+000330050524     A                                  7  6'Enter Payroll Type.......:'
+000340050524     A                                      COLOR(BLU)
+000350050524     A            PYTRTYPE#      1A  B  7 34DSPATR(HI)
+000360050524     A  96                                  ERRMSG('Payroll Run Type not found')
+000370050524     A            @DATE         10A  O  2 69DSPATR(HI)
+000380050524     A                                 23 32'F4=Prompt'
+000390050524     A                                      DSPATR(HI)
+000400050524     A                                  7 42'(Optional)'
+000410050524     A                                  5  6'Enter Department Number..:'
+000420050524     A                                      COLOR(BLU)
+000430050524     A            ERRMSG        75A  O 24  2COLOR(RED)
+000440050524     A            REC           10A  H
+000450050524     A            FLD           10A  H
+000460010815     A          R FOOTER
+000470010815     A*%%TS  SD  20010815  194137  CWILLIAMS   REL-V4R4M0  5769-PW1
+000480010815     A                                      SLNO(24)
+000490010815     A                                  1 51'Enter to continue'
+000500010815     A                                      DSPATR(HI)
+000510010815     A                                  1  8'F2 = Go Back'
+000520010815     A                                      DSPATR(HI)
+000530010815     A                                  1 29'F3 = End Program'
+000540010815     A                                      DSPATR(HI)
+000550050524     A          R SFLREC                    SFL
+000560050524     A*%%TS  SD  20050524  133950  AFUNG       REL-V5R3M0  5722-WDS
+000570050524     A            PTYPTYPE  R     D  O 12  3REFFLD(PTYFMT/PTYPTYPE *LIBL/PAYTYP)
+000580050524     A            PYTACODE# R        B 12 32REFFLD(PYTFMT/PYTACODE *LIBL/PAYTDE-
+000590050524     A                                      F)
+000600050524     A  20                                  DSPATR(RI)
+000610050524     A                                      CHANGE(88)
+000620050524     A            PTYDESC       25A  O 12  6
+000630050524     A                                 12 60'(Default)'
+000640050524     A                                      COLOR(RED)
+000650050524     A N66                                  DSPATR(ND)
+000660050524     A            PYTACODE##    25A  H
+000670050524     A          R SFLCTL                    SFLCTL(SFLREC)
+000680050524     A*%%TS  SD  20050524  135716  AFUNG       REL-V5R3M0  5722-WDS
+000690050524     A                                      SFLSIZ(0055)
+000700050524     A                                      SFLPAG(0010)
+000710050524     A                                      CA02(02)
+000720050524     A                                      OVERLAY
+000730050524     A                                      SFLDSP
+000740050524     A                                      SFLDSPCTL
+000750050524     A  33                                  SFLCLR
+000760050524     A  68                                  SFLEND(*MORE)
+000770050524     A  21                                  SFLMSG('Invalid account code')
+000780050524     A                                 11  5'Description'
+000790050524     A                                      DSPATR(HI)
+000800050524     A                                 11 32'Account code'
+000810050524     A                                      DSPATR(HI)
+000820050524     A                                  5  9'Department ........:'
+000830050524     A                                      COLOR(BLU)
+000840050524     A                                  9  9'Employee ..........:'
+000850050524     A                                      COLOR(BLU)
+000860050524     A            PYTDEPT#       3Y 0O  5 31EDTCDE(Z)
+000870050524     A                                      DSPATR(HI)
+000880050524     A            PYTEMP#        6Y 0O  9 31EDTCDE(Z)
+000890050524     A                                      DSPATR(HI)
+000900050524     A            DEPT_NAME     30A  O  5 38DSPATR(HI)
+000910050524     A            EMP_NAME      30A  O  9 38DSPATR(HI)
+000920050524     A            CONAME        30A  O  1 26DSPATR(HI)
+000930050524     A                                      DSPATR(UL)
+000940050524     A            @TITLE        40A  O  2 21DSPATR(HI)
+000950050524     A            @PGM          10A  O  1  2DSPATR(HI)
+000960050524     A                                  2  2USER
+000970050524     A                                      DSPATR(HI)
+000980050524     A                                  1 71SYSNAME
+000990050524     A                                      DSPATR(HI)
+001000050524     A            @DATE         10A  O  2 69DSPATR(HI)
+001010050524     A                                  7  9'Run Type ..........:'
+001020050524     A                                      COLOR(BLU)
+001030050524     A            RUN_NAME      30A  O  7 38DSPATR(HI)
+001040050524     A            PYTRTYPE#      1A  O  7 31DSPATR(HI)

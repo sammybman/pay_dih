@@ -1,0 +1,65 @@
+000010021120     A*%%TS  SD  20021120  100009  SBRITTON    REL-V5R1M0  5722-WDS
+000020960802     A*
+000030960802     A*
+000040960802     A* ********************************************************
+000050960802     A*              B A N K S    D I H    L T D.              *
+000060960802     A*                                                        *
+000070960802     A*                                                        *
+000080010117     A*       DISPLAY FILE  NAME: PUR01D                       *
+000090000816     A*       RECORD FORMAT NAME:                              *
+000100000816     A*                                                        *
+000110000816     A*                                                        *
+000120960802     A*                                                        *
+000130000816     A*       PROGRAMMER NAME: ALLISON FUNG                    *
+000140000816     A*       DATE ..........: 16/08/2000                      *
+000150960802     A*                                                        *
+000160001120     A*       FILE DESCRIPTION:                                *
+000170001120     A*       THIS FILE IS USED TO RUN THE MONTHLY             *
+000180001120     A*       PURCHASE LISTINGS WITH TRANSACTIONS              *
+000190001120     A*       PASSING THROUGH THE SALES/WAREHOUSE              *
+000200001120     A*       SYSTEM.                                          *
+000210960802     A*                                                        *
+000220960802     A**********************************************************
+000230021120     A*%%EC
+000240021120     A                                      DSPSIZ(24 80 *DS3)
+000250021120     A                                      REF(*LIBL/FLDREF)
+000260021120     A                                      PRINT
+000270021120     A                                      ERRSFL
+000280021120     A                                      CF02(02)
+000290021120     A                                      CF03(03)
+000300021120     A                                      CF15(15)
+000310021120     A                                      CF01(01)
+000320960802     A**
+000330021120     A          R FMT1
+000340021120     A*%%TS  SD  20021120  100009  SBRITTON    REL-V5R1M0  5722-WDS
+000350021120     A            CONAME        30A  O  1 26DSPATR(HI)
+000360021120     A                                      DSPATR(UL)
+000370021120     A            @TITLE        40A  O  2 21DSPATR(HI)
+000380021120     A                                 23  3'F1 = Payroll Types'
+000390021120     A                                      DSPATR(HI)
+000400021120     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000410021120     A                                 10  5'Select department for report...:'
+000420021120     A                                      DSPATR(HI)
+000430021120     A                                      COLOR(BLU)
+000440021120     A                                 23 57'F15 = Confirm'
+000450021120     A                                      DSPATR(HI)
+000460021120     A            DEPT#          3D 0B 10 41DSPATR(HI)
+000470021120     A                                  1  2USER
+000480021120     A                                      DSPATR(HI)
+000490021120     A            @PGM          10A  O  2  2DSPATR(HI)
+000500021120     A            @DATE         10A  O  2 70DSPATR(HI)
+000510021120     A                                  8  5'Select Payroll Type............:'
+000520021120     A                                      COLOR(BLU)
+000530021120     A            PAY_TYPE       2D 0B  8 41DSPATR(HI)
+000540021120     A                                  8 50'(Zeros = all)'
+000550021120     A                                 10 50'(Zeros = all)'
+000560021120     A                                  1 72SYSNAME
+000570021120     A                                      DSPATR(HI)
+000580021120     A            SEQ#           1D 0B 16 41DSPATR(HI)
+000590021120     A                                 16  5'Select Report Sequence.........:'
+000600021120     A                                      DSPATR(HI)
+000610021120     A                                      COLOR(BLU)
+000620021120     A                                 13 50'1. by Department'
+000630021120     A                                 14 50'2. by Pay Type'
+000640021120     A                                 23 30'F3 = End Program'
+000650021120     A                                      DSPATR(HI)

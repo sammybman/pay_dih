@@ -1,0 +1,77 @@
+000100090122     A*%%TS  DD  20090122  091045  nchapman    REL-V5.0.1  WDSc
+000200090122     A*%%EC
+000300090122     A                                      DSPSIZ(24 80 *DS3)
+000400090122     A          R FMT1
+000500090122     A*%%TS  DD  20090122  091045  nchapman    REL-V5.0.1  WDSc
+000600090122     A                                      CA03(03)
+000700090122     A                                      CF04(04)
+000800090122     A                                  1  2USER
+000900090122     A                                      DSPATR(HI)
+001000090122     A            CONAME        30   O  1 26DSPATR(UL)
+001100090122     A                                      DSPATR(HI)
+001200090122     A                                  1 72SYSNAME
+001300090122     A                                      DSPATR(HI)
+001400090122     A            @PGM          10   O  2  2DSPATR(HI)
+001500090122     A            @TITLE        40   O  2 21DSPATR(HI)
+001600090122     A            @DATE         10   O  2 70DSPATR(HI)
+001700090122     A                                  8 22'Please Enter Transit Number:'
+001800090122     A                                      COLOR(WHT)
+001900090122     A            KEY            8Y 0B  8 52EDTCDE(3)
+002000090122     A                                      COLOR(BLU)
+002100090122     A  26                                  DSPATR(RI)
+002200090122     A  26                                  DSPATR(PC)
+002300090122     A                                 23 37'F3 = End'
+002400090122     A                                      DSPATR(HI)
+002500090122     A                                 23 62'F4 = Prompt'
+002600090122     A                                      DSPATR(HI)
+002700090122     A            ERRMSG        75   O 24  3DSPATR(HI)
+002800090122     A*%%GP SCREEN21   01
+002900090122     A          R FMT2
+003000090122     A*%%TS  DD  20090122  091045  nchapman    REL-V5.0.1  WDSc
+003100090122     A                                      CA02(02)
+003200090122     A                                      CA03(03)
+003300090122     A                                      CF15(15)
+003400090122     A                                      CF20(20)
+003500090122     A                                  1  2USER
+003600090122     A                                      DSPATR(HI)
+003700090122     A            CONAME        30   O  1 26DSPATR(UL)
+003800090122     A                                      DSPATR(HI)
+003900090122     A                                  1 72SYSNAME
+004000090122     A                                      DSPATR(HI)
+004100090122     A            @PGM          10   O  2  2DSPATR(HI)
+004200090122     A            @TITLE        40   O  2 21DSPATR(HI)
+004300090122     A            @DATE         10   O  2 70DSPATR(HI)
+004400090122     A            @MODE          7   O  3 37COLOR(GRN)
+004500090122     A                                      DSPATR(RI)
+004600090122     A                                  8  2'Transit Number:'
+004700090122     A                                      DSPATR(HI)
+004800090122     A            KEY            8Y 0O  8 18EDTCDE(3)
+004900090122     A                                      COLOR(BLU)
+005000090122     A                                  8 29'Description........:'
+005100090122     A                                      DSPATR(HI)
+005200090122     A            DESC          30   B  8 50COLOR(BLU)
+005300090122     A  27                                  DSPATR(RI)
+005400090122     A  27                                  DSPATR(PC)
+005500090122     A                                 10 29'General Ledger.....:'
+005600090122     A                                      DSPATR(HI)
+005700090122     A            GL             7Y 0B 10 50EDTCDE(3)
+005800090122     A                                      COLOR(BLU)
+005900090122     A  28                                  DSPATR(RI)
+006000090122     A  28                                  DSPATR(PC)
+006100090122     A            ERRMSG        75   O 23  2DSPATR(HI)
+006200090122     A                                 24  2'F2=Go Back'
+006300090122     A                                      DSPATR(HI)
+006400090122     A                                 24 22'F3 = End'
+006500090122     A                                      DSPATR(HI)
+006600090122     A                                 24 39'F15 = Complete'
+006700090122     A                                      DSPATR(HI)
+006800090122     A                                 24 63'F20=Delete Record'
+006900090122     A                                      DSPATR(HI)
+007000090122     A                                 12 29'Main Transit Number:'
+007100090122     A                                      DSPATR(HI)
+007200090122     A            MAIN           8Y 0B 12 50COLOR(BLU)
+007300090122     A                                      EDTCDE(3)
+007400090122     A  29                                  DSPATR(RI)
+007500090122     A  29                                  DSPATR(PC)
+007600090122     A*%%GP SCREEN21   02
+007700090122     A*%%GP UNTITLED   01

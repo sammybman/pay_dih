@@ -1,0 +1,140 @@
+000010040622     A*%%TS  SD  20040622  095955  SBRITTON    REL-V5R2M0  5722-WDS
+000020040622     A*%%EC
+000030040622     A                                      DSPSIZ(24 80 *DS3)
+000040040622     A                                      CF03(03)
+000050010724     A          R FMT1
+000060010724     A*%%TS  SD  20010724  115428  SAMMY       REL-V4R4M0  5769-PW1
+000070010724     A                                      CA01(01)
+000080010724     A                                  2  3USER
+000090010724     A                                      DSPATR(HI)
+000100010724     A                                  1 71SYSNAME
+000110010724     A                                      DSPATR(HI)
+000120010724     A            @PGM          10A  O  1  3DSPATR(HI)
+000130010724     A            CONAME        30A  O  1 26DSPATR(HI)
+000140010724     A                                      DSPATR(UL)
+000150010724     A            @TITLE        40A  O  2 21DSPATR(HI)
+000160010724     A                                 23 10'F1- List Types'
+000170010724     A                                      DSPATR(HI)
+000180010724     A                                 23 40'F3 - End'
+000190010724     A                                      DSPATR(HI)
+000200010724     A                                 10  6'Enter Payroll Run Type.'
+000210010724     A                                      COLOR(BLU)
+000220010724     A            RUN_TYPE       1A  B 10 32DSPATR(HI)
+000230010724     A            @DATE         10A  O  2 69DSPATR(HI)
+000240010724     A            ERRMSG        75   O 24  3DSPATR(HI)
+000250040621     A          R FMT2
+000260040621     A*%%TS  SD  20040621  142208  SBRITTON    REL-V5R2M0  5722-WDS
+000270040621     A                                      CA01(01)
+000280040621     A                                      CF15(15)
+000290040621     A                                      CA02(02)
+000300040621     A                                      CF09(09)
+000310040621     A                                  2  3USER
+000320040621     A                                      DSPATR(HI)
+000330040621     A                                  1 71SYSNAME
+000340040621     A                                      DSPATR(HI)
+000350040621     A            @PGM          10A  O  1  3DSPATR(HI)
+000360040621     A            CONAME        30A  O  1 26DSPATR(HI)
+000370040621     A                                      DSPATR(UL)
+000380040621     A            @TITLE        40A  O  2 21DSPATR(HI)
+000390040621     A                                 22  5'F1= List Emp Types'
+000400040621     A                                      DSPATR(HI)
+000410040621     A                                 22 28'F2 = Go Back'
+000420040621     A                                      DSPATR(HI)
+000430040621     A                                  4  5'Payroll Run Type ...'
+000440040621     A                                      COLOR(BLU)
+000450040621     A            RUN_TYPE       1A  O  4 29DSPATR(HI)
+000460040621     A            @DATE         10A  O  2 69DSPATR(HI)
+000470040621     A            RUN_NAME      20A  O  4 32DSPATR(HI)
+000480040621     A                                  6  5'Run payroll on .....'
+000490040621     A                                      COLOR(BLU)
+000500040621     A            LIST          20A  B  6 29DSPATR(HI)
+000510040621     A                                  6 52'Employee Types'
+000520040621     A                                      COLOR(BLU)
+000530040621     A                                  7 10'(List Types without  spaces starti-
+000540040621     A                                      ng from the Left)'
+000550040621     A                                 11  5'For Multiple Employee Types Specif-
+000560040621     A                                      y whether a separate'
+000570040621     A                                      COLOR(BLU)
+000580040621     A                                 12 10'Payroll Batch is Generated for eac-
+000590040621     A                                      h Type'
+000600040621     A                                      COLOR(BLU)
+000610040621     A            FLAG           1A  B 13 31DSPATR(HI)
+000620040621     A                                 13 27'=>'
+000630040621     A                                      COLOR(BLU)
+000640040621     A                                 13 34'(Y = Yes)'
+000650040621     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000660040621     A                                 22 61'F9 = More Options'
+000670040621     A                                      DSPATR(HI)
+000680040621     A                                 22 46'F3 = End'
+000690040621     A                                      DSPATR(HI)
+000700040621     A                                 18  5'Select Batch Output Sequence =>'
+000710040621     A                                      COLOR(BLU)
+000720040621     A            BATCH_SEQ      1Y 0B 18 38DSPATR(HI)
+000730040621     A                                      EDTCDE(4)
+000740040621     A                                      RANGE(1 3)
+000750040621     A                                 18 42'1 = Dept ,Emp'
+000760040621     A                                 19 42'2 = Location ,Dept ,Emp'
+000770040621     A                                 20 42'3 = Emp'
+000780040621     A                                 18 70'(Default)'
+000790040621     A                                      DSPATR(HI)
+000800040621     A                                 15  5'Show Hourly Rates for Relevant Pay-
+000810040621     A                                      ment Types =>'
+000820040621     A                                      COLOR(BLU)
+000830040621     A            RATE_FLAG      1A  B 15 54DSPATR(HI)
+000840040621     A                                 15 57'(Y = Yes)'
+000850040621     A                                 23 34'F15 = Confirm'
+000860040621     A                                      DSPATR(HI)
+000870040621     A                                  9  5'Guarantee Payment of'
+000880040621     A                                      COLOR(BLU)
+000890040621     A            GUAR_PER       5Y 2B  9 27DSPATR(HI)
+000900040621     A                                      EDTCDE(1)
+000910040621     A                                  9 35'% of Gross'
+000920040621     A                                      COLOR(BLU)
+000930040622     A          R FMT3
+000940040622     A*%%TS  SD  20040622  095955  SBRITTON    REL-V5R2M0  5722-WDS
+000950040622     A                                      CF15(15)
+000960040622     A                                      CA02(02)
+000970040622     A                                  2  3USER
+000980040622     A                                      DSPATR(HI)
+000990040622     A                                  1 71SYSNAME
+001000040622     A                                      DSPATR(HI)
+001010040622     A            @PGM          10A  O  1  3DSPATR(HI)
+001020040622     A            CONAME        30A  O  1 26DSPATR(HI)
+001030040622     A                                      DSPATR(UL)
+001040040622     A            @TITLE        40A  O  2 21DSPATR(HI)
+001050040622     A                                 22 28'F2 = Go Back'
+001060040622     A                                      DSPATR(HI)
+001070040622     A                                  4  5'Payroll Run Type ...'
+001080040622     A                                      COLOR(BLU)
+001090040622     A            RUN_TYPE       1A  O  4 29DSPATR(HI)
+001100040622     A            @DATE         10A  O  2 69DSPATR(HI)
+001110040622     A            RUN_NAME      20A  O  4 32DSPATR(HI)
+001120040622     A                                  7 13'Select Payslip Style =>'
+001130040622     A                                      COLOR(BLU)
+001140040622     A            ERRMSG        75A  O 24  3DSPATR(HI)
+001150040622     A                                 22 46'F3 = End'
+001160040622     A                                      DSPATR(HI)
+001170040622     A                                 12  8'Select Payslip YTD output =>'
+001180040622     A                                      COLOR(BLU)
+001190040622     A            YTD_OPT        1Y 0B 12 38DSPATR(HI)
+001200040622     A                                      EDTCDE(4)
+001210040622     A                                      RANGE(1 3)
+001220040622     A                                 12 41'1 = Print system dft. (below)'
+001230040622     A                                 13 41'2 = Print All types (Below)'
+001240040622     A            PSTYLE         1Y 0B  7 38DSPATR(HI)
+001250040622     A                                      EDTCDE(Z)
+001260040622     A                                      RANGE(1 2)
+001270040622     A                                  7 41'1 = Horizontal (132 character)'
+001280040622     A                                  8 41'2 = Vertical (80 character)'
+001290040622     A                                 10  4'For Vertical style payslip'
+001300040622     A                                 22 61'F15 = Confirm'
+001310040622     A                                      DSPATR(HI)
+001320040622     A                                 14 41'3 = Print Adjacent'
+001330040622     A                                 10 31'ONLY'
+001340040622     A                                      DSPATR(HI)
+001350040622     A                                 18  4'Declared Earnings if above insurab-
+001360040622     A                                      le (NIS) =>'
+001370040622     A                                      COLOR(BLU)
+001380040622     A                                 19 46'% more than insurable earnings'
+001390040622     A            DECL_EARN      5Y 2B 19 39DSPATR(HI)
+001400040622     A                                      EDTCDE(1)

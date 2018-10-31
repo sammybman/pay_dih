@@ -1,0 +1,75 @@
+000010140827     A*%%TS  SD  20140827  184101  SBRITTON    REL-V7R1M0  5770-WDS
+000020140827     A*%%EC
+000030140827     A                                      DSPSIZ(24 80 *DS3)
+000040140827     A                                      CF03(03)
+000050140827     A          R FMT1
+000060140827     A*%%TS  SD  20140827  184101  SBRITTON    REL-V7R1M0  5770-WDS
+000070140827     A                                      CF05(05)
+000080140827     A  99                                  CF15(15)
+000090140827     A                                      CF04(04)
+000100140827     A  99                                  CF02(02)
+000110140827     A                                      RTNCSRLOC(*RECNAME &REC &FLD)
+000120140827     A            CONAME        30A  O  1 26DSPATR(HI)
+000130140827     A                                      DSPATR(UL)
+000140140827     A                                  1 72SYSNAME
+000150140827     A                                      DSPATR(HI)
+000160140827     A            @DATE         10A  O  2 70DSPATR(HI)
+000170140827     A            @TITLE        40A  O  2 21DSPATR(HI)
+000180140827     A                                  1  2USER
+000190140827     A                                      DSPATR(HI)
+000200140827     A            @PGM          10A  O  2  2DSPATR(HI)
+000210140827     A            ERRMSG        75A  O 24  3DSPATR(BL)
+000220140827     A            LRULTYPE# R     Y  O  8 32REFFLD(LRULFMT/LRULTYPE *LIBL/LIABR-
+000230140827     A                                      ULE)
+000240140827     A                                      DSPATR(HI)
+000250140827     A                                      EDTCDE(Z)
+000260140827     A            LRULLOC#  R     Y  O  6 32REFFLD(LRULFMT/LRULLOC *LIBL/LIABRU-
+000270140827     A                                      LE)
+000280140827     A                                      DSPATR(HI)
+000290140827     A                                      EDTCDE(Z)
+000300140827     A                                 10  6'Liability sub-Type....:'
+000310140827     A                                      COLOR(BLU)
+000320140827     A            LRULSTYPE#R     Y  O 10 32REFFLD(LRULFMT/LRULSTYPE *LIBL/LIAB-
+000330140827     A                                      RULE)
+000340140827     A                                      DSPATR(HI)
+000350140827     A                                      EDTCDE(Z)
+000360140827     A  99        LRUL4ALLWLR     Y  B 16 32REFFLD(LRUL4FMT/LRUL4ALLWL *LIBL/LI-
+000370140827     A                                      ABRULE4)
+000380140827     A                                      DSPATR(HI)
+000390140827     A                                      EDTCDE(1)
+000400140827     A                                  8  6'Liability Type........:'
+000410140827     A                                      COLOR(BLU)
+000420140827     A                                  6  6'Warehouse Location....:'
+000430140827     A                                      COLOR(BLU)
+000440140827     A  99                             16  6'Allowed Limit.........:'
+000450140827     A                                      COLOR(BLU)
+000460140827     A  99                             18  6'Ignore Limit..........:'
+000470140827     A                                      COLOR(BLU)
+000480140827     A                                 23 21'F3=End Program'
+000490140827     A                                      DSPATR(HI)
+000500140827     A  99                             23 56'F15=Confirm'
+000510140827     A                                      DSPATR(HI)
+000520140827     A            WCDESC    R        O  6 36REFFLD(WCFMT/WCDESC *LIBL/WHCON)
+000530140827     A                                      DSPATR(HI)
+000540140827     A            EMDSP     R        O  8 36REFFLD(EMFMT/EMDSP *LIBL/EMATF)
+000550140827     A                                      DSPATR(HI)
+000560140827     A            EADSP     R        O 10 36REFFLD(EAFMT/EADSP *LIBL/EASTF)
+000570140827     A                                      DSPATR(HI)
+000580140827     A                                 12  6'Employee Number.......:'
+000590140827     A                                      COLOR(BLU)
+000600140827     A  99        LRUL4IGLIMR        B 18 32REFFLD(LRUL4FMT/LRUL4IGLIM *LIBL/LI-
+000610140827     A                                      ABRULE4)
+000620140827     A                                      DSPATR(HI)
+000630140827     A  99                             17 15'or'
+000640140827     A            EMPNO     R        B 12 32REFFLD(LRUL4FMT/LRUL4EMP *LIBL/LIAB-
+000650140827     A                                      RULE4)
+000660140827     A                                      EDTCDE(1)
+000670140827     A                                      DSPATR(HI)
+000680140827     A  99                                  DSPATR(PR)
+000690140827     A  99                             23  5'F2= Go Back'
+000700140827     A                                      DSPATR(HI)
+000710140827     A N99                             23 41'F4=Prompt'
+000720140827     A                                      DSPATR(HI)
+000730140827     A            NAME          30A  O 12 41DSPATR(HI)
+000740140827     A            REC           10A  H
+000750140827     A            FLD           10A  H

@@ -1,0 +1,73 @@
+000010090415     A*%%TS  SD  20090415  103029  SBRITTON    REL-V6R1M0  5761-WDS
+000020941122     A*
+000030090415     A*%%EC
+000040090415     A                                      DSPSIZ(24 80 *DS3)
+000050090415     A                                      CA03(03)
+000060941120     A*
+000070010922     A          R FMT1
+000080010922     A*%%TS  SD  20010922  164215  SAMMY       REL-V4R4M0  5769-PW1
+000090010922     A                                      CA01(01)
+000100010922     A            @PGM          10A  O  1  2DSPATR(HI)
+000110010922     A                                 11 14'Payroll Type.'
+000120010922     A                                      COLOR(BLU)
+000130010922     A            PTYPTYPE#      2Y 0B 11 30EDTCDE(Z)
+000140010922     A                                      DSPATR(HI)
+000150010922     A                                 23 33'F3 = End Program'
+000160010922     A                                      DSPATR(HI)
+000170010922     A                                  1 71SYSNAME
+000180010922     A                                      DSPATR(HI)
+000190010922     A                                  2  2USER
+000200010922     A                                      DSPATR(HI)
+000210010922     A            CONAME        30A  O  1 26DSPATR(HI)
+000220010922     A                                      DSPATR(UL)
+000230010922     A            @TITLE        40A  O  2 21DSPATR(HI)
+000240010922     A                                 23  5'F1 = List Types'
+000250010922     A                                      DSPATR(HI)
+000260010922     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000270010922     A            @DATE         10A  O  2 69DSPATR(HI)
+000280941120     A**
+000290090415     A          R FMT2
+000300090415     A*%%TS  SD  20090415  103029  SBRITTON    REL-V6R1M0  5761-WDS
+000310090415     A                                      CA02(02)
+000320090415     A N99                                  CA04(04)
+000330090415     A                                      CHANGE(88)
+000340090415     A            #MODE          6A  O  3 35DSPATR(RI)
+000350090415     A                                      COLOR(YLW)
+000360090415     A            @PGM          10A  O  1  2DSPATR(HI)
+000370090415     A                                  5 10'Payroll Type........'
+000380090415     A                                      COLOR(BLU)
+000390090415     A            PTYPTYPE#      2Y 0O  5 32EDTCDE(Z)
+000400090415     A                                      DSPATR(HI)
+000410090415     A                                 23  2'F2 = Cancel'
+000420090415     A                                      DSPATR(HI)
+000430090415     A            CONAME        30A  O  1 26DSPATR(HI)
+000440090415     A                                      DSPATR(UL)
+000450090415     A            @TITLE        40A  O  2 21DSPATR(HI)
+000460090415     A                                  2  2USER
+000470090415     A                                      DSPATR(HI)
+000480090415     A                                  1 71SYSNAME
+000490090415     A                                      DSPATR(HI)
+000500090415     A                                 23 16'F3 = End Program'
+000510090415     A                                      DSPATR(HI)
+000520090415     A            ERRMSG        75A  O 24  3COLOR(RED)
+000530090415     A            PTYDESC   R        O  5 36REFFLD(PTYFMT/PTYDESC *LIBL/PAYTYP)
+000540090415     A                                      DSPATR(HI)
+000550090415     A                                  9 10'Liability Type......'
+000560090415     A                                      COLOR(BLU)
+000570090415     A            EMSELTYP#      2Y 0B  9 32EDTCDE(Z)
+000580090415     A                                      DSPATR(HI)
+000590090415     A            EMDSP     R        O  9 36REFFLD(EMFMT/EMDSP *LIBL/EMATF)
+000600090415     A                                      DSPATR(HI)
+000610090415     A N99                             23 36'F4 = Delete Record'
+000620090415     A                                      DSPATR(HI)
+000630090415     A  90                             19 28'PRESS F4 TO CONFIRM DELETE'
+000640090415     A                                      DSPATR(RI)
+000650090415     A                                      DSPATR(HI)
+000660090415     A            @DATE         10A  O  2 69DSPATR(HI)
+000670090415     A                                 11 10'Liability Sub-type..'
+000680090415     A                                      COLOR(BLU)
+000690090415     A            EMSUBTYP#      3Y 0B 11 32EDTCDE(Z)
+000700090415     A                                      DSPATR(HI)
+000710090415     A            EADSP     R        O 11 36REFFLD(EAFMT/EADSP *LIBL/EASTF)
+000720090415     A                                      DSPATR(HI)
+000730090415     A            DESC#         10   O  5 62

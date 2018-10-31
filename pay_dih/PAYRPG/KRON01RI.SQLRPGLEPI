@@ -1,0 +1,439 @@
+000100120503     H DATFMT(*ISO)  dftactgrp(*no)  actgrp(*caller) bnddir('DISDIR')
+000200110221      // PROGRAMMER - S.BRITTON
+000300960502     FKEMPML1   UF   E           K DISK
+000400110221
+000500980205     D                SDS
+000600980205     D  @PGM             *PROC
+000700111104     D  @user                358    367
+000800110221
+000900110614     D                 PI                  extpgm('KRON01RI')
+001000120503
+001100120503
+001200120503      /copy QCPYSRC,genpr
+001300120503      /copy QCPYSRC,chkobj
+001400110221
+001500110221     D  ckempDS      e DS                  extname('CKEMPEFF')
+001600110802
+001700110803K0515D clockDS         DS
+001800110802K0515D @Ck                          100
+001900110802K0515D  Ceck01                       10    Overlay(@Ck)
+002000120507K0515D  Ceck02                       10    Overlay(@Ck:*next)
+002100120507K0515D  Ceck03                       10    Overlay(@Ck:*next)
+002200120507K0515D  Ceck04                       10    Overlay(@Ck:*next)
+002300120507K0515D  Ceck05                       10    Overlay(@Ck:*next)
+002400120507K0515D  Ceck06                       10    Overlay(@Ck:*next)
+002500120507K0515D  Ceck07                       10    Overlay(@Ck:*next)
+002600120507K0515D  Ceck08                       10    Overlay(@Ck:*next)
+002700120507K0515D  Ceck09                       10    Overlay(@Ck:*next)
+002800120507K0515D  Ceck10                       10    Overlay(@Ck:*next)
+002900110221
+003000110802K0515D*@In             S             10    Dim(10)
+003100110221     D temp            S              4  0
+003200110221     D user#           S             10
+003300110518     D cmd             s            200
+003400110518     D library         s             10
+003500120503     D update_flg      s              8  0 dtaara(KRONUPDFLG)
+003600121009     D date_ISOflg     s               d
+003700121009     D date_flg        s              8  0
+003800110702
+003900110702     D PGMLIBRARY      c                   'TIMEKEEPER'
+004000120503     D CRT_DATA_AREA   c                   'CRTDTAARA DTAARA(KRONUPDFLG) -
+004100120503     D                                     TYPE(*DEC) LEN(8 0) TEXT(''Update -
+004200120503     D                                     check date flag'')'
+004300110221
+004400110518
+004500110518     D Line_command    PR                  extpgm('QCMDEXC')
+004600110518     D cmd                          100    options(*varsize) const
+004700110518     D cmdlen                        15p 5 const
+004800110518
+004900110518         // Escape Program   Prototype
+005000110518     D  escape_pgm     pr                  extpgm('ESCPMSG')
+005100110518     D                               10    const
+005200110518     D                                7    const
+005300110702
+005400110702         // TK/iSeries Totalizer
+005500110702     D  totalzer       pr                  extpgm('TOTALZER')
+005600110702     D   empn                         9  0 const
+005700110705     D   setlr                        1    const
+005800110518
+005900121031         // TK/iSeries Calc. employee exceptions
+006000121031     D  clkexcpt       pr                  extpgm('CLKEXCPT')
+006100121031     D   empn                         9  0 const
+006200121031     D   runtyp                       1    const
+006300121031     D   updall                       1    const
+006400121031
+006500110818
+006600110818         // Prepare for Changes to Employee master
+006700110818     D  Prepare_for_EE_changes...
+006800110818     D                 pr                  extpgm('CLKEFFCHG')
+006900110818
+007000110818         // Update effective date file
+007100110818     D  Update_effective_date...
+007200110818     D                 pr                  extpgm('CLKEFFUPD')
+007300110802
+007400110802         // Download to time clock
+007500120507     D  ClockDownload  pr                  extpgm('CLK301A')
+007600120507     D**ClockDownload  pr                  extpgm('KRON01CI')
+007700110802     D   Snapsh                       1    const
+007800110803     D   Eecono                       2  0 const
+007900110803     D   Eeempn                       9  0 const
+008000150330     D   Eebadg                      20  0 const
+008100110803|    D   Eename                      30    const
+008200110803     D   Eesced                       3    const
+008300110803     D   Eerest                       2  0 const
+008400110803|    D   Eestts                       1    const
+008500110803     D   @CK                               const  like(clockds)
+008600110802     D   Glchg                        1    const
+008700110221
+008800110221     D*--------------------------------------------------
+008900110817     D* Procedure name: populate_kronos_employees
+009000110221     D* Purpose:
+009100110221     D* Returns:
+009200110221     D*--------------------------------------------------
+009300110221     D populate_kronos_employees...
+009400110221     D                 PR
+009500110817
+009600110221
+009700110221      /FREE
+009800121009         // Get current date for comparision with interface
+009900121009         // update flag
+010000121009           exec sql
+010100121009               values ( curdate()) into :date_ISOflg;
+010200121009              //values ( decimal(char(curdate(),ISO),8,0)) into :date_flg;
+010300121009
+010400121009           date_flg = %dec(date_ISOflg:*iso);
+010500121009
+010600121009           in  update_flg;
+010700120503
+010800120503         // Create data area for update check date
+010900120503           if not chkobj('KronUPDflg' : '*DTAARA');
+011000120503              cmd = CRT_DATA_AREA;
+011100120503           // cmd = %scanRpl('&LIB' : '*CURLIB' : cmd );
+011200120503              callp(e) line_command(cmd:%size(cmd));
+011300120503           endif;
+011400110222
+011500110518         // Get Kronos data Library from config. table
+011600110518         exec sql
+011700110518            select hckrondta into :library from hmrcon;
+011800110518
+011900110518         if library = *blanks;
+012000110518            *inlr = *on;
+012100110518            escape_pgm(@pgm:'PAY0049');
+012200110518         endif;
+012300110518
+012400110222         user# = @user;
+012500110222
+012600110222         exec sql
+012700110222           select count(*) into :temp from kempm where ksts = 'A';
+012800110221
+012900110221
+013000110222         IF temp = *zeros;
+013100110222           *inlr = *on;
+013200110222           return;
+013300110222         endif;
+013400110221
+013500110518
+013600110702         // Add Kronos data Library to library list
+013700110518         cmd = 'ADDLIBLE LIB(' + library + ')' +
+013800110518               ' POSITION(*LAST)';
+013900110518         callp(e) line_command(cmd:%size(cmd));
+014000110702
+014100110702         // Add Kronos Program library to library list
+014200110702         cmd = 'ADDLIBLE LIB(' + PGMLIBRARY + ')' +
+014300110702               ' POSITION(*LAST)';
+014400110702         callp(e) line_command(cmd:%size(cmd));
+014500110816
+014600110818         // Prepare for changes to employee master
+014700121009         // Run ONCE daily if program is called
+014800121009         if  update_flg < date_flg;
+014900121009            prepare_for_EE_changes();
+015000121009         endif;
+015100110818
+015200110830         // perform deletion of terminated or unmatched
+015300110830         // employees
+015400110816         perform_soft_delete();
+015500110221
+015600110309         setll *loval kerec;
+015700110309         read kerec;
+015800110221
+015900110222         dow not %eof();
+016000110816
+016100110222           populate_kronos_employees();
+016200110222           ksts = *blanks;
+016300110221
+016400110222           update kerec;
+016500110222           read kerec;
+016600110221
+016700110222         enddo;
+016800110518
+016900110818         // Update effective date file
+017000121009         // Run ONCE daily if program is called
+017100121009         if  update_flg < date_flg;
+017200121009            update_effective_date();
+017300121009         endif;
+017400110818
+017500110518         // Remove Kronos data Library from library list
+017600110518         cmd = 'RMVLIBLE LIB(' + library +')';
+017700110518         callp(e) line_command(cmd:%size(cmd));
+017800110702
+017900110702         // Remove Kronos program Library from library list
+018000110702         cmd = 'RMVLIBLE LIB(' + PGMLIBRARY +')';
+018100110702         callp(e) line_command(cmd:%size(cmd));
+018200121009
+018300121009
+018400121009         // Update interface flag after FIRST update for the day
+018500121009         if  update_flg < date_flg;
+018600121009            in *lock  update_flg;
+018700121009            update_flg = date_flg;
+018800121009            out  update_flg;
+018900121009         endif;
+019000110614
+019100110614         *inlr = *on;
+019200110614         return;
+019300110221
+019400110221      /END-FREE
+019500110221
+019600110221     P*--------------------------------------------------
+019700110221     P* Procedure name: propulate_kronos_employees
+019800110221     P* Purpose:
+019900110221     P* Returns:
+020000110221     P*--------------------------------------------------
+020100110221     P populate_kronos_employees...
+020200110221     P                 B
+020300110221     D populate_kronos_employees...
+020400110221     D                 PI
+020500110221
+020600110221     D starttimestamp  S               Z
+020700110309     D dailyrule       S              5
+020800110309     D prdrule         S              5
+020900110803     D snapsh          S              1
+021000110816     D deleteflag      S              1
+021100110221
+021200110221
+021300110221      /FREE
+021400120503
+021500110802        // set time field for record
+021600110222        starttimestamp =  %timestamp(
+021700110222                    %char(%date()) + '-00.00.00.000000');
+021800110221
+021900110802        // Populate clock Struc.
+022000110802K0515   Ceck01 = kempdgrp1;
+022100110802K0515   Ceck02 = kempdgrp2;
+022200110802K0515   Ceck03 = kempdgrp3;
+022300110802K0515   Ceck04 = kempdgrp4;
+022400110802K0515   Ceck05 = kempdgrp5;
+022500110802K0515   Ceck06 = kempdgrp6;
+022600110802K0515   Ceck07 = kempdgrp7;
+022700110802K0515   Ceck08 = kempdgrp8;
+022800110802K0515   Ceck09 = kempdgrp9;
+022900110802K0515   Ceck10 = kempdgrp10;
+023000110802
+023100110221        exec sql
+023200110221           declare filecursor cursor for
+023300110221           select * from ckempeff where eecono = 1
+023400110804              and eeempn = :kemp and eeeffs = 'C' with nc;
+023500110222
+023600110221        exec sql
+023700110303           open filecursor;
+023800110221
+023900110221        exec sql
+024000110303          fetch filecursor into :ckempDS;
+024100110221
+024200110309         dailyrule = %editc(kempdrule:'X');
+024300110309         prdrule = %editc(kemppprule:'X');
+024400110816
+024500110816         // Setting delete flag based on Emp. status
+024600110816         if  kempsts = 'A';
+024700110816            deleteflag = *blanks;
+024800110816           else;
+024900110816            deleteflag = ckempds.eedelt;
+025000110816         endif;
+025100110816
+025200110222        // record is found
+025300110303        if SQLSTT = '00000';
+025400110222           exec sql
+025500110222              update ckempeff set eelusr = :user#,
+025600110222                         eeeffd = :starttimestamp,
+025700110222                         eeldat = current timestamp,
+025800110222                         eename = :kename,
+025900110303                         eesort = :kempsurnm,
+026000110222                         eeadat = :kemphire,
+026100110222                         eetdat = :kempresign,
+026200110222                         eestts = :kempsts,
+026300110222                         eerept = 0,
+026400110222                         eesdat = 0,
+026500110222                         eeeeml = :kempeml,
+026600110222                         eesec1 = 1,
+026700110222                         eesec2 = :kempdiv,
+026800110222                         eesec3 = :kempdept,
+026900110222                         eeptyp = :kemptyp,
+027000110222                         eeprat = :krate,
+027100110222                         eefreq = :kempfreq,
+027200110309                         eetcod = :prdrule,
+027300110309                         eealtc = :dailyrule,
+027400110222                         eeck01 = :kempdgrp1,
+027500110222                         eeck02 = :kempdgrp2,
+027600110803                         eeck03 = :kempdgrp3,
+027700110728                         eeck04 = :kempdgrp4,
+027800110728                         eeck05 = :kempdgrp5,
+027900110728                         eeck06 = :kempdgrp6,
+028000110728                         eeck07 = :kempdgrp7,
+028100110728                         eeck08 = :kempdgrp8,
+028200110728                         eeck09 = :kempdgrp9,
+028300110728                         eeck10 = :kempdgrp10,
+028400110222                         eebadg = :kbadge,
+028500110603                         eezone = '07',
+028600110603                         eerald = 'N',
+028700110603                         eexx08 = :kempbio,
+028800110816                         eedelt = :deleteflag,
+028900110222                         eerest = 0,
+029000110630                         eeconf = '0',
+029100110222                         eearst = 0
+029200110303                  where current of filecursor;
+029300110802
+029400120627          // remove delete status for re-activated employees in the Genie
+029500120627          // file
+029600120627           if deleteflag = ' ';
+029700120627              exec sql
+029800120627                update ckempgen set gndelt = ' '
+029900120627                   where gndelt = 'D' and gnempn = :kemp
+030000120627                    with NC;
+030100120627           endif;
+030200120627
+030300110802
+030400110802           // Download to time clocks
+030500110802           if kbadge <> *zeros;
+030600110802             select;
+030700110803               when kempdept <> ckempds.eesec3
+030800110816                 or kempsts <> 'A' and ckempds.eestts <> 'T';
+030900110802                 Snapsh = 'B';
+031000110803               when kempsts <> ckempds.eestts
+031100110803                 and ckempds.eedelt = ' ';
+031200110803                 Snapsh = 'A';
+031300110803               other;
+031400110804                 Snapsh = 'A';
+031500110802             endsl;
+031600121008
+031700121008             ClockDownload(Snapsh:1:kemp:kbadge:kename:*blanks:
+031800121008                            0:kempsts:@CK:*blanks);
+031900110802           endif;
+032000110222
+032100110222           else;
+032200110222
+032300120524           // Write record ONLY for active employees
+032400120524           if  kempsts = 'A';
+032500120524             exec sql
+032600120524                insert into ckempeff (eecono, eeempn, eeeffd, eeeffs,
+032700110222                       eeac01, eeac02, eeac03, eeac04, eeac05, eeac06,
+032800110222                       eeac07, eeac08, eeac09, eeac10, eeac12, eeac13,
+032900110222                       eereas, eeousr, eeodat, eelusr, eeldat,
+033000110222                       eename, eesort, eeadat, eetdat, eezone,
+033100110222                       eestts, eerept, eesdat, eeeeml, eesec1,
+033200110222                       eesec2, eesec3, eeptyp, eeprat, eefreq,
+033300110728                       eetcod, eealtc, eeck01, eeck02, eeck03,
+033400110803                       eeck04, eeck05, eeck06, eeck07, eeck08,
+033500110803                       eeck09, eeck10, eebadg,
+033600110222                       eexx08, eerest, eearst, eerald, eeshft,
+033700110630                       eerols, eearls, eerold, eearld, eeconf)
+033800110222
+033900110222                  values(1, :kemp, :starttimestamp, 'C',
+034000110303                       'N', 'N', 'N', 'Y', 'N', 'N',
+034100110303                       'Y', 'Y', 'N', ' ', 'N', 'N',
+034200110303                       ' ', :user#, current timestamp,
+034300110303                       :user#, current timestamp, :kename,
+034400110603                       :kempsurnm, :kemphire, 0, '07', :kempsts,
+034500110303                       0,0, :kempeml,'1', :kempdiv, :kempdept,
+034600110309                       :kemptyp, :krate, :kempfreq, :prdrule,
+034700110309                       :dailyrule, :kempdgrp1, :kempdgrp2,
+034800110728                       :kempdgrp3, :kempdgrp4, :kempdgrp5,
+034900110728                       :kempdgrp6, :kempdgrp7, :kempdgrp8,
+035000110728                       :kempdgrp9, :kempdgrp10,
+035100110603                       :kbadge, :kempBIO, 0, 0, 'N', '1',
+035200110630                       'Y', 'Y', 14, 14, '0') with NC;
+035300120524           endif;
+035400110802
+035500110802           // Download to time clocks
+035600110802           if kbadge <> *zeros;
+035700110802
+035800110802             ClockDownload('A':1:kemp:kbadge:kename:*blanks:
+035900110803                            0:kempsts:@CK:*blanks);
+036000110802           endif;
+036100110222
+036200110222        endif;
+036300110309
+036400110309        exec sql
+036500110309           close filecursor;
+036600110702
+036700110702        // TK/iSeries Totalizer
+036800110705        totalzer(kemp:'N');
+036900121031
+037000121031        // TK/iSeries Employee exceptions
+037100121218         clkexcpt(kemp:'C':*blanks);
+037200110802
+037300110802        // Download to time clocks
+037400110802        //ClockDownload(Snapsh:1:kemp:kbadge:kename:*blanks:
+037500110802        //              0:kempsts:@CK:Glchg);
+037600110802
+037700110221
+037800110222
+037900110221      /END-FREE
+038000110221     P populate_kronos_employees...
+038100110221     P                 E
+038200110221
+038300110816
+038400110816     D*--------------------------------------------------
+038500110816     D* Procedure name: perform_soft_delete
+038600110817     D* Purpose:  delete Emp. a month after termination
+038700110816     D* Returns:
+038800110816     D*--------------------------------------------------
+038900110817     P perform_soft_delete...
+039000110817     P                 B
+039100110817     D perform_soft_delete...
+039200110817     D                 PI
+039300120503
+039400120503
+039500110816
+039600110816      /FREE
+039700120503
+039800120503        if  update_flg < date_flg;
+039900110817
+040000110830          // set delete status for employees who joined
+040100110830          // the non-active category over 30 days
+040200110816          exec sql
+040300110817             update ckempeff set eedelt = 'D'
+040400110816                 where eecono = 1 and eeeffs = 'C'
+040500120414                 and eedelt <> 'D'
+040600110817                 and eestts <> 'A' and eetdat <> 0 and
+040700110816                 Days(CURDATE()) - Days(
+040800110816                   date(substr(digits(eetdat),1,4) concat
+040900110816                           '-' concat
+041000110816                            substr(digits(eetdat),5,2) concat
+041100110816                           '-' concat
+041200110817                            substr(digits(eetdat),7,2))) > 30
+041300110817                            with NC;
+041400111104
+041500111104
+041600120627          // set delete status for employees in the Genie
+041700120627          // file
+041800120627          exec sql
+041900120627             update ckempgen set gndelt = 'D'
+042000120627                 where gndelt <> 'D' and exists
+042100120627              (SELECT * from ckempeff where eeempn = ckempgen.gnempn
+042200130105                  and eedelt = 'D'and eeeffs = 'C') with NC;
+042300110830
+042400110830
+042500110830          // Delete unmatched records in the HR. badge
+042600110830          // master file
+042700110830          exec sql
+042800110830            DELETE from ckempeff where not exists
+042900120508            (SELECT * from kempm where kemp = ckempeff.eeempn) with NC;
+043000120414
+043100120414          exec sql
+043200120414            DELETE from ckempgen where not exists
+043300120508            (SELECT * from kempm where kemp = ckempgen.gnempn) with NC;
+043400110830
+043500120503        endif;
+043600120503
+043700110816      /END-FREE
+043800110816     P perform_soft_delete...
+043900110816     P                 E

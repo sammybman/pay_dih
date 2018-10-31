@@ -1,0 +1,29 @@
+000100990412     A* ********************************************************
+000200990412     A*              B A N K S    D I H    L T D.              *
+000300990412     A*                   PAYROLL SYSTEM                       *
+000400990412     A*                                                        *
+000500990412     A*                         BY                             *
+000600990412     A*                                                        *
+000700990412     A*                 I.S. DEPARTMENT                        *
+000800990412     A*             P.O BOX 10140, GEORGETOWN,GUYANA           *
+000900990412     A*                                                        *
+001000990412     A*                                                        *
+001100990412     A*       PHYSICAL FILE NAME: PAYBTYPL1                    *
+001200990412     A*       RECORD FORMAT NAME: PTYFMT                       *
+001300990412     A*       FILE PREFIX.......: PTY                          *
+001400990412     A*                                                        *
+001500990412     A*       PROGRAMMER NAME: SAMUEL BRITTON                  *
+001600990412     A*       DESIGN DATE....: 1999/04/12                      *
+001700990412     A*                                                        *
+001800990412     A*  FILE DESCRIPTION: PAYROLL BANK ACCOUNTS  TYPE FILE    *
+001900990412     A*                                                        *
+002000990412     A*  THIS FILE IS DESIGNED TO HOLD DIFFERENT PAYROLL       *
+002100990412     A*  TYPES.                                                *
+002200990412     A*                                                        *
+002300990412     A*                                                        *
+002400990412     A**********************************************************
+002500990412     A                                      UNIQUE
+002600990410     **
+002700990412     A          R PTYFMT                    PFILE(PAYBTYP)
+002800990412     A          K PTYTYPE
+002900990412     A          S PTYSTS                    COMP(EQ 'A')

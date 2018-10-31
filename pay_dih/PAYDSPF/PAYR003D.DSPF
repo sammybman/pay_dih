@@ -1,0 +1,104 @@
+000010030422     A*%%TS  SD  20030422  110843  SBRITTON    REL-V5R2M0  5722-WDS
+000020030422     A*%%EC
+000030030422     A                                      DSPSIZ(24 80 *DS3)
+000040030422     A                                      CF03(03)
+000050010612     A          R SELOPT
+000060010612     A*%%TS  SD  20010612  153211  SAMMY       REL-V4R4M0  5769-PW1
+000070010612     A            @PGM          10A  O  1  3DSPATR(HI)
+000080010612     A                                  5  6'Enter Payroll Type .......'
+000090010612     A                                      COLOR(BLU)
+000100010612     A            @TITLE        40A  O  2 21DSPATR(HI)
+000110010612     A            CONAME        30A  O  1 26DSPATR(HI)
+000120010612     A                                      DSPATR(UL)
+000130010612     A            @DATE         10A  O  2 70DSPATR(HI)
+000140010612     A                                 23 38'F3-END'
+000150010612     A                                      DSPATR(HI)
+000160010612     A                                  2  3USER
+000170010612     A                                      DSPATR(HI)
+000180010612     A                                  1 72SYSNAME
+000190010612     A                                      DSPATR(HI)
+000200030422     A            PDPTTYPE# R     D  B  5 33REFFLD(PDPTFMT/PDPTTYPE *LIBL/PAYD-
+000210010612     A                                      EPCON)
+000220010612     A                                      DSPATR(HI)
+000230010612     A                                  7  7'... and Employee type ...'
+000240010612     A                                      COLOR(BLU)
+000250030422     A            PDPTEMPT# R        B  7 33REFFLD(PDPTFMT/PDPTEMPT *LIBL/PAYD-
+000260010612     A                                      EPCON)
+000270010612     A                                      DSPATR(HI)
+000280010612     A                                  7 37'(optional)'
+000290010612     A            ERRMSG        75   O 24  3DSPATR(HI)
+000300030422     A          R SFLREC                    SFL
+000310030422     A*%%TS  SD  20030422  110843  SBRITTON    REL-V5R2M0  5722-WDS
+000320030422     A            DEPT#          3S 0H
+000330030422     A            DEPT_NAME     30A  O 10  3TEXT('Type Description')
+000340030422     A                                 10 35'>'
+000350030422     A            PDPTFAC#  R        B 10 39REFFLD(PDPTFMT/PDPTFAC *LIBL/PAYDEP-
+000360030422     A                                      CON)
+000370030422     A                                      EDTCDE(J)
+000380030422     A  88                                  DSPATR(PR)
+000390030422     A            PDPTPER#  R        B 10 50REFFLD(PDPTFMT/PDPTPER *LIBL/PAYDEP-
+000400030422     A                                      CON)
+000410030422     A                                      EDTCDE(J)
+000420030422     A N88                                  DSPATR(PR)
+000430030422     A          R SFLCTL                    SFLCTL(SFLREC)
+000440030422     A*%%TS  SD  20030422  110843  SBRITTON    REL-V5R2M0  5722-WDS
+000450030422     A                                      SFLSIZ(0099)
+000460030422     A                                      SFLPAG(0012)
+000470030422     A                                      CF04(04)
+000480030422     A                                      CF15(15)
+000490030422     A                                      CF02(02)
+000500030422     A                                      OVERLAY
+000510030422     A                                      PROTECT
+000520030422     A  75                                  SFLDSP
+000530030422     A                                      SFLDSPCTL
+000540030422     A  33                                  SFLCLR
+000550030422     A  55                                  SFLEND(*MORE)
+000560030422     A            @PGM          10A  O  1  3DSPATR(HI)
+000570030422     A                                  2  3USER
+000580030422     A                                      DSPATR(HI)
+000590030422     A            CONAME        30A  O  1 26DSPATR(HI)
+000600030422     A                                      DSPATR(UL)
+000610030422     A            @TITLE        40A  O  2 21DSPATR(HI)
+000620030422     A            @DATE         10A  O  2 69DSPATR(HI)
+000630030422     A                                  5  4'Payroll Type :'
+000640030422     A                                      COLOR(BLU)
+000650030422     A                                  1 71SYSNAME
+000660030422     A                                      DSPATR(HI)
+000670030422     A                                  9 39'Factor'
+000680030422     A                                      COLOR(BLU)
+000690030422     A                                      DSPATR(UL)
+000700030422     A                                  9 52'%'
+000710030422     A                                      COLOR(BLU)
+000720030422     A                                      DSPATR(UL)
+000730030422     A                                  9 47'or'
+000740030422     A                                      DSPATR(HI)
+000750030422     A            PDPTTYPE# R        O  5 20REFFLD(PDPTFMT/PDPTTYPE *LIBL/PAYDE-
+000760030422     A                                      PCON)
+000770030422     A                                      DSPATR(HI)
+000780030422     A            PAYT_NAME     25A  O  5 24
+000790030422     A                                  6  4'Employee Type:'
+000800030422     A                                      COLOR(BLU)
+000810030422     A            EMPT_NAME     25A  O  6 24
+000820030422     A            PDPTEMPT# R        O  6 20REFFLD(PDPTFMT/PDPTEMPT *LIBL/PAYDE-
+000830030422     A                                      PCON)
+000840030422     A                                      DSPATR(HI)
+000850030422     A                                  9  3'Department Name'
+000860030422     A                                      COLOR(BLU)
+000870030422     A                                      DSPATR(UL)
+000880030422     A                                  8  3'Note: Use a negative entry to crea-
+000890030422     A                                      te a net effect of zero.'
+000900030422     A                                      COLOR(RED)
+000910981202     A          R FOOTER
+000920981202     A*%%TS  SD  19981202  141010  WROBINSON   REL-V3R7M0  5716-PW1
+000930981202     A                                      SLNO(08)
+000940981202     A                                      CLRL(*NO)
+000950981202     A                                      OVERLAY
+000960981202     A                                 17 59'F4 - Delete'
+000970981202     A                                      DSPATR(HI)
+000980981202     A                                 17 10'F15-Confirm'
+000990981202     A                                      COLOR(RED)
+001000981202     A                                      DSPATR(RI)
+001010981202     A                                 17 31'F2-Cancel'
+001020981202     A                                      DSPATR(HI)
+001030981202     A                                 17 46'F3-End'
+001040981202     A                                      DSPATR(HI)

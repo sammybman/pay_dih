@@ -1,0 +1,63 @@
+000010001129     A*%%TS  SD  20001129  111401  SAMMY       REL-V4R4M0  5769-PW1
+000020001129     A*%%EC
+000030001129     A                                      DSPSIZ(24 80 *DS3)
+000040001129     A                                      CF03(03)
+000050950831     A          R REC
+000060950831     A*%%TS  SD  19950831  132433  SAMMY       REL-V2R3M0  5738-PW1
+000070950831     A                                      CF04(04)
+000080950831     A                                      SLNO(08)
+000090950831     A                                      CLRL(*NO)
+000100950831     A                                      OVERLAY
+000110950831     A                                 17 35'F4 - Delete'
+000120950831     A                                      DSPATR(HI)
+000130950831     A                                 17 51'Enter to continue'
+000140950831     A                                      DSPATR(HI)
+000150950831     A                                  3 10'XMAS BONUS AMOUNT:'
+000160950831     A            XAMT      R        B  3 31REFFLD(XMAREC/XAMT PAYLIB/XMSAMTF)
+000170950831     A                                      EDTCDE(1)
+000180950831     A                                      CHECK(ER)
+000190001129     A          R SELOPT
+000200001129     A*%%TS  SD  20001129  111401  SAMMY       REL-V4R4M0  5769-PW1
+000210001129     A                                  1 32'BANKS DIH LIMITED'
+000220001129     A                                      DSPATR(HI)
+000230001129     A                                      DSPATR(UL)
+000240001129     A                                  2 28'S e l e c t  D i s p l a y'
+000250001129     A                                      DSPATR(UL)
+000260001129     A                                      DSPATR(HI)
+000270001129     A                                  5  4'ENTER CLASSIFICATION CODE =>'
+000280001129     A                                  2 65DATE
+000290001129     A                                      EDTCDE(Y)
+000300001129     A                                  2  3USER
+000310001129     A                                 24 24'F3 - End'
+000320001129     A                                      DSPATR(HI)
+000330001129     A                                  1 65SYSNAME
+000340001129     A            XCHG           1A  I 19 28
+000350001129     A            XPER           5Y 2B 19 46EDTCDE(1)
+000360001129     A                                 19 54'%'
+000370001129     A                                      DSPATR(HI)
+000380001129     A                                 12  2'Note:'
+000390001129     A                                      DSPATR(HI)
+000400001129     A                                 13  9'the fields below to globally chang-
+000410001129     A                                      e records in the file by'
+000420001129     A                                 14  9'a fixed percentage.'
+000430001129     A                                 15  9'(+) signifies an increase while (--
+000440001129     A                                      ) a decrease.'
+000450001129     A                                 16  9'Percentage keyed is to two (2) dec-
+000460001129     A                                      imal positions.'
+000470001129     A                                 19 31'(+ or -)'
+000480001129     A                                      DSPATR(HI)
+000490001129     A                                 12  9'Use above field to change amounts -
+000500001129     A                                      in individual records or ,'
+000510001129     A            XCLASS    R        I  5 34REFFLD(XMAREC/XCLASS PAYLIB/XMSAMTF)
+000520001129     A                                      CHECK(RB)
+000530001129     A  12                                  ERRMSG('Must enter classification c-
+000540001129     A                                      ode')
+000550001129     A  11                                  ERRMSG('Employee grade incorrect')
+000560001129     A  01                                  ERRMSGID(MSG0016 PAYLIB/PAYMESS)
+000570001129     A            @PGM          10A  O  1  3
+000580001129     A                                  7  8'ENTER EMPLOYEE NUMBER =>'
+000590001129     A            XEMP      R     D  I  7 34REFFLD(XMAREC/XEMP PAYLIB/XMSAMTF)
+000600001129     A                                      CHECK(ER)
+000610001129     A  10                                  ERRMSGID(DIH0010 *LIBL/DIHMSGF)
+000620001129     A                                  7 43'(optional)'
+000630001129     A                                      DSPATR(HI)

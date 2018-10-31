@@ -1,0 +1,25 @@
+000010021015     A*%%TS  SD  20021015  172655  SBRITTON    REL-V5R1M0  5722-WDS
+000020021015     A*%%EC
+000030021015     A                                      DSPSIZ(24 80 *DS3)
+000040021015     A                                      REF(PAYLIB/EMPREF EMPRREC)
+000050021015     A                                      PRINT
+000060021015     A                                      INDARA
+000070021015     A                                      ERRSFL
+000080021015     A          R OPTSFL                    SFL
+000090021015     A*%%TS  SD  20020301  121405  SAMMY       REL-V4R4M0  5769-PW1
+000100021015     A            OPT            1A  I  2  1DSPATR(HI)
+000110021015     A            OPTTXT        30A  O  2  4
+000120021015     A            OPTCODE        2  0H
+000130021015     A          R OPTCTL                    SFLCTL(OPTSFL)
+000140021015     A*%%TS  SD  20020301  121405  SAMMY       REL-V4R4M0  5769-PW1
+000150021015     A                                      SFLDSP
+000160021015     A                                      SFLDSPCTL
+000170021015     A  33                                  SFLCLR
+000180021015     A  56                                  SFLEND(*MORE)
+000190021015     A                                      SFLSIZ(0099)
+000200021015     A                                      SFLPAG(0004)
+000210021015     A                                      WINDOW(16 20 7 35)
+000220021015     A                                  1  1'X'
+000230021015     A                                      DSPATR(HI)
+000240021015     A                                  1  4'<- to select'
+000250021015     A                                      COLOR(BLU)

@@ -1,0 +1,29 @@
+000100990412     A* ********************************************************
+000200990412     A*              B A N K S    D I H    L T D.              *
+000300990412     A*                   PAYROLL SYSTEM                       *
+000400990412     A*                                                        *
+000500990412     A*                         BY                             *
+000600990412     A*                                                        *
+000700990412     A*                 I.S. DEPARTMENT                        *
+000800990412     A*             P.O BOX 10140, GEORGETOWN,GUYANA           *
+000900990412     A*                                                        *
+001000990412     A*                                                        *
+001100990412     A*       PHYSICAL FILE NAME: PAYBANKL1                    *
+001200990412     A*       RECORD FORMAT NAME: PBFMT                        *
+001300990412     A*       FILE PREFIX.......: PB                           *
+001400990412     A*                                                        *
+001500990412     A*       PROGRAMMER NAME: SAMUEL BRITTON                  *
+001600990412     A*       DESIGN DATE....: 1999/04/12                      *
+001700990412     A*                                                        *
+001800990412     A*  FILE DESCRIPTION: PAYROLL BANK ACCOUNTS  FILE         *
+001900990412     A*                                                        *
+002000990412     A*  THIS FILE IS DESIGNED TO HOLD DIFFERENT BANKS ACC.    *
+002100990412     A*  FOR THE VARIOUS PAYROLL TYPES.                        *
+002200990412     A*                                                        *
+002300990412     A*                                                        *
+002400990412     A**********************************************************
+002500050214     A          R PBFMT                     PFILE(*LIBL/PAYBANK)
+002600990412     A          K PBTYPE
+002700990412     A          K DIVIS
+002800990412     A          K BANK
+002900990412     A          K EMP

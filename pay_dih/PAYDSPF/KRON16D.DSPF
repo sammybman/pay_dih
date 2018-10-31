@@ -1,0 +1,31 @@
+000010980317     A*%%TS  SD  19980317  162359  SAMMY       REL-V3R7M0  5716-PW1
+000020980317     A*%%EC
+000030980317     A                                      DSPSIZ(24 80 *DS3)
+000040980317     A                                      CF03(03 'end job')
+000050980317     A          R FMT1
+000060980317     A*%%TS  SD  19980317  162359  SAMMY       REL-V3R7M0  5716-PW1
+000070980317     A                                  1 32'BANKS DIH LIMITED'
+000080980317     A                                      DSPATR(HI)
+000090980317     A                                      DSPATR(UL)
+000100980317     A                                  2 24'D''AGUIARS INDUSTRIES AND HOLDINGS'
+000110980317     A                                      DSPATR(HI)
+000120980317     A                                      DSPATR(UL)
+000130980317     A                                 10 13'KEY HOLIDAY DATE'
+000140980317     A                                      DSPATR(HI)
+000150980317     A                                 13 13'IF MORE HOLIDAYS ENTER (Y)'
+000160980317     A                                      DSPATR(HI)
+000170980317     A            OPT            1A  I 13 42DSPATR(RI)
+000180980317     A                                      CHECK(ER)
+000190980317     A                                 23 17'IF NO HOLIDAY IN FORTNIGHT BEING P-
+000200980317     A                                      ROCESSED - F3'
+000210980317     A                                      DSPATR(HI)
+000220980317     A                                 24 33'F3 - End of job'
+000230980317     A                                      DSPATR(HI)
+000240980317     A            DATE           6D 0I 10 37
+000250980317     A                                  1 71SYSNAME
+000260980317     A                                  2 71DATE
+000270980317     A                                      EDTCDE(Y)
+000280980317     A            @PGM          10A  O  1  3
+000290980317     A                                  2  3USER
+000300980317     A                                 11 37'ddmmyy'
+000310980317     A                                      DSPATR(HI)

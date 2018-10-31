@@ -1,0 +1,70 @@
+000100071017     A*%%TS  DD  20071017  112032  Nchapman    REL-V5.0.1  WDSc
+000200071017     A*%%EC
+000300071017     A                                      DSPSIZ(24 80 *DS3)
+000400071016     A          R FMT1
+000500071016     A*%%TS  DD  20071016  143600  nchapman    REL-V5.0.1  WDSc
+000600071016     A                                      CA03(03)
+000700071016     A                                  1  2USER
+000800071016     A                                      DSPATR(HI)
+000900071016     A                                  1 72SYSNAME
+001000071016     A                                      DSPATR(HI)
+001100071016     A            @PGM          10   O  2  2DSPATR(HI)
+001200071016     A            @DATE         10   O  2 71DSPATR(HI)
+001300071016     A            CONAME        30   O  1 26DSPATR(UL)
+001400071016     A                                      DSPATR(HI)
+001500071016     A            @TITLE        40   O  2 21DSPATR(HI)
+001600071016     A                                 23 37'F3 = End'
+001700071016     A                                      DSPATR(HI)
+001800071016     A            ERRMSG        75   O 24  3DSPATR(HI)
+001900071016     A                                  7 21'Please Enter Employee Number:'
+002000071016     A                                      DSPATR(HI)
+002100071016     A            EMPNO          6Y 0B  7 54COLOR(BLU)
+002200071016     A                                      EDTCDE(3)
+002300071016     A  26                                  DSPATR(RI)
+002400071016     A  26                                  DSPATR(PC)
+002500071017     A          R FMT2
+002600071017     A*%%TS  DD  20071017  112032  Nchapman    REL-V5.0.1  WDSc
+002700071017     A                                      CA02(02)
+002800071017     A                                      CA03(03)
+002900071017     A                                      CA15(15)
+003000071017     A                                  1  2USER
+003100071017     A                                      DSPATR(HI)
+003200071017     A                                  1 72SYSNAME
+003300071017     A                                      DSPATR(HI)
+003400071017     A            @PGM          10   O  2  2DSPATR(HI)
+003500071017     A            @DATE         10   O  2 70DSPATR(HI)
+003600071017     A            CONAME        30   O  1 26DSPATR(UL)
+003700071017     A                                      DSPATR(HI)
+003800071017     A            @TITLE        40   O  2 21DSPATR(HI)
+003900071017     A                                 23 36'F3 = End'
+004000071017     A                                      DSPATR(HI)
+004100071017     A            ERRMSG        75   O 24  3DSPATR(HI)
+004200071017     A                                  8  1'Employee Number:'
+004300071017     A                                      DSPATR(HI)
+004400071017     A                                  8 25'Employee Name:'
+004500071017     A                                      DSPATR(HI)
+004600071017     A            EMPNO          6Y 0O  8 18COLOR(BLU)
+004700071017     A                                      EDTCDE(3)
+004800071017     A                                 11 20'Enter Loan Entry Date.....:'
+004900071017     A                                      DSPATR(HI)
+005000071017     A            EMPNAME       40A  O  8 40COLOR(BLU)
+005100071017     A            ENTDAT         8Y 0B 11 51COLOR(BLU)
+005200071017     A                                      EDTCDE(W)
+005300071017     A  27                                  DSPATR(PC)
+005400071017     A N44                                  DSPATR(PR)
+005500071017     A  27                                  DSPATR(RI)
+005600071017     A            @MODE          7A  O  4 37COLOR(GRN)
+005700071017     A                                      DSPATR(HI)
+005800071017     A                                      DSPATR(RI)
+005900071017     A                                 13 20'Enter Loan Completion Date:'
+006000071017     A                                      DSPATR(HI)
+006100071017     A            COMPLDAT       8Y 0B 13 51COLOR(BLU)
+006200071017     A                                      EDTCDE(W)
+006300071017     A  28                                  DSPATR(PC)
+006400071017     A  44                                  DSPATR(PR)
+006500071017     A  28                                  DSPATR(RI)
+006600071017     A                                 23  4'F2 = Go back'
+006700071017     A                                      DSPATR(HI)
+006800071017     A                                 23 60'F15 =  Update file'
+006900071017     A                                      DSPATR(HI)
+007000071017     A*%%GP UNTITLED   01

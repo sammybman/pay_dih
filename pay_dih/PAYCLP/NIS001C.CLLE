@@ -1,0 +1,25 @@
+000100090828             PGM        PARM(&PASSWORD)
+000200090827
+000300090827             DCL        VAR(&CMD) TYPE(*CHAR) LEN(1000)
+000400090828             DCL        VAR(&PASSWORD) TYPE(*CHAR) LEN(50)
+000500090827
+000600090827             ADDENVVAR  ENVVAR(QIBM_QSH_CMD_ESCAPE_MSG) VALUE(Y) +
+000700090827                          REPLACE(*YES)
+000800090827
+000900090827             ADDENVVAR  ENVVAR(QIBM_QSH_CMD_OUTPUT) +
+001000090827                          VALUE('FILE=/tmp/errorLog.txt') REPLACE(*YES)
+001100090827
+001200090828          /* CHGVAR     VAR(&CMD) VALUE('export +                   */
+001300090828          /*           PATH=$PATH:/QOpenSys/usr/bin:/usr/local/bin +*/
+001400090828          /*           && 7z a nisreport.zip +                      */
+001500090828          /*           /diserviq/payroll/nisreport.txt -p"This +    */
+001600090828          /*           is a Test" ')                                */
+001700090828             CHGVAR     VAR(&CMD) VALUE('export +
+001800090828                          PATH=$PATH:/QOpenSys/usr/bin:/usr/local/lib+
+001900090828                          /p7zip && 7z a +
+002000090828                          /diserviq/payroll/nisreport.zip +
+002100090828                          /diserviq/payroll/nisreport.txt -p')
+002200090828             CHGVAR     VAR(&CMD) VALUE(&cmd *tcat &password)
+002300090827             STRQSH     CMD(&CMD)
+002400090827
+002500090827             ENDPGM

@@ -1,0 +1,95 @@
+000100031003     A*%%TS  DD  20031003  115612  QUSER       REL-V5.1    iSeries WDT
+000200031003     A*
+000300031003     A*
+000400031003     A* ********************************************************
+000500031003     A*              B A N K S    D I H    L T D.              *
+000600031003     A*                                                        *
+000700031003     A*                                                        *
+000800031003     A*       DISPLAY FILE  NAME: PUR01D                       *
+000900031003     A*       RECORD FORMAT NAME:                              *
+001000031003     A*                                                        *
+001100031003     A*                                                        *
+001200031003     A*                                                        *
+001300031003     A*       PROGRAMMER NAME: ALLISON FUNG                    *
+001400031003     A*       DATE ..........: 16/08/2000                      *
+001500031003     A*                                                        *
+001600031003     A*       FILE DESCRIPTION:                                *
+001700031003     A*       THIS FILE IS USED TO RUN THE MONTHLY             *
+001800031003     A*       PURCHASE LISTINGS WITH TRANSACTIONS              *
+001900031003     A*       PASSING THROUGH THE SALES/WAREHOUSE              *
+002000031003     A*       SYSTEM.                                          *
+002100031003     A*                                                        *
+002200031003     A**********************************************************
+002300031003     A*%%FD Payroll Salaries Denomination Breakdown
+002400031003     A*%%EC
+002500031003     A                                      DSPSIZ(24 80 *DS3)
+002600031003     A                                      REF(*LIBL/FLDREF)
+002700031003     A                                      PRINT
+002800031003     A                                      ERRSFL
+002900031003     A                                      CF03(03)
+003000031003     A**
+003100031003     A          R FMT1
+003200031003     A*%%TS  DD  20031003  115612  QUSER       REL-V5.1    iSeries WDT
+003300031003     A                                      CF01(01)
+003400031003     A                                      CF04(04)
+003500031003     A                                      CF05(05)
+003600031003     A            CONAME        30A  O  1 26DSPATR(HI)
+003700031003     A                                      DSPATR(UL)
+003800031003     A            @TITLE        40A  O  2 21DSPATR(HI)
+003900031003     A                                 23 26'F3=End Program'
+004000031003     A                                      DSPATR(HI)
+004100031003     A            ERRMSG        75A  O 24  2DSPATR(HI)
+004200031003     A                                  5  5'Enter Payroll Run Date.........:'
+004300031003     A                                      COLOR(BLU)
+004400031003     A                                  5 54'(YYYYMMDD)'
+004500031003     A                                      COLOR(BLU)
+004600031003     A            PAY_DATE       8Y 0B  5 41EDTCDE(W)
+004700031003     A  24                                  ERRMSG('Start date cannot be greate-
+004800031003     A                                      r than end date')
+004900031003     A  22                                  ERRMSGID(DIH0023 *LIBL/DIHMSGF)
+005000031003     A N25N27                               DSPATR(HI)
+005100031003     A  25
+005200031003     AO 27                                  DSPATR(RI)
+005300031003     A                                  1  2USER
+005400031003     A                                      DSPATR(HI)
+005500031003     A            @PGM          10A  O  2  2DSPATR(HI)
+005600031003     A            @DATE         10A  O  2 70DSPATR(HI)
+005700031003     A                                 23  4'F1= Run Type List'
+005800031003     A                                      DSPATR(HI)
+005900031003     A                                  9  5'Enter Payroll Run Type.........:'
+006000031003     A                                      COLOR(BLU)
+006100031003     A                                  1 72SYSNAME
+006200031003     A                                      DSPATR(HI)
+006300031003     A            RUN_TYPE       1A  B  9 41
+006400031003     A N26                                  DSPATR(HI)
+006500031003     A  26                                  DSPATR(RI)
+006600031003     A                                 12  5'Please Make Selection For Rept.:'
+006700031003     A                                      COLOR(BLU)
+006800031003     A            REP_OPT        1A  B 12 41
+006900031003     A N26                                  DSPATR(HI)
+007000031003     A  26                                  DSPATR(RI)
+007100031003     A                                      VALUES('E' 'D' 'N')
+007200031003     A                                 11 54'E= Emoluments'
+007300031003     A                                      COLOR(BLU)
+007400031003     A                                 12 54'D= Deductions'
+007500031003     A                                      COLOR(BLU)
+007600031003     A                                 13 54'N= Net Payments'
+007700031003     A                                      COLOR(BLU)
+007800031003     A                                 15  5'Enter Paycode For Report.......:'
+007900031003     A                                      COLOR(BLU)
+008000031003     A            PAY_CODE       2S 0B 15 41
+008100031003     A N28                                  DSPATR(HI)
+008200031003     A  28                                  DSPATR(RI)
+008300031003     A                                 15 54'(Optional)'
+008400031003     A                                      COLOR(BLU)
+008500031003     A                                 23 43'F5= Pay Code List'
+008600031003     A                                      DSPATR(HI)
+008700031003     A                                  7  5'Enter Run Date Range...........:'
+008800031003     A                                      COLOR(BLU)
+008900031003     A            STRDATE        8Y 0B  7 41EDTCDE(W)
+009000031003     A                                      DSPATR(HI)
+009100031003     A                                  7 52'-'
+009200031003     A                                  6 14'or'
+009300031003     A            ENDDATE        8Y 0B  7 54EDTCDE(W)
+009400031003     A                                      DSPATR(HI)
+009500031003     A*%%GP UNTITLED   01

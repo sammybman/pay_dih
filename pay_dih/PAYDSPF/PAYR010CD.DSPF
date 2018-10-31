@@ -1,0 +1,32 @@
+000010090129     A*%%TS  SD  20090129  165502  CWILLIAMS   REL-V6R1M0  5761-WDS
+000020090129     A*%%EC
+000030090129     A                                      DSPSIZ(24 80 *DS3)
+000040090129     A          R FMT1
+000050090129     A*%%TS  SD  20090129  165502  CWILLIAMS   REL-V6R1M0  5761-WDS
+000060090129     A                                      CA03(03)
+000070090129     A                                  1  2USER
+000080090129     A                                      DSPATR(HI)
+000090090129     A            CONAME        30A  O  1 26DSPATR(UL)
+000100090129     A                                      DSPATR(HI)
+000110090129     A                                  1 72SYSNAME
+000120090129     A                                      DSPATR(HI)
+000130090129     A            @PGM          10A  O  2  2DSPATR(HI)
+000140090129     A            @TITLE        40A  O  2 21DSPATR(HI)
+000150090129     A            @DATE         10A  O  2 70DSPATR(HI)
+000160090129     A                                  6 17'Please select an option:'
+000170090129     A                                      DSPATR(HI)
+000180090129     A                                 11 28'2 = Bank Location Accounts Ranges'
+000190090129     A                                      DSPATR(HI)
+000200090129     A                                  9 28'1 = Bank Location Accounts Branche-
+000210090129     A                                      s'
+000220090129     A                                      DSPATR(HI)
+000230090129     A                                 13 28'3 = Bank Location Accounts Enquiry'
+000240090129     A                                      DSPATR(HI)
+000250090129     A                                 17 36'Option:'
+000260090129     A                                      DSPATR(HI)
+000270090129     A            OPT            1Y 0B 17 44COLOR(BLU)
+000280090129     A                                      EDTCDE(3)
+000290090129     A                                 23 37'F3 = End'
+000300090129     A                                      DSPATR(HI)
+000310090129     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000320090129     A*%%GP UNTITLED   01

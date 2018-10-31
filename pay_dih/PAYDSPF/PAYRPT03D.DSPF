@@ -1,0 +1,54 @@
+000010011012     A*%%TS  SD  20011012  191211  CWILLIAMS   REL-V4R4M0  5769-PW1
+000020960802     A*
+000030960802     A*
+000040960802     A* ********************************************************
+000050960802     A*              B A N K S    D I H    L T D.              *
+000060960802     A*                                                        *
+000070960802     A*                                                        *
+000080010117     A*       DISPLAY FILE  NAME: PUR01D                       *
+000090000816     A*       RECORD FORMAT NAME:                              *
+000100000816     A*                                                        *
+000110000816     A*                                                        *
+000120960802     A*                                                        *
+000130000816     A*       PROGRAMMER NAME: ALLISON FUNG                    *
+000140000816     A*       DATE ..........: 16/08/2000                      *
+000150960802     A*                                                        *
+000160001120     A*       FILE DESCRIPTION:                                *
+000170001120     A*       THIS FILE IS USED TO RUN THE MONTHLY             *
+000180001120     A*       PURCHASE LISTINGS WITH TRANSACTIONS              *
+000190001120     A*       PASSING THROUGH THE SALES/WAREHOUSE              *
+000200001120     A*       SYSTEM.                                          *
+000210960802     A*                                                        *
+000220960802     A**********************************************************
+000230011012     A*%%EC
+000240011012     A                                      DSPSIZ(24 80 *DS3)
+000250011012     A                                      REF(*LIBL/FLDREF)
+000260011012     A                                      PRINT
+000270011012     A                                      ERRSFL
+000280011012     A                                      CF03(03)
+000290960802     A**
+000300011012     A          R FMT1
+000310011012     A*%%TS  SD  20011012  191211  CWILLIAMS   REL-V4R4M0  5769-PW1
+000320011012     A                                      CF01(01)
+000330011012     A            CONAME        30A  O  1 26DSPATR(HI)
+000340011012     A                                      DSPATR(UL)
+000350011012     A            @TITLE        40A  O  2 21DSPATR(HI)
+000360011012     A                                 23 31'F3=End Program'
+000370011012     A                                      DSPATR(HI)
+000380011012     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000390011012     A                                  6  5'Enter Payroll Run Date.........:'
+000400011012     A                                      COLOR(BLU)
+000410011012     A                                  6 54'(YYYYMMDD)'
+000420011012     A                                      COLOR(BLU)
+000430011012     A            RUN_DATE       8Y 0B  6 41EDTCDE(W)
+000440011012     A  24                                  ERRMSG('Start date cannot be greate-
+000450011012     A                                      r than end date')
+000460011012     A  22                                  ERRMSGID(DIH0023 *LIBL/DIHMSGF)
+000470011012     A N25                                  DSPATR(HI)
+000480011012     A  25                                  DSPATR(RI)
+000490011012     A                                  1  2USER
+000500011012     A                                      DSPATR(HI)
+000510011012     A            @PGM          10A  O  2  2DSPATR(HI)
+000520011012     A            @DATE         10A  O  2 70DSPATR(HI)
+000530011012     A                                  1 72SYSNAME
+000540011012     A                                      DSPATR(HI)

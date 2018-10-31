@@ -1,0 +1,74 @@
+000010010904     A*%%TS  SD  20010904  191206  CWILLIAMS   REL-V4R4M0  5769-PW1
+000020950530     A* ********************************************************
+000030950905     A*              B A N K S    D I H    L T D.              *
+000040950905     A*                INVENTORY CONTROL SYSTEM                *
+000050950905     A*                                                        *
+000060950905     A*                         BY                             *
+000070950905     A*                                                        *
+000080950905     A*       ONE PLUS COMPUTER SERVICES (GUYANA) LIMITED      *
+000090950905     A*             P.O BOX 10501, GEORGETOWN,GUYANA           *
+000100950905     A*                                                        *
+000110950905     A*                                                        *
+000120950912     A*       DISPLAY FILE  NAME: INV010D                      *
+000130950906     A*       RECORD FORMAT NAME: FMT1                         *
+000140950906     A*                           FMT2                         *
+000150950905     A*                                                        *
+000160950912     A*       PROGRAMMER NAME: JERRY  GANGOO                   *
+000170950906     A*       DESIGN DATE....: 9995/09/06                      *
+000180950905     A*                                                        *
+000190950905     A*  FILE DESCRIPTION:                                     *
+000200950905     A*                                                        *
+000210950905     A*  THIS FILE IS DESIGNED TO                              *
+000220950905     A*                                                        *
+000230950905     A*                                                        *
+000240950530     A**********************************************************
+000250010904     A*%%EC
+000260010904     A                                      DSPSIZ(24 80 *DS3)
+000270010904     A                                      REF(*LIBL/FLDREF)
+000280010904     A                                      PRINT
+000290010904     A                                      HELP(77)
+000300010904     A                                      CA04(04)
+000310010412     A          R WINDOW
+000320010412     A*%%TS  SD  20010412  100715  CWILLIAMS   REL-V4R4M0  5769-PW1
+000330010412     A                                      WINDOW(5 12 17 33)
+000340010904     A          R WINREC                    SFL
+000350010904     A*%%TS  SD  20010904  191206  CWILLIAMS   REL-V4R4M0  5769-PW1
+000360010904     A            SEL#           1A  B  6  2
+000370010904     A N45                                  DSPATR(ND)
+000380010904     A N45                                  DSPATR(PR)
+000390010904     A            CYCCODE#  R        O  6  6REFFLD(CYCFMT/CYCCODE *LIBL/PAYCYCD)
+000400010904     A                                      DSPATR(HI)
+000410010904     A            CYCDESC#  R        O  6 10REFFLD(CYCFMT/CYCDESC *LIBL/PAYCYCD)
+000420010904     A                                      DSPATR(HI)
+000430010904     A          R WDWCTL                    SFLCTL(WINREC)
+000440010904     A*%%TS  SD  20010904  191206  CWILLIAMS   REL-V4R4M0  5769-PW1
+000450010904     A                                      SFLSIZ(0100)
+000460010904     A                                      SFLPAG(0010)
+000470010904     A                                      WINDOW(WINDOW)
+000480010904     A                                      CF03(03)
+000490010904     A                                      OVERLAY
+000500010904     A                                      SFLDSP
+000510010904     A                                      SFLDSPCTL
+000520010904     A  13                                  SFLCLR
+000530010904     A  20                                  SFLEND(*MORE)
+000540010904     A                                      WDWBORDER((*COLOR BLU))
+000550010904     A                                  1  4'Payroll Cycle Code Descript'
+000560010904     A                                      DSPATR(UL)
+000570010904     A                                      COLOR(BLU)
+000580010904     A                                  5  5'Code'
+000590010904     A                                      COLOR(BLU)
+000600010904     A                                      DSPATR(UL)
+000610010904     A                                  5 10'Description'
+000620010904     A                                      DSPATR(UL)
+000630010904     A                                      COLOR(BLU)
+000640010904     A  45                              4  1'Sel'
+000650010904     A                                      COLOR(BLU)
+000660010904     A                                      DSPATR(UL)
+000670010904     A                                  3 14'F3= Exit'
+000680010904     A                                      DSPATR(HI)
+000690010904     A  45                              5  1'(x)'
+000700010904     A                                      COLOR(BLU)
+000710010412     A          R RECORD
+000720010412     A*%%TS  SD  20010412  100715  CWILLIAMS   REL-V4R4M0  5769-PW1
+000730010412     A                                      ASSUME
+000740010412     A                                  1  4' '

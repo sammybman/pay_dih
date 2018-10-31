@@ -1,0 +1,70 @@
+000010021003     A*%%TS  SD  20021003  172648  SBRITTON    REL-V5R1M0  5722-WDS
+000020960802     A*
+000030960802     A*
+000040960802     A* ********************************************************
+000050960802     A*              B A N K S    D I H    L T D.              *
+000060960802     A*                                                        *
+000070960802     A*                                                        *
+000080010117     A*       DISPLAY FILE  NAME: PUR01D                       *
+000090000816     A*       RECORD FORMAT NAME:                              *
+000100000816     A*                                                        *
+000110000816     A*                                                        *
+000120960802     A*                                                        *
+000130000816     A*       PROGRAMMER NAME: ALLISON FUNG                    *
+000140000816     A*       DATE ..........: 16/08/2000                      *
+000150960802     A*                                                        *
+000160001120     A*       FILE DESCRIPTION:                                *
+000170001120     A*       THIS FILE IS USED TO RUN THE MONTHLY             *
+000180001120     A*       PURCHASE LISTINGS WITH TRANSACTIONS              *
+000190001120     A*       PASSING THROUGH THE SALES/WAREHOUSE              *
+000200001120     A*       SYSTEM.                                          *
+000210960802     A*                                                        *
+000220960802     A**********************************************************
+000230021003     A*%%EC
+000240021003     A                                      DSPSIZ(24 80 *DS3)
+000250021003     A                                      REF(*LIBL/FLDREF)
+000260021003     A                                      PRINT
+000270021003     A                                      ERRSFL
+000280021003     A                                      CF03(03)
+000290960802     A**
+000300021003     A          R FMT1
+000310021003     A*%%TS  SD  20021003  172648  SBRITTON    REL-V5R1M0  5722-WDS
+000320021003     A                                      CA01(01)
+000330021003     A                                      CA05(05)
+000340021003     A            CONAME        30A  O  1 26DSPATR(HI)
+000350021003     A                                      DSPATR(UL)
+000360021003     A            @TITLE        40A  O  2 21DSPATR(HI)
+000370021003     A                                 23 31'F3 = End Program'
+000380021003     A                                      DSPATR(HI)
+000390021003     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000400021003     A                                  6  5'Select Employee Types .........:'
+000410021003     A                                      COLOR(BLU)
+000420021003     A                                  1  2USER
+000430021003     A                                      DSPATR(HI)
+000440021003     A            @PGM          10A  O  2  2DSPATR(HI)
+000450021003     A            @DATE         10A  O  2 70DSPATR(HI)
+000460021003     A                                 23  3'F1= Emp.Type List'
+000470021003     A                                      DSPATR(HI)
+000480021003     A                                 13  5'Select Report Sequence.........:'
+000490021003     A                                      COLOR(BLU)
+000500021003     A                                  1 72SYSNAME
+000510021003     A                                      DSPATR(HI)
+000520021003     A            LIST          20A  B  6 40DSPATR(HI)
+000530021003     A            SEQ            1Y 0B 13 40DSPATR(HI)
+000540021003     A                                      EDTCDE(Z)
+000550021003     A                                 13 44'1 = by Employee Number'
+000560021003     A                                 14 44'2 = by Surname ,First Name'
+000570021003     A                                 15 44'3 = by Department ,Emp.Number'
+000580021003     A                                  8 24'(List Types without spaces startin-
+000590021003     A                                      g from the left)'
+000600021003     A                                  9 15'or'
+000610021003     A                                 11  5'Select Employee Class..........:'
+000620021003     A                                      COLOR(BLU)
+000630021003     A            EMP_CLASS      3A  B 11 40DSPATR(HI)
+000640021003     A                                      CHECK(RB)
+000650021003     A                                  6 62'(*ALLACTIVE ,*ALL,'
+000660021003     A                                 18  5'Include Employee Assets........:'
+000670021003     A                                      COLOR(BLU)
+000680021003     A            ASSET_FLAG     1A  B 18 40DSPATR(HI)
+000690021003     A                                 18 44'(Y = Yes)'
+000700021003     A                                  7 62' *ALLINACTIVE)'

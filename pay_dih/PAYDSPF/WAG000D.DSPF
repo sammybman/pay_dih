@@ -1,0 +1,61 @@
+000010960921     A*%%TS  SD  19960921  094715  SAMMY       REL-V3R1M0  5763-PW1
+000020950530     A* ********************************************************
+000030950905     A*              B A N K S    D I H    L T D.              *
+000040950905     A*                INVENTORY CONTROL SYSTEM                *
+000050950905     A*                                                        *
+000060950905     A*                         BY                             *
+000070950905     A*                                                        *
+000080950905     A*       ONE PLUS COMPUTER SERVICES (GUYANA) LIMITED      *
+000090950905     A*             P.O BOX 10501, GEORGETOWN,GUYANA           *
+000100950905     A*                                                        *
+000110950905     A*                                                        *
+000120960419     A*       DISPLAY FILE  NAME: MTHENDD                      *
+000130951207     A*       RECORD FORMAT NAME: FMT1                         *
+000140950905     A*                                                        *
+000150960419     A*       PROGRAMMER NAME: MIKE NURSE                      *
+000160960419     A*       DESIGN DATE....: 1996/04/07                      *
+000170950905     A*                                                        *
+000180950912     A*  FILE DESCRIPTION:                                     *
+000190950905     A*                                                        *
+000200960419     A*  THIS FILE IS DESIGNED TO DISPLAY MENU FOR THE MONTH-  *
+000210960419     A*  END RUN.                                              *
+000220950905     A*                                                        *
+000230950530     A**********************************************************
+000240960921     A*%%EC
+000250960921     A                                      DSPSIZ(24 80 *DS3)
+000260960921     A                                      REF(*LIBL/FLDREF)
+000270960921     A                                      PRINT
+000280960921     A                                      HELP(77)
+000290960921     A                                      CA03(03)
+000300960921     A          R FMT1
+000310960921     A*%%TS  SD  19960921  094715  SAMMY       REL-V3R1M0  5763-PW1
+000320960921     A            @PGM      R        O  1  2REFFLD(NAME10)
+000330960921     A                                      DSPATR(HI)
+000340960921     A            @MODE          6A  O  1 58DSPATR(ND)
+000350960921     A                                  4 32'WAGES  PROCESSING'
+000360960921     A                                      DSPATR(UL)
+000370960921     A                                      DSPATR(HI)
+000380960921     A                                  6  6'1.  Update Wages Master      (WAG0-
+000390960921     A                                      04R)'
+000400960921     A                                  8  6'2.  Update Category Master   (EMPM-
+000410960921     A                                      03R)'
+000420960921     A                                 10  6'3.  Update employees Wages   (WAG0-
+000430960921     A                                      03R)'
+000440960921     A                                 15  6'90. SIGNOFF'
+000450960921     A                                 17  6'Enter Option.:'
+000460960921     A                                  2  2USER
+000470960921     A                                      DSPATR(HI)
+000480960921     A                                  1 65DATE
+000490960921     A                                      EDTCDE(Y)
+000500960921     A                                      DSPATR(HI)
+000510960921     A                                  2 65TIME
+000520960921     A                                      DSPATR(HI)
+000530960921     A                                  1 32'BANKS DIH LIMITED'
+000540960921     A                                      DSPATR(HI)
+000550960921     A                                      DSPATR(UL)
+000560960921     A                                  2 25'Salary Re-calculation Main Menu'
+000570960921     A                                      DSPATR(UL)
+000580960921     A                                      DSPATR(HI)
+000590960921     A            OPT            2D 0I 17 22DSPATR(HI)
+000600960921     A                                 19  7'F3 - RETURN'
+000610960921     A                                      DSPATR(HI)

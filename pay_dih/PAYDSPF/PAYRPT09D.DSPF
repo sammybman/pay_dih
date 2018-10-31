@@ -1,0 +1,79 @@
+000100020117     A*%%TS  SD  20020117  162857  SAMMY       REL-V4R4M0  5769-PW1
+000200960802     A*
+000300960802     A*
+000400960802     A* ********************************************************
+000500960802     A*              B A N K S    D I H    L T D.              *
+000600960802     A*                                                        *
+000700960802     A*                                                        *
+000800010117     A*       DISPLAY FILE  NAME: PUR01D                       *
+000900000816     A*       RECORD FORMAT NAME:                              *
+001000000816     A*                                                        *
+001100000816     A*                                                        *
+001200960802     A*                                                        *
+001300000816     A*       PROGRAMMER NAME: ALLISON FUNG                    *
+001400000816     A*       DATE ..........: 16/08/2000                      *
+001500960802     A*                                                        *
+001600001120     A*       FILE DESCRIPTION:                                *
+001700011205     A*       THIS FILE IS USED TO RE-GENERATE PAYSLIP         *
+001800011205     A*       INFORMATION .                                    *
+001900960802     A*                                                        *
+002000960802     A**********************************************************
+002100020117     A*%%EC
+002200020117     A                                      DSPSIZ(24 80 *DS3)
+002300020117     A                                      REF(*LIBL/FLDREF)
+002400020117     A                                      PRINT
+002500020117     A                                      ERRSFL
+002600020117     A                                      CF03(03)
+002700960802     A**
+002800020117     A          R FMT1
+002900020117     A*%%TS  SD  20020117  162857  SAMMY       REL-V4R4M0  5769-PW1
+003000020117     A                                      CF15(15)
+003100020117     A            CONAME        30A  O  1 26DSPATR(HI)
+003200020117     A                                      DSPATR(UL)
+003300020117     A            @TITLE        40A  O  2 21DSPATR(HI)
+003400020117     A                                 23 33'F3 = End Program'
+003500020117     A                                      DSPATR(HI)
+003600020117     A            ERRMSG        75A  O 24  3DSPATR(HI)
+003700020117     A                                  7  5'Enter Run Date for Report .....:'
+003800020117     A                                      COLOR(BLU)
+003900020117     A                                 16  5'Select Department(s) for report '
+004000020117     A                                      DSPATR(HI)
+004100020117     A                                      COLOR(BLU)
+004200020117     A                                  7 54'(YYYYMMDD)'
+004300020117     A                                      COLOR(BLU)
+004400020117     A            DEPT#          3D 0B 16 41
+004500020117     A            RUN_DATE       8Y 0B  7 41EDTCDE(W)
+004600020117     A                                  2  2USER
+004700020117     A                                      DSPATR(HI)
+004800020117     A            @PGM          10A  O  1  2DSPATR(HI)
+004900020117     A            @DATE         10A  O  2 70DSPATR(HI)
+005000020117     A                                 11  5'Select Employee ...............:'
+005100020117     A                                      COLOR(BLU)
+005200020117     A                                  9  5'Enter Payroll Run Type.........:'
+005300020117     A                                      COLOR(BLU)
+005400020117     A                                 11 53'(Zeros = all)'
+005500020117     A                                      COLOR(BLU)
+005600020117     A                                 16 53'(Zeros = all)'
+005700020117     A                                      COLOR(BLU)
+005800020117     A            EMP#           6Y 0B 11 41EDTCDE(Z)
+005900020117     A            RUN_TYPE       1A  B  9 41
+006000020117     A                                 14  5'Select Employee Type...........:'
+006100020117     A                                      COLOR(BLU)
+006200020117     A            EMP_TYPE       1A  B 14 41
+006300020117     A                                 14 53'(Blank = all)'
+006400020117     A                                      COLOR(BLU)
+006500020117     A                                 15 11'and/or'
+006600020117     A                                 12 13'or'
+006700020117     A                                  1 70SYSNAME
+006800020117     A                                      DSPATR(HI)
+006900020117     A                                 23 62'F15 = Confirm'
+007000020117     A                                      DSPATR(HI)
+007100020117     A                                  5  5'Enter Log Date of Payroll .....:'
+007200020117     A                                      COLOR(BLU)
+007300020117     A            LOG_DATE       8Y 0B  5 41EDTCDE(W)
+007400020117     A  24                                  ERRMSG('Start date cannot be greate-
+007500020117     A                                      r than end date')
+007600020117     A  22                                  ERRMSGID(DIH0023 *LIBL/DIHMSGF)
+007700020117     A                                  5 54'(YYYYMMDD)'
+007800020117     A                                      COLOR(BLU)
+007900020117     A                                  5 67'optional'

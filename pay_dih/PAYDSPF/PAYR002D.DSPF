@@ -1,0 +1,114 @@
+000100010906     A*%%TS  SD  20010906  121957  SAMMY       REL-V4R4M0  5769-PW1
+000200010906     A*%%EC
+000300010906     A                                      DSPSIZ(24 80 *DS3)
+000400010906     A                                      CF03(03)
+000500010816     A          R FMT0
+000600010816     A*%%TS  SD  20010816  173629  CWILLIAMS   REL-V4R4M0  5769-PW1
+000700010816     A  99                                  CA02(02)
+000800010816     A                                 10 13'Enter Payroll Run Type....:'
+000900010816     A                                      COLOR(BLU)
+001000010816     A  99                             23  8'F2= Go back'
+001100010816     A                                      DSPATR(HI)
+001200010816     A                                  1 73SYSNAME
+001300010816     A                                      DSPATR(HI)
+001400010816     A                                  2  3USER
+001500010816     A                                      DSPATR(HI)
+001600010816     A            @PGM          10A  O  1  3DSPATR(HI)
+001700010816     A            CONAME        30A  O  1 26DSPATR(HI)
+001800010816     A                                      DSPATR(UL)
+001900010816     A            @TITLE        40A  O  2 21DSPATR(HI)
+002000010816     A            @DATE         10A  O  2 71DSPATR(HI)
+002100010816     A            ERRMSG        75A  O 24  3DSPATR(HI)
+002200010816     A                                      COLOR(RED)
+002300010816     A            RUN_TYPE       1A  B 10 42DSPATR(HI)
+002400010816     A  99                                  DSPATR(PR)
+002500010816     A                                 23 34'F3= End Program'
+002600010816     A                                      DSPATR(HI)
+002700010724     A          R FMT1
+002800010724     A*%%TS  SD  20010724  131004  SAMMY       REL-V4R4M0  5769-PW1
+002900010724     A                                 10 13'Enter Employee number.....:'
+003000010724     A                                      COLOR(BLU)
+003100010724     A                                 23 29'F3= End Program'
+003200010724     A                                      DSPATR(HI)
+003300050525     A            EMP#      R     D  B 10 41REFFLD(EMPRREC/EMP *LIBL/EMPREF)
+003400010724     A                                      CHECK(ER)
+003500010724     A                                      DSPATR(PC)
+003600010724     A                                      DSPATR(HI)
+003700010724     A                                  1 73SYSNAME
+003800010724     A                                      DSPATR(HI)
+003900010724     A                                  2  3USER
+004000010724     A                                      DSPATR(HI)
+004100010724     A            @PGM          10A  O  1  3DSPATR(HI)
+004200010724     A            CONAME        30A  O  1 26DSPATR(HI)
+004300010724     A                                      DSPATR(UL)
+004400010724     A            @TITLE        40A  O  2 21DSPATR(HI)
+004500010724     A            @DATE         10A  O  2 71DSPATR(HI)
+004600010724     A            ERRMSG        75A  O 24  3DSPATR(HI)
+004700010724     A                                      COLOR(RED)
+004800010906     A          R WIN1
+004900010906     A*%%TS  SD  20010906  121957  SAMMY       REL-V4R4M0  5769-PW1
+005000010906     A                                      WINDOW(12 10 6 40)
+005100010906     A                                  1  2'For Temporary staff , you may chan-
+005200010906     A                                      ge'
+005300010906     A                                      DSPATR(HI)
+005400010906     A                                  2  2'the employee Department here.'
+005500010906     A                                      DSPATR(HI)
+005600010906     A                                  4  2'Department number ....'
+005700010906     A                                      COLOR(BLU)
+005800010906     A            NEW_DEPT       3Y 0B  4 26DSPATR(HI)
+005900010906     A                                      EDTCDE(Z)
+006000010906     A  99                                  ERRMSG('Invalid Department Number')
+006100010906     A                                  5 10'Press enter to Continue'
+006200010906     A                                      DSPATR(HI)
+006300010816     A          R SFLREC                    SFL
+006400010816     A*%%TS  SD  20010816  175733  CWILLIAMS   REL-V4R4M0  5769-PW1
+006500050525     A            EMOL_TYP# R        O  8 11REFFLD(WRKFMT/WRKTYP *LIBL/PAYWORK-
+006600010816     A                                      F)
+006700010816     A                                      DSPATR(HI)
+006800050525     A            WRKHRS#   R        B  8 48REFFLD(EMPRREC/NRHRS *LIBL/EMPREF)
+006900010816     A                                      EDTWRD('   :  ')
+007000010816     A            EMOL_NAME     20A  O  8 19DSPATR(HI)
+007100010816     A          R SFLCTL                    SFLCTL(SFLREC)
+007200010816     A*%%TS  SD  20010816  193153  SAMMY       REL-V4R4M0  5769-PW1
+007300010816     A                                      CF15(15)
+007400010816     A                                      CA02(02)
+007500010816     A                                      CF04(04)
+007600010816     A                                      OVERLAY
+007700010816     A  75                                  SFLDSP
+007800010816     A                                      SFLDSPCTL
+007900010816     A  33                                  SFLCLR
+008000010816     A  60                                  SFLEND(*MORE)
+008100010816     A                                      SFLSIZ(0100)
+008200010816     A                                      SFLPAG(0010)
+008300010816     A            @PGM          10A  O  1  2DSPATR(HI)
+008400010816     A                                  2  2USER
+008500010816     A                                      DSPATR(HI)
+008600010816     A            CONAME        30A  O  1 26DSPATR(UL)
+008700010816     A                                      DSPATR(HI)
+008800010816     A            @TITLE        40A  O  2 21DSPATR(HI)
+008900010816     A                                  1 72SYSNAME
+009000010816     A                                      DSPATR(HI)
+009100010816     A            @DATE         10A  O  2 70DSPATR(HI)
+009200010816     A                                  6 49'Hours'
+009300010816     A                                      COLOR(BLU)
+009400010816     A                                  6 19'Description'
+009500010816     A                                      COLOR(BLU)
+009600010816     A                                  6 11'Code'
+009700010816     A                                      COLOR(BLU)
+009800010816     A                                  4  7'Employee..:'
+009900010816     A                                      COLOR(BLU)
+010000050525     A            EMP#      R        O  4 21REFFLD(EMPRREC/EMP *LIBL/EMPREF)
+010100010816     A                                      DSPATR(HI)
+010200010816     A            EMP_NAME      30A  O  4 31DSPATR(HI)
+010300010816     A          R FOOTER
+010400010816     A*%%TS  SD  20010816  173629  CWILLIAMS   REL-V4R4M0  5769-PW1
+010500010816     A                                      OVERLAY
+010600010816     A                                      PROTECT
+010700010816     A                                 23 55'F15 - Confirm Posting'
+010800010816     A                                      DSPATR(HI)
+010900010816     A                                 23 18'F3= End Program'
+011000010816     A                                      DSPATR(HI)
+011100010816     A                                 23  2'F2= Go Back'
+011200010816     A                                      DSPATR(HI)
+011300010816     A                                 23 38'F4= Delete'
+011400010816     A                                      DSPATR(HI)

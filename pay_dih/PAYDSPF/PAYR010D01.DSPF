@@ -1,0 +1,102 @@
+000100090128     A*%%TS  DD  20090128  164000  nchapman    REL-V5.0.1  WDSc
+000200090128     A*%%EC
+000300090128     A                                      DSPSIZ(24 80 *DS3)
+000400090128     A          R FMT1
+000500090128     A*%%TS  DD  20090128  161521  nchapman    REL-V5.0.1  WDSc
+000600090128     A                                      CA03(03)
+000700090128     A                                      CF04(04)
+000800090128     A                                  1  2USER
+000900090128     A                                      DSPATR(HI)
+001000090128     A            CONAME        30   O  1 26DSPATR(UL)
+001100090128     A                                      DSPATR(HI)
+001200090128     A                                  1 72SYSNAME
+001300090128     A                                      DSPATR(HI)
+001400090128     A            @PGM          10   O  2  2DSPATR(HI)
+001500090128     A            @TITLE        40   O  2 21DSPATR(HI)
+001600090128     A            @DATE         10   O  2 70DSPATR(HI)
+001700090128     A            TRANS#         8Y 0B  8 52EDTCDE(3)
+001800090128     A                                      COLOR(BLU)
+001900090128     A  26                                  DSPATR(RI)
+002000090128     A  26                                  DSPATR(PC)
+002100090128     A                                 23 37'F3 = End'
+002200090128     A                                      DSPATR(HI)
+002300090128     A            ERRMSG        75   O 24  3DSPATR(HI)
+002400090128     A                                  8 22'Please Enter Transit Number:'
+002500090128     A                                      COLOR(WHT)
+002600090128     A                                 23 63'F4 = Prompt'
+002700090128     A                                      DSPATR(HI)
+002800090121     A          R SFLREC
+002900090121     A*%%TS  DD  20090121  163643  nchapman    REL-V5.0.1  WDSc
+003000090121     A                                      SFL
+003100090121     A            FRANGE         7Y 0B  9  8COLOR(BLU)
+003200090121     A                                      EDTCDE(3)
+003300090121     A  27                                  DSPATR(RI)
+003400090121     A  27                                  DSPATR(PC)
+003500090121     A            TRANGE         7Y 0B  9 24COLOR(BLU)
+003600090121     A                                      EDTCDE(3)
+003700090121     A  28                                  DSPATR(RI)
+003800090121     A  28                                  DSPATR(PC)
+003900090121     A            SEL            1   B  9  3COLOR(BLU)
+004000090121     A*%%GP UNTITLED   01
+004100090128     A          R SFLCTL
+004200090128     A*%%TS  DD  20090128  164000  nchapman    REL-V5.0.1  WDSc
+004300090128     A                                      SFLCTL(SFLREC)
+004400090128     A                                      SFLDSPCTL
+004500090128     A                                      SFLDSP
+004600090128     A                                      SFLPAG(10)
+004700090128     A                                      SFLSIZ(2000)
+004800090128     A                                      CA02(02)
+004900090128     A                                      CA03(03)
+005000090128     A                                      CF15(15)
+005100090128     A                                      CF20(20)
+005200090128     A  33                                  SFLCLR
+005300090128     A  60                                  SFLEND(*MORE)
+005400090128     A                                      OVERLAY
+005500090128     A                                      PROTECT
+005600090128     A                                      CF10(10)
+005700090128     A                                  1  2USER
+005800090128     A                                      DSPATR(HI)
+005900090128     A            CONAME        30   O  1 26DSPATR(UL)
+006000090128     A                                      DSPATR(HI)
+006100090128     A                                  1 72SYSNAME
+006200090128     A                                      DSPATR(HI)
+006300090128     A            @PGM          10   O  2  2DSPATR(HI)
+006400090128     A            @TITLE        40   O  2 21DSPATR(HI)
+006500090128     A            @DATE         10   O  2 70DSPATR(HI)
+006600090128     A            @MODE          7   O  3 37COLOR(GRN)
+006700090128     A                                      DSPATR(HI)
+006800090128     A                                      DSPATR(RI)
+006900090128     A                                  5  2'Transit Number:'
+007000090128     A                                      DSPATR(HI)
+007100090128     A            TRANS#         8Y 0O  5 18COLOR(BLU)
+007200090128     A                                      EDTCDE(3)
+007300090128     A                                  7 10'From '
+007400090128     A                                      DSPATR(HI)
+007500090128     A                                  7 24'To'
+007600090128     A                                      COLOR(WHT)
+007700090128     A                                  8 10'Range'
+007800090128     A                                      COLOR(WHT)
+007900090128     A                                  8 24'Range'
+008000090128     A                                      COLOR(WHT)
+008100090128     A                                  7  2'Del'
+008200090128     A                                      DSPATR(HI)
+008300090128     A                                  8  2'(D)'
+008400090128     A                                      DSPATR(HI)
+008500090128     A            DESC##        30   O  5 28COLOR(BLU)
+008600090128     A*%%GP UNTITLED   02
+008700090121     A          R FOOTER
+008800090121     A*%%TS  DD  20090121  163643  nchapman    REL-V5.0.1  WDSc
+008900090121     A                                      CA03(03)
+009000090121     A                                      SLNO(21)
+009100090121     A                                  3  2'F2 = Go back'
+009200090121     A                                      DSPATR(HI)
+009300090121     A                                  3 18'F3 = End'
+009400090121     A                                      DSPATR(HI)
+009500090121     A                                  3 48'F15 = Confirm'
+009600090121     A                                      DSPATR(HI)
+009700090121     A                                  3 65'F20 = Delete'
+009800090121     A                                      DSPATR(HI)
+009900090121     A            ERRMSG        75   O  4  4DSPATR(HI)
+010000090121     A                                      DSPATR(BL)
+010100090121     A                                  3 30'F10 = New line'
+010200090121     A                                      DSPATR(HI)

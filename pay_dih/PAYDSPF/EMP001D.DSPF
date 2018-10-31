@@ -1,0 +1,121 @@
+000010020206     A*%%TS  SD  20020206  125819  SAMMY       REL-V4R4M0  5769-PW1
+000020941222     A*
+000030950909     A*
+000040950909     A* ********************************************************
+000050950909     A*              B A N K S    D I H    L T D.              *
+000060950909     A*                INVENTORY CONTROL SYSTEM                *
+000070950909     A*                                                        *
+000080950909     A*                         BY                             *
+000090950909     A*                                                        *
+000100950909     A*       ONE PLUS COMPUTER SERVICES (GUYANA) LIMITED      *
+000110950909     A*             P.O BOX 10501, GEORGETOWN,GUYANA           *
+000120950909     A*                                                        *
+000130950909     A*                                                        *
+000140951010     A*       DISPLAY FILE  NAME: ENQ017D                      *
+000150950909     A*       RECORD FORMAT NAME: FMT1                         *
+000160951010     A*                           SFLREC SFLCTL                *
+000170950909     A*                                                        *
+000180951010     A*       PROGRAMMER NAME: CHRIS WILLIAMS                  *
+000190951010     A*       DESIGN DATE....: 1995/10/10                      *
+000200950909     A*                                                        *
+000210950909     A*  FILE DESCRIPTION:                                     *
+000220950909     A*                                                        *
+000230951010     A*  THIS FILE IS DESIGNED TO ENQUIRE ON VEHICLE           *
+000240951002     A*  RECORDED FOR BANKS DIH TO TRANSACT WIHT.              *
+000250950909     A*                                                        *
+000260950909     A**********************************************************
+000270020206     A*%%EC
+000280020206     A                                      DSPSIZ(24 80 *DS3)
+000290020206     A                                      REF(*LIBL/FLDREF)
+000300020206     A                                      PRINT
+000310020206     A                                      ERRSFL
+000320020206     A                                      CA03(03)
+000330020206     A          R FMT1
+000340020206     A*%%TS  SD  20020206  125819  SAMMY       REL-V4R4M0  5769-PW1
+000350020206     A                                      CF01(01)
+000360020206     A                                      CF04(04)
+000370020206     A            @PGM          10A  O  2  2DSPATR(HI)
+000380020206     A            @USER         10A  O  1  2DSPATR(HI)
+000390020206     A            CONAME        30A  O  1 26DSPATR(UL)
+000400020206     A                                      DSPATR(HI)
+000410020206     A            @TITLE        40A  O  2 21DSPATR(HI)
+000420020206     A            @DATE         10A  O  2 71DSPATR(HI)
+000430020206     A                                 12 18'Employee number...:'
+000440020206     A                                      COLOR(BLU)
+000450020206     A            LIEMP#    R        B 12 38REFFLD(LIFMT/LIEMP *LIBL/LIABM)
+000460020206     A                                      EDTCDE(Z)
+000470020206     A  25                                  ERRMSGID(DIH0022 *LIBL/DIHMSGF)
+000480020206     A  26                                  ERRMSGID(DIH0064 *LIBL/DIHMSGF)
+000490020206     A  27                                  ERRMSGID(DIH0010 *LIBL/DIHMSGF)
+000500020206     A                                 24 38'F3=End'
+000510020206     A                                      DSPATR(HI)
+000520020206     A                                 15 18'Liability Sub-type:'
+000530020206     A                                      COLOR(BLU)
+000540020206     A            LISTYP#   R        B 15 38REFFLD(LIFMT/LISTYP *LIBL/LIABM)
+000550020206     A                                      EDTCDE(Z)
+000560020206     A  28                                  ERRMSG('COMBINATION NOT VALID')
+000570020206     A  25                                  ERRMSGID(DIH0022 *LIBL/DIHMSGF)
+000580020206     A                                 14 18'Liability type....:'
+000590020206     A                                      COLOR(BLU)
+000600020206     A            LITYPE#   R        B 14 38REFFLD(LIFMT/LITYPE *LIBL/LIABM)
+000610020206     A                                      EDTCDE(Z)
+000620020206     A  28                                  ERRMSG('COMBINATION NOT VALID')
+000630020206     A  29                                  ERRMSG('DEDUCTION TYPE NOT VALID')
+000640020206     A  25                                  ERRMSGID(DIH0022 *LIBL/DIHMSGF)
+000650020206     A                                 24  8'F1=Sub-Type Enquiry'
+000660020206     A                                      DSPATR(HI)
+000670020206     A                                 24 51'F4=Liability Type Enquiry'
+000680020206     A                                      DSPATR(HI)
+000690020206     A                                  1 73SYSNAME
+000700020206     A                                      DSPATR(HI)
+000710020206     A          R FMT2
+000720020206     A*%%TS  SD  20020206  125819  SAMMY       REL-V4R4M0  5769-PW1
+000730020206     A                                      CF02(02)
+000740020206     A                                      CF15(15)
+000750020206     A            @PGM          10A  O  1  2DSPATR(HI)
+000760020206     A            @USER         10A  O  2  2DSPATR(HI)
+000770020206     A            CONAME        30A  O  1 26DSPATR(UL)
+000780020206     A                                      DSPATR(HI)
+000790020206     A            @TITLE        40A  O  2 21DSPATR(HI)
+000800020206     A            @DATE         10A  O  2 71DSPATR(HI)
+000810020206     A                                  8 12'Employee number...:'
+000820020206     A                                      COLOR(BLU)
+000830020206     A            LIEMP#    R        O  8 33REFFLD(LIFMT/LIEMP *LIBL/LIABM)
+000840020206     A                                      EDTCDE(Z)
+000850020206     A                                 10 12'Deduction type....:'
+000860020206     A                                      COLOR(BLU)
+000870020206     A            LITYPE#   R        O 10 32REFFLD(LIFMT/LITYPE *LIBL/LIABM)
+000880020206     A                                      EDTCDE(Z)
+000890020206     A                                 12 12'Transaction type..:'
+000900020206     A                                      COLOR(BLU)
+000910020206     A            LISTYP#   R        O 12 32REFFLD(LIFMT/LISTYP *LIBL/LIABM)
+000920020206     A                                      EDTCDE(Z)
+000930020206     A                                 14 12'Deduction code....:'
+000940020206     A                                      COLOR(BLU)
+000950020206     A            LICODE#   R        B 14 32REFFLD(LIFMT/LICODE *LIBL/LIABM)
+000960020206     A                                      VALUES('N' ' ')
+000970020206     A                                 16 12'Fixed deduction...:'
+000980020206     A                                      COLOR(BLU)
+000990020206     A            LIFIX#    R        B 16 32REFFLD(LIFMT/LIFIX *LIBL/LIABM)
+001000020206     A                                      EDTCDE(1 $)
+001010020206     A                                 23 39'F3 = End'
+001020020206     A                                      DSPATR(HI)
+001030020206     A                                 23 54'F15 = Confirm'
+001040020206     A                                      DSPATR(HI)
+001050020206     A                                      DSPATR(RI)
+001060020206     A                                      COLOR(RED)
+001070020206     A                                 23 21'F2 = Cancel'
+001080020206     A                                      DSPATR(HI)
+001090020206     A            EMP_NAM       40A  O  8 41
+001100020206     A            EADSP         35A  O 12 41
+001110020206     A                                 14 35'(N  or'
+001120020206     A                                      DSPATR(HI)
+001130020206     A                                 14 42'"'
+001140020206     A                                      DSPATR(HI)
+001150020206     A                                 14 44'"'
+001160020206     A                                      DSPATR(HI)
+001170020206     A                                 14 46')'
+001180020206     A                                      DSPATR(HI)
+001190020206     A            EMDSP     R        O 10 41REFFLD(EMFMT/EMDSP *LIBL/EMATF)
+001200020206     A                                  1 73SYSNAME
+001210020206     A                                      DSPATR(HI)

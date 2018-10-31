@@ -1,0 +1,112 @@
+000010010816     A*%%TS  SD  20010816  084653  SAMMY       REL-V4R4M0  5769-PW1
+000020941222     A*
+000030950907     A* ********************************************************
+000040950907     A*              B A N K S    D I H    L T D.              *
+000050950907     A*                INVENTORY CONTROL SYSTEM                *
+000060950907     A*                                                        *
+000070950907     A*                         BY                             *
+000080950907     A*                                                        *
+000090950907     A*       ONE PLUS COMPUTER SERVICES (GUYANA) LIMITED      *
+000100950907     A*             P.O BOX 10501, GEORGETOWN,GUYANA           *
+000110950907     A*                                                        *
+000120950907     A*                                                        *
+000130951121     A*       DISPLAY FILE  NAME: ENQ022D                      *
+000140950907     A*       RECORD FORMAT NAME: FMT1                         *
+000150950907     A*                           FMT2                         *
+000160950907     A*                                                        *
+000170951121     A*       PROGRAMMER NAME: LORAINE INNISS                  *
+000180951121     A*       DESIGN DATE....: 1995/11/21                      *
+000190950907     A*                                                        *
+000200951121     A*  FILE DESCRIPTION:  CALENDER ENQUIRY                   *
+000210950907     A*                                                        *
+000220951121     A*  THIS FILE IS DESIGNED TO DISPLAY DATES                *
+000230950907     A*                                                        *
+000240950907     A*                                                        *
+000250950907     A**********************************************************
+000260010816     A*%%EC
+000270010816     A                                      DSPSIZ(24 80 *DS3)
+000280010816     A                                      REF(*LIBL/FLDREF)
+000290010816     A                                      PRINT
+000300010816     A                                      HELP(77)
+000310010816     A                                      CA03(03)
+000320010816     A                                      CA02(02)
+000330010808     A          R FMT1
+000340010808     A*%%TS  SD  20010808  160405  SAMMY       REL-V4R4M0  5769-PW1
+000350010808     A            @PGM      R        O  1  2REFFLD(NAME10)
+000360010808     A                                      DSPATR(HI)
+000370010808     A            CONAME    R        O  1 24REFFLD(NAME30)
+000380010808     A                                      DSPATR(HI)
+000390010808     A                                      DSPATR(UL)
+000400010808     A            @MODE          6A  O  1 58DSPATR(ND)
+000410010808     A            @DATE     R        O  1 70REFFLD(NAME10)
+000420010808     A                                      DSPATR(HI)
+000430010808     A            @TITLE    R        O  2 20REFFLD(NAME40)
+000440010808     A                                      DSPATR(HI)
+000450010808     A            @TIME          6Y 0O  2 70DSPATR(HI)
+000460010808     A                                      EDTWRD('  :  :  ')
+000470010808     A                                  5  8'Enter Year:'
+000480010808     A            YER            4Y 0B  5 20DSPATR(HI)
+000490010808     A                                      DSPATR(UL)
+000500010808     A                                      EDTCDE(Z)
+000510010808     A                                  5 40'Enter Month:'
+000520010808     A            MON            2Y 0B  5 53DSPATR(HI)
+000530010808     A                                      DSPATR(UL)
+000540010808     A                                      EDTCDE(Z)
+000550010808     A                                 22  2'F3 = End Program'
+000560010808     A                                      DSPATR(HI)
+000570010808     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000580010808     A                                  2  2USER
+000590010808     A                                      DSPATR(HI)
+000600010816     A          R SFLREC                    SFL
+000610010816     A*%%TS  SD  20010816  084653  SAMMY       REL-V4R4M0  5769-PW1
+000620010816     A            HODATE    R        O  8 10REFFLD(CDATE)
+000630010816     A                                      EDTWRD('    /  /  ')
+000640010816     A                                      DSPATR(HI)
+000650010816     A            DAYDESC        9A  O  8 30DSPATR(HI)
+000660010816     A            HODESC        25A  O  8 46DSPATR(HI)
+000670010816     A            DAYNO          1  0O  8 27DSPATR(HI)
+000680941129     A*
+000690010816     A          R SFLCTL                    SFLCTL(SFLREC)
+000700010816     A*%%TS  SD  20010816  084653  SAMMY       REL-V4R4M0  5769-PW1
+000710010816     A                                      SFLSIZ(0031)
+000720010816     A                                      SFLPAG(0008)
+000730010816     A                                      SFLDSP
+000740010816     A                                      OVERLAY
+000750010816     A                                      PROTECT
+000760010816     A                                      SFLDSPCTL
+000770010816     A  55                                  SFLEND(*MORE)
+000780010816     A  33                                  SFLCLR
+000790010816     A            @PGM      R        O  1  2REFFLD(NAME10)
+000800010816     A                                      DSPATR(HI)
+000810010816     A            CONAME    R        O  1 24REFFLD(NAME30)
+000820010816     A                                      DSPATR(HI)
+000830010816     A                                      DSPATR(UL)
+000840010816     A            @MODE          6A  O  1 58DSPATR(ND)
+000850010816     A            @DATE     R        O  1 70REFFLD(NAME10)
+000860010816     A                                      DSPATR(HI)
+000870010816     A            @USER     R        O  2  2REFFLD(NAME10)
+000880010816     A                                      DSPATR(HI)
+000890010816     A            @TITLE    R        O  2 20REFFLD(NAME40)
+000900010816     A                                      DSPATR(HI)
+000910010816     A            @TIME          6Y 0O  2 70DSPATR(HI)
+000920010816     A                                      EDTWRD('  :  :  ')
+000930010816     A                                  6 12'Date'
+000940010816     A                                  6 24'Day No'
+000950010816     A                                  6 46'Description'
+000960010816     A                                  4  8'Year:'
+000970010816     A            YER            4Y 0O  4 14DSPATR(HI)
+000980010816     A                                      DSPATR(UL)
+000990010816     A                                  4 40'Month:'
+001000010816     A            MON            2Y 0O  4 47DSPATR(HI)
+001010010816     A                                      DSPATR(UL)
+001020010816     A            MTYP          10A  O  4 52DSPATR(HI)
+001030941215     A*
+001040010808     A          R FOOTER
+001050010808     A*%%TS  SD  20010808  150736  SAMMY       REL-V4R4M0  5769-PW1
+001060010808     A                                      OVERLAY
+001070010808     A                                      PROTECT
+001080010808     A                                 23  3'F2 = Cancel'
+001090010808     A                                      DSPATR(HI)
+001100010808     A                                 23 19'F3 = End Program'
+001110010808     A                                      DSPATR(HI)
+001120010808     A            ERRMSG        75A  O 24  2DSPATR(HI)

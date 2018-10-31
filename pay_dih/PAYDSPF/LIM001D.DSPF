@@ -1,0 +1,75 @@
+000010991020     A*%%TS  SD  19991020  162705  SAMMY       REL-V4R2M0  5769-PW1
+000020991020     A*%%EC
+000030991020     A                                      DSPSIZ(24 80 *DS3)
+000040991020     A                                      REF(PAYLIB/EMPREF EMPRREC)
+000050991020     A                                      PRINT
+000060991020     A                                      INDARA
+000070991020     A                                      ERRSFL
+000080991020     A                                      CF03(03)
+000090991020     A                                      CF05(05)
+000100991020     A          R SPCSF                     SFL
+000110991020     A*%%TS  SD  19991020  162705  SAMMY       REL-V4R2M0  5769-PW1
+000120991020     A            BALANCE        9Y 2O  8 41EDTCDE(A)
+000130991020     A            EMP       R        O  8  2DSPATR(HI)
+000140991020     A                                      EDTCDE(Z)
+000150991020     A            CHRIST    R        O  8 10
+000160991020     A            SURNAM    R        O  8 24
+000170991020     A            RESIGN_TXT    10A  O  8 60DSPATR(HI)
+000180991020     A          R SPCCTL                    SFLCTL(SPCSF)
+000190991020     A*%%TS  SD  19991020  162705  SAMMY       REL-V4R2M0  5769-PW1
+000200991020     A                                      SFLSIZ(1200)
+000210991020     A                                      SFLPAG(0012)
+000220991020     A                                      FRCDTA
+000230991020     A                                      OVERLAY
+000240991020     A N20                                  SFLDSP
+000250991020     A                                      SFLDSPCTL
+000260991020     A  12                                  SFLCLR
+000270991020     A N13                                  SFLEND(*MORE)
+000280991020     A                                  1 32'BANKS DIH LIMITED'
+000290991020     A                                      DSPATR(HI)
+000300991020     A                                      DSPATR(UL)
+000310991020     A                                  2 27'EMPLOYEES ABOVE CREDIT LIMIT'
+000320991020     A                                      DSPATR(UL)
+000330991020     A                                  6 47'AMOUNT'
+000340991020     A                                      DSPATR(UL)
+000350991020     A                                  6  4'EMP#'
+000360991020     A                                      DSPATR(UL)
+000370991020     A                                  6 10'NAME'
+000380991020     A                                      DSPATR(UL)
+000390991020     A                                  1 64SYSNAME
+000400991020     A                                  2 64DATE
+000410991020     A                                      EDTCDE(Y)
+000420991020     A            @PGM          10A  O  1  4
+000430991020     A                                  2  4USER
+000440991020     A                                  4  3'NOTE: Credit limit is currently se-
+000450991020     A                                      t at $1500.00 (Grades 1-4)'
+000460991020     A                                  5 38'and $2000.00 (Grade 5)'
+000470970506     A          R FOOTER
+000480970506     A*%%TS  SD  19970506  165311  ANTHONY     REL-V3R2M0  5763-PW1
+000490970506     A                                      SLNO(24)
+000500970506     A                                  1 46'F3 - END'
+000510970506     A                                      DSPATR(HI)
+000520970506     A                                  1 21'F5 - PRINT RECORDS'
+000530970506     A                                      DSPATR(HI)
+000540970319     A          R INFDSP
+000550970319     A*%%TS  SD  19970319  135358  SAMMY       REL-V3R1M0  5763-PW1
+000560970319     A                                      FRCDTA
+000570970319     A                                  1 32'BANKS DIH LIMITED'
+000580970319     A                                      DSPATR(UL)
+000590970319     A                                      DSPATR(HI)
+000600970319     A                                  2 31'INFORMATION DISPLAY'
+000610970319     A                                      DSPATR(UL)
+000620970319     A                                      DSPATR(HI)
+000630970319     A                                 12 19'P L E A S E   W A I T  . . . . . .'
+000640970319     A                                      DSPATR(BL)
+000650970319     A                                      COLOR(RED)
+000660970319     A            @PGM          10A  O  1  3DSPATR(HI)
+000670970319     A                                  2  3USER
+000680970319     A                                      DSPATR(HI)
+000690970319     A                                  1 64SYSNAME
+000700970319     A                                      DSPATR(HI)
+000710970319     A                                  2 64DATE
+000720970319     A                                      EDTCDE(Y)
+000730970319     A                                      DSPATR(HI)
+000740970319     A                                 24 37'F3 - End'
+000750970319     A                                      DSPATR(HI)

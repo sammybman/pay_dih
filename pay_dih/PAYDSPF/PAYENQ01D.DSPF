@@ -1,0 +1,75 @@
+000010050524     A*%%TS  SD  20050524  094941  AFUNG       REL-V5R3M0  5722-WDS
+000020950530     A* ********************************************************
+000030950905     A*              B A N K S    D I H    L T D.              *
+000040950905     A*                INVENTORY CONTROL SYSTEM                *
+000050950905     A*                                                        *
+000060950905     A*                         BY                             *
+000070950905     A*                                                        *
+000080950905     A*       ONE PLUS COMPUTER SERVICES (GUYANA) LIMITED      *
+000090950905     A*             P.O BOX 10501, GEORGETOWN,GUYANA           *
+000100950905     A*                                                        *
+000110950905     A*                                                        *
+000120950912     A*       DISPLAY FILE  NAME: INV010D                      *
+000130950906     A*       RECORD FORMAT NAME: FMT1                         *
+000140950906     A*                           FMT2                         *
+000150950905     A*                                                        *
+000160950912     A*       PROGRAMMER NAME: JERRY  GANGOO                   *
+000170950906     A*       DESIGN DATE....: 9995/09/06                      *
+000180950905     A*                                                        *
+000190950905     A*  FILE DESCRIPTION:                                     *
+000200950905     A*                                                        *
+000210950905     A*  THIS FILE IS DESIGNED TO                              *
+000220950905     A*                                                        *
+000230950905     A*                                                        *
+000240950530     A**********************************************************
+000250050524     A*%%EC
+000260050524     A                                      DSPSIZ(24 80 *DS3)
+000270050524     A                                      REF(*LIBL/FLDREF)
+000280050524     A                                      PRINT
+000290050524     A                                      HELP(77)
+000300050524     A                                      CA04(04)
+000310050524     A          R WINDOW
+000320050524     A*%%TS  SD  20050524  083130  AFUNG       REL-V5R3M0  5722-WDS
+000330050524     A                                      WINDOW(5 12 17 40)
+000340050524     A          R WINREC                    SFL
+000350050524     A*%%TS  SD  20050524  083130  AFUNG       REL-V5R3M0  5722-WDS
+000360050524     A            SEL#           1A  B  6  2DSPATR(HI)
+000370050524     A            PTYPTYPE  R        O  6  7REFFLD(PTYFMT/PTYPTYPE *LIBL/PAYTYP)
+000380050524     A                                      DSPATR(HI)
+000390050524     A            PTYDESC   R        O  6 12REFFLD(PTYFMT/PTYDESC *LIBL/PAYTYP)
+000400050524     A                                      DSPATR(HI)
+000410050524     A          R WDWCTL                    SFLCTL(WINREC)
+000420050524     A*%%TS  SD  20050524  094941  AFUNG       REL-V5R3M0  5722-WDS
+000430050524     A                                      CF03(03)
+000440050524     A                                      CA05(05)
+000450050524     A                                      OVERLAY
+000460050524     A  15                                  SFLDSP
+000470050524     A                                      SFLDSPCTL
+000480050524     A  13                                  SFLCLR
+000490050524     A  20                                  SFLEND(*MORE)
+000500050524     A                                      SFLSIZ(0100)
+000510050524     A                                      SFLPAG(0010)
+000520050524     A                                      WINDOW(WINDOW)
+000530050524     A                                      WDWBORDER((*COLOR BLU))
+000540050524     A                                  1  8'Payment Code Description'
+000550050524     A                                      DSPATR(UL)
+000560050524     A                                      COLOR(BLU)
+000570050524     A                                  5  6'Code'
+000580050524     A                                      COLOR(BLU)
+000590050524     A                                      DSPATR(UL)
+000600050524     A                                  5 12'Description'
+000610050524     A                                      DSPATR(UL)
+000620050524     A                                      COLOR(BLU)
+000630050524     A                                  4  1'Sel'
+000640050524     A                                      DSPATR(UL)
+000650050524     A                                      COLOR(BLU)
+000660050524     A                                  3  6'F3= Exit'
+000670050524     A                                      DSPATR(HI)
+000680050524     A                                  5  1'(x)'
+000690050524     A                                      COLOR(BLU)
+000700050524     A                                  3 24'F5=Print'
+000710050524     A                                      DSPATR(HI)
+000720010412     A          R RECORD
+000730010412     A*%%TS  SD  20010412  100715  CWILLIAMS   REL-V4R4M0  5769-PW1
+000740010412     A                                      ASSUME
+000750010412     A                                  1  4' '

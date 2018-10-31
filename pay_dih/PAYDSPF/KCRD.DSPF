@@ -1,0 +1,82 @@
+000010980209     A*%%TS  SD  19980209  134357  ANTHONY     REL-V3R2M0  5763-PW1
+000020980209     A*%%EC
+000030980209     A                                      DSPSIZ(24 80 *DS3)
+000040980209     A                                      CF03
+000050980209     A N99                                  CF12
+000060980209     A                                      CF06(66)
+000070980209     A          R REC2
+000080980209     A*%%TS  SD  19980209  133311  ANTHONY     REL-V3R2M0  5763-PW1
+000090980209     A                                  1 32'Banks DiH Limited'
+000100980209     A                                      DSPATR(UL)
+000110980209     A                                      DSPATR(HI)
+000120980209     A                                  2 28'Timecard selection screen'
+000130980209     A                                      DSPATR(UL)
+000140980209     A                                      DSPATR(HI)
+000150980209     A                                  9 14'1. Change Time Card Entry'
+000160980209     A                                 13 14'Enter option here->'
+000170980209     A            OPTION         1Y 0I 13 35CHECK(ER)
+000180980209     A                                      VALUES(1)
+000190980209     A                                 23 37'F3 - end'
+000200980209     A                                      DSPATR(HI)
+000210980209     A                                  1 72SYSNAME
+000220980209     A                                  2 72DATE
+000230980209     A                                      EDTCDE(Y)
+000240980209     A                                  1  2USER
+000250980209     A            @PGM          10   O  2  2
+000260980209     A          R REC1
+000270980209     A*%%TS  SD  19980209  134357  ANTHONY     REL-V3R2M0  5763-PW1
+000280980209     A                                  1 32'Banks DiH Limited'
+000290980209     A                                      DSPATR(UL)
+000300980209     A                                      DSPATR(HI)
+000310980209     A                                  2 29'Time Card Entry Program'
+000320980209     A                                      DSPATR(UL)
+000330980209     A                                      DSPATR(HI)
+000340980209     A                                 11  6'Enter Employee number:'
+000350980209     A                                 23 29'F12 - Select new option'
+000360980209     A                                      DSPATR(HI)
+000370980209     A                                  3 36'(Regular)'
+000380980209     A  99                             20 22'Press Enter/Rec adv. to change rec-
+000390980209     A                                      ord'
+000400980209     A                                      DSPATR(HI)
+000410980209     A                                      DSPATR(RI)
+000420980209     A            EMP       R     D  I 11 31REFFLD(EMPRREC/EMP PAYLIB/EMPREF)
+000430980209     A  99                                  DSPATR(PR)
+000440980209     A                                      CHECK(ER)
+000450980209     A  06                                  ERRMSG('Employee Not In Timecard Fi-
+000460980209     A                                      le.')
+000470980209     A  05                                  ERRMSGID(MSG0001 PAYLIB/PAYMESS)
+000480980209     A N08 10                               ERRMSGID(MSG0003 PAYLIB/PAYMESS)
+000490980209     A  07                                  ERRMSGID(MSG0004 PAYLIB/PAYMESS)
+000500980209     A  11                                  ERRMSGID(MSG0005 PAYLIB/PAYMESS)
+000510980209     A  12                                  ERRMSGID(MSG0006 PAYLIB/PAYMESS)
+000520980209     A  19                                  ERRMSGID(MSG0028 PAYLIB/PAYMESS)
+000530980209     A                                  1 71SYSNAME
+000540980209     A                                  2 71DATE
+000550980209     A                                      EDTCDE(Y)
+000560980209     A                                  1  2USER
+000570980209     A            @PGM          10A  O  2  2
+000580980209     A          R REC3
+000590980209     A*%%TS  SD  19980209  134357  ANTHONY     REL-V3R2M0  5763-PW1
+000600980209     A                                  1 32'Banks DiH Limited'
+000610980209     A                                      DSPATR(UL)
+000620980209     A                                      DSPATR(HI)
+000630980209     A                                  2 29'Time Card Entry Program'
+000640980209     A                                      DSPATR(UL)
+000650980209     A                                      DSPATR(HI)
+000660980209     A                                 11  6'Enter Employee number:'
+000670980209     A                                 23 29'F12 - Select new option'
+000680980209     A                                      DSPATR(HI)
+000690980209     A                                 14 14'Normal Time Hours:'
+000700980209     A                                 11 39'Name:'
+000710980209     A            NAME          26A  O 11 46
+000720980209     A            EMP       R        O 11 30REFFLD(EMPRREC/EMP PAYLIB/EMPREF)
+000730980209     A                                      DSPATR(RI)
+000740980209     A            NRHRS     R        B 14 34REFFLD(EMPRREC/NRHRS PAYLIB/EMPREF)
+000750980209     A                                      EDTCDE(3)
+000760980209     A                                      COMP(LE 200.00)
+000770980209     A                                  1 71SYSNAME
+000780980209     A                                  2 71DATE
+000790980209     A                                      EDTCDE(Y)
+000800980209     A                                  1  2USER
+000810980209     A            @PGM          10A  O  2  2
+000820980209     A                                  3 36'(Regular)'

@@ -1,0 +1,77 @@
+000010961214     A*%%TS  SD  19961214  174639  ANTHONY     REL-V3R1M0  5763-PW1
+000020961214     A*%%EC
+000030961214     A                                      DSPSIZ(24 80 *DS3)
+000040961214     A                                      CF03(03)
+000050961214     A                                      CF07(07)
+000060961214     A                                      CF08(08)
+000070961214     A          R SFILE                     SFL
+000080961214     A*%%TS  SD  19961214  174639  ANTHONY     REL-V3R1M0  5763-PW1
+000090961214     A            CLASS     R        O 10  2REFFLD(EMPDREC/CLASS PAYLIB/EMPSM)
+000100961214     A                                      DSPATR(HI)
+000110961214     A            OL_GROSS  R        O 10  6REFFLD(EMPDREC/GROSS PAYLIB/EMPSM)
+000120961214     A                                      EDTCDE(1)
+000130961214     A            OL_COE    R        O 10 53REFFLD(EMPDREC/COEALW PAYLIB/EMPSM)
+000140961214     A                                      EDTCDE(1)
+000150961214     A            OL_SWT    R        O 10 64REFFLD(EMPDREC/SWTNER PAYLIB/EMPSM)
+000160961214     A                                      EDTCDE(1)
+000170961214     A            OL_GROSSM R        O 10 20REFFLD(EMPDREC/GROSSM PAYLIB/EMPSM)
+000180961214     A                                      EDTCDE(1)
+000190961214     A            NW_COE    R        B 10 42REFFLD(EMPDREC/COEALW PAYLIB/EMPSM)
+000200961214     A                                      EDTCDE(1)
+000210961214     A            NW_PER         4Y 1B 10 34EDTCDE(J)
+000220961214     A            OL_SWTBPR R        B 10 77REFFLD(EMPDREC/SWTBPR PAYLIB/EMPSM)
+000230961214     A                                      EDTCDE(4)
+000240961214     A            OL_INCR   R        H      REFFLD(EMPDREC/INCR PAYLIB/EMPSM)
+000250961214     A          R SFCTL                     SFLCTL(SFILE)
+000260961214     A*%%TS  SD  19961214  171934  ANTHONY     REL-V3R1M0  5763-PW1
+000270961214     A                                      SFLSIZ(0100)
+000280961214     A                                      SFLPAG(0012)
+000290961214     A                                      OVERLAY
+000300961214     A                                      SFLDSP
+000310961214     A                                      SFLDSPCTL
+000320961214     A  12                                  SFLCLR
+000330961214     A N20                                  SFLEND(*MORE)
+000340961214     A            @PGM          10A  O  1  4
+000350961214     A                                  2  4USER
+000360961214     A                                  1 32'Banks DiH Limited'
+000370961214     A                                      DSPATR(UL)
+000380961214     A                                      DSPATR(HI)
+000390961214     A                                  1 64SYSNAME
+000400961214     A                                  2 64DATE
+000410961214     A                                      EDTCDE(Y)
+000420961214     A                                  4  3'Enter percentage Incr./Decr. if it-
+000430961214     A                                       applies to all classes ->'
+000440961214     A            NW_GPER        4Y 1B  4 65EDTCDE(J)
+000450961214     A                                  8  7'F/nightly'
+000460961214     A                                  9  7'Min. gross'
+000470961214     A                                  8 21'F/nightly'
+000480961214     A                                  9 21'Max. Gross'
+000490961214     A                                  8 34'Percent'
+000500961214     A                                  9 33'incr/decr'
+000510961214     A                                  8 45'New'
+000520961214     A                                  9 43'COE amt'
+000530961214     A                                  8 56'Old'
+000540961214     A                                  9 54'COE amt'
+000550961214     A                                  2 31'Wages Master Update'
+000560961214     A                                      DSPATR(UL)
+000570961214     A                                      DSPATR(HI)
+000580961214     A                                  5  3'Enter COE amount here if it applie-
+000590961214     A                                      s to all classes ->'
+000600961214     A                                  8 65'Sweetener'
+000610961214     A            NW_GCOE   R        B  5 65REFFLD(EMPDREC/COEALW PAYLIB/EMPSM)
+000620961214     A                                      EDTCDE(1)
+000630961214     A                                  6  3'Update Sweetener from new salaries-
+000640961214     A                                       ->'
+000650961214     A            SWT_OPT        1A  B  6 65DFTVAL('N')
+000660961214     A                                  8 77'Swt.'
+000670961214     A                                  9 78'%'
+000680961214     A                                  7  3'Number of increments to Max. Gross-
+000690961214     A                                       ->'
+000700961214     A            NUM_INCR       3Y 0B  7 65EDTCDE(1)
+000710961214     A                                      TEXT('Condition of Employment')
+000720960911     A          R FOOTER
+000730960911     A*%%TS  SD  19960911  144904  SAMMY       REL-V3R1M0  5763-PW1
+000740960911     A                                      SLNO(23)
+000750960911     A                                  1 14'F3 - End      F7 - Reset values   -
+000760960911     A                                         F8 - Update file'
+000770960911     A                                      DSPATR(HI)

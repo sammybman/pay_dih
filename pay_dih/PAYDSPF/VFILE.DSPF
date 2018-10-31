@@ -1,0 +1,80 @@
+000010970620     A*%%TS  SD  19970620  103719  ANTHONY     REL-V3R2M0  5763-PW1
+000020970620     A*%%EC
+000030970620     A                                      DSPSIZ(24 80 *DS3)
+000040970620     A                                      CF03
+000050970620     A                                      CF12
+000060970620     A                                      ROLLUP(98)
+000070970620     A                                      ROLLDOWN(99)
+000080970616     A          R SELECT
+000090970616     A*%%TS  SD  19970616  145317  ANTHONY     REL-V3R2M0  5763-PW1
+000100970616     A                                  1 32'BANKS DIH LIMITED'
+000110970616     A                                      DSPATR(HI)
+000120970616     A                                      DSPATR(UL)
+000130970616     A                                  2 33'Selection Screen'
+000140970616     A                                      DSPATR(UL)
+000150970616     A                                 23 37'F3 - end'
+000160970616     A                                  8 32'1. Enter  records'
+000170970616     A                                  9 32'2. Change record'
+000180970616     A                                 10 32'3. Delete records'
+000190970616     A                                 14 20'Enter your choice here:'
+000200970616     A            OPTION         1D 0I 14 46CHECK(ER)
+000210970616     A                                      RANGE(1 4)
+000220970616     A                                 11 32'4. Balance department total'
+000230970620     A          R BENTRY
+000240970620     A*%%TS  SD  19970620  100452  ANTHONY     REL-V3R2M0  5763-PW1
+000250970620     A                                  1 32'BANKS DIH LIMITED'
+000260970620     A                                      DSPATR(HI)
+000270970620     A                                      DSPATR(UL)
+000280970620     A                                  2 29'Employees Monthly Bonus'
+000290970620     A                                      DSPATR(UL)
+000300970620     A                                 12  4'Employee number:'
+000310970620     A                                 12 37'Total  Bonus ->:'
+000320970620     A  11                                  DSPATR(ND)
+000330970620     A                                 23 34'F12 - Go back'
+000340970620     A                                      DSPATR(HI)
+000350970620     A            EMP       R        B 12 23REFFLD(BONREC/EMP PAYLIB/BONUSF)
+000360970620     A  12                                  DSPATR(PR)
+000370970620     A  11                                  CHECK(ER)
+000380970620     A                                      EDTCDE(3)
+000390970620     A  05                                  ERRMSGID(MSG0001 PAYLIB/PAYMESS)
+000400970620     A N08 10                               ERRMSGID(MSG0003 PAYLIB/PAYMESS)
+000410970620     A  07                                  ERRMSGID(MSG0004 PAYLIB/PAYMESS)
+000420970620     A  06                                  ERRMSGID(MSG0007 PAYLIB/PAYMESS)
+000430970620     A            BONUS     R        B 12 55REFFLD(BONREC/BONUS PAYLIB/BONUSF)
+000440970620     A  11                                  DSPATR(ND)
+000450970620     A                                      EDTCDE(1)
+000460970620     A                                      COLOR(PNK)
+000470970620     A                                 23 57'Rollup/Rolldown'
+000480970620     A                                      DSPATR(HI)
+000490970620     A          R BALANC
+000500970620     A*%%TS  SD  19970620  103719  ANTHONY     REL-V3R2M0  5763-PW1
+000510970620     A                                  1 32'Banks DiH Limited'
+000520970620     A                                      DSPATR(UL)
+000530970620     A                                      DSPATR(HI)
+000540970620     A                                  2 29'Bonus Department totals'
+000550970620     A                                      DSPATR(UL)
+000560970620     A                                      DSPATR(HI)
+000570970620     A                                  6  8'Enter Department Number ->'
+000580970620     A                                  7  8'Enter Balancing Total ->'
+000590970620     A            BDEPT          3Y 0B  6 36EDTCDE(Z)
+000600970620     A  21                                  DSPATR(PR)
+000610970620     A            BTOT           9Y 2B  7 36EDTCDE(1)
+000620970620     A  21                                  DSPATR(PR)
+000630970620     A                                 10  8'Your Total            ->'
+000640970620     A  20                                  DSPATR(ND)
+000650970620     A            YBTOT          9Y 2B 10 36EDTCDE(1)
+000660970620     A  20                                  DSPATR(ND)
+000670970620     A            DBTOT          9Y 2B 14 23EDTCDE(1 $)
+000680970620     A  20                                  DSPATR(ND)
+000690970620     A                                 14  8'Your Total is'
+000700970620     A  20                                  DSPATR(ND)
+000710970620     A                                 14 36'more'
+000720970620     A                                 23 34'F12 - Go Back'
+000730970620     A                                      DSPATR(HI)
+000740970620     A                                  1 72SYSNAME
+000750970620     A                                  2 72DATE
+000760970620     A                                      EDTCDE(Y)
+000770970620     A                                  1  3USER
+000780970620     A            @PGM          10A  O  2  3
+000790970620     A            DIFF           4   O 14 38
+000800970620     A  20                                  DSPATR(ND)

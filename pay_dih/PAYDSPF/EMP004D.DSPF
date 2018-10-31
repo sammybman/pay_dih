@@ -1,0 +1,100 @@
+000010050524     A*%%TS  SD  20050524  170815  SBRITTON    REL-V5R3M0  5722-WDS
+000020050524     A*%%EC
+000030050524     A                                      DSPSIZ(24 80 *DS3)
+000040050524     A                                      ERRSFL
+000050050524     A                                      CF03(03)
+000060020206     A          R FMT1
+000070020206     A*%%TS  SD  20020206  132053  SAMMY       REL-V4R4M0  5769-PW1
+000080020206     A            @PGM          10A  O  1  2DSPATR(HI)
+000090020206     A            @USER         10A  O  2  2DSPATR(HI)
+000100020206     A            CONAME        30A  O  1 26DSPATR(HI)
+000110020206     A                                      DSPATR(UL)
+000120020206     A            @TITLE        40A  O  2 21DSPATR(HI)
+000130020206     A            @DATE         10A  O  2 71DSPATR(HI)
+000140020206     A                                  9 27'1 ....... Cents elimination'
+000150020206     A                                      DSPATR(HI)
+000160020206     A                                 10 27'2 ....... Balance write-off'
+000170020206     A                                      DSPATR(HI)
+000180020206     A                                 23 37'F3 = End'
+000190020206     A                                      DSPATR(HI)
+000200020206     A                                 14 31'Action...:'
+000210020206     A                                      DSPATR(HI)
+000220020206     A            CHOICE         1A  B 14 42
+000230020206     A  42                                  ERRMSGID(DIH0022 *LIBL/DIHMSGF)
+000240020206     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000250020206     A                                  1 73SYSNAME
+000260020206     A                                      DSPATR(HI)
+000270050524     A          R FMT2
+000280050524     A*%%TS  SD  20050524  170815  SBRITTON    REL-V5R3M0  5722-WDS
+000290050524     A                                      CF02(02)
+000300050524     A                                      CF01(01)
+000310050524     A                                      CF04(04)
+000320050524     A                                      CHANGE(40)
+000330050524     A                                 23 41'F3 = End'
+000340050524     A                                      DSPATR(HI)
+000350050524     A            @PGM          10A  O  1  2DSPATR(HI)
+000360050524     A                                  8 20'Enter Period Number..:'
+000370050524     A                                      COLOR(BLU)
+000380050524     A            PRNO      R        B  8 43REFFLD(LTFMT/LTPRNO *LIBL/LIABT)
+000390050524     A                                      EDTCDE(Z)
+000400050524     A  50                                  ERRMSG('Only previous periods can b-
+000410050524     A                                      e updated')
+000420050524     A  54                                  ERRMSG('Enter period number')
+000430050524     A  88                                  ERRMSGID(DIH0064 *LIBL/DIHMSGF)
+000440050524     A                                 11 27'Select Type...:'
+000450050524     A                                      COLOR(BLU)
+000460050524     A            TYPE      R        B 11 43REFFLD(LTFMT/LTTYPE *LIBL/LIABT)
+000470050524     A                                      EDTCDE(Z)
+000480050524     A  52                                  ERRMSG('Only one selection can be m-
+000490050524     A                                      ade')
+000500050524     A  47                                  ERRMSG('Type not valid')
+000510050524     A  43                                  ERRMSGID(DIH0022 *LIBL/DIHMSGF)
+000520050524     A  88                                  ERRMSGID(DIH0064 *LIBL/DIHMSGF)
+000530050524     A                                 23  5'F1 = List Types'
+000540050524     A                                      DSPATR(HI)
+000550050524     A  41                             13 15'Enter Write Off Balance...:'
+000560050524     A                                      COLOR(BLU)
+000570050524     A  41        WBAL          11Y 2B 13 43EDTCDE(1 $)
+000580050524     A  44                                  ERRMSGID(DIH0022 *LIBL/DIHMSGF)
+000590050524     A  88                                  ERRMSGID(DIH0064 *LIBL/DIHMSGF)
+000600050524     A                                      RANGE(-100.00 100.00)
+000610050524     A            @USER         10A  O  2  2DSPATR(HI)
+000620050524     A            CONAME        30A  O  1 26DSPATR(HI)
+000630050524     A                                      DSPATR(UL)
+000640050524     A            @TITLE        40A  O  2 21DSPATR(HI)
+000650050524     A            @DATE         10A  O  2 71DSPATR(HI)
+000660050524     A  40                             23 55'F4 = Process All Records'
+000670050524     A                                      DSPATR(HI)
+000680050524     A                                 23 25'F2 = Cancel'
+000690050524     A                                      DSPATR(HI)
+000700050524     A  41        ACT            1A  B 16 33
+000710050524     A  41                             16 15'Write - Off Only'
+000720050524     A                                      COLOR(BLU)
+000730050524     A  41                             16 36'B - Debit/Credit  Transactions'
+000740050524     A                                      DSPATR(HI)
+000750050524     A  41                             17 36'D - Debit'
+000760050524     A                                      DSPATR(HI)
+000770050524     A  41                             18 36'C - Credit'
+000780050524     A                                      DSPATR(HI)
+000790050524     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000800050524     A                                  1 73SYSNAME
+000810050524     A                                      DSPATR(HI)
+000820980204     A          R WINREC
+000830980204     A*%%TS  SD  19980123  145357  LESLIE      REL-V3R2M0  5763-PW1
+000840980204     A                                      WINDOW(9 10 5 43)
+000850980204     A                                  3  4'ENTER YES TO CONFIRM UPDATE ->>'
+000860980204     A                                      DSPATR(BL)
+000870980204     A                                      DSPATR(HI)
+000880980204     A            ANSWER         3   B  3 37
+000890981028     A          R FMT3
+000900981028     A*%%TS  SD  19981028  102135  WROBINSON   REL-V3R7M0  5716-PW1
+000910981028     A                                      WINDOW(6 25 7 30)
+000920981028     A                                  2  6'Process all records ?'
+000930981028     A                                      COLOR(RED)
+000940981028     A                                  6  8'Action..:'
+000950981028     A                                      DSPATR(HI)
+000960981028     A            ANS            1A  B  6 18
+000970981028     A                                  4  9'Y=Yes'
+000980981028     A                                      DSPATR(HI)
+000990981028     A                                  4 19'N=No'
+001000981028     A                                      DSPATR(HI)

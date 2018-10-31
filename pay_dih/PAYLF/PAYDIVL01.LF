@@ -1,0 +1,25 @@
+000100950905     A* ********************************************************
+000200950905     A*              B A N K S    D I H    L T D.              *
+000300950905     A*                INVENTORY CONTROL SYSTEM                *
+000400950905     A*                                                        *
+000500950905     A*                         BY                             *
+000600950905     A*                                                        *
+000700970927     A*                    I.S. DEPARTMENT                     *
+000800950905     A*                                                        *
+000900950905     A*                                                        *
+001000010424     A*       LOGICAL FILE NAME:  PAYDIVL01                    *
+001100990111     A*       RECORD FORMAT NAME: DIVFMT                       *
+001200990111     A*       FILE PREFIX.......: DT                           *
+001300950905     A*                                                        *
+001400990111     A*       PROGRAMMER NAME: SAMUEL BRITTON                  *
+001500990111     A*       DESIGN DATE....: 1999/01/11                      *
+001600950905     A*                                                        *
+001700990111     A*  FILE DESCRIPTION: DIVISION MASTER FILE                *
+001800950905     A*                                                        *
+001900950905     A*                                                        *
+002000950905     A*                                                        *
+002100950905     A**********************************************************
+002200971011     A                                      UNIQUE
+002300010424     A          R DIVFMT                    PFILE(PAYDIV)
+002400990111     A          K DTNO
+002500990111     A          S DTRSTS                    COMP(EQ 'A')

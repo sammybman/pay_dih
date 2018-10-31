@@ -1,0 +1,170 @@
+000010090417     A*%%TS  SD  20090417  090433  SBRITTON    REL-V6R1M0  5761-WDS
+000020941122     A*
+000030090417     A*%%EC
+000040090417     A                                      DSPSIZ(24 80 *DS3)
+000050090417     A                                      CA03(03)
+000060090417     A                                      CF01(01)
+000070941120     A*
+000080011011     A          R FMT1
+000090011011     A*%%TS  SD  20011011  172113  SAMMY       REL-V4R4M0  5769-PW1
+000100011011     A            @PGM          10A  O  2  4DSPATR(HI)
+000110011011     A                                 10 11'Payment Type.'
+000120011011     A                                      COLOR(BLU)
+000130011011     A            PTYPTYPE#      2Y 0B 10 27EDTCDE(Z)
+000140011011     A                                      DSPATR(HI)
+000150011011     A                                 23 34'F3 = End Program'
+000160011011     A                                      DSPATR(HI)
+000170011011     A                                  1 73SYSNAME
+000180011011     A                                      DSPATR(HI)
+000190011011     A                                  1  4USER
+000200011011     A                                      DSPATR(HI)
+000210011011     A            CONAME        30A  O  1 26DSPATR(HI)
+000220011011     A                                      DSPATR(UL)
+000230011011     A            @TITLE        40A  O  2 21DSPATR(HI)
+000240011011     A                                 23  3'F1 = List Payment Types'
+000250011011     A                                      DSPATR(HI)
+000260011011     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000270011011     A            @DATE         10A  O  2 71DSPATR(HI)
+000280941120     A**
+000290090417     A          R FMT2
+000300090417     A*%%TS  SD  20090417  090433  SBRITTON    REL-V6R1M0  5761-WDS
+000310090417     A                                      CA02(02)
+000320090417     A                                      CF09(09)
+000330090417     A            #MODE          6A  O  3 38DSPATR(RI)
+000340090417     A            @PGM          10A  O  2  2DSPATR(HI)
+000350090417     A                                  4  8'Payment Type..........'
+000360090417     A                                      COLOR(BLU)
+000370090417     A            PTYPTYPE#      2Y 0O  4 32EDTCDE(Z)
+000380090417     A                                      DSPATR(HI)
+000390090417     A                                 23 41'F3 = End Program'
+000400090417     A                                      DSPATR(HI)
+000410090417     A                                  6  8'Short Name............'
+000420090417     A                                      COLOR(BLU)
+000430090417     A                                  7 36'(Y=Yes)'
+000440090417     A            CONAME        30A  O  1 26DSPATR(HI)
+000450090417     A                                      DSPATR(UL)
+000460090417     A            @TITLE        40A  O  2 21DSPATR(HI)
+000470090417     A                                  1  2USER
+000480090417     A                                      DSPATR(HI)
+000490090417     A                                  1 71SYSNAME
+000500090417     A                                      DSPATR(HI)
+000510090417     A                                 23  3'F1 = Cycle Code Enq'
+000520090417     A                                      DSPATR(HI)
+000530090417     A            ERRMSG        75A  O 24  3COLOR(RED)
+000540090417     A                                  7  8'Taxable ?.............'
+000550090417     A                                      COLOR(BLU)
+000560090417     A            PTYTCODE  R        B  7 32REFFLD(PTYFMT/PTYTCODE *LIBL/PAYTYP)
+000570090417     A                                      DSPATR(HI)
+000580090417     A  88                                  DSPATR(PR)
+000590090417     A                                  8  8'Record -Type..........'
+000600090417     A                                      COLOR(BLU)
+000610090417     A            PTYRTYPE  R        B  8 32REFFLD(PTYFMT/PTYRTYPE *LIBL/PAYTYP)
+000620090417     A                                      DSPATR(HI)
+000630090417     A  88
+000640090417     AO 99                                  DSPATR(PR)
+000650090417     A                                  9  8'Transaction Priority..'
+000660090417     A                                      COLOR(BLU)
+000670090417     A            PTYPRIOR  R     D  B  9 32REFFLD(PTYFMT/PTYPRIOR *LIBL/PAYTYP)
+000680090417     A                                      DSPATR(HI)
+000690090417     A  88                                  DSPATR(PR)
+000700090417     A            PTYDESC   R        B  5 32REFFLD(PTYFMT/PTYDESC *LIBL/PAYTYP)
+000710090417     A                                      DSPATR(HI)
+000720090417     A  88                                  DSPATR(PR)
+000730090417     A                                 10  8'Default G/L Code......'
+000740090417     A                                      COLOR(BLU)
+000750090417     A            PTYDGLCOD R        B 10 32REFFLD(PTYFMT/PTYDGLCOD *LIBL/PAYTY-
+000760090417     A                                      P)
+000770090417     A                                      DSPATR(HI)
+000780090417     A                                  8 36'(E = Emoluments ,D = Deductions)'
+000790090417     A                                  9 36'(1 - 99)'
+000800090417     A                                 21  8'+ - Valid for record type E (Emolu-
+000810090417     A                                      ments) only'
+000820090417     A                                      COLOR(RED)
+000830090417     A                                 22  8'% - Valid for record type D (Deduc-
+000840090417     A                                      tions) only'
+000850090417     A                                      COLOR(RED)
+000860090417     A                                  7 46'+'
+000870090417     A                                      COLOR(RED)
+000880090417     A                                  9 46'%'
+000890090417     A                                      COLOR(RED)
+000900090417     A                                 11  8'Lock to this Run Type.'
+000910090417     A                                      COLOR(BLU)
+000920090417     A            PTYLINK   R        B 11 32REFFLD(PTYFMT/PTYLINK *LIBL/PAYTYP)
+000930090417     A                                      DSPATR(HI)
+000940090417     A  88                                  DSPATR(PR)
+000950090417     A                                      TEXT('Link to Run type')
+000960090417     A                                 12  8'Factor  of Basic Wage.'
+000970090417     A                                      COLOR(BLU)
+000980090417     A            PTYFACTOR R        B 12 32REFFLD(PTYFMT/PTYFACTOR *LIBL/PAYTY-
+000990090417     A                                      P)
+001000090417     A                                      DSPATR(HI)
+001010090417     A  88                                  DSPATR(PR)
+001020090417     A                                      EDTCDE(1)
+001030090417     A                                 13  8'% of Basic Wage.......'
+001040090417     A                                      COLOR(BLU)
+001050090417     A            PTYPERCEN R        B 13 32REFFLD(PTYFMT/PTYPERCEN *LIBL/PAYTY-
+001060090417     A                                      P)
+001070090417     A                                      DSPATR(HI)
+001080090417     A  88                                  DSPATR(PR)
+001090090417     A                                      EDTCDE(1)
+001100090417     A                                 14  8'Payment Cycle Code....'
+001110090417     A                                      COLOR(BLU)
+001120090417     A            PTYCLCODE R        B 14 32REFFLD(PTYFMT/PTYCLCODE *LIBL/PAYTY-
+001130090417     A                                      P)
+001140090417     A                                      DSPATR(HI)
+001150090417     A                                 15  8'Apply Penalties.......'
+001160090417     A                                      COLOR(BLU)
+001170090417     A            PTYAPYPEN R        B 15 32REFFLD(PTYFMT/PTYAPYPEN *LIBL/PAYTY-
+001180090417     A                                      P)
+001190090417     A                                      DSPATR(HI)
+001200090417     A  88                                  DSPATR(PR)
+001210090417     A                                 16  8'Max. Penalty %........'
+001220090417     A                                      COLOR(BLU)
+001230090417     A            PTYMAXPEN R        B 16 32REFFLD(PTYFMT/PTYMAXPEN *LIBL/PAYTY-
+001240090417     A                                      P)
+001250090417     A                                      DSPATR(HI)
+001260090417     A                                      EDTCDE(1)
+001270090417     A  88                                  DSPATR(PR)
+001280090417     A                                 17  8'Based on Department...'
+001290090417     A                                      COLOR(BLU)
+001300090417     A            PTYBASDEP R        B 17 32REFFLD(PTYFMT/PTYBASDEP *LIBL/PAYTY-
+001310090417     A                                      P)
+001320090417     A                                      DSPATR(HI)
+001330090417     A  88                                  DSPATR(PR)
+001340090417     A                                 15 36'(Y=Yes)'
+001350090417     A                                 17 36'(Y=Yes)'
+001360090417     A                                 15 46'+'
+001370090417     A                                      COLOR(RED)
+001380090417     A                                 16 46'+'
+001390090417     A                                      COLOR(RED)
+001400090417     A                                 17 46'+'
+001410090417     A                                      COLOR(RED)
+001420090417     A                                 18  8'Payment fixed on Dft..'
+001430090417     A                                      COLOR(BLU)
+001440090417     A            PTYFIXCLS R        B 18 32REFFLD(PTYFMT/PTYFIXCLS *LIBL/PAYTY-
+001450090417     A                                      P)
+001460090417     A                                      DSPATR(HI)
+001470090417     A  88                                  DSPATR(PR)
+001480090417     A                                 19  8'Payment Method........'
+001490090417     A                                      COLOR(BLU)
+001500090417     A            PTYPAYTYP R        B 19 32REFFLD(PTYFMT/PTYPAYTYP *LIBL/PAYTY-
+001510090417     A                                      P)
+001520090417     A                                      DSPATR(HI)
+001530090417     A  88                                  DSPATR(PR)
+001540090417     A                                      CHECK(AB)
+001550090417     A                                      VALUES('H' 'M' 'B' 'S')
+001560090417     A                                 19 36'(H= Hourly,M=Money , B=H or M)'
+001570090417     A                                 18 36'(Y=Yes)'
+001580090417     A                                 19 71'+'
+001590090417     A                                      COLOR(RED)
+001600090417     A            @DATE         10A  O  2 69DSPATR(HI)
+001610090417     A                                 20 36'(S= all non-payroll/Charge types)'
+001620090417     A                                 23 26'F2 = Cancel'
+001630090417     A                                      DSPATR(HI)
+001640090417     A                                  5  8'Description...........'
+001650090417     A                                      COLOR(BLU)
+001660090417     A            PTYSHRTNM R        B  6 32REFFLD(PTYFMT/PTYSHRTNM *LIBL/PAYTY-
+001670090417     A                                      P)
+001680090417     A                                      DSPATR(HI)
+001690090417     A                                 23 61'F9 = Set prd. %'
+001700090417     A                                      DSPATR(HI)

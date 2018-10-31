@@ -1,0 +1,32 @@
+000010110531     A*%%TS  SD  20110531  093155  CWILLIAMS   REL-V7R1M0  5770-WDS
+000020110531     A*%%EC
+000030110531     A                                      DSPSIZ(24 80 *DS3)
+000040110531     A          R KROND1
+000050110531     A*%%TS  SD  20110531  093155  CWILLIAMS   REL-V7R1M0  5770-WDS
+000060110531     A                                      CF01(01 'lists class profiles')
+000070110531     A                                      CF03(03)
+000080110531     A                                  1 69SYSNAME
+000090110531     A                                      DSPATR(HI)
+000100110531     A                                  1  3USER
+000110110531     A                                      DSPATR(HI)
+000120110531     A                                 13 17'Kronos Class Name:'
+000130110531     A                                      DSPATR(HI)
+000140110531     A                                 24 20'F1 - List'
+000150110531     A                                      DSPATR(HI)
+000160110531     A                                 24 41'F3 - Exit'
+000170110531     A                                      DSPATR(HI)
+000180110531     A            @PGM          10A  O  2  3DSPATR(HI)
+000190110531     A                                  6 52'A = add new class profile'
+000200110531     A                                  7 52'D = delete class profile'
+000210110531     A                                 10 17'Enter selection ->'
+000220110531     A            AED            1A  I 10 52DSPATR(RI)
+000230110531     A                                      DSPATR(CS)
+000240110531     A            CONAME        30A  O  1 26DSPATR(HI)
+000250110531     A                                      DSPATR(UL)
+000260110531     A            @TITLE        40A  O  2 21DSPATR(HI)
+000270110531     A            @DATE         10A  O  2 67DSPATR(HI)
+000280110531     A            KCLASS    R        B 13 37REFFLD(KCPREC/KCLASS *LIBL/KRONCF)
+000290110531     A            KCLASSID  R        B 15 37REFFLD(KCPREC/KCLASSID *LIBL/KRONCF)
+000300110531     A                                      EDTCDE(Z)
+000310110531     A                                 15 22'Terminal ID.:'
+000320110531     A                                      DSPATR(HI)

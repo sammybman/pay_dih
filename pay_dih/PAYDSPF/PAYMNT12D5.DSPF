@@ -1,0 +1,119 @@
+000010060511     A*%%TS  SD  20060511  150729  SBRITTON    REL-V5R3M0  5722-WDS
+000020060511     A*%%EC
+000030060511     A                                      DSPSIZ(24 80 *DS3)
+000040060511     A                                      ERRSFL
+000050060511     A                                      CF03(03)
+000060060324     A          R FMT1
+000070060324     A*%%TS  SD  20060324  211800  SBRITTON    REL-V5R3M0  5722-WDS
+000080060324     A                                      CA04(04)
+000090060324     A            @PGM          10A  O  1  3DSPATR(HI)
+000100060324     A                                  2  3USER
+000110060324     A                                      DSPATR(HI)
+000120060324     A            CONAME        30A  O  1 26DSPATR(HI)
+000130060324     A                                      DSPATR(UL)
+000140060324     A            @TITLE        40A  O  2 21DSPATR(HI)
+000150060324     A            @DATE         10A  O  1 71DSPATR(HI)
+000160060324     A                                  2 71TIME
+000170060324     A                                      DSPATR(HI)
+000180060324     A                                 23 10'F3 = End Program'
+000190060324     A                                      DSPATR(HI)
+000200060324     A            ERRMSG        75A  O 24  3DSPATR(BL)
+000210060324     A                                      COLOR(RED)
+000220060324     A                                 14  6'Enter Grouping Code......:'
+000230060324     A                                      COLOR(BLU)
+000240060324     A                                 23 31'F4 = Prompt'
+000250060324     A                                      DSPATR(HI)
+000260060324     A            ITEM#          6A  B 14 34DSPATR(HI)
+000270060324     A                                 11  6'Select Item Type.........:'
+000280060324     A                                      COLOR(BLU)
+000290060324     A            TYPE#          1Y 0B 11 34EDTCDE(Z)
+000300060324     A                                      DSPATR(HI)
+000310060324     A                                      RANGE(0 2)
+000320060324     A                                  9 44'0  =  Product (Default)'
+000330060324     A                                 10 44'1  =  Product Group'
+000340060324     A                                 11 44'2  =  Product Type'
+000350060324     A                                 14 44'(Must start with @ )'
+000360060324     A                                 11  3'*'
+000370060324     A                                 21  3'* - Only used when NEW codes are b-
+000380060324     A                                      eing created'
+000390060403     A          R SFLREC                    SFL
+000400060403     A*%%TS  SD  20060403  111935  SBRITTON    REL-V5R3M0  5722-WDS
+000410060403     A            LITEMDESC     30A  O 11 32TEXT('Linked Item DESCRIPTION')
+000420060403     A            LITEM#         6A  B 11 12
+000430060403     A  34                                  DSPATR(RI)
+000440060403     A                                      TEXT('ROUTE #')
+000450060403     A            LITEM@         6A  H
+000460060511     A          R SFLCTL                    SFLCTL(SFLREC)
+000470060511     A*%%TS  SD  20060511  150729  SBRITTON    REL-V5R3M0  5722-WDS
+000480060511     A                                      SFLSIZ(0099)
+000490060511     A                                      SFLPAG(0005)
+000500060511     A                                      CF02(02)
+000510060511     A                                      CF10(10)
+000520060511     A                                      CA04(04)
+000530060511     A                                      CF15(15)
+000540060511     A                                      CF20(22)
+000550060511     A                                      OVERLAY
+000560060511     A                                      PROTECT
+000570060511     A  20                                  SFLDSP
+000580060511     A                                      SFLDSPCTL
+000590060511     A  33                                  SFLCLR
+000600060511     A  55                                  SFLEND(*MORE)
+000610060511     A            @PGM          10A  O  1  3DSPATR(HI)
+000620060511     A                                  2  3USER
+000630060511     A                                      DSPATR(HI)
+000640060511     A            CONAME        30A  O  1 26DSPATR(HI)
+000650060511     A                                      DSPATR(UL)
+000660060511     A            @TITLE        40A  O  2 21DSPATR(HI)
+000670060511     A            @DATE         10A  O  1 66DSPATR(HI)
+000680060511     A                                  2 66TIME
+000690060511     A                                      DSPATR(HI)
+000700060511     A                                  4  4'Grouping Code......:'
+000710060511     A                                      COLOR(BLU)
+000720060511     A                                  5  4'Code Description...:'
+000730060511     A                                      COLOR(BLU)
+000740060511     A                                  9 12'Linked'
+000750060511     A                                      DSPATR(UL)
+000760060511     A                                      DSPATR(HI)
+000770060511     A                                  9 32'Item Description'
+000780060511     A                                      DSPATR(UL)
+000790060511     A                                      DSPATR(HI)
+000800060511     A            ITEM#          6A  O  4 25DSPATR(HI)
+000810060511     A            ITEMDESC      30A  B  5 25DSPATR(HI)
+000820060511     A                                 10 12'Items'
+000830060511     A                                      DSPATR(HI)
+000840060511     A                                      DSPATR(UL)
+000850060511     A                                  6  4'Use Dollar value instead of Unit c-
+000860060511     A                                      ount.'
+000870060511     A                                      COLOR(BLU)
+000880060511     A            DOLLARF#  R        B  6 44REFFLD(CMIFMT/CMIDOLLARF *LIBL/WHCO-
+000890060511     A                                      MMITM)
+000900060511     A                                      DSPATR(HI)
+000910060511     A                                  6 47'(Y = Yes)'
+000920060511     A                                  7  4'1 Unit ='
+000930060511     A                                      COLOR(BLU)
+000940060511     A            CONVQTY#  R        B  7 14REFFLD(CMIFMT/CMICONVQTY *LIBL/WHCO-
+000950060511     A                                      MMITM)
+000960060511     A                                      EDTCDE(1)
+000970060511     A                                      DSPATR(HI)
+000980060511     A            CONVUOM#  R        B  7 24REFFLD(CMIFMT/CMICONVUOM *LIBL/WHCO-
+000990060511     A                                      MMITM)
+001000060511     A                                      DSPATR(HI)
+001010060511     A                                      CHECK(RB)
+001020060325     A          R FOOTER
+001030060325     A*%%TS  SD  20060325  130111  SBRITTON    REL-V5R3M0  5722-WDS
+001040060325     A                                      SLNO(08)
+001050060325     A                                      CLRL(*NO)
+001060060325     A                                      OVERLAY
+001070060325     A                                 15  2'F15-Confirm'
+001080060325     A                                      COLOR(RED)
+001090060325     A                                      DSPATR(RI)
+001100060325     A                                 15 19'F2-Cancel'
+001110060325     A                                      DSPATR(HI)
+001120060325     A                                 15 34'F3-End'
+001130060325     A                                      DSPATR(HI)
+001140060325     A                                 15 47'F10-New Line'
+001150060325     A                                      DSPATR(HI)
+001160060325     A            ERRMSG        75A  O 16  2DSPATR(HI)
+001170060325     A                                      DSPATR(BL)
+001180060325     A                                 15 67'F20-Delete'
+001190060325     A                                      DSPATR(HI)

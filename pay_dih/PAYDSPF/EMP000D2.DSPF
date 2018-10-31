@@ -1,0 +1,172 @@
+000010990512     A*%%TS  SD  19990512  082257  SAMMY       REL-V4R2M0  5769-PW1
+000020950530     A* ********************************************************
+000030950905     A*              B A N K S    D I H    L T D.              *
+000040950905     A*                INVENTORY CONTROL SYSTEM                *
+000050950905     A*                                                        *
+000060950905     A*                         BY                             *
+000070950905     A*                                                        *
+000080950905     A*       ONE PLUS COMPUTER SERVICES (GUYANA) LIMITED      *
+000090950905     A*             P.O BOX 10501, GEORGETOWN,GUYANA           *
+000100950905     A*                                                        *
+000110950905     A*                                                        *
+000120951006     A*       DISPLAY FILE  NAME: INV000D                      *
+000130950912     A*       RECORD FORMAT NAME: FMT0                         *
+000140950912     A*                           FMT1                         *
+000150950912     A*                           FMT2                         *
+000160950912     A*                           FMT3                         *
+000170951006     A*                           FMT4                         *
+000180951006     A*                           FMT5                         *
+000190951103     A*                           FMT6                         *
+000200950905     A*                                                        *
+000210951006     A*       PROGRAMMER NAME: JERRY GANGOO                    *
+000220951006     A*       DESIGN DATE....: 9995/09/30                      *
+000230950905     A*                                                        *
+000240950912     A*  FILE DESCRIPTION:                                     *
+000250950905     A*                                                        *
+000260950905     A*  THIS FILE IS DESIGNED TO                              *
+000270950905     A*                                                        *
+000280950905     A*                                                        *
+000290950530     A**********************************************************
+000300990512     A*%%EC
+000310990512     A                                      DSPSIZ(24 80 *DS3)
+000320990512     A                                      REF(*LIBL/FLDREF)
+000330990512     A                                      PRINT
+000340990512     A                                      CF01(01)
+000350990512     A                                      CF03(03)
+000360950906     A*
+000370990512     A          R FMT1
+000380990512     A*%%TS  SD  19990512  082257  SAMMY       REL-V4R2M0  5769-PW1
+000390990512     A            @PGM      R        O  1  2REFFLD(NAME10)
+000400990512     A                                      DSPATR(HI)
+000410990512     A                                      COLOR(BLU)
+000420990512     A            CONAME    R        O  1 24REFFLD(NAME30)
+000430990512     A                                      DSPATR(HI)
+000440990512     A                                      DSPATR(UL)
+000450990512     A            @MODE          6A  O  1 58DSPATR(ND)
+000460990512     A            @DATE     R        O  2 70REFFLD(NAME10)
+000470990512     A                                      DSPATR(HI)
+000480990512     A                                      COLOR(BLU)
+000490990512     A            @USER     R        O  2  2REFFLD(NAME10)
+000500990512     A                                      DSPATR(HI)
+000510990512     A                                      COLOR(BLU)
+000520990512     A            @TITLE    R        O  2 20REFFLD(NAME40)
+000530990512     A                                      DSPATR(HI)
+000540990512     A                                  7  6'1. Maintain Employee Fixed Deducti-
+000550990512     A                                      ons'
+000560990512     A                                      DSPATR(HI)
+000570990512     A                                  8  6'2. Set up Payroll Fixed Deductions'
+000580990512     A                                      DSPATR(HI)
+000590990512     A                                 10 50'28.'
+000600990512     A                                      DSPATR(HI)
+000610990512     A                                 20  6'90. SIGNOFF'
+000620990512     A                                      DSPATR(HI)
+000630990512     A                                 22  6'Enter Option..:'
+000640990512     A                                      COLOR(BLU)
+000650990512     A                                  8 50'26.'
+000660990512     A                                      DSPATR(HI)
+000670990512     A            @TIME          6Y 0O  3 70DSPATR(HI)
+000680990512     A                                      EDTWRD('  :  :  ')
+000690990512     A                                      DSPATR(ND)
+000700990512     A                                  4  3'Select one of the following:'
+000710990512     A                                      COLOR(BLU)
+000720990512     A                                  1 70SYSNAME
+000730990512     A                                      COLOR(BLU)
+000740990512     A            OPT            2Y 0B 22 23EDTCDE(Z)
+000750990512     A                                      DSPATR(HI)
+000760990512     A                                  7 50'25. Apply Club Bal. for Ded.'
+000770990512     A                                      DSPATR(HI)
+000780990512     A                                 17  6'10. Employee Enquiry'
+000790990512     A                                      DSPATR(HI)
+000800990512     A                                  6 50'Daily Update And Reporting'
+000810990512     A                                      DSPATR(UL)
+000820990512     A                                      COLOR(BLU)
+000830990512     A                                  6  6'Daily Operations'
+000840990512     A                                      DSPATR(UL)
+000850990512     A                                      COLOR(BLU)
+000860990512     A                                 18  6'11. Main Enquiry'
+000870990512     A                                      DSPATR(HI)
+000880990512     A                                 16  6'Enquiry Selections'
+000890990512     A                                      DSPATR(UL)
+000900990512     A                                      COLOR(BLU)
+000910990512     A                                  9  6'3. Set up Payroll Deductions'
+000920990512     A                                      DSPATR(HI)
+000930990512     A                                  9 50'27.'
+000940990512     A                                      DSPATR(HI)
+000950990512     A                                 14 50'40. Employee Reports'
+000960990512     A                                      DSPATR(HI)
+000970990512     A                                 13 50'Reports  Selections'
+000980990512     A                                      DSPATR(UL)
+000990990512     A                                      COLOR(BLU)
+001000990512     A                                 15 49' 41. Employee Final Update'
+001010990512     A                                      DSPATR(HI)
+001020990512     A            ERRMSG        75A  O 24  5DSPATR(BL)
+001030990512     A                                      COLOR(RED)
+001040990512     A                                 10  6'4. Maintain Employee Accounts'
+001050990512     A                                      DSPATR(HI)
+001060990512     A                                 15  6'9. Customer Accounts'
+001070990512     A                                      DSPATR(HI)
+001080990512     A                                 11  6'5. Handling Small Balances'
+001090990512     A                                      DSPATR(HI)
+001100990512     A                                 14  6'8. Authorise Emp. Transactions'
+001110990512     A                                      DSPATR(HI)
+001120990512     A                                  8 54'Employee Transactions'
+001130990512     A                                      DSPATR(HI)
+001140990512     A                                 12  6'6. Transaction Type Maintenance'
+001150990512     A                                      DSPATR(HI)
+001160990127     A          R FMT2
+001170990127     A*%%TS  SD  19990127  154518  SAMMY       REL-V3R7M0  5716-PW1
+001180990127     A                                      CF21(21)
+001190990127     A            @PGM      R        O  1  2REFFLD(NAME10)
+001200990127     A                                      DSPATR(HI)
+001210990127     A                                      COLOR(BLU)
+001220990127     A            CONAME    R        O  1 24REFFLD(NAME30)
+001230990127     A                                      DSPATR(HI)
+001240990127     A                                      DSPATR(UL)
+001250990127     A            @MODE          6A  O  1 58DSPATR(ND)
+001260990127     A            @DATE     R        O  2 70REFFLD(NAME10)
+001270990127     A                                      DSPATR(HI)
+001280990127     A                                      COLOR(BLU)
+001290990127     A            @USER     R        O  2  2REFFLD(NAME10)
+001300990127     A                                      DSPATR(HI)
+001310990127     A                                      COLOR(BLU)
+001320990127     A            @TITLE    R        O  2 20REFFLD(NAME40)
+001330990127     A                                      DSPATR(HI)
+001340990127     A            @TIME          6Y 0O  3 70DSPATR(HI)
+001350990127     A                                      EDTWRD('  :  :  ')
+001360990127     A                                      DSPATR(ND)
+001370990127     A                                  1 70SYSNAME
+001380990127     A                                      COLOR(BLU)
+001390990127     A                                  5 23'These Are The Final Reports Allowe-
+001400990127     A                                      d'
+001410990127     A                                  6 31'For The Period--:'
+001420990127     A            PRNO           6S 0O  6 50DSPATR(RI)
+001430990127     A                                      DSPATR(BL)
+001440990127     A                                      COLOR(RED)
+001450990127     A                                      DSPATR(UL)
+001460990127     A                                  8 23'Are You Ready To Complete Them?'
+001470990127     A                                 12 21'Key in'
+001480990127     A                                 12 29'YES'
+001490990127     A                                      DSPATR(HI)
+001500990127     A                                      DSPATR(UL)
+001510990127     A                                 12 34'To Complete'
+001520990127     A                                 12 47'NO'
+001530990127     A                                      DSPATR(HI)
+001540990127     A                                      DSPATR(UL)
+001550990127     A                                 12 51'To Go Back'
+001560990127     A                                 15 21'Choice------------------>'
+001570990127     A            ANS            3A  B 15 48DSPATR(HI)
+001580990127     A                                      DFTVAL('NO ')
+001590990127     A                                 24  3'F3->End Pgm'
+001600990127     A                                 19 31'F21-CONFIRM UPDATE!'
+001610990127     A                                      DSPATR(HI)
+001620990127     A                                      DSPATR(RI)
+001630990127     A                                  9 19'!!The Liability Master WILL Be UPD-
+001640990127     A                                      ATED!!'
+001650990127     A                                      DSPATR(RI)
+001660990127     A                                      DSPATR(BL)
+001670990127     A                                      COLOR(RED)
+001680990127     A                                 10 24'!!This Process Is Irreversible!!'
+001690990127     A                                      DSPATR(RI)
+001700990127     A                                      DSPATR(BL)
+001710990127     A                                      COLOR(RED)
+001720990127     A                                      DSPATR(HI)

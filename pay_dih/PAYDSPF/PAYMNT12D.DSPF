@@ -1,0 +1,52 @@
+000010151109     A*%%TS  SD  20151109  085743  SBRITTON    REL-V7R1M0  5770-WDS
+000020950909     A* ********************************************************
+000030990617     A*                   C R E A T E D                        *
+000040990617     A*                       B Y                              *
+000050990617     A*          B A N K S   D I H   L I M I T E D             *
+000060950909     A*                                                        *
+000070990617     A*               I.S   D E P A R T M E N T                *
+000080950909     A*                                                        *
+000090990617     A*       DISPLAY FILE  NAME: WENQ001D                     *
+000100990617     A*
+000110950909     A*                                                        *
+000120990617     A*       PROGRAMMER NAME: WINSTON ROBINSON                *
+000130990617     A*       DESIGN DATE....: 1998/10/06                      *
+000140950909     A*                                                        *
+000150950909     A**********************************************************
+000160151109     A*%%EC
+000170151109     A                                      DSPSIZ(24 80 *DS3)
+000180151109     A                                      REF(*LIBL/FLDREF)
+000190151109     A                                      PRINT
+000200151109     A                                      CF03(03)
+000210151109     A                                      CF02(02)
+000220151109     A          R FMT1
+000230151109     A*%%TS  SD  20151109  085743  SBRITTON    REL-V7R1M0  5770-WDS
+000240151109     A                                      CF05(05)
+000250151109     A                                      CF06(06)
+000260151109     A                                      CF04(04)
+000270151109     A                                      RTNCSRLOC(*RECNAME &REC &FLD)
+000280151109     A            CONAME        30A  O  1 26DSPATR(UL)
+000290151109     A                                      DSPATR(HI)
+000300151109     A            @TITLE        40A  O  2 21DSPATR(HI)
+000310151109     A            @PGM          10A  O  1  2DSPATR(HI)
+000320151109     A            @USER         10A  O  2  2DSPATR(HI)
+000330151109     A            @DATE         10A  O  1 70DSPATR(HI)
+000340151109     A            @TIME          6Y 0O  2 70DSPATR(HI)
+000350151109     A                                      EDTWRD('  :  :  ')
+000360151109     A            ERRMSG        75A  O 24  3COLOR(RED)
+000370151109     A                                 14 10'Enter Your Choice Please.....:'
+000380151109     A                                      COLOR(BLU)
+000390151109     A            REC           10A  H
+000400151109     A            FLD           10A  H
+000410151109     A                                 23 33'F3 = End Program'
+000420151109     A                                      DSPATR(HI)
+000430151109     A            OPTION         1Y 0B 14 42DSPATR(HI)
+000440151109     A                                      EDTCDE(Z)
+000450151109     A                                      RANGE(1 7)
+000460151109     A                                  6 42'1. Set Global prarmeters'
+000470151109     A                                  9 42'4. Setup P.I. Defaults'
+000480151109     A                                 10 42'5. Maintain P.I. Item Codes'
+000490151109     A                                 11 42'6. Setup P.I. Calc. Criteria'
+000500151109     A                                  7 42'2. Define P.I. Codes'
+000510151109     A                                  8 42'3. Setup Department Configuration'
+000520151109     A                                 12 42'7. Duplicate Rates'

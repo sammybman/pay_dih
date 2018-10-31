@@ -1,0 +1,7 @@
+000100000327             PGM
+000200000309             MONMSG     MSGID(CPF4328)
+000300000309             STRCMTCTL  LCKLVL(*CHG)
+000400020206    /* Credit Control Application (Employees) */
+000500020206             CALLPRC    PRC(EMP000R)
+000600991209             ENDCMTCTL
+000700941209             ENDPGM

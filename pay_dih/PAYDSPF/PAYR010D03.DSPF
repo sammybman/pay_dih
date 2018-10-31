@@ -1,0 +1,64 @@
+000100090123     A*%%TS  DD  20090123  082626  nchapman    REL-V5.0.1  WDSc
+000200090123     A*%%EC
+000300090123     A                                      DSPSIZ(24 80 *DS3)
+000400090123     A          R SFLREC
+000500090123     A*%%TS  DD  20090123  082626  nchapman    REL-V5.0.1  WDSc
+000600090123     A                                      SFL
+000700090123     A            SEL            1   B  7  3COLOR(BLU)
+000800090123     A            KEY#           8Y 0O  7  9COLOR(BLU)
+000900090123     A                                      EDTCDE(3)
+001000090123     A            DESC#         30   O  7 22COLOR(BLU)
+001100090123     A            GL#            7Y 0O  7 57COLOR(BLU)
+001200090123     A                                      EDTCDE(3)
+001300090123     A            MAIN#          8Y 0O  7 68COLOR(BLU)
+001400090123     A                                      EDTCDE(3)
+001500090123     A*%%GP UNTITLED   01
+001600090123     A          R SFLCTL
+001700090123     A*%%TS  DD  20090123  082626  nchapman    REL-V5.0.1  WDSc
+001800090123     A                                      SFLCTL(SFLREC)
+001900090123     A                                      SFLDSPCTL
+002000090123     A                                      SFLDSP
+002100090123     A                                      SFLPAG(12)
+002200090123     A                                      SFLSIZ(2000)
+002300090123     A  33                                  SFLCLR
+002400090123     A  60                                  SFLEND(*MORE)
+002500090123     A                                      CA03(03)
+002600090123     A                                      OVERLAY
+002700090123     A                                      PROTECT
+002800090123     A                                  1  2USER
+002900090123     A                                      DSPATR(HI)
+003000090123     A            CONAME        30   O  1 26DSPATR(UL)
+003100090123     A                                      DSPATR(HI)
+003200090123     A                                  1 72SYSNAME
+003300090123     A                                      DSPATR(HI)
+003400090123     A            @PGM          10   O  2  2DSPATR(HI)
+003500090123     A            @TITLE        40   O  2 21DSPATR(HI)
+003600090123     A            @DATE         10   O  2 70DSPATR(HI)
+003700090123     A                                  5  2'Sel'
+003800090123     A                                      DSPATR(HI)
+003900090123     A                                  6  2'(X)'
+004000090123     A                                      DSPATR(HI)
+004100090123     A                                  5  9'Transit '
+004200090123     A                                      DSPATR(HI)
+004300090123     A                                  6 22'Description'
+004400090123     A                                      DSPATR(HI)
+004500090123     A                                  5 57'General'
+004600090123     A                                      DSPATR(HI)
+004700090123     A                                  6 57'Ledger'
+004800090123     A                                      DSPATR(HI)
+004900090123     A                                  5 68'Main Transit'
+005000090123     A                                      DSPATR(HI)
+005100090123     A                                  6  9'Number'
+005200090123     A                                      DSPATR(HI)
+005300090123     A                                  6 68'Number'
+005400090123     A                                      DSPATR(HI)
+005500090123     A*%%GP UNTITLED   02
+005600090120     A          R FOOTER
+005700090120     A*%%TS  DD  20090120  091118  nchapman    REL-V5.0.1  WDSc
+005800090120     A                                      CA03(03)
+005900090120     A                                      SLNO(23)
+006000090120     A                                  1 37'F3 = End'
+006100090120     A                                      DSPATR(HI)
+006200090120     A                                  1  8'X = Select'
+006300090120     A                                      DSPATR(HI)
+006400090120     A            ERRMSG        75   O  2  3DSPATR(HI)

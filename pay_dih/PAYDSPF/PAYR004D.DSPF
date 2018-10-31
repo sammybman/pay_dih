@@ -1,0 +1,97 @@
+000010081206     A*%%TS  SD  20081206  212814  SBRITTON    REL-V6R1M0  5761-WDS
+000020081206     A*%%EC
+000030081206     A                                      DSPSIZ(24 80 *DS3)
+000040081206     A                                      CF03(03)
+000050011012     A          R SFILE                     SFL
+000060011012     A*%%TS  SD  20011012  170335  SAMMY       REL-V4R4M0  5769-PW1
+000070011012     A            FDATE          8Y 0O 11  9TEXT('Fortnight date')
+000080011012     A                                      DSPATR(PC)
+000090011012     A  11
+000100011012     AO 22                                  DSPATR(RI)
+000110011012     A                                      EDTCDE(W)
+000120011012     A            RRN            3Y 0O 11  3DSPATR(HI)
+000130011012     A                                      EDTCDE(Z)
+000140061121     A          R SFCTL                     SFLCTL(SFILE)
+000150061121     A*%%TS  SD  20061121  204053  SBRITTON    REL-V5R4M0  5722-WDS
+000160061121     A  *DS3                                SFLLIN(0004)
+000170061121     A                                      SFLSIZ(0100)
+000180061121     A                                      SFLPAG(0012)
+000190061121     A  77                                  CA15(15)
+000200061121     A                                      CA02(02)
+000210061121     A                                      OVERLAY
+000220061121     A N77                                  ERASE(SFILE)
+000230061121     A  77                                  SFLDSP
+000240061121     A                                      SFLDSPCTL
+000250061121     A  33                                  SFLCLR
+000260061121     A  55                                  SFLEND(*MORE)
+000270061121     A  22                                  SFLMSG('Date entered is not found i-
+000280061121     A                                      n payroll database')
+000290061121     A            @PGM          10A  O  1  2DSPATR(HI)
+000300061121     A                                  2  2USER
+000310061121     A                                      DSPATR(HI)
+000320061121     A                                  1 72SYSNAME
+000330061121     A                                      DSPATR(HI)
+000340061121     A  77                              9 10'Run Date'
+000350061121     A                                      DSPATR(HI)
+000360061121     A  77                             10  8'(YYYY/MM/DD)'
+000370061121     A                                      DSPATR(HI)
+000380061121     A                                  4  2'Enter Effective Date Range for Ret-
+000390061121     A                                      ro. Calcs.:'
+000400061121     A                                      COLOR(BLU)
+000410061121     A            SDATE          8Y 0B  4 50EDTCDE(W)
+000420061121     A  10                                  ERRMSGID(DIH0023 *LIBL/DIHMSGF)
+000430061121     A  77                              9 30'Run Date'
+000440061121     A                                      DSPATR(HI)
+000450061121     A  77                              9 50'Run Date'
+000460061121     A                                      DSPATR(HI)
+000470061121     A  77                              9 70'Run Date'
+000480061121     A                                      DSPATR(HI)
+000490061121     A  77                             10 28'(YYYY/MM/DD)'
+000500061121     A                                      DSPATR(HI)
+000510061121     A  77                             10 48'(YYYY/MM/DD)'
+000520061121     A                                      DSPATR(HI)
+000530061121     A  77                             10 68'(YYYY/MM/DD)'
+000540061121     A                                      DSPATR(HI)
+000550061121     A            RUN_TYPE       1A  B  5 50
+000560061121     A                                  5 21'... and Payroll Run Type.:'
+000570061121     A                                      COLOR(BLU)
+000580061121     A            @DATE         10A  O  2 70DSPATR(HI)
+000590061121     A            CONAME        30A  O  1 26DSPATR(HI)
+000600061121     A                                      DSPATR(UL)
+000610061121     A            @TITLE        40A  O  2 21DSPATR(HI)
+000620061121     A            EDATE          8Y 0B  4 65EDTCDE(W)
+000630061121     A  10                                  ERRMSGID(DIH0023 *LIBL/DIHMSGF)
+000640061121     A                                  4 62'-'
+000650061121     A                                  6 19'Create Payroll on Run Type.:'
+000660061121     A                                      COLOR(BLU)
+000670061121     A            SPC_TYPE       1A  B  6 50
+000680061121     A                                  7 19'Enter Employee Number......:'
+000690061121     A                                      COLOR(BLU)
+000700061121     A            EMP#           6Y 0B  7 50EDTCDE(Z)
+000710061121     A                                  7 58'(Optional)'
+000720061121     A                                  8  5'Omit up to two (2) run dates (opti-
+000730061121     A                                      onal)..:'
+000740061121     A                                      COLOR(BLU)
+000750061121     A            OMITDATE1      8Y 0B  8 50EDTCDE(W)
+000760061121     A                                  8 61','
+000770061121     A                                      DSPATR(HI)
+000780061121     A            OMITDATE2      8Y 0B  8 63EDTCDE(W)
+000790011013     A          R FOOTER
+000800011013     A*%%TS  SD  20011013  141819  SAMMY       REL-V4R4M0  5769-PW1
+000810011013     A                                      FRCDTA
+000820011013     A                                      SLNO(23)
+000830011013     A                                      OVERLAY
+000840011013     A                                  1 31'F3 = End'
+000850011013     A                                      DSPATR(HI)
+000860011013     A            ERRMSG        75A  O  2  3DSPATR(HI)
+000870011013     A                                      DSPATR(BL)
+000880011013     A  77                              1 54'F15 = Generate Pay file'
+000890011013     A                                      DSPATR(HI)
+000900011013     A                                  1  4'F2 = Go Back'
+000910011013     A                                      DSPATR(HI)
+000920081206     A          R MSGDSP
+000930081206     A*%%TS  SD  20081206  212814  SBRITTON    REL-V6R1M0  5761-WDS
+000940081206     A                                      FRCDTA
+000950081206     A                                      SLNO(17)
+000960081206     A                                      OVERLAY
+000970081206     A            MESSAGE       60A  O  1 10DSPATR(HI)

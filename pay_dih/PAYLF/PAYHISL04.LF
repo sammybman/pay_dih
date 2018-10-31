@@ -1,0 +1,5 @@
+000100010423     A          R PHISFMT                   PFILE(PAYHIS)
+000200010905     A          K PHISPDATE
+000300010905     A          K PHISTYPE
+000400010905     A          K PHISDIV
+000500010905     A          K PHISEMP

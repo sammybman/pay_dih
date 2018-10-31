@@ -1,0 +1,151 @@
+000100060707     A*%%TS  SD  20060707  085343  CWILLIAMS   REL-V5R4M0  5722-WDS
+000200950530     A* ********************************************************
+000300020206     A*              D I S E R V    S Y S T E M S              *
+000400020206     A*                CREDIT CONTROL SYSTEM                   *
+000500950905     A*                                                        *
+000600950905     A*                         BY                             *
+000700950905     A*                                                        *
+000800020206     A*       DISERV APPLICATION DEVELOPMENT TEAM              *
+000900950905     A*                                                        *
+001000950905     A*                                                        *
+001100020206     A*       DISPLAY FILE  NAME: EMPRPTSD                     *
+001200950906     A*       RECORD FORMAT NAME: FMT1                         *
+001300950906     A*                           FMT2                         *
+001400950905     A*                                                        *
+001500950906     A*       PROGRAMMER NAME: CHRISTOPHER WILLIAMS            *
+001600950906     A*       DESIGN DATE....: 1995/09/06                      *
+001700950905     A*                                                        *
+001800950905     A*  FILE DESCRIPTION:                                     *
+001900950905     A*                                                        *
+002000950907     A*  THIS FILE IS DESIGNED TO DISPLAY ALL DATA ON          *
+002100950907     A*  PARTS IN STOCK.                                       *
+002200950905     A*                                                        *
+002300950905     A*                                                        *
+002400950905     A*                                                        *
+002500950905     A*                                                        *
+002600950905     A*                                                        *
+002700950905     A*                                                        *
+002800950905     A*                                                        *
+002900950905     A*                                                        *
+003000950905     A*                                                        *
+003100950530     A**********************************************************
+003200060707     A*%%EC
+003300060707     A                                      DSPSIZ(24 80 *DS3)
+003400060707     A                                      REF(*LIBL/FLDREF)
+003500060707     A                                      PRINT
+003600060707     A                                      CA03(03)
+003700060707     A                                      CA02(02)
+003800060707     A                                      CA15(15)
+003900060707     A                                      CA01(01)
+004000060707     A          R FMT1
+004100060707     A*%%TS  SD  20060707  085343  CWILLIAMS   REL-V5R4M0  5722-WDS
+004200060707     A                                      CA05(05)
+004300060707     A            @PGM      R        O  1  2REFFLD(NAME10)
+004400060707     A                                      DSPATR(HI)
+004500060707     A            CONAME    R        O  1 24REFFLD(NAME30)
+004600060707     A                                      DSPATR(HI)
+004700060707     A                                      DSPATR(UL)
+004800060707     A            @MODE          6A  O  1 58DSPATR(ND)
+004900060707     A            @TITLE    R        O  2 20REFFLD(NAME40)
+005000060707     A                                      DSPATR(HI)
+005100060707     A                                  9 10'Enter Period........:'
+005200060707     A                                      DSPATR(HI)
+005300060707     A                                 22 33'F3= End Program'
+005400060707     A                                      DSPATR(HI)
+005500060707     A            ERRMSG        75A  O 24  2DSPATR(HI)
+005600060707     A                                  2 69DATE
+005700060707     A                                      EDTCDE(Y)
+005800060707     A                                      DSPATR(HI)
+005900060707     A                                  1 69SYSNAME
+006000060707     A                                      DSPATR(HI)
+006100060707     A                                  2  2USER
+006200060707     A                                      DSPATR(HI)
+006300060707     A                                  6 18'Select......:'
+006400060707     A                                      DSPATR(HI)
+006500060707     A                                  6 53'1=Liability Detail - EMP'
+006600060707     A                                      DSPATR(HI)
+006700060707     A                                 11 10'Enter Type..........:'
+006800060707     A                                      DSPATR(HI)
+006900060707     A            TYPE           2Y 0B 11 34EDTCDE(Z)
+007000060707     A            PRNO           6Y 0B  9 34EDTCDE(Z)
+007100060707     A  25                                  ERRMSGID(DIH0022 *LIBL/DIHMSGF)
+007200060707     A                                      COMP(GT 0)
+007300060707     A                                  8 53'3=Employee Dbts. & Crds.'
+007400060707     A                                      DSPATR(HI)
+007500060707     A                                 22  7'F1= Type Enquiry'
+007600060707     A                                      DSPATR(HI)
+007700060707     A                                  9 53'4=Liability Summary'
+007800060707     A                                      DSPATR(HI)
+007900060707     A                                 10 53'5=Allowances'
+008000060707     A                                      DSPATR(HI)
+008100060707     A                                 11 53'6=Credit Status Reports'
+008200060707     A                                      DSPATR(HI)
+008300060707     A                                 11 40'(optional)'
+008400060707     A            SEL#           2Y 0B  6 34EDTCDE(Z)
+008500060707     A                                 16 52'10=Savings Withdrawal'
+008600060707     A                                      DSPATR(HI)
+008700060707     A                                 17 52'11=Savings Month-end'
+008800060707     A                                      DSPATR(HI)
+008900060707     A                                 18 52'12=Savings Year-end'
+009000060707     A                                      DSPATR(HI)
+009100060707     A                                 19 52'13=Savings Letters'
+009200060707     A                                      DSPATR(HI)
+009300060707     A                                  7 53'2=Deductions Setup'
+009400060707     A                                      DSPATR(HI)
+009500020206     A          R FMT2
+009600020206     A*%%TS  SD  19990127  154518  SAMMY       REL-V3R7M0  5716-PW1
+009700020206     A                                      CF21(21)
+009800020206     A            @PGM      R        O  1  2REFFLD(NAME10)
+009900020206     A                                      DSPATR(HI)
+010000020206     A                                      COLOR(BLU)
+010100020206     A            CONAME    R        O  1 24REFFLD(NAME30)
+010200020206     A                                      DSPATR(HI)
+010300020206     A                                      DSPATR(UL)
+010400020206     A            @MODE          6A  O  1 58DSPATR(ND)
+010500020206     A            @DATE     R        O  2 70REFFLD(NAME10)
+010600020206     A                                      DSPATR(HI)
+010700020206     A                                      COLOR(BLU)
+010800020206     A            @USER     R        O  2  2REFFLD(NAME10)
+010900020206     A                                      DSPATR(HI)
+011000020206     A                                      COLOR(BLU)
+011100020206     A            @TITLE    R        O  2 20REFFLD(NAME40)
+011200020206     A                                      DSPATR(HI)
+011300020206     A            @TIME          6Y 0O  3 70DSPATR(HI)
+011400020206     A                                      EDTWRD('  :  :  ')
+011500020206     A                                      DSPATR(ND)
+011600020206     A                                  1 70SYSNAME
+011700020206     A                                      COLOR(BLU)
+011800020206     A                                  5 23'These Are The Final Reports Allowe-
+011900020206     A                                      d'
+012000020206     A                                  6 31'For The Period--:'
+012100111116     A            UPD_PRNO       6S 0O  6 50DSPATR(RI)
+012200020206     A                                      DSPATR(BL)
+012300020206     A                                      COLOR(RED)
+012400020206     A                                      DSPATR(UL)
+012500020206     A                                  8 23'Are You Ready To Complete Them?'
+012600020206     A                                 12 21'Key in'
+012700020206     A                                 12 29'YES'
+012800020206     A                                      DSPATR(HI)
+012900020206     A                                      DSPATR(UL)
+013000020206     A                                 12 34'To Complete'
+013100020206     A                                 12 47'NO'
+013200020206     A                                      DSPATR(HI)
+013300020206     A                                      DSPATR(UL)
+013400020206     A                                 12 51'To Go Back'
+013500020206     A                                 15 21'Choice------------------>'
+013600020206     A            ANS            3A  B 15 48DSPATR(HI)
+013700020206     A                                      DFTVAL('NO ')
+013800020206     A                                 24  3'F3->End Pgm'
+013900020206     A                                 19 31'F21-CONFIRM UPDATE!'
+014000020206     A                                      DSPATR(HI)
+014100020206     A                                      DSPATR(RI)
+014200020206     A                                  9 19'!!The Liability Master WILL Be UPD-
+014300020206     A                                      ATED!!'
+014400020206     A                                      DSPATR(RI)
+014500020206     A                                      DSPATR(BL)
+014600020206     A                                      COLOR(RED)
+014700020206     A                                 10 24'!!This Process Is Irreversible!!'
+014800020206     A                                      DSPATR(RI)
+014900020206     A                                      DSPATR(BL)
+015000020206     A                                      COLOR(RED)
+015100020206     A                                      DSPATR(HI)

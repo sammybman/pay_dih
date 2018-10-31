@@ -1,0 +1,115 @@
+000010141009     A*%%TS  SD  20141009  132901  SBRITTON    REL-V7R1M0  5770-WDS
+000020141009     A*%%EC
+000030141009     A                                      DSPSIZ(24 80 *DS3)
+000040141009     A                                      INDARA
+000050141009     A                                      CF03(03)
+000060141008     A          R FMT1
+000070141008     A*%%TS  SD  20141008  171257  SBRITTON    REL-V7R1M0  5770-WDS
+000080141008     A                                      CA01(01)
+000090141008     A                                      CF15(15)
+000100141008     A                                      CF07(07)
+000110141008     A                                  2  3USER
+000120141008     A                                      DSPATR(HI)
+000130141008     A                                  1 71SYSNAME
+000140141008     A                                      DSPATR(HI)
+000150141008     A            @PGM          10A  O  1  3DSPATR(HI)
+000160141008     A            CONAME        30A  O  1 26DSPATR(HI)
+000170141008     A                                      DSPATR(UL)
+000180141008     A            @TITLE        40A  O  2 21DSPATR(HI)
+000190141008     A                                 23 37'F3 - End'
+000200141008     A                                      DSPATR(HI)
+000210141008     A            @DATE         10A  O  2 69DSPATR(HI)
+000220141008     A            ERRMSG        75   O 24  3COLOR(RED)
+000230141008     A                                 23 58'F15 - Confirm'
+000240141008     A                                      DSPATR(HI)
+000250141008     A                                  7  4'Default company code in Kronos..:'
+000260141008     A                                      COLOR(BLU)
+000270141008     A            PIN2DCCODER        B  7 41REFFLD(PIN2FMT/PIN2DCCODE *LIBL/PAY-
+000280141008     A                                      INTF2)
+000290141008     A                                      EDTCDE(Z)
+000300141008     A                                  5 13'Default Settings for Kronos timeke-
+000310141008     A                                      eper Payroll Interface'
+000320141008     A                                      DSPATR(HI)
+000330141008     A                                  9  4'Normal time pay type............:'
+000340141008     A                                      COLOR(BLU)
+000350141008     A            PIN2NTPAY R        B  9 41REFFLD(PIN2FMT/PIN2NTPAY *LIBL/PAYI-
+000360141008     A                                      NTF2)
+000370141008     A                                      EDTCDE(Z)
+000380141008     A                                 11  4'Normal time multiplier..........:'
+000390141008     A                                      COLOR(BLU)
+000400141008     A            PIN2NTMULTR        B 11 41REFFLD(PIN2FMT/PIN2NTMULT *LIBL/PAY-
+000410141008     A                                      INTF2)
+000420141008     A                                      EDTCDE(1)
+000430141008     A                                 13  4'Overtime pay type...............:'
+000440141008     A                                      COLOR(BLU)
+000450141008     A            PIN2OTPAY R        B 13 41REFFLD(PIN2FMT/PIN2OTPAY *LIBL/PAYI-
+000460141008     A                                      NTF2)
+000470141008     A                                      EDTCDE(Z)
+000480141008     A                                 15  4'Overtime multiplier.............:'
+000490141008     A                                      COLOR(BLU)
+000500141008     A            PIN2OTMULTR        B 15 41REFFLD(PIN2FMT/PIN2OTMULT *LIBL/PAY-
+000510141008     A                                      INTF2)
+000520141008     A                                      EDTCDE(1)
+000530141008     A          R SFLREC                    SFL
+000540141008     A*%%TS  SD  20141008  203615  SBRITTON    REL-V7R1M0  5770-WDS
+000550141008     A            SEL#           1A  B  9  6
+000560141008     A            PN3WCAT##      1A  H
+000570141008     A            PIN1DESC  R        B  9 24REFFLD(PIN1FMT/PIN1DESC *LIBL/PAYIN-
+000580141008     A                                      TF1)
+000590141008     A  71                                  DSPATR(RI)
+000600141008     A                                      CHECK(LC)
+000610141008     A            PIN1PAYTP R        B  9 56REFFLD(PIN1FMT/PIN1PAYTP *LIBL/PAYI-
+000620141008     A                                      NTF1)
+000630141008     A                                      EDTCDE(Z)
+000640141008     A  72                                  DSPATR(RI)
+000650141008     A            PIN1MULT  R        B  9 63REFFLD(PIN1FMT/PIN1MULT *LIBL/PAYIN-
+000660141008     A                                      TF1)
+000670141008     A                                      EDTCDE(1)
+000680141008     A  73                                  DSPATR(RI)
+000690141008     A            PIN1KPAYC R        B  9 17REFFLD(PIN1FMT/PIN1KPAYC *LIBL/PAYI-
+000700141008     A                                      NTF1)
+000710141008     A  70
+000720141008     AO 74                                  DSPATR(RI)
+000730141008     A          R SFLCTL                    SFLCTL(SFLREC)
+000740141008     A*%%TS  SD  20141008  181218  SBRITTON    REL-V7R1M0  5770-WDS
+000750141008     A                                      CF10(10)
+000760141008     A                                      CF15(15)
+000770141008     A                                      SFLDSP
+000780141008     A                                      SFLDSPCTL
+000790141008     A  33                                  SFLCLR
+000800141008     A  55                                  SFLEND(*MORE)
+000810141008     A                                      SFLSIZ(0020)
+000820141008     A                                      SFLPAG(0012)
+000830141008     A  70                                  SFLMSG('Invalid Kronos Pay code')
+000840141008     A  71                                  SFLMSG('Description Cannot be blank-
+000850141008     A                                      s')
+000860141008     A  72                                  SFLMSG('Invalid Pay Type')
+000870141008     A  73                                  SFLMSG('Multiplier cannot be zeros')
+000880141008     A  74                                  SFLMSG('Duplicate Pay code specifie-
+000890141008     A                                      d')
+000900141008     A                                  1  3USER
+000910141008     A                                      DSPATR(HI)
+000920141008     A            CONAME        30A  O  1 26DSPATR(HI)
+000930141008     A                                  1 68SYSNAME
+000940141008     A                                      DSPATR(HI)
+000950141008     A            @DATE         10A  O  2 68DSPATR(HI)
+000960141008     A            @TITLE        40A  O  2 21DSPATR(HI)
+000970141008     A            @PGM          10A  O  2  3DSPATR(HI)
+000980141008     A                                  7  4'Delete'
+000990141008     A                                      COLOR(BLU)
+001000141008     A                                  7 17'Kronos pay code and Description'
+001010141008     A                                      COLOR(BLU)
+001020141008     A                                  5 14'F3= Exit'
+001030141008     A                                      DSPATR(HI)
+001040141008     A                                  8  5'(X)'
+001050141008     A                                      COLOR(BLU)
+001060141008     A                                  7 56'Pay'
+001070141008     A                                      COLOR(BLU)
+001080141008     A                                  8 56'Type'
+001090141008     A                                      COLOR(BLU)
+001100141008     A                                  7 63'Multiplier'
+001110141008     A                                      COLOR(BLU)
+001120141008     A                                  5 30'F10 = Add Line'
+001130141008     A                                      DSPATR(HI)
+001140141008     A                                  5 52'F15 = Confirm'
+001150141008     A                                      DSPATR(HI)

@@ -1,0 +1,6 @@
+000100010720     A          R YTDREC                    PFILE(PAYEYTD)
+000200010720     A          K EMP
+000300010720     A          K YEAR                      DESCEND
+000400021030     A          K YTDTYPE
+000500021030     A          K YTDORG
+000600021030     A          S YTDTXFLAG                 COMP(EQ ' ')

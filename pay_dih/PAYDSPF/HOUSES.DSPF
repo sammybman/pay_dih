@@ -1,0 +1,30 @@
+000010960903     A*%%TS  SD  19960903  132342  ANTHONY     REL-V3R1M0  5763-PW1
+000020960903     A*%%EC
+000030960903     A                                      DSPSIZ(24 80 *DS3)
+000040960903     A          R HOUSE1
+000050960903     A*%%TS  SD  19960903  132342  ANTHONY     REL-V3R1M0  5763-PW1
+000060960903     A                                      CF03(03)
+000070960903     A                                  1 37SYSNAME
+000080960903     A                                      DSPATR(UL)
+000090960903     A                                      DSPATR(HI)
+000100960903     A                                  1 69TIME
+000110960903     A                                  1  5DATE
+000120960903     A                                      EDTCDE(Y)
+000130960903     A                                 24 38'f3-end'
+000140960903     A                                  3 27'Maintain House-Keeping File'
+000150960903     A                                      DSPATR(UL)
+000160960903     A                                      DSPATR(HI)
+000170960903     A                                  7  3'Department Number:'
+000180960903     A            DEPT      R     Y  B  7 23REFFLD(TFREC/DEPT PAYLIB/TEAMFILE)
+000190960903     A  01                                  ERRMSG('Invalid Department Code. Ki-
+000200960903     A                                      ndly Retry.')
+000210960903     A  02                                  ERRMSG('Department Already Exists I-
+000220960903     A                                      n File.')
+000230960903     A                                      CHECK(ER)
+000240960903     A                                  7 38'House-keeping amount:'
+000250960903     A            TEAMT     R     Y  B  8 61REFFLD(TFREC/TEAMT PAYLIB/TEAMFILE)
+000260960903     A                                      CHECK(ER)
+000270960903     A                                      COMP(EQ 1000.00)
+000280960903     A                                      DSPATR(ND)
+000290960903     A                                  2  5USER
+000300960903     A                                  7 61'1000.00'

@@ -1,0 +1,31 @@
+000010141008     A*%%TS  SD  20141008  132938  SBRITTON    REL-V7R1M0  5770-WDS
+000020141008     A*%%EC
+000030141008     A                                      DSPSIZ(24 80 *DS3)
+000040141008     A                                      CF03(03)
+000050141008     A          R FMT1
+000060141008     A*%%TS  SD  20141008  132938  SBRITTON    REL-V7R1M0  5770-WDS
+000070141008     A                                      CA01(01)
+000080141008     A                                  2  3USER
+000090141008     A                                      DSPATR(HI)
+000100141008     A                                  1 71SYSNAME
+000110141008     A                                      DSPATR(HI)
+000120141008     A            @PGM          10A  O  1  3DSPATR(HI)
+000130141008     A            CONAME        30A  O  1 26DSPATR(HI)
+000140141008     A                                      DSPATR(UL)
+000150141008     A            @TITLE        40A  O  2 21DSPATR(HI)
+000160141008     A                                 23 37'F3 = End'
+000170141008     A                                      DSPATR(HI)
+000180141008     A            @DATE         10A  O  2 69DSPATR(HI)
+000190141008     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000200141008     A                                  7 26'1. Tax Configuration'
+000210141008     A                                      COLOR(BLU)
+000220141008     A                                  8 26'2. NIS Configuration'
+000230141008     A                                      COLOR(BLU)
+000240141008     A            OPTION         1D 0I 14 26DSPATR(HI)
+000250141008     A                                 14 30'<- Enter Selection'
+000260141008     A                                  9 26'3. Payroll System Parameters'
+000270141008     A                                      COLOR(BLU)
+000280141008     A                                 10 26'4. User Authority Setup'
+000290141008     A                                      COLOR(BLU)
+000300141008     A                                 11 26'5. Kronos Interface Setup'
+000310141008     A                                      COLOR(BLU)

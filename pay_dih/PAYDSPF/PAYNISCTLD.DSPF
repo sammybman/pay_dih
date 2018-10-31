@@ -1,0 +1,192 @@
+000010140922     A*%%TS  SD  20140922  182022  CWILLIAMS   REL-V7R1M0  5770-WDS
+000020140922     A*%%EC
+000030140922     A                                      DSPSIZ(24 80 *DS3)
+000040140922     A                                      CF03(03)
+000050140922     A          R FMT1
+000060140922     A*%%TS  SD  20140922  182022  CWILLIAMS   REL-V7R1M0  5770-WDS
+000070140922     A                                      CA01(01)
+000080140922     A                                      CF15(15)
+000090140922     A                                      CF07(07)
+000100140922     A                                  2  3USER
+000110140922     A                                      DSPATR(HI)
+000120140922     A                                  1 71SYSNAME
+000130140922     A                                      DSPATR(HI)
+000140140922     A            @PGM          10A  O  1  3DSPATR(HI)
+000150140922     A            CONAME        30A  O  1 26DSPATR(HI)
+000160140922     A                                      DSPATR(UL)
+000170140922     A            @TITLE        40A  O  2 21DSPATR(HI)
+000180140922     A                                 23  6'F1- Cycle Codes'
+000190140922     A                                      DSPATR(HI)
+000200140922     A                                 23 37'F3 - End'
+000210140922     A                                      DSPATR(HI)
+000220140922     A                                 19  4'Enter NIS Cycle code.....'
+000230140922     A                                      COLOR(BLU)
+000240140922     A            @DATE         10A  O  2 69DSPATR(HI)
+000250140922     A            NIS_CYCLE      2A  B 19 31DSPATR(HI)
+000260140922     A                                  5  4'Employer Registration....'
+000270140922     A                                      COLOR(BLU)
+000280140922     A            PNIREG    R        B  5 31REFFLD(PNIFMT/PNIREG *LIBL/PAYNISCT-
+000290140922     A                                      L)
+000300140922     A                                  7  4'Employer Contr. (%)......'
+000310140922     A                                      COLOR(BLU)
+000320140922     A            PNICPER   R        B  7 31REFFLD(PNIFMT/PNICPER *LIBL/PAYNISC-
+000330140922     A                                      TL)
+000340140922     A                                      EDTCDE(1)
+000350140922     A                                  9  4'Employee Contr. (%)......'
+000360140922     A                                      COLOR(BLU)
+000370140922     A            PNIEPER   R        B  9 31REFFLD(PNIFMT/PNIEPER *LIBL/PAYNISC-
+000380140922     A                                      TL)
+000390140922     A                                      EDTCDE(1)
+000400140922     A                                 11  4'Min. Age Covered.........'
+000410140922     A                                      COLOR(BLU)
+000420140922     A            PNIMIAGE  R        B 11 31REFFLD(PNIFMT/PNIMIAGE *LIBL/PAYNIS-
+000430140922     A                                      CTL)
+000440140922     A                                      EDTCDE(Z)
+000450140922     A                                 13  4'Max. Age Covered.........'
+000460140922     A                                      COLOR(BLU)
+000470140922     A            PNIMXAGE  R        B 13 31REFFLD(PNIFMT/PNIMXAGE *LIBL/PAYNIS-
+000480140922     A                                      CTL)
+000490140922     A                                      EDTCDE(Z)
+000500140922     A                                 15  4'Contr.% Age not Covered..'
+000510140922     A                                      COLOR(BLU)
+000520140922     A            PNINPER   R        B 15 31REFFLD(PNIFMT/PNINPER *LIBL/PAYNISC-
+000530140922     A                                      TL)
+000540140922     A                                      EDTCDE(1)
+000550140922     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000560140922     A                                 23 58'F15 - Confirm'
+000570140922     A                                      DSPATR(HI)
+000580140922     A                                 22 20'F7=Add/Amend Alternate Contributio-
+000590140922     A                                      n Config'
+000600140922     A                                      DSPATR(RI)
+000610131024     A          R FMT2
+000620131024     A*%%TS  SD  20131024  093847  CWILLIAMS   REL-V7R1M0  5770-WDS
+000630131024     A                                      CF15(15)
+000640131024     A                                      CA02(02)
+000650131024     A                                  2  3USER
+000660131024     A                                      DSPATR(HI)
+000670131024     A                                  1 71SYSNAME
+000680131024     A                                      DSPATR(HI)
+000690131024     A            @PGM          10A  O  1  3DSPATR(HI)
+000700131024     A            CONAME        30A  O  1 26DSPATR(HI)
+000710131024     A                                      DSPATR(UL)
+000720131024     A            @TITLE        40A  O  2 21DSPATR(HI)
+000730131024     A                                 23  5'F2 - Go Back'
+000740131024     A                                      DSPATR(HI)
+000750131024     A            @DATE         10A  O  2 69DSPATR(HI)
+000760131024     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000770131024     A                                 23 62'F15 - Confirm'
+000780131024     A                                      DSPATR(HI)
+000790131024     A                                 23 37'F3 - End'
+000800131024     A                                      DSPATR(HI)
+000810131024     A                                 10  4'Min. Insurable Earnings..'
+000820131024     A                                      COLOR(BLU)
+000830131024     A            PNI2MIN   R        B 10 32REFFLD(PNI2FMT/PNI2MIN *LIBL/PAYNIS-
+000840131024     A                                      CTL2)
+000850131024     A                                      EDTCDE(1)
+000860131024     A                                 13  4'Max. Insurable Earnings..'
+000870131024     A                                      COLOR(BLU)
+000880131024     A            PNI2MAX   R        B 13 32REFFLD(PNI2FMT/PNI2MAX *LIBL/PAYNIS-
+000890131024     A                                      CTL2)
+000900131024     A                                      EDTCDE(1)
+000910131024     A                                  5 12'Nis Cycle.......:'
+000920131024     A                                      DSPATR(HI)
+000930131024     A            NIS_CYCLE      2A  O  5 31DSPATR(HI)
+000940131024     A            CYC_NAME      25A  O  5 34DSPATR(HI)
+000950140922     A          R FMT3
+000960140922     A*%%TS  SD  20140922  170208  CWILLIAMS   REL-V7R1M0  5770-WDS
+000970140922     A                                      CA01(01)
+000980140922     A                                      CF15(15)
+000990140922     A                                  2  3USER
+001000140922     A                                      DSPATR(HI)
+001010140922     A                                  1 71SYSNAME
+001020140922     A                                      DSPATR(HI)
+001030140922     A            @PGM          10A  O  1  3DSPATR(HI)
+001040140922     A            CONAME        30A  O  1 26DSPATR(HI)
+001050140922     A                                      DSPATR(UL)
+001060140922     A            @TITLE        40A  O  2 21DSPATR(HI)
+001070140922     A                                 23  6'F1- Cycle Codes'
+001080140922     A                                      DSPATR(HI)
+001090140922     A                                 23 37'F3 - End'
+001100140922     A                                      DSPATR(HI)
+001110140922     A                                 18  4'Earning Category to use..'
+001120140922     A                                      COLOR(BLU)
+001130140922     A            @DATE         10A  O  2 69DSPATR(HI)
+001140140922     A                                  5  4'NIS Configuraton Desc.:'
+001150140922     A                                      COLOR(BLU)
+001160140922     A                                  7  4'Employer Contr. (%)......'
+001170140922     A                                      COLOR(BLU)
+001180140922     A            PNI3CPER# R        B  7 31REFFLD(PNIFMT/PNICPER *LIBL/PAYNISC-
+001190140922     A                                      TL)
+001200140922     A                                      EDTCDE(1)
+001210140922     A                                      DSPATR(HI)
+001220140922     A                                  9  4'Employee Contr. (%)......'
+001230140922     A                                      COLOR(BLU)
+001240140922     A            PNI3EPER# R        B  9 31REFFLD(PNIFMT/PNIEPER *LIBL/PAYNISC-
+001250140922     A                                      TL)
+001260140922     A                                      EDTCDE(1)
+001270140922     A                                      DSPATR(HI)
+001280140922     A            ERRMSG        75A  O 24  3DSPATR(HI)
+001290140922     A                                 23 58'F15 - Confirm'
+001300140922     A                                      DSPATR(HI)
+001310140922     A            PNI3DESC# R        B  5 31REFFLD(PAYNISCTL3/PNI3DESC *LIBL/PA-
+001320140922     A                                      YNISCTL3)
+001330140922     A                                      DSPATR(HI)
+001340140922     A                                 12  4'Minimum Gross ...........'
+001350140922     A                                      COLOR(BLU)
+001360140922     A            PNI3MIN#  R        B 12 31REFFLD(PAYNISCTL3/PNI3MIN *LIBL/PAY-
+001370140922     A                                      NISCTL3)
+001380140922     A                                      EDTCDE(1)
+001390140922     A                                      DSPATR(HI)
+001400140922     A                                 14  4'Maximum Gross ...........'
+001410140922     A                                      COLOR(BLU)
+001420140922     A            PNI3MAX#  R        B 14 31REFFLD(PAYNISCTL3/PNI3MAX *LIBL/PAY-
+001430140922     A                                      NISCTL3)
+001440140922     A                                      EDTCDE(1)
+001450140922     A                                      DSPATR(HI)
+001460140922     A            PNI3ECAT# R        B 18 31REFFLD(PAYNISCTL3/PNI3ECAT *LIBL/PA-
+001470140922     A                                      YNISCTL3)
+001480140922     A                                      DSPATR(HI)
+001490140922     A                                  3 11'Wage Category Code..'
+001500140922     A                                      COLOR(BLU)
+001510140922     A            PN3WCAT#  R        O  3 36REFFLD(PAYNISCTL3/PN3WCAT *LIBL/PAY-
+001520140922     A                                      NISCTL3)
+001530140922     A                                      DSPATR(RI)
+001540140922     A                                 16  4'NIS Cycle Code...........'
+001550140922     A                                      COLOR(BLU)
+001560140922     A            PNI3CYC#  R        B 16 31REFFLD(PAYNISCTL3/PNI3CYC *LIBL/PAY-
+001570140922     A                                      NISCTL3)
+001580140922     A                                      DSPATR(HI)
+001590140922     A          R SFLREC                    SFL
+001600140922     A*%%TS  SD  20140922  181152  CWILLIAMS   REL-V7R1M0  5770-WDS
+001610140922     A            SEL#           1A  B  9  6
+001620140922     A            PNI3DESC# R        O  9 17REFFLD(PAYNISCTL3/PNI3DESC *LIBL/PA-
+001630140922     A                                      YNISCTL3)
+001640140922     A                                      DSPATR(HI)
+001650140922     A            PN3WCAT##      1A  H
+001660140922     A          R SFLCTL                    SFLCTL(SFLREC)
+001670140922     A*%%TS  SD  20140922  145941  CWILLIAMS   REL-V7R1M0  5770-WDS
+001680140922     A                                      CF10(10)
+001690140922     A                                      SFLDSP
+001700140922     A                                      SFLDSPCTL
+001710140922     A  33                                  SFLCLR
+001720140922     A  55                                  SFLEND(*MORE)
+001730140922     A                                      SFLSIZ(0020)
+001740140922     A                                      SFLPAG(0005)
+001750140922     A                                  1  3USER
+001760140922     A                                      DSPATR(HI)
+001770140922     A            CONAME        30   O  1 26DSPATR(HI)
+001780140922     A                                  1 68SYSNAME
+001790140922     A                                      DSPATR(HI)
+001800140922     A            @DATE         10   O  2 68DSPATR(HI)
+001810140922     A            @TITLE        40   O  2 21DSPATR(HI)
+001820140922     A            @PGM          10   O  2  3DSPATR(HI)
+001830140922     A                                  7  4'Select'
+001840140922     A                                      COLOR(BLU)
+001850140922     A                                  7 17'Description'
+001860140922     A                                      COLOR(BLU)
+001870140922     A                                  5  5'F10 = New Contribution Config'
+001880140922     A                                      DSPATR(RI)
+001890140922     A                                  5 40'F3= Exit'
+001900140922     A                                      COLOR(BLU)
+001910140922     A                                  8  5'(X)'
+001920140922     A                                      COLOR(BLU)

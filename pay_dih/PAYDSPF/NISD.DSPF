@@ -1,0 +1,39 @@
+000010980228     A*%%TS  SD  19980228  172605  SAMMY       REL-V3R2M0  5763-PW1
+000020980228     A*%%EC
+000030980228     A                                      DSPSIZ(24 80 *DS3)
+000040980228     A                                      CF03(03)
+000050980228     A          R SELOPT
+000060980228     A*%%TS  SD  19980228  172605  SAMMY       REL-V3R2M0  5763-PW1
+000070980228     A                                  1 32'BANKS DIH LIMITED'
+000080980228     A                                      DSPATR(HI)
+000090980228     A                                      DSPATR(UL)
+000100980228     A                                  2 33'N.I.S. Selection'
+000110980228     A                                      DSPATR(UL)
+000120980228     A                                      DSPATR(HI)
+000130980228     A                                  2  3DATE
+000140980228     A                                      EDTCDE(Y)
+000150980228     A                                  2 65TIME
+000160980228     A                                  1  3USER
+000170980228     A                                 24 37'F3 - end'
+000180980228     A                                      DSPATR(HI)
+000190980228     A                                  5  9'Select Report Type -'
+000200980228     A            REPTYP         1A  I  5 42VALUES('R' 'C' 'O')
+000210980228     A                                  5 51'R = Regular/Execs'
+000220980228     A                                  6 51'C = Casual'
+000230980228     A                                  7 51'O = On Leave Employees'
+000240980228     A                                 10  9'Enter Payroll Date for report -'
+000250980228     A            REPDAT         6D  I 10 42DFT('000000')
+000260980228     A                                 14  9'To include Voucher Transactions'
+000270980228     A                                 15  9'in the report , enter voucher'
+000280980228     A                                 16  9'Payment date -'
+000290980228     A            VOUDAT         6D  I 16 42DFT('000000')
+000300980228     A                                 20  8'NOTE: If vouchers date is the same-
+000310980228     A                                       as the payroll date there is no'
+000320980228     A                                 21 14'need to enter into the voucher pay-
+000330980228     A                                      ment date field.'
+000340980228     A                                 10 51'(DDMMYY)'
+000350980228     A                                 16 51'(DDMMYY)'
+000360980228     A                                  1 65SYSNAME
+000370980228     A                                  9  9'Enter Transaction Period      -'
+000380980228     A            PRD            6D 0I  9 42
+000390980228     A                                  9 51'(YYYYMM)'
