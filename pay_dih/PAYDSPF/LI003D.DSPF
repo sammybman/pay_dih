@@ -1,0 +1,65 @@
+000010020412     A*%%TS  SD  20020412  135003  SAMMY       REL-V4R4M0  5769-PW1
+000020960802     A*
+000030960802     A*
+000040960802     A* ********************************************************
+000050960802     A*              B A N K S    D I H    L T D.              *
+000060960802     A*                                                        *
+000070960802     A*                                                        *
+000080010117     A*       DISPLAY FILE  NAME: PUR01D                       *
+000090000816     A*       RECORD FORMAT NAME:                              *
+000100000816     A*                                                        *
+000110000816     A*                                                        *
+000120960802     A*                                                        *
+000130000816     A*       PROGRAMMER NAME: ALLISON FUNG                    *
+000140000816     A*       DATE ..........: 16/08/2000                      *
+000150960802     A*                                                        *
+000160001120     A*       FILE DESCRIPTION:                                *
+000170001120     A*       THIS FILE IS USED TO RUN THE MONTHLY             *
+000180001120     A*       PURCHASE LISTINGS WITH TRANSACTIONS              *
+000190001120     A*       PASSING THROUGH THE SALES/WAREHOUSE              *
+000200001120     A*       SYSTEM.                                          *
+000210960802     A*                                                        *
+000220960802     A**********************************************************
+000230020412     A*%%EC
+000240020412     A                                      DSPSIZ(24 80 *DS3)
+000250020412     A                                      REF(*LIBL/FLDREF)
+000260020412     A                                      PRINT
+000270020412     A                                      ERRSFL
+000280020412     A                                      CF03(03)
+000290960802     A**
+000300020412     A          R FMT1
+000310020412     A*%%TS  SD  20020412  135003  SAMMY       REL-V4R4M0  5769-PW1
+000320020412     A                                      CA01(01)
+000330020412     A                                      CA05(05)
+000340020412     A            CONAME        30A  O  1 26DSPATR(HI)
+000350020412     A                                      DSPATR(UL)
+000360020412     A            @TITLE        40A  O  2 21DSPATR(HI)
+000370020412     A                                 23 31'F3 = End Program'
+000380020412     A                                      DSPATR(HI)
+000390020412     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000400020412     A                                  6  5'Select Employee Types .........:'
+000410020412     A                                      COLOR(BLU)
+000420020412     A                                  1  2USER
+000430020412     A                                      DSPATR(HI)
+000440020412     A            @PGM          10A  O  2  2DSPATR(HI)
+000450020412     A            @DATE         10A  O  2 70DSPATR(HI)
+000460020412     A                                 23  3'F1= Emp.Type List'
+000470020412     A                                      DSPATR(HI)
+000480020412     A                                 13  5'Select Report Sequence.........:'
+000490020412     A                                      COLOR(BLU)
+000500020412     A                                  1 72SYSNAME
+000510020412     A                                      DSPATR(HI)
+000520020412     A            LIST          20A  B  6 40DSPATR(HI)
+000530020412     A            SEQ            1Y 0B 13 40DSPATR(HI)
+000540020412     A                                      EDTCDE(Z)
+000550020412     A                                 13 44'1 = by Employee Number'
+000560020412     A                                 14 44'2 = by Surname ,First Name'
+000570020412     A                                 15 44'3 = by Department ,Emp.Number'
+000580020412     A                                  7 24'(List Types without spaces startin-
+000590020412     A                                      g from the left)'
+000600020412     A                                  8 15'or'
+000610020412     A                                 10  5'Select Employee Class..........:'
+000620020412     A                                      COLOR(BLU)
+000630020412     A            EMP_CLASS      3A  B 10 40DSPATR(HI)
+000640020412     A                                      CHECK(RB)
+000650020412     A                                  6 62'(*ALLACTIVE ,*ALL)'

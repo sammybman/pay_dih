@@ -1,0 +1,4 @@
+000100080221     A          R PNISFMT                   PFILE(PAYNISRDAT)
+000200080221     A          K PNRNDATE
+000300080221     A          K PNRTYPE
+000400080221     A          K PNREMP

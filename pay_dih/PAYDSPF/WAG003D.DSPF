@@ -1,0 +1,70 @@
+000010971001     A*%%TS  SD  19971001  214739  ANTHONY     REL-V3R2M0  5763-PW1
+000020971001     A*%%EC
+000030971001     A                                      DSPSIZ(24 80 *DS3)
+000040971001     A                                      CF03(03)
+000050971001     A                                      CF07(07)
+000060971001     A                                      CF08(08)
+000070971001     A          R SFILE                     SFL
+000080971001     A*%%TS  SD  19971001  214246  ANTHONY     REL-V3R2M0  5763-PW1
+000090971001     A            UCLASS    R        O 10  2REFFLD(EMPDREC/CLASS PAYLIB/EMPSM)
+000100971001     A                                      DSPATR(HI)
+000110971001     A            EWG_PER   R        O 10  9REFFLD(EMPDREC/WG_PER PAYLIB/EMPSM)
+000120971001     A                                      EDTCDE(J)
+000130971001     A            OPT            1A  B 10 25SFLCSRPRG
+000140971001     A            ICROPT         1A  B 10 46SFLCSRPRG
+000150971001     A          R SFCTL                     SFLCTL(SFILE)
+000160971001     A*%%TS  SD  19971001  214739  ANTHONY     REL-V3R2M0  5763-PW1
+000170971001     A                                      SFLSIZ(0100)
+000180971001     A                                      SFLPAG(0012)
+000190971001     A                                      OVERLAY
+000200971001     A                                      SFLDSP
+000210971001     A                                      SFLDSPCTL
+000220971001     A  12                                  SFLCLR
+000230971001     A N20                                  SFLEND(*MORE)
+000240971001     A            @PGM          10A  O  1  4
+000250971001     A                                  2  4USER
+000260971001     A                                  1 32'Banks DiH Limited'
+000270971001     A                                      DSPATR(UL)
+000280971001     A                                      DSPATR(HI)
+000290971001     A                                  1 64SYSNAME
+000300971001     A                                  2 64DATE
+000310971001     A                                      EDTCDE(Y)
+000320971001     A                                  7  3'To update all other classes now , -
+000330971001     A                                      enter Y     ->'
+000340971001     A                                  8  7'Percentage'
+000350971001     A                                  9  7'Incr./Decr.'
+000360971001     A                                  8 20'Update Salaries'
+000370971001     A                                  9 23'Y or N'
+000380971001     A                                  2 30'Employee salary update'
+000390971001     A                                      DSPATR(UL)
+000400971001     A                                      DSPATR(HI)
+000410971001     A                                  4  3'To update Caribanks personnel , En-
+000420971001     A                                      ter Y       ->'
+000430971001     A                                  5  3'To update Security personnel , Ent-
+000440971001     A                                      er Y        ->'
+000450971001     A            GOPT           1A  I  7 52DFT('N')
+000460971001     A            MOPT           1A  I  4 52DFT('N')
+000470971001     A            SOPT           1A  I  5 52DFT('N')
+000480971001     A                                  6  3'To update Casuals , Enter percenta-
+000490971001     A                                      ge increase ->'
+000500971001     A            CS_PER         4Y 1B  6 52EDTCDE(1)
+000520971001     A                                  6 58'%'
+000530971001     A                                      DSPATR(HI)
+000540971001     A                                  8 38'Update Using Incr.'
+000550971001     A                                  9 43'Y or N'
+000560971001     A                                  4 61'Use Increment->'
+000570971001     A                                  5 61'Use Increment->'
+000580971001     A            M_INCR         1A  I  4 78CHECK(AB)
+000590971001     A                                      VALUES('Y' 'N')
+000600971001     A            S_INCR         1A  I  5 78CHECK(AB)
+000610971001     A                                      VALUES('Y' 'N')
+000620960923     A          R FOOTER
+000630960923     A*%%TS  SD  19960923  121948  SAMMY       REL-V3R1M0  5763-PW1
+000640960923     A                                      FRCDTA
+000650960923     A                                      SLNO(23)
+000660960923     A                                      OVERLAY
+000670960923     A                                  1 14'F3 - End      F7 - Save Master Fil-
+000680960923     A                                      e  F8 - Update file'
+000690960923     A                                      DSPATR(HI)
+000700960923     A            MSGLIN        64   O  2  9DSPATR(HI)
+000710960923     A                                      DSPATR(BL)

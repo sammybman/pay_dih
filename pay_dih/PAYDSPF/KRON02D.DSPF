@@ -1,0 +1,70 @@
+000010001206     A*%%TS  SD  20001206  112052  SAMMY       REL-V4R4M0  5769-PW1
+000020001206     A*%%EC
+000030001206     A                                      DSPSIZ(24 80 *DS3)
+000040001206     A                                      CA12
+000050980206     A          R BEGDSP
+000060980206     A*%%TS  SD  19980206  154314  SAMMY       REL-V3R2M0  5763-PW1
+000070980206     A                                      OVERLAY
+000080980206     A                                  9 11'Use this application to perform al-
+000090980206     A                                      l the common tasks'
+000100980206     A                                 10 11'associated with KRONOS Timekeeper -
+000110980206     A                                      Central.'
+000120980206     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000130980206     A                                 23  3'F12 - Cancel Menu'
+000140980206     A                                      DSPATR(HI)
+000150980206     A          R MENUBAR
+000160980206     A*%%TS  SD  19980206  155318  SAMMY       REL-V3R2M0  5763-PW1
+000170980206     A                                      OVERLAY
+000180980206     A                                      MNUBAR
+000190980206     A                                      MNUBARDSP
+000200980206     A            MNUFLD         2Y 0B  1  2MNUBARCHC(1 TASK '>User Tasks')
+000210980206     A                                      MNUBARCHC(2 EDIT '>Maintainance')
+000220980206     A                                      MNUBARCHC(3 VIEW '>View')
+000230980206     A                                      MNUBARCHC(4 REPORT '>Report')
+000240980206     A                                      MNUBARCHC(5 EXIT 'E>xit')
+000250980206     A          R TASK
+000260980206     A*%%TS  SD  19980206  155057  SAMMY       REL-V3R2M0  5763-PW1
+000270980206     A                                      PULLDOWN(*SLTIND *RSTCSR)
+000280980206     A            F1             2Y 0B  1  1SNGCHCFLD
+000290980206     A                                      CHECK(ER)
+000300980206     A                                      CHOICE(1 '>Update Kronos Record')
+000310980206     A                                      CHOICE(2 '>Rewrite interface File')
+000320980206     A                                      CHOICE(3 '>Create Payroll File')
+000330980209     A                                      CHOICE(4 'Re>fresh Payroll Files')
+000340980209     A                                      CHOICE(5 'Re>gular Timecard Entry')
+000350980209     A                                      CHOICE(6 'C>asual Timecard Entry')
+000360980206     A          R EDIT
+000370980206     A*%%TS  SD  19980206  154107  SAMMY       REL-V3R2M0  5763-PW1
+000380980206     A                                      PULLDOWN(*SLTIND *RSTCSR)
+000390980206     A            F1             2Y 0B  1  1SNGCHCFLD
+000400980206     A                                      CHECK(ER)
+000410980206     A                                      CHOICE(1 '>Class Profiles')
+000420980206     A                                      CHOICE(2 '>Terminal Groups')
+000430980206     A                                      CHOICE(3 '>Restriction Profiles')
+000440980206     A                                      CHOICE(4 '>Accural Fields')
+000450980206     A                                      CHOICE(5 '>Schedule Names')
+000460001206     A          R REPORT
+000470001206     A*%%TS  SD  20001206  112052  SAMMY       REL-V4R4M0  5769-PW1
+000480001206     A                                      PULLDOWN(*RSTCSR)
+000490001206     A            F1             2Y 0B  1  1SNGCHCFLD
+000500001206     A                                      CHECK(ER)
+000510001206     A                                      CHOICE(1 'Payroll >Query')
+000520001206     A                                      CHOICE(2 '>Casual Timecards')
+000530001206     A                                      CHOICE(3 '>Regular Timecards')
+000540980206     A          R VIEW
+000550980206     A*%%TS  SD  19980206  144257  SAMMY       REL-V3R2M0  5763-PW1
+000560980206     A                                      PULLDOWN(*SLTIND *RSTCSR)
+000570980206     A            F1             2Y 0B  1  1SNGCHCFLD
+000580980206     A                                      CHECK(ER)
+000590980206     A                                      CHOICE(1 '>Class Profiles')
+000600980206     A                                      CHOICE(2 '>Terminal Groups')
+000610980206     A                                      CHOICE(3 '>Restriction Profiles')
+000620980206     A                                      CHOICE(4 '>Accrual Fields')
+000630980206     A                                      CHOICE(5 '>Schedule Names')
+000640980206     A          R EXIT
+000650980206     A*%%TS  SD  19980206  144257  SAMMY       REL-V3R2M0  5763-PW1
+000660980206     A                                      PULLDOWN(*SLTIND *RSTCSR)
+000670980206     A            F1             2Y 0B  1  1SNGCHCFLD
+000680980206     A                                      CHECK(ER)
+000690980206     A                                      CHOICE(1 '>Exit Program')
+000700980206     A                                      CHOICE(2 '>Resume Application')

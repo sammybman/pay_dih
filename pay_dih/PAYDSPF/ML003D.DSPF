@@ -1,0 +1,63 @@
+000010980805     A*%%TS  SD  19980805  151919  SAMMY       REL-V3R7M0  5716-PW1
+000020980805     A*%%EC
+000030980805     A                                      DSPSIZ(24 80 *DS3)
+000040980805     A                                      CF03(03)
+000050980805     A          R SELOPT
+000060980805     A*%%TS  SD  19980805  151919  SAMMY       REL-V3R7M0  5716-PW1
+000070980805     A                                  1 32'BANKS DIH LIMITED'
+000080980805     A                                      DSPATR(HI)
+000090980805     A                                      DSPATR(UL)
+000100980805     A                                  2 28'S e l e c t  D i s p l a y'
+000110980805     A                                      DSPATR(UL)
+000120980805     A                                      DSPATR(HI)
+000130980805     A                                  2 65DATE
+000140980805     A                                      EDTCDE(Y)
+000150980805     A                                  2  3USER
+000160980805     A                                 24 24'F3 - End'
+000170980805     A                                      DSPATR(HI)
+000180980805     A                                  1 65SYSNAME
+000190980805     A            @PGM          10A  O  1  3
+000200980805     A            MLEMP     R     D  I  6 34REFFLD(MLREC/MLEMP PRGPROGS/MLM)
+000210980805     A  02                                  ERRMSGID(GLR0008 PRGPROGS/GLEDMESS)
+000220980805     A  05                                  ERRMSGID(GLR0027 PRGPROGS/GLEDMESS)
+000230980805     A                                  6  7'ENTER EMPLOYEE NUMBER =>'
+000240980805     A            ERRMSG        75   O 23  4DSPATR(HI)
+000250960306     A          R REC
+000260960306     A*%%TS  SD  19960306  132845  SAMMY       REL-V3R1M0  5763-PW1
+000270960306     A                                      CF04(04)
+000280960306     A                                      SLNO(08)
+000290960306     A                                      CLRL(*NO)
+000300960306     A                                      OVERLAY
+000310960306     A                                 17 35'F4 - Delete'
+000320960306     A                                      DSPATR(HI)
+000330960306     A                                 17 51'Enter to continue'
+000340960306     A                                      DSPATR(HI)
+000350960306     A                                  2 21'INITAL LOAN AMOUNT:'
+000360960306     A            MLIAMT    R        B  2 43REFFLD(MLREC/MLIAMT PRGPROGS/MLM)
+000370960306     A                                      EDTCDE(1)
+000380960306     A                                      COMP(GT .00)
+000390960306     A                                  4 21'MONTHLY RE-PAYMENT:'
+000400960306     A            MLMAMT    R        B  4 43REFFLD(MLREC/MLMAMT PRGPROGS/MLM)
+000410960306     A                                      EDTCDE(1)
+000420951108     A          R RECSFL                    SFL
+000430951108     A*%%TS  SD  19951108  162140  SAMMY       REL-V2R3M0  5738-PW1
+000440951108     A            MLEMP     R        O  3 11REFFLD(MLREC/MLEMP PRGPROGS/MLM)
+000450951108     A                                      DSPATR(HI)
+000460951108     A                                      EDTCDE(Z)
+000470951108     A            OPT#           1A  I  3  3
+000480951108     A            NAME          26A  O  3 22DSPATR(HI)
+000490951106     A          R RECCTL                    SFLCTL(RECSFL)
+000500951106     A*%%TS  SD  19951106  153501  SAMMY       REL-V2R3M0  5738-PW1
+000510951106     A                                      SFLDSP
+000520951106     A                                      SFLDSPCTL
+000530951106     A  12                                  SFLCLR
+000540951106     A N20                                  SFLEND(*MORE)
+000550951106     A                                      SFLSIZ(0100)
+000560951106     A                                      SFLPAG(0008)
+000570951106     A                                      WINDOW(9 15 13 50)
+000580951106     A                                  2 12'Emp.'
+000590951106     A                                      DSPATR(UL)
+000600951106     A                                  2  3'X'
+000610951106     A                                      DSPATR(UL)
+000620951106     A                                  2 30'Name'
+000630951106     A                                      DSPATR(UL)

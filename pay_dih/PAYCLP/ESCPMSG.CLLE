@@ -1,0 +1,15 @@
+000100941121/* ******************************************************** */
+000200970715/*  DEFAULT MESSAGE HANDLING PROGRAM -FOR ESCAPE MESSAGES   */
+000300970715/*  CREATED BY - S.BRITTON                                  */
+000400941121/* ******************************************************** */
+000500011106             PGM        PARM(&PGM &MSGID)
+000600951026/*                                     */
+000700970715             DCL        VAR(&PGM) TYPE(*CHAR) LEN(10)
+000800971106             DCL        VAR(&LIB) TYPE(*CHAR) LEN(10)
+000900971106             DCL        VAR(&FILE) TYPE(*CHAR) LEN(10)
+001000970715             DCL        VAR(&MSGID) TYPE(*CHAR) LEN(7)
+001100970715
+001200011106             SNDPGMMSG  MSGID(&MSGID) MSGF(QGPL/DIHMSGF) TOPGMQ(*PRV +
+001300011106                          (&PGM)) MSGTYPE(*ESCAPE)
+001400951026/*                                     */
+001500951014             ENDPGM

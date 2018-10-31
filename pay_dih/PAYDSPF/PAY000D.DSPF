@@ -1,0 +1,173 @@
+000100041211     A*%%TS  SD  20041211  113642  SBRITTON    REL-V5R3M0  5722-WDS
+000200041211     A*%%EC
+000300041211     A                                      DSPSIZ(24 80 *DS3)
+000400041211     A                                      MNUBARSW
+000500041211     A                                      CF04(04)
+000600041211     A                                      CF07(07)
+000700000205     A          R FMT1
+000800000205     A                                      CF03(03)
+000900000205     A            @PGM          10A  O  1  4DSPATR(HI)
+001000000205     A                                  2  4USER
+001100000205     A                                      DSPATR(HI)
+001200000205     A                                  1 69SYSNAME
+001300000205     A                                      DSPATR(HI)
+001400000205     A            CONAME    R        O  1 26REFFLD(RFLDFMT/NAME30 *LIBL/FLDREF)
+001500000205     A                                      DSPATR(HI)
+001600000205     A                                      DSPATR(UL)
+001700000205     A            @TITLE    R        O  2 21REFFLD(RFLDFMT/NAME40 *LIBL/FLDREF)
+001800000205     A                                      DSPATR(HI)
+001900000205     A                                 12 11'Please Key In I.D. Code-->'
+002000000205     A                                      DSPATR(HI)
+002100000205     A            PASSWORD  R        B 12 38REFFLD(CAFMT/CAURID *LIBL/CASHCON)
+002200000205     A                                      DSPATR(ND)
+002300000205     A                                      DSPATR(PC)
+002400000205     A                                      DSPATR(CS)
+002500000205     A  50                                  ERRMSG('Invalid User I.D.Code Enter-
+002600000205     A                                      ed, Please Try Again.')
+002700000205     A  52                                  ERRMSG('Next Not Valid Attempt Sign-
+002800000205     A                                      s Off User.')
+002900000205     A  54                                  ERRMSG('Cannot sign-on from this di-
+003000000205     A                                      splay')
+003100000205     A  51                                  ERRMSGID(DIH0022 *LIBL/DIHMSGF)
+003200000205     A            @DATE         10A  O  2 69DSPATR(HI)
+003300000205     A            ERRMSG        75   O 24  3DSPATR(BL)
+003400000205     A                                      COLOR(RED)
+003500010227     A          R MENUBAR
+003600010227     A                                      OVERLAY
+003700010227     A                                      PROTECT
+003800010227     A                                      MNUBAR
+003900010227     A                                      MNUBARDSP
+004000010227     A                                      MNUCNL(CA12 12)
+004100010227     A            MNUFLD         2Y 0B  1  2CHCSLT((*COLOR TRQ))
+004200010424     A                                      MNUBARCHC(1 OPTS '>Payroll')
+004300010227     A                                      MNUBARCHC(2 MAINT '>Maintenance')
+004400010424     A                                      MNUBARCHC(3 VIEW '>View')
+004500010424     A                                      MNUBARCHC(4 REPORT '>Reports')
+004600020313     A                                      MNUBARCHC(5 UTILCTL '>Utilities')
+004700011007     A                                      MNUBARCHC(6 EXIT '>Exit')
+004800010816     A          R OPTS
+004900010816     A*%%TS  SD  20010816  185250  SAMMY       REL-V4R4M0  5769-PW1
+005000010816     A                                      PULLDOWN(*RSTCSR)
+005100010816     A            F1             2Y 0B  1  1SNGCHCFLD
+005200010816     A                                      CHECK(ER)
+005300011007     A                                      CHOICE(1 '>Create Payroll Files')
+005400011007     A                                      CHOICE(2 'H>ours Entry')
+005500011007     A                                      CHOICE(3 'Departmental Payments >Se-
+005600010816     A                                      tup')
+005700011007     A                                      CHOICE(4 '>Maintain Employee Timesh-
+005800010816     A                                      eets')
+005900011007     A                                      CHOICE(5 '>Payroll' *SPACEB)
+006000011007     A                                      CHOICE(6 '>Handling Retro Payments')
+006100030315     A                                      CHOICE(7 '>Electronic Payroll Trans-
+006200030315     A                                      fer')
+006300010816     A          R MAINT
+006400010816     A*%%TS  SD  20010816  123550  SAMMY       REL-V4R4M0  5769-PW1
+006500010816     A                                      PULLDOWN(*RSTCSR)
+006600010816     A            F1             2Y 0B  1  1SNGCHCFLD
+006700010816     A                                      CHECK(ER)
+006800010816     A                                      DSPATR(ND)
+006900010816     A                                      CHOICE(1 '>System Control')
+007000010816     A                                      CHOICE(2 'Sus>pended Payments' *SPA-
+007100010816     A                                      CEB)
+007200011011     A                                      CHOICE(3 'P>ayment Type Maint')
+007300010918     A                                      CHOICE(4 'Payroll >Gl. Definition')
+007400010816     A                                      CHOICE(5 'Payroll >Cross Reference')
+007500010816     A                                      CHOICE(6 'Payroll R>untype Codes')
+007600010816     A                                      CHOICE(7 'Payro>ll Runtype Restrict-
+007700010816     A                                      ions')
+007800010816     A                                      CHOICE(8 'Payroll Runtype >Defaults-
+007900010816     A                                      ')
+008000010901     A                                      CHOICE(9 '>Holiday file')
+008100010918     A                                      CHOICE(10 'Payroll >YTD')
+008200021115     A                                      CHOICE(11 'Payslip C>omments')
+008300151009     A                                      CHOICE(12 'P>erformance Incentive -
+008400151009     A                                      Setup')
+008500010424     A*
+008600010424     A          R VIEW
+008700010424     A                                      PULLDOWN(*RSTCSR)
+008800010424     A            F1             2Y 0B  1  1SNGCHCFLD
+008900010227     A                                      CHECK(ER)
+009000010227     A                                      CHOICE(1 '>Employee Profile')
+009100010424     A                                      CHOICE(2 'Employee >Leave')
+009200010424     A                                      CHOICE(3 'Leave >Payment')
+009300980629     A*
+009400011003     A          R REPORT
+009500011003     A*%%TS  SD  20011003  215024  CWILLIAMS   REL-V4R4M0  5769-PW1
+009600011003     A                                      PULLDOWN(*RSTCSR)
+009700011003     A            F1             2Y 0B  1  1SNGCHCFLD
+009800011003     A                                      CHECK(ER)
+009900011012     A                                      CHOICE(1 '>Payrun Timesheet')
+010000011012     A                                      CHOICE(2 '>GL. Report ')
+010100011003     A                                      CHOICE(3 'Payroll Div. >Summary ')
+010200011003     A                                      CHOICE(4 'Payroll >Check Sheet ')
+010300011205     A                                      CHOICE(5 'Payroll Department >Analy-
+010400011205     A                                      sis')
+010500011003     A                                      CHOICE(6 'Payroll >Denomination Bre-
+010600011003     A                                      akdown')
+010700011003     A                                      CHOICE(7 'Monthly >NIS ' *SPACEB)
+010800011003     A                                      CHOICE(8 'Monthly >Tax & Union')
+010900011205     A                                      CHOICE(9 'Payslip >Re-generation')
+011000011205     A                                      CHOICE(10 'Y>ear-to-Date Earnings' -
+011100011205                                            *SPACEB)
+011200011003     A                                      CHOICE(11 '>Yearend Income Tax ')
+011201151026     A                                      CHOICE(12 '>Performance Incentive')
+011300020313     A*         R UTILITY
+011400011007     A*%%TS  SD  20010227  095630  SAMMY       REL-V4R4M0  5769-PW1
+011500020313     A*                                     PULLDOWN(*RSTCSR)
+011600020313     A*           F1             2Y 0B  1  1SNGCHCFLD
+011700020313     A*                                     CHECK(ER)
+011800020313     A*                                     CHOICE(1 'Update >Kronos Records')
+011900020313     A*                                     CHOICE(2 '>Rewrite Interface Files')
+012000020313     A*                                     CHOICE(3 '>Xmas Bonus' *SPACEB)
+012100980629     A*
+012200010227     A          R EXIT
+012300010227     A                                      PULLDOWN(*RSTCSR)
+012400010227     A            F5             2Y 0B  1  1SNGCHCFLD
+012500010227     A                                      CHECK(ER)
+012600010227     A                                      CHOICE(1 '>EXIT')
+012700041211     A          R FMT2
+012800041211     A*%%TS  SD  20041211  113642  SBRITTON    REL-V5R3M0  5722-WDS
+012900041211     A                                      OVERLAY
+013000041211     A                                      PROTECT
+013100041211     A                                 24  8'(C)Copyright Diserv Systems, 2001 -
+013200041211     A                                      - 2004'
+013300041211     A                                      DSPATR(HI)
+013400041211     A                                 21  3'PAYROLL'
+013500041211     A                                      COLOR(BLU)
+013600041211     A            ERRMSG        75A  O 23  2DSPATR(BL)
+013700041211     A                                      COLOR(RED)
+013800041211     A                                 21 13'PAYROLL'
+013900041211     A                                      COLOR(BLU)
+014000041211     A                                 21 24'PAYROLL'
+014100041211     A                                      COLOR(BLU)
+014200041211     A                                 21 35'PAYROLL'
+014300041211     A                                      COLOR(BLU)
+014400041211     A                                 21 46'PAYROLL'
+014500041211     A                                      COLOR(BLU)
+014600041211     A                                 21 57'PAYROLL'
+014700041211     A                                      COLOR(BLU)
+014800041211     A                                 21 68'PAYROLL'
+014900041211     A                                      COLOR(BLU)
+015000020313     A          R UTILSFL                   SFL
+015100020313     A*%%TS  SD  20011018  134923  SAMMY       REL-V4R4M0  5769-PW1
+015200020313     A            UTILCCTL       1Y 0H      SFLCHCCTL
+015300020313     A            UTILNAME      25A  O  1  2
+015400020313     A            UTILORG        3A  H
+015500020313     A            UTILOBJ       10A  H
+015600020313     A            UTILOBJT       1A  H
+015700020313     A          R UTILCTL                   SFLCTL(UTILSFL)
+015800020313     A*%%TS  SD  20011018  145540  SAMMY       REL-V4R4M0  5769-PW1
+015900020313     A                                      CSRLOC(SETROW     SETCOL)
+016000020313     A                                      SFLCSRRRN(&GETRRN)
+016100020313     A                                      SFLSNGCHC
+016200030308     A  20                                  SFLDSP
+016300020313     A                                      SFLDSPCTL
+016400020313     A  33                                  SFLCLR
+016500020313     A  55                                  SFLEND(*MORE)
+016600020313     A                                      SFLSIZ(0020)
+016700020313     A                                      SFLPAG(0010)
+016800020313     A                                      PULLDOWN(*SLTIND *RSTCSR)
+016900020313     A            GETRRN         5S 0H
+017000020313     A            SETROW         3S 0H
+017100020313     A            SETCOL         3S 0H
+017200020313

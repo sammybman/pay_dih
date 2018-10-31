@@ -1,0 +1,57 @@
+000010151026     A*%%TS  SD  20151026  202421  SBRITTON    REL-V7R1M0  5770-WDS
+000020950530     A* ********************************************************
+000030950905     A*              B A N K S    D I H    L T D.              *
+000040041002     A*                   ASSET CONTROL SYSTEM                 *
+000050950905     A*                                                        *
+000060950905     A*                                                        *
+000070041002     A*       DISPLAY FILE  NAME: ASETRPT08D                   *
+000080950906     A*       RECORD FORMAT NAME: FMT1                         *
+000090030331     A*                                                        *
+000100950905     A*                                                        *
+000110030331     A*       PROGRAMMER NAME: ALLISON FUNG                    *
+000120041002     A*       DESIGN DATE....: 02.10.2004                      *
+000130950905     A*                                                        *
+000140041002     A*  FILE DESCRIPTION: ASSETS LABOUR HOURS/COST REPORT     *
+000150950905     A*                                                        *
+000160041002     A*  THIS FILE IS USED TO RUN THE ASSETS LABOUR/COST       *
+000170041002     A*                               REPORT                   *
+000180950905     A*                                                        *
+000190950530     A**********************************************************
+000200151026     A*%%EC
+000210151026     A                                      DSPSIZ(24 80 *DS3)
+000220151026     A                                      REF(*LIBL/FLDREF)
+000230151026     A                                      PRINT
+000240151026     A                                      HELP(77)
+000250151026     A          R FMT1
+000260151026     A*%%TS  SD  20151026  202421  SBRITTON    REL-V7R1M0  5770-WDS
+000270151026     A                                      CF03(03)
+000280151026     A                                      CF04(04)
+000290151026     A                                      RTNCSRLOC(*RECNAME &REC &FLD)
+000300151026     A            @PGM      R        O  2  3REFFLD(NAME10)
+000310151026     A                                      DSPATR(HI)
+000320151026     A            CONAME    R        O  1 24REFFLD(NAME30)
+000330151026     A                                      DSPATR(HI)
+000340151026     A                                      DSPATR(UL)
+000350151026     A            @MODE          6A  O  1 58DSPATR(ND)
+000360151026     A            @DATE     R        O  2 70REFFLD(NAME10)
+000370151026     A                                      DSPATR(HI)
+000380151026     A            @TITLE    R        O  2 20REFFLD(NAME40)
+000390151026     A                                      DSPATR(HI)
+000400151026     A                                 23  3'F3=Program End'
+000410151026     A                                      DSPATR(HI)
+000420151026     A            ERRMSG        75A  O 24  3COLOR(RED)
+000430151026     A                                  1  3USER
+000440151026     A                                      DSPATR(HI)
+000450151026     A                                  1 70SYSNAME
+000460151026     A                                      DSPATR(HI)
+000470151026     A                                 11  5'Enter Period Range.......:'
+000480151026     A                                      COLOR(BLU)
+000490151026     A            FPRNO          6Y 0B 11 33DSPATR(HI)
+000500151026     A                                      EDTCDE(W)
+000510151026     A                                 11 58'(YYYYMM)'
+000520151026     A            FLD           10A  H
+000530151026     A            REC           10A  H
+000540151026     A                                 11 43'-'
+000550151026     A                                      COLOR(BLU)
+000560151026     A            TPRNO          6Y 0B 11 47DSPATR(HI)
+000570151026     A                                      EDTCDE(W)

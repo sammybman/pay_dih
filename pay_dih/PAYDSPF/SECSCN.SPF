@@ -1,0 +1,117 @@
+000010970121     A*%%TS  SD  19970121  191917  ANTHONY     REL-V3R1M0  5763-PW1
+000020970121     A*%%EC
+000030970121     A                                      DSPSIZ(24 80 *DS3)
+000040970121     A                                      CF03(03)
+000050970121     A N99                                  CF12(12)
+000060961127     A          R REC2
+000070961127     A*%%TS  SD  19961127  171924  ANTHONY     REL-V3R1M0  5763-PW1
+000080961127     A                                  1 32'Banks DiH Limited'
+000090961127     A                                      DSPATR(UL)
+000100961127     A                                      DSPATR(HI)
+000110961127     A                                  2 28'Gate allowance entry screen'
+000120961127     A                                      DSPATR(UL)
+000130961127     A                                      DSPATR(HI)
+000140961127     A                                 16 14'Enter option here->'
+000150961127     A            OPTION         1Y 0I 16 35CHECK(ER)
+000160961127     A                                      VALUES(1 2 3)
+000170961127     A                                 23 37'F3 - end'
+000180961127     A                                      DSPATR(HI)
+000190961127     A                                  7 14'1. Enter Gate Allowance'
+000200961127     A                                  9 14'2. Change/Delete Records'
+000210961127     A                                  1 67SYSNAME
+000220961127     A                                      DSPATR(HI)
+000230961127     A                                  2 67DATE
+000240961127     A                                      EDTCDE(Y)
+000250961127     A                                      DSPATR(HI)
+000260961127     A                                  2  5USER
+000270961127     A                                      DSPATR(HI)
+000280961127     A            @PGM          10A  O  1  5DSPATR(HI)
+000290961127     A          R REC1
+000300961127     A*%%TS  SD  19961127  171924  ANTHONY     REL-V3R1M0  5763-PW1
+000310961127     A                                  1 32'Banks DiH Limited'
+000320961127     A                                      DSPATR(UL)
+000330961127     A                                      DSPATR(HI)
+000340961127     A                                  2 29'Allowance Entry Program'
+000350961127     A                                      DSPATR(UL)
+000360961127     A                                      DSPATR(HI)
+000370961127     A                                 24 29'F12 - Cancel'
+000380961127     A                                      DSPATR(HI)
+000390961127     A                                  3 35'(Guards)'
+000400961127     A                                      DSPATR(HI)
+000410961127     A                                      DSPATR(UL)
+000420961127     A                                 10 14'Employee Number:'
+000430961127     A            GARD#     R     Y  I 10 32REFFLD(GATREC/GARD# PAYLIB/GATALW)
+000440961127     A  05                                  ERRMSG('Employee does not exist')
+000450961127     A  04                                  ERRMSG('Duplicate record not allowe-
+000460961127     A                                      d')
+000470961127     A N08                                  ERRMSG('Employee is not a guard')
+000480961127     A            GATAMT    R     Y  I 12 32REFFLD(GATREC/GATAMT PAYLIB/GATALW)
+000490961127     A                                      CHECK(ER)
+000500961127     A                                 12 15'Gate Allowance:'
+000510961127     A            @PGM          10A  O  1  3DSPATR(HI)
+000520961127     A                                  2  3USER
+000530961127     A                                      DSPATR(HI)
+000540961127     A                                  1 68SYSNAME
+000550961127     A                                      DSPATR(HI)
+000560961127     A                                  2 68DATE
+000570961127     A                                      EDTCDE(Y)
+000580961127     A                                      DSPATR(HI)
+000590961127     A                                 24 13'F3 - End'
+000600961127     A                                      DSPATR(HI)
+000610970121     A          R SUBFL                     SFL
+000620970121     A*%%TS  SD  19970121  191917  ANTHONY     REL-V3R1M0  5763-PW1
+000630970121     A            GARD#     R        O  8 15REFFLD(GATREC/GARD# PAYLIB/GATALW)
+000640970121     A                                      EDTCDE(Z)
+000650970121     A            GATAMT    R        B  8 65REFFLD(GATREC/GATAMT PAYLIB/GATALW)
+000660970121     A                                      EDTCDE(1 $)
+000670970121     A            EMPNAM        26A  O  8 29
+000680970121     A            DEL            1A  I  8  5
+000690961128     A          R SUBCTL                    SFLCTL(SUBFL)
+000700961128     A*%%TS  SD  19961128  112704  ANTHONY     REL-V3R1M0  5763-PW1
+000710961128     A                                      SFLSIZ(0100)
+000720961128     A                                      SFLPAG(0012)
+000730961128     A                                      OVERLAY
+000740961128     A N10                                  SFLDSP
+000750961128     A                                      SFLDSPCTL
+000760961128     A  12                                  SFLCLR
+000770961128     A  55                                  SFLEND(*MORE)
+000780961128     A                                  1 68SYSNAME
+000790961128     A                                      DSPATR(HI)
+000800961128     A                                  2 68DATE
+000810961128     A                                      EDTCDE(Y)
+000820961128     A                                      DSPATR(HI)
+000830961128     A            @PGM          10A  O  1  3DSPATR(HI)
+000840961128     A                                  2  3USER
+000850961128     A                                      DSPATR(HI)
+000860961128     A                                  1 32'Banks DiH Limited'
+000870961128     A                                      DSPATR(HI)
+000880961128     A                                      DSPATR(UL)
+000890961128     A                                  2 29'Allowance Update Screen'
+000900961128     A                                      DSPATR(HI)
+000910961128     A                                      DSPATR(UL)
+000920961128     A                                  3 35'(Guards)'
+000930961128     A                                      DSPATR(HI)
+000940961128     A                                      DSPATR(UL)
+000950961128     A                                  6 15'Employee'
+000960961128     A                                      DSPATR(HI)
+000970961128     A                                  7 15'Number'
+000980961128     A                                      DSPATR(HI)
+000990961128     A                                  6 65'Gate'
+001000961128     A                                      DSPATR(HI)
+001010961128     A                                  7 65'Allowance'
+001020961128     A                                      DSPATR(HI)
+001030961128     A                                  6 29'Employee Name'
+001040961128     A                                      DSPATR(HI)
+001050961128     A                                  6  1'D = Delete'
+001060961128     A                                      DSPATR(HI)
+001070961127     A          R FOOTER
+001080961127     A*%%TS  SD  19961127  173846  ANTHONY     REL-V3R1M0  5763-PW1
+001090961127     A                                      SLNO(22)
+001100961127     A                                      CLRL(*NO)
+001110961127     A  10                              1 24'NO RECORDS FOUND IN ALLOWANCE FILE'
+001120961127     A                                      DSPATR(HI)
+001130961127     A                                      DSPATR(BL)
+001140961127     A                                  2 26'F3 - End'
+001150961127     A                                      DSPATR(HI)
+001160961127     A                                  2 43'F12 - Cancel'
+001170961127     A                                      DSPATR(HI)

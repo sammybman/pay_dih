@@ -1,0 +1,210 @@
+000010091014     A*%%TS  SD  20091014  142242  SBRITTON    REL-V6R1M0  5761-WDS
+000020091014     A*%%EC
+000030030828     A*%%FD Payroll Electronic data transfer
+000040091014     A                                      DSPSIZ(24 80 *DS3)
+000050091014     A                                      CF03(03)
+000060090908     A          R FMT1
+000070090908     A*%%TS  SD  20090908  110341  SBRITTON    REL-V6R1M0  5761-WDS
+000080090908     A                                  2  3USER
+000090090908     A                                      DSPATR(HI)
+000100090908     A                                  1 71SYSNAME
+000110090908     A                                      DSPATR(HI)
+000120090908     A            @PGM          10A  O  1  3DSPATR(HI)
+000130090908     A            CONAME        30A  O  1 26DSPATR(HI)
+000140090908     A                                      DSPATR(UL)
+000150090908     A            @TITLE        40A  O  2 21DSPATR(HI)
+000160090908     A                                 23 33'F3 = End Program'
+000170090908     A                                      DSPATR(HI)
+000180090908     A            @DATE         10A  O  2 69DSPATR(HI)
+000190090908     A                                 13  6'Enter your choice .........'
+000200090908     A                                      COLOR(BLU)
+000210090908     A            ERRMSG        75A  O 24  3COLOR(RED)
+000220090908     A                                 11 42'1. Setup Bank/Govt. Inst. params'
+000230090908     A                                 12 42'2. Process Transactions'
+000240090908     A            OPTION         1Y 0B 13 38DSPATR(HI)
+000250090908     A                                      EDTCDE(Z)
+000260030828     A*%%GP SCREEN1    01
+000270090908     A          R FMT2
+000280090908     A*%%TS  SD  20090908  110341  SBRITTON    REL-V6R1M0  5761-WDS
+000290090908     A                                      CA02(02)
+000300090908     A                                  2  3USER
+000310090908     A                                      DSPATR(HI)
+000320090908     A                                  1 71SYSNAME
+000330090908     A                                      DSPATR(HI)
+000340090908     A            @PGM          10A  O  1  3DSPATR(HI)
+000350090908     A            CONAME        30A  O  1 26DSPATR(HI)
+000360090908     A                                      DSPATR(UL)
+000370090908     A            @TITLE        40A  O  2 21DSPATR(HI)
+000380090908     A            @DATE         10A  O  2 69DSPATR(HI)
+000390090908     A                                  6 49'1. Citizen''s bank'
+000400090908     A                                 13 16'Select Bank...........'
+000410090908     A                                      COLOR(BLU)
+000420090908     A            BANKSEL        2Y 0B 13 44DSPATR(HI)
+000430090908     A                                      EDTCDE(Z)
+000440090908     A                                  7 49'2. Republic bank'
+000450090908     A            ERRMSG        75A  O 24  3COLOR(RED)
+000460090908     A                                 23  5'F2 =  Go back'
+000470090908     A                                      DSPATR(HI)
+000480030828     A*%%GP SCREEN2    01
+000490090908     A                                  8 49'3. ScotiaBank'
+000500090908     A                                  9 49'4. GBTI'
+000510090908     A                                 11 49'5. N.I.S'
+000520090908     A                                 12 49'6. Guyana Revenue Authority'
+000530090908     A                                 10 49'----------------------------'
+000540091014     A          R FMT3
+000550091014     A*%%TS  SD  20091014  142242  SBRITTON    REL-V6R1M0  5761-WDS
+000560091014     A                                      CA02(02)
+000570091014     A                                      CA07(07)
+000580091014     A                                      CA04(04)
+000590091014     A                                      RTNCSRLOC(*RECNAME &REC &FLD)
+000600091014     A                                  2  3USER
+000610091014     A                                      DSPATR(HI)
+000620091014     A                                  1 71SYSNAME
+000630091014     A                                      DSPATR(HI)
+000640091014     A            @PGM          10A  O  1  3DSPATR(HI)
+000650091014     A            CONAME        30A  O  1 26DSPATR(HI)
+000660091014     A                                      DSPATR(UL)
+000670091014     A            @TITLE        40A  O  2 21DSPATR(HI)
+000680091014     A            @DATE         10A  O  2 69DSPATR(HI)
+000690091014     A                                  4  3'Select Bank....'
+000700091014     A                                      COLOR(BLU)
+000710091014     A                                  6  3'List Payment Divisions...'
+000720091014     A                                      COLOR(BLU)
+000730091014     A            BANKSEL        2S 0O  4 31DSPATR(HI)
+000740091014     A                                  8  3'Specify Account No.......'
+000750091014     A                                      COLOR(BLU)
+000760091014     A            #EACCT        25A  B  8 31
+000770091014     A                                  9  3'Batch no/seq. range......'
+000780091014     A                                      COLOR(BLU)
+000790091014     A            #EDIV         10Y 0B  6 31EDTWRD('  -  -  -  -  ')
+000800091014     A            #ELOWER        6Y 0B  9 31EDTCDE(Z)
+000810091014     A                                  9 38'-'
+000820091014     A                                      COLOR(BLU)
+000830091014     A                                      DSPATR(HI)
+000840091014     A            #EUPPER        6Y 0B  9 40EDTCDE(Z)
+000850091014     A            ERRMSG        75A  O 24  3COLOR(RED)
+000860091014     A                                 23  5'F2 = Go Back'
+000870091014     A                                      DSPATR(HI)
+000880030828     A*%%GP SCREEN4    01
+000890091014     A                                 23 21'F4 = Prompt for Maint.'
+000900091014     A                                      DSPATR(HI)
+000910030828     A*%%GP SCREEN4    01
+000920091014     A                                 10  3'Transaction charges......'
+000930091014     A                                      COLOR(BLU)
+000940091014     A            #ECHGAMT       5Y 2B 10 31EDTCDE(1)
+000950091014     A                                 11  3'Default Charge account...'
+000960091014     A                                      COLOR(BLU)
+000970091014     A            #EDFTCHGAC     7Y 0B 11 31EDTCDE(Z)
+000980091014     A                                 12  3'Default clearing account.'
+000990091014     A                                      COLOR(BLU)
+001000091014     A            #EDFTCLAC      7Y 0B 12 31EDTCDE(Z)
+001010091014     A                                 13  3'Default Transit no.......'
+001020091014     A                                      COLOR(BLU)
+001030091014     A            #EDFTTRN#      8Y 0B 13 31EDTCDE(Z)
+001040091014     A                                 14 18'Specify ONLY for email Setup'
+001050091014     A                                      DSPATR(HI)
+001060091014     A                                 17  3'Text Document File Name..'
+001070091014     A                                      COLOR(BLU)
+001080091014     A            #EFILENM     100A  B 17 29ALIAS(FILE_NAME)
+001090091014     A                                      CHECK(LC)
+001100091014     A                                 19  3'Email Subject............'
+001110091014     A                                      COLOR(BLU)
+001120091014     A            #ESUBJECT     50A  B 19 29ALIAS(TRANS_SUBJECT)
+001130091014     A                                      CHECK(LC)
+001140091014     A                                 16  3'Emailed From Address.....'
+001150091014     A                                      COLOR(BLU)
+001160091014     A            #EMFROM       50A  B 16 29ALIAS(EMAIL_FROM)
+001170091014     A                                      CHECK(LC)
+001180091014     A                                 20  3'Email Text...............'
+001190091014     A                                      COLOR(BLU)
+001200091014     A            #ETEXT        50A  B 20 29CHECK(LC)
+001210091014     A                                 22  3'* - Use fields as specified by spe-
+001220091014     A                                      cified Bank/Financial Institution'
+001230091014     A                                      COLOR(RED)
+001240091014     A                                  8 58'*'
+001250091014     A                                      COLOR(RED)
+001260091014     A                                  9 58'*'
+001270091014     A                                      COLOR(RED)
+001280091014     A                                 10 58'*'
+001290091014     A                                      COLOR(RED)
+001300091014     A                                 11 58'*'
+001310091014     A                                      COLOR(RED)
+001320091014     A                                 12 58'*'
+001330091014     A                                      COLOR(RED)
+001340091014     A                                 13 58'*'
+001350091014     A                                      COLOR(RED)
+001360091014     A                                 23 48'F7 = Set-up email List'
+001370091014     A                                      DSPATR(HI)
+001380091014     A            REC           10A  H
+001390091014     A            FLD           10A  H
+001400030828     A*%%GP SCREEN4    01
+001410081211     A          R FMT4
+001420081211     A*%%TS  SD  20081211  192338  SBRITTON    REL-V6R1M0  5761-WDS
+001430081211     A                                      CA21(21)
+001440081211     A                                  2  3USER
+001450081211     A                                      DSPATR(HI)
+001460081211     A                                  1 71SYSNAME
+001470081211     A                                      DSPATR(HI)
+001480081211     A            @PGM          10A  O  1  3DSPATR(HI)
+001490081211     A            CONAME        30A  O  1 26DSPATR(HI)
+001500081211     A                                      DSPATR(UL)
+001510081211     A            @TITLE        40A  O  2 21DSPATR(HI)
+001520081211     A            @DATE         10A  O  2 69DSPATR(HI)
+001530091014     A          R FMT5
+001540091014     A*%%TS  SD  20091014  100453  SBRITTON    REL-V6R1M0  5761-WDS
+001550091014     A                                      CA21(21)
+001560091014     A                                      FRCDTA
+001570091014     A                                      SLNO(20)
+001580091014     A                                      OVERLAY
+001590091014     A            ERRMSG        75   O  1  3
+001600091014     A  99                                  DSPATR(BL)
+001610091014     A  99                                  COLOR(RED)
+001620091014     A            ERRMSG2       75A  O  2  3
+001630091014     A            ERRMSG3       75A  O  3  3
+001640091014     A            ERRMSG4       75A  O  4  3
+001650030317     A*%%GP SCREEN5    02
+001660090618     A          R WINDOW
+001670090618     A*%%TS  SD  20090618  164220  SBRITTON    REL-V6R1M0  5761-WDS
+001680090618     A                                      WINDOW(5 2 17 75)
+001690090619     A          R WINREC                    SFL
+001700090619     A*%%TS  SD  20090619  172238  SBRITTON    REL-V6R1M0  5761-WDS
+001710090619     A            PAYEMP         6Y 0O  6  1EDTCDE(Z)
+001720090619     A            PAYACC        30A  B  6  9
+001730090619     A            PAYCRD         6Y 0O  6 41EDTCDE(Y)
+001740090619     A            PAYNAME       26A  O  6 50
+001750090619     A            OLDPAYACC     30A  H
+001760030317     A*%%GP SCREEN5    01
+001770090618     A          R WDWCTL                    SFLCTL(WINREC)
+001780090618     A*%%TS  SD  20090618  164220  SBRITTON    REL-V6R1M0  5761-WDS
+001790090618     A                                      CF05(05)
+001800090618     A                                      OVERLAY
+001810090618     A                                      SFLDSP
+001820090618     A                                      SFLDSPCTL
+001830090618     A  33                                  SFLCLR
+001840090618     A  55                                  SFLEND(*MORE)
+001850090618     A                                      SFLSIZ(0100)
+001860090618     A                                      SFLPAG(0010)
+001870090618     A                                      WINDOW(WINDOW)
+001880090618     A                                      WDWBORDER((*COLOR BLU) (*CHAR '...:-
+001890090618     A                                      ::.:'))
+001900090618     A                                      RMVWDW
+001910090618     A                                  5 50'Name'
+001920090618     A                                      DSPATR(UL)
+001930090618     A                                      COLOR(BLU)
+001940090618     A                                  3 17'F5= Print List'
+001950090618     A                                      DSPATR(HI)
+001960090618     A                                  1 16'Invalid Account List'
+001970090618     A                                      DSPATR(HI)
+001980090618     A                                      DSPATR(UL)
+001990090618     A                                      COLOR(BLU)
+002000090618     A                                  3  3'F3= Exit'
+002010090618     A                                      DSPATR(HI)
+002020090618     A                                  5 45'Date'
+002030090618     A                                      COLOR(BLU)
+002040090618     A                                      DSPATR(UL)
+002050090618     A                                  5  9'Account No.'
+002060090618     A                                      COLOR(BLU)
+002070090618     A                                      DSPATR(UL)
+002080090618     A                                  5  3'Emp.'
+002090090618     A                                      COLOR(BLU)
+002100090618     A                                      DSPATR(UL)

@@ -1,0 +1,109 @@
+000100011228     A*%%TS  SD  20011228  125636  SAMMY       REL-V4R4M0  5769-PW1
+000200011228     A*%%EC
+000300011228     A                                      DSPSIZ(24 80 *DS3)
+000400011228     A                                      CF03(03)
+000500010426     A          R FOOTER
+000600010426     A*%%TS  SD  20010426  083810  SAMMY       REL-V4R4M0  5769-PW1
+000700010426     A                                      SLNO(24)
+000800010426     A                                  1 51'Enter to continue'
+000900010426     A                                      DSPATR(HI)
+001000010426     A                                  1 29'F3 - End'
+001100010426     A                                      DSPATR(HI)
+001200011228     A          R SFLREC                    SFL
+001300011228     A*%%TS  SD  20011228  125636  SAMMY       REL-V4R4M0  5769-PW1
+001400011228     A            SEL            1A  B 12  3DSPATR(HI)
+001500011228     A  66
+001600011228     AON66N99                               DSPATR(PR)
+001700050525     A            PRTYPTYPE#R        O 12  8REFFLD(PRTYFMT/PRTYPTYPE *LIBL/PAY-
+001800011228     A                                      RTYP)
+001900050525     A            PRTYDESC  R        O 12 10REFFLD(PRTYFMT/PRTYDESC *LIBL/PAYR-
+002000011228     A                                      TYP)
+002100050525     A            PRTYLDATE R        O 12 36REFFLD(PRTYFMT/PRTYLDATE *LIBL/PAY-
+002200011228     A                                      RTYP)
+002300011228     A                                      EDTCDE(W)
+002400050525     A            PRTYNDATE R        O 12 48REFFLD(PRTYFMT/PRTYNDATE *LIBL/PAY-
+002500011228     A                                      RTYP)
+002600011228     A                                      EDTCDE(W)
+002700011228     A            DSPTEXT       20A  O 12 60
+002800011228     A N99                                  COLOR(RED)
+002900011228     A  99                                  COLOR(BLU)
+003000011228     A            PRTYPRNO#      2S 0H
+003100011228     A            PRTYPROL##     2  0H
+003200010824     A          R SFLCTL                    SFLCTL(SFLREC)
+003300010824     A*%%TS  SD  20010824  093710  SAMMY       REL-V4R4M0  5769-PW1
+003400010824     A                                      SFLSIZ(0055)
+003500010824     A                                      SFLPAG(0010)
+003600010824     A                                      OVERLAY
+003700010824     A                                      SFLDSP
+003800010824     A                                      SFLDSPCTL
+003900010824     A  33                                  SFLCLR
+004000010824     A  68                                  SFLEND(*MORE)
+004100010824     A  21                                  SFLMSG('Invalid account code')
+004200010824     A                                 11 10'Payroll Description'
+004300010824     A                                      DSPATR(HI)
+004400010824     A            CONAME        30A  O  1 26DSPATR(HI)
+004500010824     A                                      DSPATR(UL)
+004600010824     A            @TITLE        40A  O  2 21DSPATR(HI)
+004700010824     A            @PGM          10A  O  1  2DSPATR(HI)
+004800010824     A                                  2  2USER
+004900010824     A                                      DSPATR(HI)
+005000010824     A                                  1 71SYSNAME
+005100010824     A                                      DSPATR(HI)
+005200010824     A            @DATE         10A  O  2 69DSPATR(HI)
+005300010824     A                                 11  2'X=Sel'
+005400010824     A                                      DSPATR(HI)
+005500010824     A                                 11 37'Last date'
+005600010824     A                                      DSPATR(HI)
+005700010824     A                                 11 49'Next Date'
+005800010824     A                                      DSPATR(HI)
+005900010824     A                                  5  6'USE This Program to Generate Paysl-
+006000010824     A                                      ips for Selected Payroll Run Types.'
+006100010824     A                                      DSPATR(HI)
+006200010824     A                                  6  6'A Particular run type can be selec-
+006300010824     A                                      ted only  if Status is Available'
+006400010824     A                                      DSPATR(HI)
+006500010824     A          R FMT1
+006600010824     A*%%TS  SD  20010824  093710  SAMMY       REL-V4R4M0  5769-PW1
+006700010824     A                                      WINDOW(10 5 10 40)
+006800010824     A                                      CF15(15)
+006900010824     A                                      CF02(02)
+007000010824     A  98                              4  2'Mimic Payroll type...'
+007100010824     A                                      COLOR(BLU)
+007200010824     A                                  6  2'Enter Payroll date...'
+007300010824     A                                      COLOR(BLU)
+007400010824     A  98        RUN_TYPE       1A  B  4 25DSPATR(HI)
+007500010824     A            PAY_DATE       8Y 0B  6 25EDTCDE(W)
+007600010824     A                                      DSPATR(HI)
+007700010824     A                                  2 16'PAYROLL RUN'
+007800010824     A                                      DSPATR(HI)
+007900010824     A                                      DSPATR(UL)
+008000010824     A                                  8 19'Press F15 to confirm'
+008100010824     A                                      DSPATR(HI)
+008200010824     A                                  7 24'(YYYY/MM/DD)'
+008300010824     A            ERRMSG1       35A  O  9  4COLOR(RED)
+008400010824     A                                  8  2'F2 = Cancel'
+008500010824     A                                      DSPATR(HI)
+008600011227     A          R FMT2
+008700011227     A*%%TS  SD  20011227  104950  SAMMY       REL-V4R4M0  5769-PW1
+008800011227     A                                      CF15(15)
+008900011227     A                                      CF02(02)
+009000011227     A                                      WINDOW(12 10 10 40)
+009100011227     A                                  2 16'PAYROLL RUN'
+009200011227     A                                      DSPATR(HI)
+009300011227     A                                      DSPATR(UL)
+009400011227     A                                  9 10'Press ENTER to continue'
+009500011227     A                                      DSPATR(HI)
+009600011227     A                                  4  2'Is this the first payroll for the -
+009700011227     A                                      new'
+009800011227     A                                      COLOR(BLU)
+009900011227     A                                  5  2'Year ?'
+010000011227     A                                      COLOR(BLU)
+010100011227     A                                  5 17'YES'
+010200011227     A                                      DSPATR(HI)
+010300011227     A                                  5 21'or'
+010400011227     A                                      COLOR(BLU)
+010500011227     A            YESFIELD       3   I  7 20DSPATR(HI)
+010600011227     A                                      VALUES('YES' 'NO ')
+010700011227     A                                      CHECK(ME)
+010800011227     A                                  5 24'NO'
+010900011227     A                                      DSPATR(HI)

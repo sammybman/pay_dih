@@ -1,0 +1,49 @@
+000010970105     A*%%TS  SD  19970105  193456  SAMMY       REL-V3R1M0  5763-PW1
+000020970105     A*%%EC
+000030970105     A                                      DSPSIZ(24 80 *DS3)
+000040970105     A                                      PRINT
+000050970105     A                                      HLPRCD(HELPREC)
+000060970105     A                                      HELP
+000070970105     A                                      CA03(03)
+000080950530     A*
+000090970105     A          R SFLREC                    SFL
+000100970105     A*%%TS  SD  19970105  193456  SAMMY       REL-V3R1M0  5763-PW1
+000110970105     A            NUMB           6Y 0O  7  2EDTCDE(Z)
+000120970105     A            DEPT           3Y 0O  7  9EDTCDE(Z)
+000130970105     A            NAME          28A  O  7 13
+000140970105     A            AMOUNT         8  0O  7 43EDTCDE(1)
+000150950530     A*
+000160951127     A          R SFLCTL                    SFLCTL(SFLREC)
+000170951127     A*%%TS  SD  19951127  151059  SAMMY       REL-V2R3M0  5738-PW1
+000180951127     A                                      SFLSIZ(0180)
+000190951127     A                                      SFLPAG(0015)
+000200951127     A                                      CF07(07)
+000210951127     A                                      OVERLAY
+000220951127     A                                      SFLDSP
+000230951127     A                                      SFLDSPCTL
+000240951127     A  33                                  SFLCLR
+000250951127     A            @PGM          10A  O  1  2
+000260951127     A            UDATE          6Y 0O  2  2EDTCDE(Y)
+000270951127     A                                  1 28'B A N K S   D I H    L T D'
+000280951127     A                                      DSPATR(UL)
+000290951127     A                                  2 31'ALLOWANCES SELECTION'
+000300951127     A                                      DSPATR(UL)
+000310951127     A            #MODE          6A  O  1 75DSPATR(RI)
+000320951127     A            @USER         10A  O  2 69
+000330951127     A                                  5  3'No..'
+000340951127     A                                      DSPATR(UL)
+000350951127     A                                  5  9'Dept'
+000360951127     A                                      DSPATR(UL)
+000370951127     A                                  5 14'Name'
+000380951127     A                                      DSPATR(UL)
+000390951127     A                                  5 46'Amount'
+000400951127     A                                      DSPATR(UL)
+000410951127     A          R FOOTER
+000420951127     A*%%TS  SD  19951127  140921  SAMMY       REL-V2R3M0  5738-PW1
+000430951127     A                                      OVERLAY
+000440951127     A                                      PROTECT
+000450951127     A                                 23  5'CMD3=Cancel Entry'
+000460951127     A                                      DSPATR(HI)
+000470951127     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000480951127     A                                 23 41'CMD7=Create Pay File'
+000490951127     A                                      DSPATR(HI)

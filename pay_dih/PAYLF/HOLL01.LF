@@ -1,0 +1,26 @@
+000100010808     A* ********************************************************
+000200010808     A*              B A N K S    D I H    L T D.              *
+000300010808     A*                    PAYROLL SYSTEM                      *
+000400010808     A*                                                        *
+000500010808     A*                         BY                             *
+000600010808     A*                                                        *
+000700010808     A*                    DISERV SYSTEMS                      *
+000800010808     A*                                                        *
+000900010808     A*                                                        *
+001000010808     A*       PHYSICAL FILE NAME: HOLL01                       *
+001100010808     A*       RECORD FORMAT NAME: HOLFMT                       *
+001200010808     A*       FILE PREFIX.......: HO                           *
+001300010808     A*                                                        *
+001400010808     A*       PROGRAMMER NAME: SAMUEL BRITTON                  *
+001500010808     A*       DESIGN DATE....: 2001/08/08                      *
+001600010808     A*                                                        *
+001700010808     A*  FILE DESCRIPTION: HOLIDAY MASTER FILE                 *
+001800010808     A*                                                        *
+001900010808     A*  THIS FILE IS DESIGNED TO HOLD INFORMATION CONCERNING  *
+002000010808     A*       PUBLIC HOLIDAYS IN EFFECT.                       *
+002100010808     A*                                                        *
+002200010808     A* ********************************************************
+002300950906     A*
+002400010808     A          R HOLFMT                    PFILE(HOL)
+002500010808     A          K HODATE
+002600010808     A          S HOSTS                     COMP(EQ 'A')

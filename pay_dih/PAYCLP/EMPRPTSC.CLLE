@@ -1,0 +1,99 @@
+000100951103/* ******************************************************** */
+000200971219/*  DSPLY  PROGRAM FOR THE FOREIGN PAYMENTS REPORT          */
+000300951103/*                                                          */
+000400951103/* ******************************************************** */
+000500951103PGM
+000600010920             DCL        VAR(&SEL#) TYPE(*DEC) LEN(2 0)
+000700010920             DCL        VAR(&PRNO) TYPE(*DEC) LEN(6 0)
+000800951103             DCL        VAR(&UDATE) TYPE(*DEC)  LEN(6 0)
+000900951103             DCL        VAR(&DATE) TYPE(*CHAR) LEN(6)
+001000951103             DCL        VAR(&@PGM) TYPE(*CHAR) LEN(10)
+001100951103             DCL        VAR(&@USER) TYPE(*CHAR) LEN(10)
+001200951103             DCL        VAR(&NO) TYPE(*CHAR) LEN(1) VALUE(' ')
+001300980109             DCL        VAR(&@TITLE) TYPE(*CHAR) LEN(40) +
+001400981007                          VALUE('      Employees Reports Main Menu ')
+001500951103             /*                                           */
+001600951103             DCL        VAR(&CONAME) TYPE(*CHAR) LEN(30)
+001700951103             DCL        VAR(&@DATE) TYPE(*CHAR) LEN(10)
+001800981026             DCL        VAR(&TYPE) TYPE(*DEC) LEN(2 0)
+001900980415             DCL        VAR(&@PRN) TYPE(*CHAR) LEN(2)
+002000951103             /*                                           */
+002100981026             DCLF       FILE(EMPRPTSD) RCDFMT(FMT1)
+002200010920             COPYRIGHT  TEXT('Diserv Systems ')
+002300951103
+002400951103/*                                                          */
+002500980108             RTVJOBA    JOB(&@PGM) USER(&@USER) DATE(&DATE)
+002600981026             CHGVAR     VAR(&@PGM) VALUE('EMPRPTSC')
+002700951103             CHGVAR     VAR(&UDATE) VALUE(&DATE)
+002800951103/*                                                          */
+002900981003top:
+003000060618             CALLPRC    PRC(GET_CONAME) PARM((*NONE)) RTNVAL(&CONAME)
+003100060618             CALLPRC    PRC(GET_SYS_DATE) RTNVAL(&@DATE)
+003200951103             SNDRCVF    RCDFMT(FMT1)
+003300981026             IF         COND(&IN03 = '1') THEN(GOTO CMDLBL(ENDPGM))
+003400981026         /*                              */
+003500981026         /* Type enquiry                 */
+003600010920             IF         COND(&IN01 = '1') THEN(DO)
+003700060618             CALLPRC    PRC(LST_LTYPE) RTNVAL(&TYPE)
+003800981026             GOTO       CMDLBL(TOP)
+003900981026             ENDDO
+004000981003                          /*             */
+004100981026             /* option 1 for employee details rept - EMP */
+004200010920             IF         COND(&SEL# = 1) THEN(DO)
+004300091121             CALL       PGM(LI003R) PARM(&PRNO &TYPE ' ')
+004400981002             ENDDO
+004500021005             /* option 2 for employee Deduction setup */
+004600021005             IF         COND(&SEL# = 2) THEN(DO)
+004700091121             CALLPRC    PRC(EMPFRPT03) PARM(&PRNO ' ')
+004800021005             enddo
+004900981026             /* option 3 for Employee dbts. & crds. */
+005000010920             IF         COND(&SEL# = 3) THEN(DO)
+005100981026             CALL       PGM(LI013R) PARM(&PRNO &TYPE 'C')
+005200981026             CALL       PGM(LI013R) PARM(&PRNO &TYPE 'D')
+005300981002             ENDDO
+005400981026             /* option 4 for Employee summary rept. */
+005500010920             IF         COND(&SEL# = 4) THEN(DO)
+005600091121             CALL       PGM(LI007R) PARM(&PRNO &TYPE)
+005700981026             ENDDO
+005800981026             /* option 5 for Employee Allowances */
+005900010920             IF         COND(&SEL# = 5) THEN(DO)
+006000981027             CALL       PGM(LI008R) PARM(&PRNO ' ')
+006100981026             ENDDO
+006200990213             /* Option 6 for Credit Status Reports */
+006300010920             IF         COND(&SEL# = 6) THEN(DO)
+006400091121             CALL       PGM(LI010R) PARM(&PRNO ' ')
+006500990213             ENDDO
+006600990825             /* Option 7 for Summary loans Reports */
+006700010920             IF         COND(&SEL# = 7) THEN(DO)
+006800091121             CALL       PGM(LI004R) PARM(&PRNO &TYPE)
+006900990825             ENDDO
+007000000928             /* Option 9 for Execs. Drink allowance Reports */
+007100010920             IF         COND(&SEL# = 9) THEN(DO)
+007200000928             CALL       PGM(LI016R) PARM(&PRNO)
+007300000928             ENDDO
+007400010920             /* Option 10 Saving Withdrawal  */
+007500010920             IF         COND(&SEL# = 10) THEN(DO)
+007600010920             CALL       PGM(SAVRPT01R) PARM(&PRNO)
+007700010920             ENDDO
+007800010920             /* Option 11 Saving Month-end report */
+007900010920             IF         COND(&SEL# = 11) THEN(DO)
+008000030121             CALLPRC    PRC(EMPFRPT05) PARM(&PRNO)
+008100060214             COMMIT
+008200010920             CALL       PGM(SAVRPT02R) PARM(&PRNO)
+008300010920             ENDDO
+008400010920             /* Option 12 Saving Year-end  */
+008500010920             IF         COND(&SEL# = 12) THEN(DO)
+008600010920             CALL       PGM(SAVRPT03R) PARM(&PRNO 'A') /* active +
+008700010920                          emp. */
+008800010920             CALL       PGM(SAVRPT03R) PARM(&PRNO ' ') /* Inactive +
+008900010920                          Emp. */
+009000010920             ENDDO
+009100010921             /* Option 13 Saving Letters   */
+009200010921             IF         COND(&SEL# = 13) THEN(DO)
+009300010921             CALL       PGM(SAVRPT04R) PARM(&PRNO 'A') /* active +
+009400010921                          emp. */
+009500010921             ENDDO
+009600990619             GOTO       CMDLBL(TOP)
+009700981026endpgm:
+009800951103/*     */
+009900980415             ENDPGM

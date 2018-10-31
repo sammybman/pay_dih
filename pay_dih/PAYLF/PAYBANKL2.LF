@@ -1,0 +1,44 @@
+000100950905     A* ********************************************************
+000200950905     A*              B A N K S    D I H    L T D.              *
+000300950905     A*                INVENTORY CONTROL SYSTEM                *
+000400950905     A*                                                        *
+000500950905     A*                         BY                             *
+000600950905     A*                                                        *
+000700950905     A*       ONE PLUS COMPUTER SERVICES (GUYANA) LIMITED      *
+000800950905     A*             P.O BOX 10501, GEORGETOWN,GUYANA           *
+000900950905     A*                                                        *
+001000950905     A*                                                        *
+001100951106     A*       LOGICAL  FILE NAME: ITHL05                       *
+001200950906     A*       RECORD FORMAT NAME: ITHFMT                       *
+001300950906     A*       FILE PREFIX.......: TH                           *
+001400950905     A*                                                        *
+001500950905     A*       PROGRAMMER NAME: JERRY  GANGOO                   *
+001600950905     A*       DESIGN DATE....: 1995/09/05                      *
+001700950905     A*                                                        *
+001800950906     A*  FILE DESCRIPTION: ITEM TRANSACTION FILE               *
+001900950905     A*                                                        *
+002000950906     A*  THIS LOGICAL FILE SHOWS ALL ITEM TRANSACTION          *
+002100950906     A*  RECORDS .                                             *
+002200950905     A*                                                        *
+002300950906     A**********************************************************
+002400990413     **
+002500990413     A          R PBFMT                     PFILE(PAYBANK)
+002600990413     A            EMP
+002700990413     A            DIVIS
+002800990413     A            BANK
+002900990413     A            PBTYPE
+003000990413     A          K DIVIS
+003100990413     A          K BANK
+003200990413     A          K EMP
+003300990413     A          K PBTYPE
+003400990413     **
+003500990413     A          R EMPREC                    PFILE(EMPMAST)
+003600990413     A            EMP
+003700990413     A            DIVIS
+003800990413     A            BANK
+003900990413     A            STATUS
+004000990413     A          K DIVIS
+004100990413     A          K BANK
+004200990413     A          K EMP
+004300990413     A          K *NONE
+004400990413     A          S STATUS                    VALUES('R' 'E')

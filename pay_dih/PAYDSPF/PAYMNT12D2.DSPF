@@ -1,0 +1,87 @@
+000010151027     A*%%TS  SD  20151027  101243  SBRITTON    REL-V7R1M0  5770-WDS
+000020021014     A* ********************************************************
+000030021014     A*              B A N K S    D I H    L T D.              *
+000040021014     A*                  M.I.S. DEPARTMENT                     *
+000050021014     A*                                                        *
+000060021014     A*                                                        *
+000070021018     A*       DISPLAY FILE NAME :  ASETMNT03D                  *
+000080021014     A*                                                        *
+000090021014     A*       PROGRAMMER NAME...:  ALLISON FUNG                *
+000100021014     A*       DATE..............:  14.10.2002                  *
+000110021014     A*                                                        *
+000120021018     A*  FILE DESCRIPTION: ASSETS LOCATION MAINTENANCE         *
+000130021014     A*                    DISPLAY                             *
+000140021014     A*                                                        *
+000150021014     A**********************************************************
+000160941122     A*
+000170151027     A*%%EC
+000180151027     A                                      DSPSIZ(24 80 *DS3)
+000190151027     A                                      CA03(03)
+000200151027     A                                      CA01(01)
+000210151027     A                                      CA15(15)
+000220151021     A          R FMT1
+000230151021     A*%%TS  SD  20151021  091138  SBRITTON    REL-V7R1M0  5770-WDS
+000240151021     A            @PGM          10A  O  1  2DSPATR(HI)
+000250151021     A                                  5  6'Enter Incentive Type..:'
+000260151021     A                                      COLOR(BLU)
+000270151021     A            PITYPE#        2Y 0B  5 31EDTCDE(Z)
+000280151021     A                                      DSPATR(HI)
+000290151021     A  25                                  ERRMSGID(DIH0022 *LIBL/DIHMSGF)
+000300151021     A                                 23 35'F3 = End Program'
+000310151021     A                                      DSPATR(HI)
+000320151021     A            @TITLE        40A  O  2 21DSPATR(HI)
+000330151021     A            CONAME        30A  O  1 26DSPATR(HI)
+000340151021     A                                      DSPATR(UL)
+000350151021     A                                  1 72SYSNAME
+000360151021     A                                      DSPATR(HI)
+000370151021     A                                  2  2USER
+000380151021     A                                      DSPATR(HI)
+000390151021     A            @DATE         10A  O  2 70DSPATR(HI)
+000400151021     A                                 23  6'F1 = P.I. Types'
+000410151021     A                                      DSPATR(HI)
+000420941120     A**
+000430151027     A          R FMT2
+000440151027     A*%%TS  SD  20151027  101243  SBRITTON    REL-V7R1M0  5770-WDS
+000450151027     A                                      CA02(02)
+000460151027     A                                      CF20(20)
+000470151027     A                                      CF04(04)
+000480151027     A            @PGM          10A  O  1  2DSPATR(HI)
+000490151027     A                                  6  6'P.I. Type.............:'
+000500151027     A                                      COLOR(BLU)
+000510151027     A            PITYPE#        2Y 0O  6 32EDTCDE(Z)
+000520151027     A                                      DSPATR(HI)
+000530151027     A            DESC#         30A  B  8 32DSPATR(HI)
+000540151027     A                                 23  7'F2 = Cancel'
+000550151027     A                                      DSPATR(HI)
+000560151027     A            @TITLE        40A  O  2 21DSPATR(HI)
+000570151027     A            CONAME        30A  O  1 26DSPATR(HI)
+000580151027     A                                      DSPATR(UL)
+000590151027     A                                  2  2USER
+000600151027     A                                      DSPATR(HI)
+000610151027     A            @DATE         10A  O  2 70DSPATR(HI)
+000620151027     A                                  1 72SYSNAME
+000630151027     A                                      DSPATR(HI)
+000640151027     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000650151027     A                                  3 64'Mode:'
+000660151027     A                                      DSPATR(HI)
+000670151027     A            #MODE          7A  O  3 70DSPATR(HI)
+000680151027     A                                  8  6'Type Description......:'
+000690151027     A                                      COLOR(BLU)
+000700151027     A                                 23 46'F15 = Confirm'
+000710151027     A                                      DSPATR(HI)
+000720151027     A                                 23 25'F4 = Prompt'
+000730151027     A                                      DSPATR(HI)
+000740151027     A                                 10  6'W/house Trn Codes.....:'
+000750151027     A                                      COLOR(BLU)
+000760151027     A                                 23 66'F20 = Delete'
+000770151027     A                                      DSPATR(HI)
+000780151027     A                                 14  6'Calculate on revenue?.:'
+000790151027     A                                      COLOR(BLU)
+000800151027     A            REVFLAG        1A  B 14 32DSPATR(HI)
+000810151027     A            CDLIST        30A  B 10 32DSPATR(HI)
+000820151027     A                                 14 35'Y = Yes'
+000830151027     A                                 10 64'(optional)'
+000840151027     A                                 12  6'W/house/Prod. List....:'
+000850151027     A                                      COLOR(BLU)
+000860151027     A            WHLIST        75A  B 12 32DSPATR(HI)
+000870151027     A                                 13 64'(optional)'

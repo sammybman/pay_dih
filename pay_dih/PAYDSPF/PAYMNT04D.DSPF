@@ -1,0 +1,90 @@
+000010021118     A*%%TS  SD  20021118  091042  SBRITTON    REL-V5R1M0  5722-WDS
+000020941122     A*
+000030021118     A*%%EC
+000040021118     A                                      DSPSIZ(24 80 *DS3)
+000050021118     A                                      CA03(03)
+000060941120     A*
+000070021118     A          R FMT1
+000080021118     A*%%TS  SD  20021118  091042  SBRITTON    REL-V5R1M0  5722-WDS
+000090021118     A                                      CF01(01)
+000100021118     A                                      CF04(04)
+000110021118     A            @PGM          10A  O  1  2DSPATR(HI)
+000120021118     A                                 12 11'Payroll Run Type..'
+000130021118     A                                      COLOR(BLU)
+000140021118     A                                 23 31'F3 = End Program'
+000150021118     A                                      DSPATR(HI)
+000160021118     A            CONAME        30A  O  1 26DSPATR(HI)
+000170021118     A                                      DSPATR(UL)
+000180021118     A            @TITLE        40A  O  2 21DSPATR(HI)
+000190021118     A                                  2  2USER
+000200021118     A                                      DSPATR(HI)
+000210021118     A                                  1 73SYSNAME
+000220021118     A                                      DSPATR(HI)
+000230021118     A            @DATE         10A  O  2 71DSPATR(HI)
+000240021118     A            PTYPE#         1A  B 12 32DSPATR(HI)
+000250021118     A                                 23  2'F1 = Run Type Enquiry'
+000260021118     A                                      DSPATR(HI)
+000270021118     A                                  6  8'Use this option  to edit comments -
+000280021118     A                                      appearing on the payslip. Comments'
+000290021118     A                                  7  8'can be run type specific or can co-
+000300021118     A                                      ver all payrolls (leave Run Type'
+000310021118     A                                  8  8'blank).'
+000320021118     A                                 23 52'F4 = Delete ALL records'
+000330021118     A                                      DSPATR(HI)
+000340021118     A                                 12 39'(optional)'
+000350021118     A            ERRMSG        75   O 24  3DSPATR(HI)
+000360941120     A**
+000370021118     A          R FMT2
+000380021118     A*%%TS  SD  20021118  091042  SBRITTON    REL-V5R1M0  5722-WDS
+000390021118     A                                      CA02(02)
+000400021118     A                                      CF01(01)
+000410021118     A                                      CF15(15)
+000420021118     A N80                                  CF04(04)
+000430021118     A            #MODE          6A  O  3 38DSPATR(RI)
+000440021118     A                                      COLOR(YLW)
+000450021118     A            @PGM          10A  O  1  3DSPATR(HI)
+000460021118     A                                  5  2'Payroll Run Type..'
+000470021118     A                                      COLOR(BLU)
+000480021118     A                                 23 14'F2 = Cancel'
+000490021118     A                                      DSPATR(HI)
+000500021118     A            CONAME        30A  O  1 26DSPATR(HI)
+000510021118     A                                      DSPATR(UL)
+000520021118     A            @TITLE        40A  O  2 21DSPATR(HI)
+000530021118     A                                  2  3USER
+000540021118     A                                      DSPATR(HI)
+000550021118     A                                  1 73SYSNAME
+000560021118     A                                      DSPATR(HI)
+000570021118     A            @DATE         10A  O  2 71DSPATR(HI)
+000580021118     A                                 23 33'F3 = End Program'
+000590021118     A                                      DSPATR(HI)
+000600021118     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000610021118     A            PTYPE#    R        O  5 24REFFLD(PRTYFMT/PRTYPTYPE PAYLIB/PAY-
+000620021118     A                                      RTYP)
+000630021118     A                                      DSPATR(HI)
+000640021118     A N80                             23 59'F4 = Delete Record'
+000650021118     A                                      DSPATR(HI)
+000660021118     A                                 22 31'F15 = Confirm Record'
+000670021118     A                                      DSPATR(HI)
+000680021118     A            PCOMDESC1 R        B 12  2REFFLD(PCOMFMT/PCOMDESC1 PAYLIB/PAY-
+000690021118     A                                      COMM)
+000700021118     A                                 10  2'Enter Text'
+000710021118     A                                      COLOR(BLU)
+000720021118     A            PCOMDESC2 R        B 13  2REFFLD(PCOMFMT/PCOMDESC2 PAYLIB/PAY-
+000730021118     A                                      COMM)
+000740021118     A            PCOMDESC3 R        B 14  2REFFLD(PCOMFMT/PCOMDESC3 PAYLIB/PAY-
+000750021118     A                                      COMM)
+000760021118     A            RUN_DESC      25   O  5 27DSPATR(HI)
+000770021115     A          R WIN2
+000780021115     A*%%TS  SD  20021115  172908  SBRITTON    REL-V5R1M0  5722-WDS
+000790021115     A                                      WINDOW(10 15 10 40)
+000800021115     A                                  2  2'LEAVE DELETE TYPE ENTRY BLANK TO '
+000810021115     A                                      COLOR(RED)
+000820021115     A                                  3  2'IGNORE THIS DELET REQUEST.'
+000830021115     A                                      COLOR(RED)
+000840021115     A                                  5  7'PRESS ENTER TO CONTINUE'
+000850021115     A                                      COLOR(RED)
+000860021115     A                                  8  2'DELETE TYPE-'
+000870021115     A                                      COLOR(RED)
+000880021115     A            DELETE         1A  B  8 17DSPATR(HI)
+000890021115     A                                      DFTVAL('N')
+000900021115     A                                  8 20'(Y = YES)'

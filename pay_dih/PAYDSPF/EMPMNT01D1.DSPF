@@ -1,0 +1,194 @@
+000010140827     A*%%TS  SD  20140827  145548  SBRITTON    REL-V7R1M0  5770-WDS
+000020140827     A*%%EC
+000030140827     A                                      DSPSIZ(24 80 *DS3)
+000040140827     A                                      CF03(03)
+000050050519     A          R FMT1
+000060050519     A*%%TS  SD  20050519  144044  AFUNG       REL-V5R3M0  5722-WDS
+000070050519     A                                      CF05(05)
+000080050519     A                                      CF15(15)
+000090050519     A            CONAME        30A  O  1 26DSPATR(HI)
+000100050519     A                                      DSPATR(UL)
+000110050519     A                                  1 72SYSNAME
+000120050519     A                                      DSPATR(HI)
+000130050519     A            @DATE         10A  O  2 70DSPATR(HI)
+000140050519     A            @TITLE        40A  O  2 21DSPATR(HI)
+000150050519     A                                  1  2USER
+000160050519     A                                      DSPATR(HI)
+000170050519     A            @PGM          10A  O  2  2DSPATR(HI)
+000180050519     A            ERRMSG        75A  O 24  3DSPATR(BL)
+000190050519     A            LRULTYPE# R     Y  O  8 32REFFLD(LRULFMT/LRULTYPE *LIBL/LIABR-
+000200050519     A                                      ULE)
+000210050519     A                                      DSPATR(HI)
+000220050519     A                                      EDTCDE(Z)
+000230050519     A            LRULLOC#  R     Y  O  6 32REFFLD(LRULFMT/LRULLOC *LIBL/LIABRU-
+000240050519     A                                      LE)
+000250050519     A                                      DSPATR(HI)
+000260050519     A                                      EDTCDE(Z)
+000270050519     A                                 10  6'Liability sub-Type....:'
+000280050519     A                                      COLOR(BLU)
+000290050519     A            LRULSTYPE#R     Y  O 10 32REFFLD(LRULFMT/LRULSTYPE *LIBL/LIAB-
+000300050519     A                                      RULE)
+000310050519     A                                      DSPATR(HI)
+000320050519     A                                      EDTCDE(Z)
+000330050519     A            LRULALLLIMR     Y  B 12 32REFFLD(LRULFMT/LRULALLLIM *LIBL/LIA-
+000340050519     A                                      BRULE)
+000350050519     A                                      DSPATR(HI)
+000360050519     A                                      EDTCDE(1)
+000370050519     A            LRULPERLIMR        B 14 32REFFLD(LRULFMT/LRULPERLIM *LIBL/LIA-
+000380050519     A                                      BRULE)
+000390050519     A                                      DSPATR(HI)
+000400050519     A                                      EDTCDE(1)
+000410050519     A            LRULCLSLIMR        B 16 32REFFLD(LRULFMT/LRULCLSLIM *LIBL/LIA-
+000420050519     A                                      BRULE)
+000430050519     A                                      DSPATR(HI)
+000440050519     A                                  8  6'Liability Type........:'
+000450050519     A                                      COLOR(BLU)
+000460050519     A                                  6  6'Warehouse Location....:'
+000470050519     A                                      COLOR(BLU)
+000480050519     A                                 12  6'Allowed Limit.........:'
+000490050519     A                                      COLOR(BLU)
+000500050519     A                                 14  6'Percent Basic Wage....:'
+000510050519     A                                      COLOR(BLU)
+000520050519     A                                 16  6'Setup Class Limit.....:'
+000530050519     A                                      COLOR(BLU)
+000540050519     A                                 23  6'F3=End Program'
+000550050519     A                                      DSPATR(HI)
+000560050519     A                                 23 50'F15=Confirm'
+000570050519     A                                      DSPATR(HI)
+000580050519     A            WCDESC    R        O  6 36REFFLD(WCFMT/WCDESC *LIBL/WHCON)
+000590050519     A                                      DSPATR(HI)
+000600050519     A            EMDSP     R        O  8 36REFFLD(EMFMT/EMDSP *LIBL/EMATF)
+000610050519     A                                      DSPATR(HI)
+000620050519     A            EADSP     R        O 10 36REFFLD(EAFMT/EADSP *LIBL/EASTF)
+000630050519     A                                      DSPATR(HI)
+000640050527     A          R SFILE                     SFL
+000650050527     A*%%TS  SD  20050527  143615  AFUNG       REL-V5R3M0  5722-WDS
+000660050527     A            LRUL2ALLWLR     Y  B 10 40REFFLD(LRUL2FMT/LRUL2ALLWL *LIBL/LI-
+000670050527     A                                      ABRULE2)
+000680050527     A                                      DSPATR(HI)
+000690050527     A                                      EDTCDE(1)
+000700050527     A            LRUL2IGLIMR        B 10 74REFFLD(LRUL2FMT/LRUL2IGLIM *LIBL/LI-
+000710050527     A                                      ABRULE2)
+000720050527     A                                      DSPATR(HI)
+000730050527     A            LRUL2PRLIMR        B 10 60REFFLD(LRUL2FMT/LRUL2PRLIM *LIBL/LI-
+000740050527     A                                      ABRULE2)
+000750050527     A                                      DSPATR(HI)
+000760050527     A                                      EDTCDE(1)
+000770050527     A            ESMCLSDES R        O 10 11REFFLD(ESMFMT/ESMCLSDES *LIBL/EMPSM-
+000780050527     A                                      F)
+000790050527     A                                      DSPATR(HI)
+000800050527     A            ESMCLASS  R        O 10  5REFFLD(ESMFMT/ESMCLASS *LIBL/EMPSMF)
+000810050527     A                                      DSPATR(HI)
+000820140827     A          R SFCTL                     SFLCTL(SFILE)
+000830140827     A*%%TS  SD  20140827  145548  SBRITTON    REL-V7R1M0  5770-WDS
+000840140827     A                                      CF02(02)
+000850140827     A                                      CF15(15)
+000860140827     A                                      CF05(05)
+000870140827     A                                      OVERLAY
+000880140827     A  75                                  SFLDSP
+000890140827     A                                      SFLDSPCTL
+000900140827     A  33                                  SFLCLR
+000910140827     A  55                                  SFLEND(*MORE)
+000920140827     A                                      SFLSIZ(0100)
+000930140827     A                                      SFLPAG(0012)
+000940140827     A            @PGM          10A  O  2  4DSPATR(HI)
+000950140827     A                                  1  4USER
+000960140827     A                                      DSPATR(HI)
+000970140827     A                                  1 71SYSNAME
+000980140827     A                                      DSPATR(HI)
+000990140827     A                                  9 44'Limit'
+001000140827     A                                      DSPATR(HI)
+001010140827     A                                      DSPATR(UL)
+001020140827     A                                      COLOR(BLU)
+001030140827     A                                  8 43'Allowed'
+001040140827     A                                      DSPATR(HI)
+001050140827     A                                      DSPATR(UL)
+001060140827     A                                      COLOR(BLU)
+001070140827     A            CONAME        30A  O  1 26DSPATR(HI)
+001080140827     A                                      DSPATR(UL)
+001090140827     A            @TITLE        40A  O  2 21DSPATR(HI)
+001100140827     A            @DATE         10A  O  2 69DSPATR(HI)
+001110140827     A                                  4  3'Warehouse Location..:'
+001120140827     A                                      DSPATR(HI)
+001130140827     A                                      COLOR(BLU)
+001140140827     A                                  8  4'Class'
+001150140827     A                                      DSPATR(HI)
+001160140827     A                                      DSPATR(UL)
+001170140827     A                                      COLOR(BLU)
+001180140827     A                                  5  3'Liability Type......:'
+001190140827     A                                      COLOR(BLU)
+001200140827     A            LRULTYPE#      2Y 0O  5 26DSPATR(HI)
+001210140827     A                                      EDTCDE(Z)
+001220140827     A            LRULLOC#       3S 0O  4 26DSPATR(HI)
+001230140827     A                                  8 71'Ignore'
+001240140827     A                                      COLOR(BLU)
+001250140827     A                                      DSPATR(UL)
+001260140827     A                                  9 72'Limit'
+001270140827     A                                      COLOR(BLU)
+001280140827     A                                      DSPATR(UL)
+001290140827     A            EMDSP     R        O  5 31REFFLD(EMFMT/EMDSP *LIBL/EMATF)
+001300140827     A                                      DSPATR(HI)
+001310140827     A            WCDESC    R        O  4 31REFFLD(WCFMT/WCDESC *LIBL/WHCON)
+001320140827     A                                      DSPATR(HI)
+001330140827     A                                  8 68'or'
+001340140827     A                                  8 54'or'
+001350140827     A            EADSP     R        O  6 31REFFLD(EAFMT/EADSP *LIBL/EASTF)
+001360140827     A                                      DSPATR(HI)
+001370140827     A                                  6  3'Liability Sub-Type..:'
+001380140827     A                                      COLOR(BLU)
+001390140827     A            LRULSTYPE#R        O  6 26REFFLD(EAFMT/EASUBTYP *LIBL/EASTF)
+001400140827     A                                      DSPATR(HI)
+001410140827     A                                      EDTCDE(Z)
+001420140827     A                                  9 58'Basic Wage'
+001430140827     A                                      COLOR(BLU)
+001440140827     A                                      DSPATR(UL)
+001450140827     A                                  8 12'Description'
+001460140827     A                                      COLOR(BLU)
+001470140827     A                                      DSPATR(UL)
+001480140827     A                                  7  3'Note: Limit signifies deductable a-
+001490140827     A                                      mount per pay-period cycle'
+001500140827     A                                      DSPATR(HI)
+001510140827     A                                  8 58'% Monthly'
+001520140827     A                                      COLOR(BLU)
+001530140827     A          R FOOTER
+001540140827     A*%%TS  SD  20140827  145548  SBRITTON    REL-V7R1M0  5770-WDS
+001550140827     A                                      FRCDTA
+001560140827     A                                      SLNO(23)
+001570140827     A                                      CLRL(*NO)
+001580140827     A                                      OVERLAY
+001590140827     A                                  1 17'F3=End Program'
+001600140827     A                                      DSPATR(HI)
+001610140827     A            ERRMSG        75A  O  2  3DSPATR(BL)
+001620140827     A                                  1  4'F2=Cancel'
+001630140827     A                                      DSPATR(HI)
+001640140827     A                                  1 60'F15=Update File'
+001650140827     A                                      DSPATR(HI)
+001660140827     A                                  1 35'F5=Employee Exception'
+001670140827     A                                      DSPATR(HI)
+001680050530     A          R FMT0
+001690050530     A*%%TS  SD  20050530  151252  AFUNG       REL-V5R3M0  5722-WDS
+001700050530     A                                      CF04(04)
+001710050530     A                                      RTNCSRLOC(*RECNAME &REC &FLD)
+001720050530     A            CONAME        30A  O  1 26DSPATR(HI)
+001730050530     A                                      DSPATR(UL)
+001740050530     A                                  1 72SYSNAME
+001750050530     A                                      DSPATR(HI)
+001760050530     A            @DATE         10A  O  2 70DSPATR(HI)
+001770050530     A            @TITLE        40A  O  2 21DSPATR(HI)
+001780050530     A                                  1  2USER
+001790050530     A                                      DSPATR(HI)
+001800050530     A            @PGM          10A  O  2  2DSPATR(HI)
+001810050530     A            ERRMSG        75A  O 24  3DSPATR(BL)
+001820050530     A            LRULLOC#  R     Y  B  6 32REFFLD(LRULFMT/LRULLOC *LIBL/LIABRU-
+001830050530     A                                      LE)
+001840050530     A                                      DSPATR(HI)
+001850050530     A                                      EDTCDE(Z)
+001860050530     A                                  6  6'Warehouse Location....:'
+001870050530     A                                      COLOR(BLU)
+001880050530     A                                 23  5'F3=End Program'
+001890050530     A                                      DSPATR(HI)
+001900050530     A                                 23 30'F4=Prompt'
+001910050530     A                                      DSPATR(HI)
+001920050530     A            FLD           10A  H
+001930050530     A            REC           10A  H
+001940050530     A                                  6 38'(Leave blank for all locations)'

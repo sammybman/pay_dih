@@ -1,0 +1,47 @@
+000010010921     A*%%TS  SD  20010921  181942  SAMMY       REL-V4R4M0  5769-PW1
+000020010921     A*%%EC
+000030010921     A                                      DSPSIZ(24 80 *DS3)
+000040010921     A                                      CF03(03)
+000050010921     A          R FMT1
+000060010921     A*%%TS  SD  20010921  181942  SAMMY       REL-V4R4M0  5769-PW1
+000070010921     A                                  2  3USER
+000080010921     A                                      DSPATR(HI)
+000090010921     A                                  1 71SYSNAME
+000100010921     A                                      DSPATR(HI)
+000110010921     A            @PGM          10A  O  1  3DSPATR(HI)
+000120010921     A            CONAME        30A  O  1 26DSPATR(HI)
+000130010921     A                                      DSPATR(UL)
+000140010921     A            @TITLE        40A  O  2 21DSPATR(HI)
+000150010921     A                                 23 33'F3 = End Program'
+000160010921     A                                      DSPATR(HI)
+000170010921     A            @DATE         10A  O  2 69DSPATR(HI)
+000180010921     A                                 13  6'Enter Payroll Run Type.....'
+000190010921     A                                      COLOR(BLU)
+000200010921     A            RUN_TYPE       1A  B 13 38DSPATR(HI)
+000210010921     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000220010620     A          R FMT2
+000230010620     A*%%TS  SD  20010620  104931  SAMMY       REL-V4R4M0  5769-PW1
+000240010620     A                                      CA21(21)
+000250010620     A                                  2  3USER
+000260010620     A                                      DSPATR(HI)
+000270010620     A                                  1 71SYSNAME
+000280010620     A                                      DSPATR(HI)
+000290010620     A            @PGM          10A  O  1  3DSPATR(HI)
+000300010620     A            CONAME        30A  O  1 26DSPATR(HI)
+000310010620     A                                      DSPATR(UL)
+000320010620     A            @TITLE        40A  O  2 21DSPATR(HI)
+000330010620     A            @DATE         10A  O  2 69DSPATR(HI)
+000340010620     A                                  6 12'WARNING ! THIS OPTION WILL CREATE -
+000350010620     A                                      ALL EMPLOYEE TIMESHEET'
+000360010620     A                                      DSPATR(BL)
+000370010620     A                                  7 12'TRANSACTIONS FOR SELECTED PAYROLL -
+000380010620     A                                      TYPES.'
+000390010620     A                                      DSPATR(BL)
+000400010620     A                                  9 12'THESE TRANSACTIONS CAN BE CHANGED -
+000410010620     A                                      ONLY THROUGH THE TIMESHEET'
+000420010620     A                                      DSPATR(BL)
+000430010620     A                                 10 12'MAINTENANCE OPTION.'
+000440010620     A                                      DSPATR(BL)
+000450010620     A                                 16 17'PRESS F21 TO CONTINUE OR F3 TO TER-
+000460010620     A                                      MINATE PROCESS'
+000470010620     A                                      DSPATR(HI)

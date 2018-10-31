@@ -1,0 +1,34 @@
+000010960419     A*%%TS  SD  19960419  131016  ANTHONY     REL-V3R1M0  5763-PW1
+000020960419     A*%%EC
+000030960419     A                                      DSPSIZ(24 80 *DS3)
+000040960416     A          R RECORD
+000050960416     A*%%TS  SD  19960416  104623  ANTHONY     REL-V3R1M0  5763-PW1
+000060960416     A                                      ASSUME
+000070960416     A                                  1  4' '
+000080960419     A          R SFDSP                     SFL
+000090960419     A*%%TS  SD  19960419  111535  ANTHONY     REL-V3R1M0  5763-PW1
+000100960419     A            OPT            1A  I  5  4
+000110960419     A  99                                  DSPATR(ND)
+000120960419     A  99                                  DSPATR(PR)
+000130960419     A            KACCFD    R        O  5 16REFFLD(KACRU/KACCFD PAYLIB/KRONACRU)
+000140960419     A          R SFCTL                     SFLCTL(SFDSP)
+000150960419     A*%%TS  SD  19960419  131016  ANTHONY     REL-V3R1M0  5763-PW1
+000160960419     A N25                                  SFLDSP
+000170960419     A                                      SFLDSPCTL
+000180960419     A  12                                  SFLCLR
+000190960419     A N20                                  SFLEND(*MORE)
+000200960419     A                                      SFLSIZ(0050)
+000210960419     A                                      SFLPAG(0009)
+000220960419     A                                      WINDOW(5 10 15 50)
+000230960419     A                                  1 18'Banks DiH Limited'
+000240960419     A                                      DSPATR(UL)
+000250960419     A                                      DSPATR(HI)
+000260960419     A N99                              3  2'Select'
+000270960419     A                                      DSPATR(UL)
+000280960419     A N99                              4  3'(x)'
+000290960419     A                                  2 16'Kronos Accrual Fields'
+000300960419     A                                      DSPATR(UL)
+000310960419     A                                      DSPATR(HI)
+000320960419     A                                  3 19'Accrual Fields'
+000330960419     A                                      DSPATR(UL)
+000340960419     A                                      DSPATR(HI)

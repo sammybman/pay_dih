@@ -1,0 +1,46 @@
+000100090129             pgm
+000102090129          /* declaring the variables to be used in the program */
+000103090129             DCL        VAR(&IN03) TYPE(*LGL) LEN(1) VALUE('0')
+000107090129             DCL        VAR(&@PGM) TYPE(*CHAR) LEN(10) VALUE(' ')
+000109090129             DCL        VAR(&CONAME) TYPE(*CHAR) LEN(30) VALUE(' ')
+000111090129             DCL        VAR(&@TITLE) TYPE(*CHAR) LEN(40) VALUE('    +
+000112090129                          Republic Bank Location Accounts')
+000118090129             DCL        VAR(&@DATE) TYPE(*CHAR) LEN(10) VALUE(' ')
+000119090129             DCL        VAR(&ERRMSG) TYPE(*CHAR) LEN(75) VALUE(' ')
+000120090129             DCL        VAR(&OPT) TYPE(*DEC) LEN(1 0) VALUE(0)
+000121090129          /* declaring disply file to program */
+000122090129             DCLF       FILE(PAYR010CD) RCDFMT(FMT1)
+000124090129             CALLPRC    PRC(GET_CONAME) RTNVAL(&CONAME)
+000126090129             CALLPRC    PRC(GET_SYS_DATE) RTNVAL(&@DATE)
+000128090129             RTVJOBA    JOB(&@PGM)
+000130090129 dspscn:
+000132090129          /* executing the record format */
+000133090129             SNDRCVF    RCDFMT(FMT1)
+000135090129          /* clearing the error message field*/
+000136090129             CHGVAR     VAR(&ERRMSG) VALUE(' ')
+000138090129          /* go to endpgm: if F3 is pressed */
+000139090129             IF         COND(&IN03 *EQ '1') THEN(GOTO CMDLBL(ENDPGM))
+000140090129
+000144090129          /* validating data entered*/
+000145090129          /* checking to see if any option was selected*/
+000146090129             IF         COND(&OPT *EQ 0) THEN(DO)
+000148090129                CHGVAR     VAR(&ERRMSG) VALUE('PLEASE SELECT AN OPTION')
+000150090129                GOTO       CMDLBL(DSPSCN)
+000152090129             ENDDO
+000154090129             SELECT
+000156090129          /* call payr010r01 when option 1 is selected */
+000157090129                WHEN       COND(&OPT *EQ 1) THEN(CALLPRC PRC(PAYR010R02))
+000159090129          /* call payr010r02 when option 2 is selected */
+000160090129                WHEN       COND(&OPT *EQ 2) THEN(CALLPRC PRC(PAYR010R01))
+000162090129          /* call payr010r03 when option 3 is selected */
+000163090129                WHEN       COND(&OPT *EQ 3) THEN(CALLPRC PRC(PAYR010R03))
+000165090129                OTHERWISE  CMD(CHGVAR VAR(&ERRMSG) VALUE('INVALID OPTION +
+000166090129                             SELECTED'))
+000169090129             ENDSELECT
+000171090129             MONMSG     MSGID(CPF0000)
+000173090129             commit
+000175090129          /* execute fmt1*/
+000176090129             GOTO       CMDLBL(DSPSCN)
+000178090129 ENDPGM:
+000180090129       /* ends the program */
+000181090129             endpgm

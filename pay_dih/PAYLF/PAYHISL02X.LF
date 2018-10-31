@@ -1,0 +1,8 @@
+000100010423     A          R PHISFMT                   PFILE(PAYHIS)
+000200010424     A          K PHISTYPE
+000300010427     A          K PHISEMP
+000400081113     A          S PHISSTS                   VALUES('G')
+000500090227                  PHISRDATE                 COMP(EQ 20081111)
+000600090227                  PHISPDATE                 COMP(EQ 20081114)
+000700090227                  PHISNDATE                 COMP(EQ 20081111)
+000800081113                  PHISTYPE                  COMP(EQ 'R')

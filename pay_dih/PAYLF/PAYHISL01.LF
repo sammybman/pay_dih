@@ -1,0 +1,3 @@
+000100010423     A          R PHISFMT                   PFILE(PAYHIS)
+000200010423     A          K PHISEMP
+000300010423     A          S PHISSTS                   VALUES('A')

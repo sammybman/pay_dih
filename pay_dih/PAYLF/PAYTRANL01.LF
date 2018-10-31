@@ -1,0 +1,7 @@
+000100010423     A          R PTISFMT                   PFILE(PAYTRANS)
+000200010423     A          K PTRNEMP
+000300010423     A          K PTRNPDATE
+000400010423     A          K PTRNRDATE
+000500010423     A          K PTRNTYPE
+000600010423     A          K PTRNTCODE
+000700010423     A          S PTRNSTS                   VALUES('A')

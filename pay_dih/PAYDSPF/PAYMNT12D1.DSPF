@@ -1,0 +1,141 @@
+000010160416     A*%%TS  SD  20160416  115416  SBRITTON    REL-V7R1M0  5770-WDS
+000020160416     A*%%EC
+000030160416     A                                      DSPSIZ(27 132 *DS4)
+000040160416     A                                      ERRSFL
+000050160416     A                                      CF03(03)
+000060151110     A          R FMT1
+000070151110     A*%%TS  SD  20151110  085019  SBRITTON    REL-V7R1M0  5770-WDS
+000080151110     A                                      CF15(15)
+000090151110     A                                      CF04(04)
+000100151110     A                                      RTNCSRLOC(*RECNAME &REC &FLD)
+000110151110     A            OVRPAYTATR     1A  P
+000120151110     A            DEDPAYTATR     1A  P
+000130151110     A            @PGM          10A  O  1  3DSPATR(HI)
+000140151110     A                                  2  3USER
+000150151110     A                                      DSPATR(HI)
+000160151110     A            CONAME        30A  O  1 26DSPATR(HI)
+000170151110     A                                      DSPATR(UL)
+000180151110     A            @TITLE        40A  O  2 21DSPATR(HI)
+000190151110     A            @DATE         10A  O  1 71DSPATR(HI)
+000200151110     A                                  2 71TIME
+000210151110     A                                      DSPATR(HI)
+000220151110     A                                 25 33'F3 = End Program'
+000230151110     A                                      DSPATR(HI)
+000240151110     A            ERRMSG        75A  O 26  3DSPATR(BL)
+000250151110     A                                      COLOR(RED)
+000260151110     A                                  4  3'Define Incentive  table on default-
+000270151110     A                                        specification....:'
+000280151110     A                                      COLOR(BLU)
+000290151110     A            CMGDFTFLAGR        B  4 59REFFLD(CMGFMT/CMGDFTFLAG *LIBL/PICO-
+000300151110     A                                      MMGM)
+000310151110     A                                      DSPATR(HI)
+000320151110     A                                  4 63'(Y = Yes)'
+000330151110     A                                 20 22'Incentive  Rate #1...:'
+000340151110     A                                      COLOR(BLU)
+000350151110     A            CMGRLIST#1R        B 20 46REFFLD(CMGFMT/CMGRLIST#1 *LIBL/PICO-
+000360151110     A                                      MMGM)
+000370151110     A                                      DSPATR(HI)
+000380151110     A                                 21 22'Incentive  Rate #2...:'
+000390151110     A                                      COLOR(BLU)
+000400151110     A            CMGRLIST#2R        B 21 46REFFLD(CMGFMT/CMGRLIST#2 *LIBL/PICO-
+000410151110     A                                      MMGM)
+000420151110     A                                      DSPATR(HI)
+000430151110     A                                 22 22'Incentive  Rate #3...:'
+000440151110     A                                      COLOR(BLU)
+000450151110     A            CMGRLIST#3R        B 22 46REFFLD(CMGFMT/CMGRLIST#3 *LIBL/PICO-
+000460151110     A                                      MMGM)
+000470151110     A                                      DSPATR(HI)
+000480151110     A            CMGOVRPAYTR        B 13 59REFFLD(CMGFMT/CMGOVRPAYT *LIBL/PICO-
+000490151110     A                                      MMGM)
+000500151110     A                                      DSPATR(HI)
+000510151110     A                                      EDTCDE(Z)
+000520151110     A                                      DSPATR(&OVRPAYTATR)
+000530151110     A                                 18  9'Define Job categories Specific to -
+000540151110     A                                      listed rates'
+000550151110     A                                      DSPATR(HI)
+000560151110     A                                 19 12'(separate each Job category with a-
+000570151110     A                                       comma)'
+000580151110     A                                 12  3'If Incentive  payments will OVERRI-
+000590151110     A                                      DE or SUPERCEDE any'
+000600151110     A                                      COLOR(BLU)
+000610151110     A                                 13  3'other payroll type , ENTER that Pa-
+000620151110     A                                      yroll type here....:'
+000630151110     A                                      COLOR(BLU)
+000640151110     A            REC           10A  H
+000650151110     A            FLD           10A  H
+000660151110     A                                  6  3'Keep configuration data for incent-
+000670151110     A                                      ives (months)......:'
+000680151110     A                                      COLOR(BLU)
+000690151110     A            CMGKEEPDTAR        B  6 59REFFLD(CMGFMT/CMGKEEPDTA *LIBL/PICO-
+000700151110     A                                      MMGM)
+000710151110     A                                      DSPATR(HI)
+000720151110     A                                      EDTCDE(Z)
+000730151110     A                                      COMP(GT 12)
+000740151110     A                                  6 63'( > 12 months)'
+000750151110     A                                 25 54'F15 = Confirm changes'
+000760151110     A                                      DSPATR(HI)
+000770151110     A                                 15  3'If Incentive  payments will be DED-
+000780151110     A                                      UCTED  from any'
+000790151110     A                                      COLOR(BLU)
+000800151110     A                                 16  3'other payroll type , ENTER that Pa-
+000810151110     A                                      yroll type here....:'
+000820151110     A                                      COLOR(BLU)
+000830151110     A            CMGDEDPAYTR        B 16 59REFFLD(CMGFMT/CMGDEDPAYT *LIBL/PICO-
+000840151110     A                                      MMGM)
+000850151110     A                                      EDTCDE(Z)
+000860151110     A                                      DSPATR(HI)
+000870151110     A                                      DSPATR(&DEDPAYTATR)
+000880151110     A                                 14 25'or'
+000890151110     A                                 13 63'(optional)'
+000900151110     A                                 16 63'(optional)'
+000910151110     A                                  5  3'Performance Incentive Payment Type-
+000920151110     A                                      ...................:'
+000930151110     A                                      COLOR(BLU)
+000940151110     A            CMGPITYPE R        B  5 59REFFLD(CMGFMT/CMGPITYPE *LIBL/PICOM-
+000950151110     A                                      MGM)
+000960151110     A                                      EDTCDE(Z)
+000970151110     A                                      DSPATR(HI)
+000980151110     A                                 10  3'Calc. Individual Payment based on -
+000990151110     A                                      grade specific rate:'
+001000151110     A                                      COLOR(BLU)
+001010151110     A            CMGMINGFLGR        B 10 59REFFLD(CMGFMT/CMGMINGFLG *LIBL/PICO-
+001020151110     A                                      MMGM)
+001030151110     A                                      DSPATR(HI)
+001040151110     A                                      VALUES('0' '1' '2' '3')
+001050151110     A                                  7 63'0 = non specified'
+001060151110     A                                  8 63'1 = 1st base rate'
+001070151110     A                                  9 63'2 = 2nd base rate'
+001080151110     A                                 10 63'3 = 3rd base rate'
+001090151110     A                                 24  3'NEXT RUN PERIOD FOR INCENTIVE (YYY-
+001100151110     A                                      YMM)................:'
+001110151110     A                                      COLOR(BLU)
+001120151110     A            CMGNPRNO  R        B 24 59REFFLD(CMGFMT/CMGNPRNO *LIBL/PICOMM-
+001130151110     A                                      GM)
+001140151110     A                                      DSPATR(HI)
+001150151110     A                                      EDTCDE(Z)
+001160151110     A                                 23  3'Use Year Average for Target Calcul-
+001170151110     A                                      ations?.............:'
+001180151110     A                                      COLOR(BLU)
+001190151110     A            CMGAVGFLAGR        B 23 59REFFLD(CMGFMT/CMGAVGFLAG *LIBL/PICO-
+001200151110     A                                      MMGM)
+001210151110     A                                      DSPATR(HI)
+001220151110     A                                 23 63'(0 = NO, 1 = Calendar year, 2 = Fi-
+001230151110     A                                      scal Year)'
+001240060509     A          R WIN2
+001250060509     A*%%TS  SD  20060509  182932  SBRITTON    REL-V5R3M0  5722-WDS
+001260060509     A                                      WINDOW(10 15 10 40)
+001270060509     A                                  2  2'WARNING! CHANGES TO EMPLOYEE EMOLU-
+001280060509     A                                      MENTS'
+001290060509     A                                      COLOR(RED)
+001300060509     A                                  3  2'MIGHT BE APPLIED, VERIFY ALL DATA'
+001310060509     A                                      COLOR(RED)
+001320060509     A                                  7  7'PROCEED WITH EXTREME CAUTION.'
+001330060509     A                                      COLOR(RED)
+001340060509     A                                  8  7'Type YES in field to Proceed'
+001350060509     A                                      COLOR(RED)
+001360060509     A            OPTION         3A  B  9 20DSPATR(HI)
+001370060509     A                                      DFTVAL('N')
+001380060509     A                                  4  2'WITH HR/PAYROLL DEPARTMENTS BEFORE'
+001390060509     A                                      COLOR(RED)
+001400060509     A                                  5  2'CONTINUING.'
+001410060509     A                                      COLOR(RED)

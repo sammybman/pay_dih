@@ -1,0 +1,26 @@
+000100950905     A* ********************************************************
+000200950905     A*              B A N K S    D I H    L T D.              *
+000300950905     A*                INVENTORY CONTROL SYSTEM                *
+000400950905     A*                                                        *
+000500950905     A*                         BY                             *
+000600950905     A*                                                        *
+000700970908     A*                BANKS DIH I.S. DEPARTMENT               *
+000800950905     A*                                                        *
+000900950905     A*                                                        *
+001000980217     A*       LOGICAL  FILE NAME: JRNM                         *
+001100980217     A*       RECORD FORMAT NAME: JRFMT                        *
+001200980217     A*       FILE PREFIX.......: JR                           *
+001300950905     A*                                                        *
+001400980217     A*       PROGRAMMER NAME: CHRIS WILLIAMS                  *
+001500980217     A*       DESIGN DATE....: 1998/02/17                      *
+001600950905     A*                                                        *
+001700980217     A*  FILE DESCRIPTION: JOURNAL MASTER FILE                 *
+001800950905     A*                                                        *
+001900980217     A*  THIS LOGICAL FILE SHOWS OPEN RECORDS  BY  JRN NUMBER  *
+002000970910     A*                                                        *
+002100950906     A**********************************************************
+002200950906     A*
+002300980217     A          R JRFMT                     PFILE(JRNM)
+002400980217     A          K JRNUMB
+002500980217     A          S JRSTS                     COMP(EQ 'O')
+002600021014     A*           JRTAG                     COMP(EQ '1')

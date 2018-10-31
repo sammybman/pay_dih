@@ -1,0 +1,55 @@
+000010980520     A*%%TS  SD  19980520  100316  SAMMY       REL-V3R7M0  5716-PW1
+000020941122     A*
+000030980520     A*%%EC
+000040980520     A                                      DSPSIZ(24 80 *DS3)
+000050980520     A                                      CA03(03)
+000060941120     A          R FMT1
+000070941120     A*
+000080941121     A            UDATE          6Y 0O  1  2EDTCDE(Y)
+000090950711     A            @USER         10   O  2  2
+000100941214     A                                  1 24'B A N K S   D I H    L T D'
+000110950711     A                                  2 21'DIH LOCATIONS FILE  MAINTENANCE'
+000120941214     A                                          DSPATR(UL)
+000130941120     A            #MODE          6   O  1 75DSPATR(RI)
+000140950711     A            @PGM          10   O  2 70
+000150950711     A                                  4  4'Location No..'
+000160950711     A            LTNO           2Y 0B  4 22 EDTCDE(Z)
+000170941120     **
+000180941121     A                                 23  1'CMD3=End Program'
+000190941120     A                                      DSPATR(HI)
+000200941120     A**
+000210980520     A          R FMT2
+000220980520     A*%%TS  SD  19980520  100316  SAMMY       REL-V3R7M0  5716-PW1
+000230980520     A                                      CA01(01)
+000240980520     A            UDATE          6Y 0O  1  2EDTCDE(Y)
+000250980520     A            @USER         10A  O  2  2
+000260980520     A                                  1 24'B A N K S   D I H    L T D'
+000270980520     A                                  2 21'DIH LOCATIONS FILE  MAINTENANCE'
+000280980520     A                                      DSPATR(UL)
+000290980520     A            #MODE          6A  O  1 75DSPATR(RI)
+000300980520     A            @PGM          10A  O  2 70
+000310980520     A                                  4  4'Location No............'
+000320980520     A            LTNO           2Y 0O  4 30EDTCDE(Z)
+000330980520     A                                      DSPATR(HI)
+000340980520     A                                  6  4'Location Name..........'
+000350980520     A            LTNAME        15A  B  6 30CHECK(LC)
+000360980520     A                                 23  2'CMD1=Cancel   CMD3=End Program'
+000370980520     A                                      DSPATR(HI)
+000380980520     A            LTACCT    R     D  B  8 30REFFLD(LOCFMT/LTACCT *LIBL/DPTLOC)
+000390980520     A            LTSUB1    R        O  8 39REFFLD(LOCFMT/LTSUB1 *LIBL/DPTLOC)
+000400980520     A            LTSPC     R     D  B  8 46REFFLD(LOCFMT/LTSPC *LIBL/DPTLOC)
+000410980520     A                                  8 44'-'
+000420980520     A                                  8 37'-'
+000430980520     A                                  8  4'Default Property Acc...'
+000440980520     A                                  8 59'(OLD)'
+000450980520     A                                 10  4'Default Property Acc...'
+000460980520     A            LTAL1     R        B 10 30REFFLD(LOCFMT/LTAL1 *LIBL/DPTLOC)
+000470980520     A            LTAL2     R        B 10 36REFFLD(LOCFMT/LTAL2 *LIBL/DPTLOC)
+000480980520     A            LTAL3     R        B 10 42REFFLD(LOCFMT/LTAL3 *LIBL/DPTLOC)
+000490980520     A            LTAL4     R        B 10 48REFFLD(LOCFMT/LTAL4 *LIBL/DPTLOC)
+000500980520     A            LTAL5     R        B 10 54REFFLD(LOCFMT/LTAL5 *LIBL/DPTLOC)
+000510980520     A                                 10 34'-'
+000520980520     A                                 10 40'-'
+000530980520     A                                 10 46'-'
+000540980520     A                                 10 52'-'
+000550980520     A                                 10 59'(NEW)'

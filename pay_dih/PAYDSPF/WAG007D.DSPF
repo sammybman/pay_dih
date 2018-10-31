@@ -1,0 +1,95 @@
+000010980724     A*%%TS  SD  19980724  112912  ANTHONY     REL-V3R7M0  5716-PW1
+000020980724     A*%%EC
+000030980724     A                                      DSPSIZ(24 80 *DS3)
+000040980724     A                                      PRINT
+000050980724     A                                      HLPRCD(HELPREC)
+000060980724     A                                      HELP
+000070980724     A                                      CA03(03)
+000080950530     A*
+000090980724     A          R FMT1
+000100980724     A*%%TS  SD  19980724  112023  ANTHONY     REL-V3R7M0  5716-PW1
+000110980724     A            @PGM          10A  O  1  2
+000120980724     A            UDATE          6Y 0O  2  2EDTCDE(Y)
+000130980724     A                                  1 24'B A N K S   D I H    L T D'
+000140980724     A                                  2 24'OVERTIME  PAYROLL  SELECTION'
+000150980724     A                                      DSPATR(UL)
+000160980724     A            #MODE          6A  O  1 75DSPATR(RI)
+000170980724     A            @USER         10A  O  2 69
+000180980724     A                                  3  2'Enter up to three (3) payroll date-
+000190980724     A                                      s for overtime selection'
+000200980724     A            SDATE          6Y 0B  4 42EDTCDE(Z)
+000210980724     A            TDATE          6Y 0B  4 57EDTCDE(Z)
+000220980724     A                                 23  1'CMD3=End Program'
+000230980724     A                                      DSPATR(HI)
+000240980724     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000250980724     A            FDATE          6Y 0B  4 26EDTCDE(Z)
+000260980724     A                                  4  2'Format -DDMMYY'
+000270980724     A                                  4 19'(1st)'
+000280980724     A                                      DSPATR(HI)
+000290980724     A                                  4 35'(2nd)'
+000300980724     A                                      DSPATR(HI)
+000310980724     A                                  4 50'(3rd)'
+000320980724     A                                      DSPATR(HI)
+000330950530     A*
+000340980724     A          R SFLREC                    SFL
+000350980724     A*%%TS  SD  19980724  112023  ANTHONY     REL-V3R7M0  5716-PW1
+000360980724     A            NUMB           6Y 0O  7  2EDTCDE(Z)
+000370980724     A            DEPT           3Y 0O  7  9EDTCDE(Z)
+000380980724     A            NAME          28A  O  7 13
+000390980724     A            THRS           5Y 2B  7 51EDTCDE(4)
+000400980724     A            OTH1           4Y 2O  7 60EDTWRD('  .  ')
+000410980724     A            OTH2           4Y 2O  7 67EDTWRD('  .  ')
+000420980724     A            OTH3           4Y 2O  7 74EDTWRD('  .  ')
+000430980724     A            SCLASS         3A  O  7 43
+000440950530     A*
+000450951127     A          R SFLCTL                    SFLCTL(SFLREC)
+000460951127     A*%%TS  SD  19951127  092259  SAMMY       REL-V2R3M0  5738-PW1
+000470951127     A                                      CF02(02)
+000480951127     A                                      CF07(07)
+000490951127     A                                      OVERLAY
+000500951127     A                                      SFLDSP
+000510951127     A                                      SFLDSPCTL
+000520951127     A  33                                  SFLCLR
+000530951127     A                                      SFLSIZ(0180)
+000540951127     A                                      SFLPAG(0015)
+000550951127     A            @PGM          10A  O  1  2
+000560951127     A            UDATE          6Y 0O  2  2EDTCDE(Y)
+000570951127     A                                  1 24'B A N K S   D I H    L T D'
+000580951127     A                                  2 24'OVERTIME  PAYROLL  SELECTION'
+000590951127     A                                      DSPATR(UL)
+000600951127     A            #MODE          6A  O  1 75DSPATR(RI)
+000610951127     A            @USER         10A  O  2 69
+000620951127     A                                  4  2'For payroll dated........'
+000630951127     A            FDATE          6Y 0O  4 29EDTCDE(Y)
+000640951127     A            TDATE          6Y 0O  4 62EDTCDE(Y)
+000650951127     A                                  5  3'No..'
+000660951127     A                                      DSPATR(UL)
+000670951127     A                                  5  9'Dept'
+000680951127     A                                      DSPATR(UL)
+000690951127     A                                  5 14'Name'
+000700951127     A                                      DSPATR(UL)
+000710951127     A                                  5 49'Total hours'
+000720951127     A                                      DSPATR(UL)
+000730951127     A            SDATE          6Y 0O  4 43EDTCDE(Y)
+000740951127     A                                  4 39','
+000750951127     A                                  4 54'and'
+000760951127     A                                  5 61'1st'
+000770951127     A                                      DSPATR(UL)
+000780951127     A                                  5 68'2nd'
+000790951127     A                                      DSPATR(UL)
+000800951127     A                                  5 74'3rd'
+000810951127     A                                      DSPATR(UL)
+000820951127     A                                  5 42'Class'
+000830951127     A                                      DSPATR(UL)
+000840951127     A          R FOOTER
+000850951127     A*%%TS  SD  19951127  092259  SAMMY       REL-V2R3M0  5738-PW1
+000860951127     A                                      OVERLAY
+000870951127     A                                      PROTECT
+000880951127     A                                 23  5'CMD2=Cancel Entry'
+000890951127     A                                      DSPATR(HI)
+000900951127     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000910951127     A                                 23 41'CMD7=Create Pay File'
+000920950530     ** HELP TEXT WHEN HELP IS PRESSED
+000930950530     A          R HELPREC
+000940950530     A*                                     OVERLAY
+000950950530     A                                 10 20'NO HELP AVAILABLE YET'

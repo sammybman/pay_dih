@@ -1,0 +1,117 @@
+000010040705     A*%%TS  SD  20040705  163203  SBRITTON    REL-V5R2M0  5722-WDS
+000020040622     A* ********************************************************
+000030040622     A*              B A N K S    D I H    L T D.              *
+000040040622     A*                  M.I.S. DEPARTMENT                     *
+000050040622     A*                                                        *
+000060040622     A*                                                        *
+000070040622     A*       DISPLAY FILE NAME :  PAYMNT12D                   *
+000080040622     A*                                                        *
+000090040622     A*       PROGRAMMER NAME...:  ALLISON FUNG                *
+000100040622     A*       DATE..............:  21.06.2004                  *
+000110040622     A*                                                        *
+000120040622     A*  FILE DESCRIPTION: PAYROLL RUN TYPE DEF.MAINT.2        *
+000130040622     A*                    DISPLAY                             *
+000140040622     A*                                                        *
+000150040622     A**********************************************************
+000160040622     A*
+000170040705     A*%%EC
+000180040622     A*%%FD Payroll Run Type Def. Maint.2
+000190040705     A                                      DSPSIZ(24 80 *DS3)
+000200040705     A                                      REF(QGPL/QINVREC INVREC)
+000210040705     A                                      CA02(02)
+000220040622     A          R SUB1
+000230040622     A*%%TS  DD  20040622  161641  afung       REL-V5.0.1  WDSc
+000240040622     A                                      SFL
+000250040622     A*           PDPCOD#   R        O  8  4REFFLD(PDTFMT/PDPCOD SALESLIB/WHPDT-
+000260040622     A*                                     L01)
+000270040622     A            RUNRCODE       1   H
+000280040622     A            RUNPTYPE       2  0H
+000290040622     A            PRUNPRNO# R        O  9 15REFFLD(PRUNFMT/PRUNPRNO +
+000300040622     A                                      *LIBL/PAYRUNT)
+000310040622     A                                      EDTCDE(Z)
+000320040622     A                                      DSPATR(HI)
+000330040622     A            PRUNPERC# R     Y 4B  9 25EDTCDE(1)
+000340040622     A                                      REFFLD(PRUNFMT/PRUNPERC +
+000350110513     A                                           *LIBL/PAYRUNT)
+000360040622     A                                      DSPATR(HI)
+000370040622     A                                      COMP(GE 0)
+000380040622     A*%%GP SCREEN1    01
+000390040622     A          R SUBCTL1
+000400040622     A*%%TS  DD  20040622  143547  afung       REL-V5.0.1  WDSc
+000410040622     A                                      SFLCTL(SUB1)
+000420040622     A                                      CF15(15)
+000430040622     A  20                                  SFLDSP
+000440040622     A                                      SFLDSPCTL
+000450040622     A  33                                  SFLCLR
+000460040622     A  55                                  SFLEND(*MORE)
+000470040622     A                                      SFLSIZ(100)
+000480040622     A                                      SFLPAG(6)
+000490040622     A                                      WINDOW(5 9 16 59)
+000500040622     A                                      RMVWDW
+000510040622     A                                  8 13'PERIOD'
+000520040622     A                                      DSPATR(HI)
+000530040622     A                                      DSPATR(UL)
+000540040622     A                                      COLOR(BLU)
+000550040622     A                                  8 24'PERCENTAGE'
+000560040622     A                                      DSPATR(HI)
+000570040622     A                                      DSPATR(UL)
+000580040622     A                                      COLOR(BLU)
+000590040622     A                                  6  9'F2=Cancel'
+000600040622     A                                      DSPATR(HI)
+000610040622     A                                  6 24'F15=Confirm'
+000620040622     A                                      DSPATR(HI)
+000630040622     A                                  2  4'Run Type.............:'
+000640040622     A                                      COLOR(BLU)
+000650040622     A            PRUNRCODE R        O  2 28REFFLD(PRUNFMT/PRUNRCODE +
+000660040622     A                                      *LIBL/PAYRUNT)
+000670040622     A                                      DSPATR(HI)
+000680040622     A            PRTYDESC  R        O  2 32REFFLD(PRTYFMT/PRTYDESC +
+000690040622     A                                      *LIBL/PAYRTYP)
+000700040622     A                                      DSPATR(HI)
+000710040622     A                                  4  4'Pay Type.............:'
+000720040622     A                                      COLOR(BLU)
+000730040622     A            PRUNPTYPE R        O  4 28REFFLD(PRUNFMT/PRUNPTYPE +
+000740040622     A                                      *LIBL/PAYRUNT)
+000750040622     A                                      DSPATR(HI)
+000760040622     A            PTYDESC   R        O  4 32REFFLD(PTYFMT/PTYDESC *LIBL/PAYTYP)
+000770040622     A                                      DSPATR(HI)
+000780040622     A            TOTPERC        7Y 4O  8 45EDTCDE(3)
+000790040622     A                                      DSPATR(RI)
+000800040622     A            ERR#          55   O  7  3COLOR(RED)
+000810040622     A*%%GP SCREEN1    02
+000820040622     A          R WIN1
+000830040622     A*%%TS  DD  20040622  143138  afung       REL-V5.0.1  WDSc
+000840040622     A                                      WINDOW(5 5 9 60)
+000850040622     A                                  2  3'WARNING! '
+000860040622     A                                      COLOR(RED)
+000870040622     A                                  3  3'SETTING PERCENTAGE FROM THIS OPTIO-
+000880040622     A                                      N WILL AFFECT EVERY '
+000890040622     A                                      COLOR(RED)
+000900040622     A                                  4  3'PAYMENT TYPE PAID WITHIN THIS PAYR-
+000910040622     A                                      OLL.  IT IS ADVISABLE'
+000920040622     A                                      COLOR(RED)
+000930040622     A                                  5  3'TO CHOOSE THIS OPTION FROM THE PAY-
+000940040622     A                                      MENT TYPE MAINTENANCE,'
+000950040622     A                                      COLOR(RED)
+000960040622     A                                  6  3'IF INDIVIDUAL PAYMENT TYPE CONTROL-
+000970040622     A                                       IS NEEDED.'
+000980040622     A                                      COLOR(RED)
+000990040622     A                                  8  3'CONTINUE ?'
+001000040622     A                                      COLOR(RED)
+001010040622     A            CONFIRM        1   B  8 15DSPATR(HI)
+001020040622     A                                      DFTVAL('N')
+001030040622     A                                  8 19'(Y = YES)'
+001040040622     A          R FMT31
+001050040622     A*%%TS  DD  20040622  143547  afung       REL-V5.0.1  WDSc
+001060040622     A                                      ASSUME
+001070040622     A            FIELD1         1   B 12  7DSPATR(PR)
+001080040622     A*%%GP UNTITLED   01
+001090040705     A          R WIN2
+001100040705     A*%%TS  SD  20040705  163203  SBRITTON    REL-V5R2M0  5722-WDS
+001110040705     A                                      CA03(03)
+001120040705     A                                      WINDOW(5 5 9 60)
+001130040705     A                                  4  4'Please Enter Payroll Run-type code-
+001140040705     A                                       here ....'
+001150040705     A            RUN_TYPE       1A  B  4 51DSPATR(HI)
+001160040705     A                                  8  6'F3 = End Process'
+001170040705     A                                      DSPATR(HI)

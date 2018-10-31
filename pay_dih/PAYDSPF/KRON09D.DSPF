@@ -1,0 +1,34 @@
+000100960416     A*%%TS  SD  19960416  141859  ANTHONY     REL-V3R1M0  5763-PW1
+000200960416     A*%%EC
+000300960416     A                                      DSPSIZ(24 80 *DS3)
+000400960416     A          R RECORD
+000500960416     A*%%TS  SD  19960416  104623  ANTHONY     REL-V3R1M0  5763-PW1
+000600960416     A                                      ASSUME
+000700960416     A                                  1  4' '
+000800960416     A          R SFDSP                     SFL
+000900960416     A*%%TS  SD  19960416  141859  ANTHONY     REL-V3R1M0  5763-PW1
+001000960416     A            OPT            1A  I  5  4
+001100960416     A  99                                  DSPATR(ND)
+001200960416     A  99                                  DSPATR(PR)
+001300110627     A            KRST      R        O  5 19REFFLD(KRPREC/KRST *LIBL/KRONRF)
+001400960416     A          R SFCTL                     SFLCTL(SFDSP)
+001500960416     A*%%TS  SD  19960416  141859  ANTHONY     REL-V3R1M0  5763-PW1
+001600960416     A N25                                  SFLDSP
+001700960416     A                                      SFLDSPCTL
+001800960416     A  12                                  SFLCLR
+001900960416     A N20                                  SFLEND(*MORE)
+002000960416     A                                      SFLSIZ(0050)
+002100960416     A                                      SFLPAG(0009)
+002200960416     A                                      WINDOW(5 10 15 50)
+002300960416     A                                  1 18'Banks DiH Limited'
+002400960416     A                                      DSPATR(UL)
+002500960416     A                                      DSPATR(HI)
+002600960416     A N99                              3  2'Select'
+002700960416     A                                      DSPATR(UL)
+002800960416     A N99                              4  3'(x)'
+002900960416     A                                  2 13'Kronos Restriction Profiles'
+003000960416     A                                      DSPATR(UL)
+003100960416     A                                      DSPATR(HI)
+003200960416     A                                  3 20'Profile Names'
+003300960416     A                                      DSPATR(UL)
+003400960416     A                                      DSPATR(HI)

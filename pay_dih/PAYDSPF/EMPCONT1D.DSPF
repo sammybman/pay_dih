@@ -1,0 +1,222 @@
+000010060725     A*%%TS  SD  20060725  103643  CWILLIAMS   REL-V5R4M0  5722-WDS
+000020021011     A* ********************************************************
+000030021011     A*              B A N K S    D I H    L T D.              *
+000040021011     A*                INVENTORY CONTROL SYSTEM                *
+000050021011     A*                                                        *
+000060021011     A*                         BY                             *
+000070021011     A*                                                        *
+000080021011     A*       ONE PLUS COMPUTER SERVICES (GUYANA) LIMITED      *
+000090021011     A*             P.O BOX 10501, GEORGETOWN,GUYANA           *
+000100021011     A*                                                        *
+000110021011     A*                                                        *
+000120021011     A*       DISPLAY FILE  NAME: SYS002D                      *
+000130021011     A*       RECORD FORMAT NAME: FMT1                         *
+000140021011     A*                           FMT2                         *
+000150021011     A*                                                        *
+000160021011     A*       PROGRAMMER NAME: LORAINE INNISS                  *
+000170021011     A*       DESIGN DATE....: 9995/10/18                      *
+000180021011     A*                                                        *
+000190021011     A*  FILE DESCRIPTION: AUTHORITY MASTER FILE               *
+000200021011     A*                                                        *
+000210021011     A*  THIS FILE IS DESIGNED TO                              *
+000220021011     A*                                                        *
+000230021011     A*                                                        *
+000240021011     A**********************************************************
+000250060725     A*%%EC
+000260021011     A*%%FD Employee credit Savings Display File - v1.0
+000270060725     A                                      DSPSIZ(24 80 *DS3)
+000280060725     A                                      REF(*LIBL/SYSAUT AUTFMT)
+000290060725     A                                      PRINT
+000300060725     A                                      HELP(77)
+000310060725     A                                      CA03(03)
+000320060725     A                                      CA05(05)
+000330060725     A          R FMT1
+000340060725     A*%%TS  SD  20060725  103643  CWILLIAMS   REL-V5R4M0  5722-WDS
+000350060725     A                                      CA01(01)
+000360060725     A                                      CA02(02)
+000370060725     A                                      CA20(20)
+000380060725     A                                      CF15(15)
+000390060725     A                                      CF10(10)
+000400060725     A            @PGM          10A  O  1  2DSPATR(HI)
+000410060725     A            CONAME        30A  O  1 24DSPATR(UL)
+000420060725     A                                      DSPATR(HI)
+000430060725     A            @DATE         10A  O  2 70DSPATR(HI)
+000440060725     A            @TITLE        40A  O  2 20DSPATR(HI)
+000450060725     A                                 23  3'F2=Cancel'
+000460060725     A                                      DSPATR(HI)
+000470060725     A                                 23 15'F3=End Program'
+000480060725     A                                      DSPATR(HI)
+000490060725     A                                 23 67'F20=Delete'
+000500060725     A                                      DSPATR(HI)
+000510060725     A N99                                  DSPATR(ND)
+000520060725     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000530060725     A                                      DSPATR(BL)
+000540060725     A                                  1 70SYSNAME
+000550060725     A                                      DSPATR(HI)
+000560060725     A                                 23 52'F15=Confirm'
+000570060725     A                                      DSPATR(HI)
+000580060725     A                                  2  2USER
+000590060725     A                                      DSPATR(HI)
+000600060725     A                                  4  3'Liability type for transactions.:'
+000610060725     A                                      COLOR(BLU)
+000620060725     A            SACTYPE   R        B  4 39REFFLD(SACFMT/SACTYPE *LIBL/SAVCONF)
+000630060725     A                                      DSPATR(HI)
+000640060725     A                                      EDTCDE(Z)
+000650060725     A                                  6  3'Savings start cycle.(MONTH).....:'
+000660060725     A                                      COLOR(BLU)
+000670060725     A            SACMTH    R        B  6 39REFFLD(SACFMT/SACMTH *LIBL/SAVCONF)
+000680060725     A                                      DSPATR(HI)
+000690060725     A                                      EDTCDE(Z)
+000700060725     A                                      RANGE(1 12)
+000710060725     A                                  7  3'Fixed Interest percentage.......:'
+000720060725     A                                      COLOR(BLU)
+000730060725     A            SACINT    R        B  7 39REFFLD(SACFMT/SACINT *LIBL/SAVCONF)
+000740060725     A                                      DSPATR(HI)
+000750060725     A                                      EDTCDE(3)
+000760060725     A                                  8  3'Intr. calc. on years of service.:'
+000770060725     A                                      COLOR(BLU)
+000780060725     A            SACINTD   R        B  8 39REFFLD(SACFMT/SACINTD *LIBL/SAVCONF)
+000790060725     A                                      DSPATR(HI)
+000800060725     A                                 11  3'Intr. calc. on bal. & emp. cont.:'
+000810060725     A                                      COLOR(BLU)
+000820060725     A            SACINTBF  R        B  9 39REFFLD(SACFMT/SACINTBF *LIBL/SAVCON-
+000830060725     A                                      F)
+000840060725     A                                      DSPATR(HI)
+000850060725     A                                  9  3'Intr. calc. on balance..........:'
+000860060725     A                                      COLOR(BLU)
+000870060725     A            SACINTBCF R        B 11 39REFFLD(SACFMT/SACINTBCF *LIBL/SAVCO-
+000880060725     A                                      NF)
+000890060725     A                                      DSPATR(HI)
+000900060725     A                                 13  3'Fixed Company contribution......:'
+000910060725     A                                      COLOR(BLU)
+000920060725     A            SACCOM    R        B 13 39REFFLD(SACFMT/SACCOM *LIBL/SAVCONF)
+000930060725     A                                      DSPATR(HI)
+000940060725     A                                      EDTCDE(3)
+000950060725     A                                 14  3'Com.Contr. on years of service..:'
+000960060725     A                                      COLOR(BLU)
+000970060725     A            SACCOND   R        B 14 39REFFLD(SACFMT/SACCOND *LIBL/SAVCONF)
+000980060725     A                                      DSPATR(HI)
+000990060725     A                                 15  3'Com.Contr. on bal & emp Contr...:'
+001000060725     A                                      COLOR(BLU)
+001010060725     A            SACCONBF  R        B 15 39REFFLD(SACFMT/SACCONBF *LIBL/SAVCON-
+001020060725     A                                      F)
+001030060725     A                                      DSPATR(HI)
+001040060725     A                                 17  3'Com.Contr. on Emp.Contr. ONLY...:'
+001050060725     A                                      COLOR(BLU)
+001060060725     A            SACCONEF  R        B 17 39REFFLD(SACFMT/SACCONEF *LIBL/SAVCON-
+001070060725     A                                      F)
+001080060725     A                                      DSPATR(HI)
+001090060725     A                                 20  3'Apply Com. Contr. as above......:'
+001100060725     A                                      COLOR(BLU)
+001110060725     A            SACCONNEG R        B 20 39REFFLD(SACFMT/SACCONNEG *LIBL/SAVCO-
+001120060725     A                                      NF)
+001130060725     A                                      DSPATR(HI)
+001140060725     A                                 21  3'Apply on overall difference.....:'
+001150060725     A                                      COLOR(BLU)
+001160060725     A            SACCONNEG2R        B 21 39REFFLD(SACFMT/SACCONNEG2 *LIBL/SAVC-
+001170060725     A                                      ONF)
+001180060725     A                                      DSPATR(HI)
+001190060725     A                                  6 46'(1 - 12)'
+001200060725     A                                  7 47'%'
+001210060725     A                                  8 47'Y = Yes'
+001220060725     A                                  9 47'Y = Yes'
+001230060725     A                                 11 47'Y = Yes'
+001240060725     A                                 13 47'%'
+001250060725     A                                 14 47'Y = Yes'
+001260060725     A                                 15 47'Y = Yes'
+001270060725     A                                 17 47'Y = Yes'
+001280060725     A                                 10 16'or'
+001290060725     A                                 19  3'For Overdrawn Accounts - SELECT ON-
+001300060725     A                                      E'
+001310060725     A                                 20 47'Y = Yes'
+001320060725     A                                 21 47'Y = Yes'
+001330060725     A                                 16 16'or'
+001340060725     A                                 12  3'NOTE: Employee contr. is setup wit-
+001350060725     A                                      hin the HR and/or Payroll systems'
+001360060725     A                                 23 32'F10=More Options'
+001370060725     A                                      DSPATR(HI)
+001380060725     A                                  5  3'Payroll SAVINGS deduction type..:'
+001390060725     A                                      COLOR(BLU)
+001400060725     A            SACDTYPE  R        B  5 39REFFLD(SACFMT/SACDTYPE *LIBL/SAVCON-
+001410060725     A                                      F)
+001420060725     A                                      DSPATR(HI)
+001430060725     A                                      EDTCDE(Z)
+001440060725     A                                  5 46'ie. Employee Contr.'
+001450021011     A*%%GP SCREEN1    01
+001460021120     A          R FMT2
+001470021120     A*%%TS  SD  20021120  151304  SBRITTON    REL-V5R1M0  5722-WDS
+001480021120     A                                      CA02(02)
+001490021120     A                                      CA20(20)
+001500021120     A                                      CF15(15)
+001510021120     A            @PGM          10A  O  1  2DSPATR(HI)
+001520021120     A            CONAME        30A  O  1 24DSPATR(UL)
+001530021120     A                                      DSPATR(HI)
+001540021120     A            @DATE         10A  O  2 70DSPATR(HI)
+001550021120     A            @TITLE        40A  O  2 20DSPATR(HI)
+001560021120     A                                 23 14'F2=Cancel'
+001570021120     A                                      DSPATR(HI)
+001580021120     A                                 23 33'F3=End Program'
+001590021120     A                                      DSPATR(HI)
+001600021120     A                                 23 67'F20=Delete'
+001610021120     A                                      DSPATR(HI)
+001620021120     A N99                                  DSPATR(ND)
+001630021120     A            ERRMSG        75A  O 24  2DSPATR(HI)
+001640021120     A                                      DSPATR(BL)
+001650021120     A                                  1 70SYSNAME
+001660021120     A                                      DSPATR(HI)
+001670021120     A                                 23 54'F15=Confirm'
+001680021120     A                                      DSPATR(HI)
+001690021120     A                                  2  2USER
+001700021120     A                                      DSPATR(HI)
+001710021120     A                                  4  3'Liability type for transactions.:'
+001720021120     A                                      COLOR(BLU)
+001730021120     A            SACTYPE   R        O  4 39REFFLD(SACFMT/SACTYPE *LIBL/SAVCONF)
+001740021120     A                                      DSPATR(HI)
+001750021120     A                                      EDTCDE(Z)
+001760021120     A                                  8  3'Apply Tax. to Company contr.....:'
+001770021120     A                                      COLOR(BLU)
+001780021120     A                                  9  3'Apply Tax. to Interest Calcs....:'
+001790021120     A                                      COLOR(BLU)
+001800021120     A                                 17  3'Merge with Payroll YTD..........:'
+001810021120     A                                      COLOR(BLU)
+001820021120     A                                 18  3'Write Separate records..........:'
+001830021120     A                                      COLOR(BLU)
+001840021120     A                                 19  3'Write ONE new record ...........:'
+001850021120     A                                      COLOR(BLU)
+001860021120     A                                  8 47'Y = Yes'
+001870021120     A                                  9 47'Y = Yes'
+001880021120     A                                 18 47'Y = Yes'
+001890021120     A                                 19 47'Y = Yes'
+001900021120     A                                 11  3'For Tax calculations - select 1 on-
+001910021120     A                                      ly'
+001920021120     A                                 17 47'Y = Yes'
+001930021120     A                                 16  3'For 7B2 form (YTD output) - select-
+001940021120     A                                       1 only'
+001950021120     A                                 13  3'Use Specified Percentage........:'
+001960021120     A                                      COLOR(BLU)
+001970021120     A                                 12 47'Y = Yes'
+001980021120     A                                 12  3'Use Payroll Tax. Calc. routine..:'
+001990021120     A                                      COLOR(BLU)
+002000021120     A                                 13 47'%'
+002010021120     A            SACTAXCOM R        B  8 39REFFLD(SACFMT/SACTAXCOM *LIBL/SAVCO-
+002020021120     A                                      NF)
+002030021120     A                                      DSPATR(HI)
+002040021120     A            SACTAXINTRR        B  9 39REFFLD(SACFMT/SACTAXINTR *LIBL/SAVC-
+002050021120     A                                      ONF)
+002060021120     A                                      DSPATR(HI)
+002070021120     A            SACTAXPAY R        B 12 39REFFLD(SACFMT/SACTAXPAY *LIBL/SAVCO-
+002080021120     A                                      NF)
+002090021120     A                                      DSPATR(HI)
+002100021120     A            SACTAXPER R        B 13 39REFFLD(SACFMT/SACTAXPER *LIBL/SAVCO-
+002110021120     A                                      NF)
+002120021120     A                                      DSPATR(HI)
+002130021120     A                                      EDTCDE(3)
+002140021120     A            SACYTDPAY R        B 17 39REFFLD(SACFMT/SACYTDPAY *LIBL/SAVCO-
+002150021120     A                                      NF)
+002160021120     A                                      DSPATR(HI)
+002170021120     A            SACYTDSEP R        B 18 39REFFLD(SACFMT/SACYTDSEP *LIBL/SAVCO-
+002180021120     A                                      NF)
+002190021120     A                                      DSPATR(HI)
+002200021120     A            SACYTDONE R        B 19 39REFFLD(SACFMT/SACYTDONE *LIBL/SAVCO-
+002210021120     A                                      NF)
+002220021120     A                                      DSPATR(HI)

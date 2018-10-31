@@ -1,0 +1,34 @@
+000010010924     A*%%TS  SD  20010924  102304  CWILLIAMS   REL-V4R4M0  5769-PW1
+000020010924     A*%%EC
+000030010924     A                                      DSPSIZ(24 80 *DS3)
+000040010924     A                                      CF03(03)
+000050010924     A          R FMT1
+000060010924     A*%%TS  SD  20010924  102304  CWILLIAMS   REL-V4R4M0  5769-PW1
+000070010924     A                                      CF05(05)
+000080010924     A                                  1  3USER
+000090010924     A                                      DSPATR(HI)
+000100010924     A                                 23 31'F3 = End'
+000110010924     A                                      DSPATR(HI)
+000120010924     A                                  5  9'Select Report Needed.....:'
+000130010924     A                                      COLOR(BLU)
+000140010924     A                                  1 70SYSNAME
+000150010924     A                                      DSPATR(HI)
+000160010924     A                                  9  9'Enter Transaction Period.:'
+000170010924     A                                      COLOR(BLU)
+000180010924     A            PAY_PRNO       6D 0B  9 42
+000190010924     A N28                                  DSPATR(HI)
+000200010924     A  28                                  DSPATR(RI)
+000210010924     A                                  9 54'(YYYYMM)'
+000220010924     A                                      COLOR(BLU)
+000230010924     A            CONAME        30A  O  1 26DSPATR(HI)
+000240010924     A                                      DSPATR(UL)
+000250010924     A            @TITLE        40A  O  2 21DSPATR(HI)
+000260010924     A            @DATE         10A  O  2 68DSPATR(HI)
+000270010924     A            @PGM          10A  O  2  3DSPATR(HI)
+000280010924     A            ERRMSG        75A  O 24  3DSPATR(BL)
+000290010924     A            REP_SEL        1Y 0B  5 42EDTCDE(Z)
+000300010924     A                                      DSPATR(HI)
+000310010924     A                                  5 55'1. Tax'
+000320010924     A                                      COLOR(BLU)
+000330010924     A                                  6 55'2. Union'
+000340010924     A                                      COLOR(BLU)

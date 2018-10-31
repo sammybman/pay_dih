@@ -1,0 +1,198 @@
+000100050530     A*%%TS  SD  20050530  105440  AFUNG       REL-V5R3M0  5722-WDS
+000200050530     A*%%EC
+000300050530     A                                      DSPSIZ(24 80 *DS3)
+000400050530     A                                      CA03(03)
+000500050530     A                                      CA02(02)
+000600050530     A                                      CA20(20)
+000700050530     A                                      CF05(05)
+000800050514     A          R FMT1
+000900050514     A*%%TS  SD  20050514  164411  AFUNG       REL-V5R3M0  5722-WDS
+001000050514     A                                  6  5'Enter Liability Type ......:'
+001100050514     A                                      COLOR(BLU)
+001200050514     A            @PGM          10A  O  1  3DSPATR(HI)
+001300050514     A                                  2  3USER
+001400050514     A                                      DSPATR(HI)
+001500050514     A                                  1 70SYSNAME
+001600050514     A                                      DSPATR(HI)
+001700050514     A                                 23  6'F3=End Program'
+001800050514     A                                      DSPATR(HI)
+001900050514     A            EMSELTYP# R        B  6 36REFFLD(EMFMT/EMSELTYP *LIBL/EMATF)
+002000050514     A                                      EDTCDE(Z)
+002100050514     A                                      CHECK(ER)
+002200050514     A                                      DSPATR(HI)
+002300050514     A            CONAME        30A  O  1 26DSPATR(HI)
+002400050514     A                                      DSPATR(UL)
+002500050514     A            @TITLE        40A  O  2 21DSPATR(HI)
+002600050514     A            ERRMSG        75A  O 24  3DSPATR(HI)
+002700050514     A            @DATE         10A  O  2 68DSPATR(HI)
+002800050514     A                                 23 36'F5=Liability Type Enq.'
+002900050514     A                                      DSPATR(HI)
+003000050530     A          R FMT2
+003100050530     A*%%TS  SD  20050530  105440  AFUNG       REL-V5R3M0  5722-WDS
+003200050530     A                                      CF06(06)
+003300050530     A                                      CHANGE(40 'Change Indicator')
+003400050530     A                                  4  3'Type Description..........:'
+003500050530     A                                      COLOR(BLU)
+003600050530     A                                  5  3'G.L Account...............:'
+003700050530     A                                      COLOR(BLU)
+003800050530     A                                 14  3'Sub-Type.(Y/N)............:'
+003900050530     A                                      COLOR(BLU)
+004000050530     A            @PGM          10A  O  1  4DSPATR(HI)
+004100050530     A                                  2  4USER
+004200050530     A                                      DSPATR(HI)
+004300050530     A                                  1 70SYSNAME
+004400050530     A                                      DSPATR(HI)
+004500050530     A                                 23 19'F3=End'
+004600050530     A                                      DSPATR(HI)
+004700050530     A                                 23  3'F2=Cancel'
+004800050530     A                                      DSPATR(HI)
+004900050530     A            EMACCT    R        B  5 32REFFLD(EMFMT/EMACCT *LIBL/EMATF)
+005000050530     A                                      DSPATR(HI)
+005100050530     A            EMDSP     R        B  4 36REFFLD(EMFMT/EMDSP *LIBL/EMATF)
+005200050530     A                                      DSPATR(HI)
+005300050530     A            EMSUBTYP# R        B 14 32REFFLD(EMFMT/EMSUBTYP *LIBL/EMATF)
+005400050530     A                                      VALUES('Y' 'N')
+005500050530     A                                      CHECK(ER)
+005600050530     A                                      DSPATR(HI)
+005700050530     A                                 13  3'Employee Type.............:'
+005800050530     A                                      COLOR(BLU)
+005900050530     A            EMCHGTYP# R        B 13 32REFFLD(EMFMT/EMCHGTYP *LIBL/EMATF)
+006000050530     A                                      DSPATR(HI)
+006100050530     A            EMSELTYP# R        O  4 32REFFLD(EMFMT/EMSELTYP *LIBL/EMATF)
+006200050530     A                                      EDTCDE(Z)
+006300050530     A                                      DSPATR(HI)
+006400050530     A            CONAME        30A  O  1 26DSPATR(HI)
+006500050530     A                                      DSPATR(UL)
+006600050530     A            @TITLE        40A  O  2 21DSPATR(HI)
+006700050530     A                                 14 44'Allow P/Roll Deduction..:'
+006800050530     A                                      COLOR(BLU)
+006900050530     A            EMALWPYD  R        B 14 71REFFLD(EMFMT/EMALWPYD *LIBL/EMATF)
+007000050530     A                                      DSPATR(HI)
+007100050530     A                                 15  3'Auto. Create Pay.Ded......:'
+007200050530     A                                      COLOR(BLU)
+007300050530     A            EMAUTPYD  R        B 15 32REFFLD(EMFMT/EMAUTPYD *LIBL/EMATF)
+007400050530     A                                      DSPATR(HI)
+007500050530     A                                 15 44'Default Mths to Display.:'
+007600050530     A                                      COLOR(BLU)
+007700050530     A            EMDFTMTH  R     D  B 15 71REFFLD(EMFMT/EMDFTMTH *LIBL/EMATF)
+007800050530     A                                      DSPATR(HI)
+007900050530     A                                 14 35'(Y=Yes)'
+008000050530     A                                 14 73'(Y=Yes)'
+008100050530     A                                 15 35'(Y=Yes)'
+008200050530     A            @DATE         10A  O  2 68DSPATR(HI)
+008300050530     A                                  6  3'NOTE: The account code specified h-
+008400050530     A                                      ere is overridden if this type is'
+008500050530     A                                  7  9'also specifed in the payroll syste-
+008600050530     A                                      m cross reference utility.'
+008700050530     A            ERRMSG        75A  O 24  3DSPATR(HI)
+008800050530     A                                 11  3'Months to Calc Interest...:'
+008900050530     A                                      COLOR(BLU)
+009000050530     A            EMMTH     R        B 11 32REFFLD(EMFMT/EMMTH *LIBL/EMATF)
+009100050530     A                                      EDTCDE(Z)
+009200050530     A                                      DSPATR(HI)
+009300050530     A            EMINTPER  R        B 12 32REFFLD(EMFMT/EMINTPER *LIBL/EMATF)
+009400050530     A                                      EDTCDE(1)
+009500050530     A                                      DSPATR(HI)
+009600050530     A                                 13 35'(Max. of 2 permitted)'
+009700050530     A                                  9  3'Type Usage................:'
+009800050530     A                                      COLOR(BLU)
+009900050530     A            TYPE_USG       1Y 0B  9 32DSPATR(HI)
+010000050530     A                                      EDTCDE(Z)
+010100050530     A                                 10  3'Month for allowance Reset.:'
+010200050530     A                                      COLOR(BLU)
+010300050530     A            RESET_MTH R        B 10 32REFFLD(EMFMT/EMMTH *LIBL/EMATF)
+010400050530     A                                      EDTCDE(Z)
+010500050530     A                                      DSPATR(HI)
+010600050530     A                                 10 35'(Type usage = 2 only)'
+010700050530     A                                  9 35'1=Liability  2=Allowance  3=Miscel-
+010800050530     A                                      laneous'
+010900050530     A                                 16  3'Available Systems.........:'
+011000050530     A                                      COLOR(BLU)
+011100050530     A            EMSYSFLAG     80A  B 16 32DSPATR(HI)
+011200050530     A                                      CNTFLD(040)
+011300050530     A                                 12  3'Interest Percent..........:'
+011400050530     A                                      COLOR(BLU)
+011500050530     A                                 18  3'Pay Type for Allow to Credit..:'
+011600050530     A                                      COLOR(BLU)
+011700050530     A            EMPAYTYPE R        B 18 36REFFLD(EMFMT/EMMTH *LIBL/EMATF)
+011800050530     A                                      EDTCDE(Z)
+011900050530     A                                      DSPATR(HI)
+012000050530     A                                      TEXT('PAY TYPE FOR ALLOWANCE TO CRE-
+012100050530     A                                      DIT')
+012200050530     A            EMAPYMTH  R        B 18 71REFFLD(EMFMT/EMMTH *LIBL/EMATF)
+012300050530     A                                      EDTCDE(Z)
+012400050530     A                                      DSPATR(HI)
+012500050530     A                                      TEXT('APPLY EVERY (PERIODS)')
+012600050530     A                                 18 44'Apply Every (Periods)...:'
+012700050530     A                                      COLOR(BLU)
+012800050530     A                                 19 44'Periods Completed.......:'
+012900050530     A                                      COLOR(BLU)
+013000050530     A            EMPRDCMPLTR        B 19 71REFFLD(EMFMT/EMPRDCMPLT *LIBL/EMATF)
+013100050530     A                                      EDTCDE(Z)
+013200050530     A                                      DSPATR(HI)
+013300050530     A                                      TEXT('PERIODS COMPLETED')
+013400050530     A  99                                  DSPATR(PR)
+013500050530     A                                 20  3'Next Apply Period.........:'
+013600050530     A                                      COLOR(BLU)
+013700050530     A            EMNXTPRD  R        B 20 32REFFLD(EMFMT/EMNXTPRD *LIBL/EMATF)
+013800050530     A                                      EDTCDE(Z)
+013900050530     A                                      DSPATR(HI)
+014000050530     A                                      TEXT('NEXT APPLY PERIOD')
+014100050530     A  99                                  DSPATR(PR)
+014200050530     A                                 20 44'Enforce Limits..........:'
+014300050530     A                                      COLOR(BLU)
+014400050530     A            EMENFLIM  R        B 20 71REFFLD(EMFMT/EMALWPYD *LIBL/EMATF)
+014500050530     A                                      DSPATR(HI)
+014600050530     A                                      TEXT('ENFORCE LIMITS')
+014700050530     A                                 18 75'*'
+014800050530     A                                      COLOR(RED)
+014900050530     A                                 21  3'*  Valid Periods - 1,2,3,4,6,12 '
+015000050530     A                                      COLOR(RED)
+015100050530     A                                 23 63'F20=Delete'
+015200050530     A                                      DSPATR(HI)
+015300050530     A                                 19 75'**'
+015400050530     A                                      COLOR(RED)
+015500050530     A                                 20 40'**'
+015600050530     A                                      COLOR(RED)
+015700050530     A                                 22  3'** Values CANNOT be changed after -
+015800050530     A                                      record is created'
+015900050530     A                                      COLOR(RED)
+016000050530     A                                 19  3'Total Periods per year........:'
+016100050530     A                                      COLOR(BLU)
+016200050530     A            EMPRDTOTL R        O 19 36REFFLD(EMFMT/EMPRDTOTL *LIBL/EMATF)
+016300050530     A                                      DSPATR(HI)
+016400050530     A                                 23 32'F6=Setup Payroll Deductions'
+016500050530     A                                      DSPATR(HI)
+016600050514     A          R FMT3
+016700050514     A*%%TS  SD  20050514  161330  AFUNG       REL-V5R3M0  5722-WDS
+016800050514     A                                      CHANGE(40 'Change indicator')
+016900050514     A                                  8  5'Liability Type...........:'
+017000050514     A                                      COLOR(BLU)
+017100050514     A            EMSELTYP# R        O  8 33REFFLD(EAFMT/EASELTYP *LIBL/EASTF)
+017200050514     A                                      EDTCDE(Z)
+017300050514     A                                      DSPATR(HI)
+017400050514     A                                 11  5'Liability Sub_Type.......:'
+017500050514     A                                      COLOR(BLU)
+017600050514     A            EASUBTYP# R        B 11 33REFFLD(EAFMT/EASUBTYP *LIBL/EASTF)
+017700050514     A                                      EDTCDE(Z)
+017800050514     A                                      DSPATR(HI)
+017900050514     A            EADSP     R        B 11 39REFFLD(EAFMT/EADSP *LIBL/EASTF)
+018000050514     A                                      DSPATR(HI)
+018100050514     A                                 23  7'F2 = Cancel'
+018200050514     A                                      DSPATR(HI)
+018300050514     A            @PGM          10A  O  1  2DSPATR(HI)
+018400050514     A                                  2  2USER
+018500050514     A                                      DSPATR(HI)
+018600050514     A                                  1 71SYSNAME
+018700050514     A                                      DSPATR(HI)
+018800050514     A            CONAME        30A  O  1 26DSPATR(HI)
+018900050514     A                                      DSPATR(UL)
+019000050514     A            @TITLE        40A  O  2 21DSPATR(HI)
+019100050514     A            @DATE         10A  O  2 69DSPATR(HI)
+019200050514     A                                 11 77'%'
+019300050514     A                                      DSPATR(HI)
+019400050514     A                                 21  5'%'
+019500050514     A                                      DSPATR(HI)
+019600050514     A                                 21  7'- New sub-types are always added i-
+019700050514     A                                      n numeric sequence'
+019800050514     A            ERRMSG        75A  O 24  3DSPATR(HI)

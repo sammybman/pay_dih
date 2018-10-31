@@ -1,0 +1,99 @@
+000010021005     A*%%TS  SD  20021005  120127  SBRITTON    REL-V5R1M0  5722-WDS
+000020950530     A* ********************************************************
+000030950905     A*              B A N K S    D I H    L T D.              *
+000040950905     A*                INVENTORY CONTROL SYSTEM                *
+000050950905     A*                                                        *
+000060950905     A*                         BY                             *
+000070950905     A*                                                        *
+000080950905     A*       ONE PLUS COMPUTER SERVICES (GUYANA) LIMITED      *
+000090950905     A*             P.O BOX 10501, GEORGETOWN,GUYANA           *
+000100950905     A*                                                        *
+000110950905     A*                                                        *
+000120951019     A*       DISPLAY FILE  NAME: SYS002D                      *
+000130950906     A*       RECORD FORMAT NAME: FMT1                         *
+000140950906     A*                           FMT2                         *
+000150950905     A*                                                        *
+000160950906     A*       PROGRAMMER NAME: LORAINE INNISS                  *
+000170951019     A*       DESIGN DATE....: 9995/10/18                      *
+000180950905     A*                                                        *
+000190951019     A*  FILE DESCRIPTION: AUTHORITY MASTER FILE               *
+000200950905     A*                                                        *
+000210950905     A*  THIS FILE IS DESIGNED TO                              *
+000220950905     A*                                                        *
+000230950905     A*                                                        *
+000240950530     A**********************************************************
+000250021005     A*%%EC
+000260021005     A                                      DSPSIZ(24 80 *DS3)
+000270021005     A                                      REF(*LIBL/SYSAUT AUTFMT)
+000280021005     A                                      PRINT
+000290021005     A                                      HELP(77)
+000300021005     A                                      CA03(03)
+000310021005     A                                      CA05(05)
+000320021005     A          R FMT1
+000330021005     A*%%TS  SD  20021005  120127  SBRITTON    REL-V5R1M0  5722-WDS
+000340021005     A                                      CA01(01)
+000350021005     A                                      CA02(02)
+000360021005     A                                      CA20(20)
+000370021005     A                                      CA15(15)
+000380021005     A            @PGM          10A  O  1  2DSPATR(HI)
+000390021005     A            CONAME        30A  O  1 24DSPATR(UL)
+000400021005     A                                      DSPATR(HI)
+000410021005     A            @DATE         10A  O  2 70DSPATR(HI)
+000420021005     A            @TITLE        40A  O  2 20DSPATR(HI)
+000430021005     A                                 23 21'F2=Cancel'
+000440021005     A                                      DSPATR(HI)
+000450021005     A                                 23 33'F3=End Program'
+000460021005     A                                      DSPATR(HI)
+000470021005     A                                 23 67'F20=Delete'
+000480021005     A                                      DSPATR(HI)
+000490021005     A N99                                  DSPATR(ND)
+000500021005     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000510021005     A                                      DSPATR(BL)
+000520021005     A                                  1 70SYSNAME
+000530021005     A                                      DSPATR(HI)
+000540021005     A                                 23 51'F15=Confirm'
+000550021005     A                                      DSPATR(HI)
+000560021005     A                                  2  2USER
+000570021005     A                                      DSPATR(HI)
+000580021005     A                                  7  3'Years History to Keep.............-
+000590021005     A                                      ......:'
+000600021005     A                                      COLOR(BLU)
+000610021005     A                                  7 54'(1-999)'
+000620021005     A                                  9  3'Period last updated...............-
+000630021005     A                                      ......:'
+000640021005     A                                      COLOR(BLU)
+000650021005     A                                 11  3'Gl. Account for Interest charges..-
+000660021005     A                                      ......:'
+000670021005     A                                      COLOR(BLU)
+000680021005     A                                 13  3'Gl. Account for Write-offs........-
+000690021005     A                                      ......:'
+000700021005     A                                      COLOR(BLU)
+000710021005     A            ESYSINACCTR        B 11 47REFFLD(ESYFMT/ESYSINACCT *LIBL/EMPC-
+000720021005     A                                      ON)
+000730021005     A                                      DSPATR(HI)
+000740021005     A            ESYSCEACCTR        B 13 47REFFLD(ESYFMT/ESYSCEACCT *LIBL/EMPC-
+000750021005     A                                      ON)
+000760021005     A                                      DSPATR(HI)
+000770021005     A            ESYSHIS   R        B  7 47REFFLD(ESYFMT/ESYSHIS *LIBL/EMPCON)
+000780021005     A                                      EDTCDE(Z)
+000790021005     A                                      DSPATR(HI)
+000800021005     A            ESYSUPDPRDR        B  9 47REFFLD(ESYFMT/ESYSUPDPRD *LIBL/EMPC-
+000810021005     A                                      ON)
+000820021005     A                                      DSPATR(HI)
+000830021005     A                                      EDTCDE(Z)
+000840021005     A  99                                  DSPATR(PR)
+000850021005     A                                 15  3'Financial year start..............-
+000860021005     A                                      ......:'
+000870021005     A                                      COLOR(BLU)
+000880021005     A            ESYSFINMTHR        B 15 47REFFLD(ESYFMT/ESYSFINMTH *LIBL/EMPC-
+000890021005     A                                      ON)
+000900021005     A                                      EDTCDE(Z)
+000910021005     A                                      DSPATR(HI)
+000920021005     A                                 17  3'Deduction Calculation Cycle.(next -
+000930021005     A                                      prd)..:'
+000940021005     A                                      COLOR(BLU)
+000950021005     A            ESYSDEDCYCR        B 17 47REFFLD(ESYFMT/ESYSDEDCYC *LIBL/EMPC-
+000960021005     A                                      ON)
+000970021005     A                                      DSPATR(HI)
+000980021005     A                                 15 54'(1 - 12)'
+000990021005     A                                 17 54'*M (month) is default'

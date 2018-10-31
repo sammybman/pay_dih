@@ -1,0 +1,101 @@
+000010010815     A*%%TS  SD  20010815  195455  CWILLIAMS   REL-V4R4M0  5769-PW1
+000020950909     A* ********************************************************
+000030990617     A*                   C R E A T E D                        *
+000040990617     A*                       B Y                              *
+000050990617     A*          B A N K S   D I H   L I M I T E D             *
+000060950909     A*                                                        *
+000070990617     A*               I.S   D E P A R T M E N T                *
+000080950909     A*                                                        *
+000090990617     A*       DISPLAY FILE  NAME: WENQ001D                     *
+000100990617     A*
+000110950909     A*                                                        *
+000120990617     A*       PROGRAMMER NAME: WINSTON ROBINSON                *
+000130990617     A*       DESIGN DATE....: 1998/10/06                      *
+000140950909     A*                                                        *
+000150950909     A**********************************************************
+000160010815     A*%%EC
+000170010815     A                                      DSPSIZ(24 80 *DS3)
+000180010815     A                                      REF(*LIBL/FLDREF)
+000190010815     A                                      PRINT
+000200010815     A                                      CF03(03)
+000210010815     A                                      CF02(02)
+000220010815     A          R FMT1
+000230010815     A*%%TS  SD  20010815  195455  CWILLIAMS   REL-V4R4M0  5769-PW1
+000240010815     A                                      CF05(05)
+000250010815     A            CONAME        30A  O  1 26DSPATR(UL)
+000260010815     A                                      DSPATR(HI)
+000270010815     A            @TITLE        40A  O  2 21DSPATR(HI)
+000280010815     A            @PGM          10A  O  1  3DSPATR(HI)
+000290010815     A            @USER         10A  O  2  3DSPATR(HI)
+000300010815     A            @DATE         10A  O  2 68DSPATR(HI)
+000310010815     A                                  6 23'Payroll Cycle..:'
+000320010815     A                                      DSPATR(HI)
+000330010815     A                                  8 15'Lower'
+000340010815     A                                      DSPATR(HI)
+000350010815     A                                  9 15'Limit'
+000360010815     A                                      DSPATR(HI)
+000370010815     A                                  8 34'Upper'
+000380010815     A                                      DSPATR(HI)
+000390010815     A                                  9 34'Limit'
+000400010815     A                                      DSPATR(HI)
+000410010815     A                                  8 47'Tax'
+000420010815     A                                      DSPATR(HI)
+000430010815     A                                  9 49'%'
+000440010815     A                                      DSPATR(HI)
+000450010815     A                                  4 33'Mode.:'
+000460010815     A                                      DSPATR(HI)
+000470010815     A            MODE           6A  O  4 40DSPATR(RI)
+000480010815     A                                      COLOR(RED)
+000490010815     A                                  8  2'Del'
+000500010815     A                                      DSPATR(HI)
+000510010815     A                                  9  3'X'
+000520010815     A                                      DSPATR(HI)
+000530010815     A            DESC#     R        O  6 44REFFLD(DCFMT/DCDESC *LIBL/WHDISCL01)
+000540010815     A                                      COLOR(BLU)
+000550010815     A            PTXCYC#        2A  O  6 41COLOR(BLU)
+000560010815     A                                  1 70SYSNAME
+000570010815     A                                      DSPATR(HI)
+000580010607     A          R SUB1                      SFL
+000590010607     A*%%TS  SD  20010607  151312  SAMMY       REL-V4R4M0  5769-PW1
+000600010607     A                                      SFLNXTCHG
+000610010607     A            NEWREC         1A  H
+000620010607     A            DELOPT         1A  I 11  3
+000630010607     A            PTX2QTYL# R        B 11  6REFFLD(PTX2FMT/PTX2QTYL *LIBL/PAYTA-
+000640010607     A                                      XCTL2)
+000650010607     A                                      EDTCDE(1)
+000660010607     A            PTX2QTYU# R        B 11 25REFFLD(PTX2FMT/PTX2QTYU *LIBL/PAYTA-
+000670010607     A                                      XCTL2)
+000680010607     A                                      EDTCDE(1)
+000690010607     A            PTX2PER#  R        B 11 44REFFLD(PTX2FMT/PTX2PER *LIBL/PAYTAX-
+000700010607     A                                      CTL2)
+000710010607     A                                      EDTCDE(1)
+000720010607     A          R SUBCTL1                   SFLCTL(SUB1)
+000730010607     A*%%TS  SD  20010607  151312  SAMMY       REL-V4R4M0  5769-PW1
+000740010607     A                                      SFLSIZ(0100)
+000750010607     A                                      SFLPAG(0009)
+000760010607     A                                      CF15(15)
+000770010607     A                                      CF04(04)
+000780010607     A                                      OVERLAY
+000790010607     A                                      PUTRETAIN
+000800010607     A                                      SFLDSP
+000810010607     A                                      SFLDSPCTL
+000820010607     A  33                                  SFLCLR
+000830010607     A  30                                  SFLEND(*MORE)
+000840010607     A                                      SFLFOLD(CF05)
+000850010607     A  76                                  SFLMSG('Invalid Range Sequence  Ent-
+000860010607     A                                      ered !')
+000870010607     A  71
+000880010607     AO 70
+000890010607     AO 74                                  SFLMSGID(DIH0022 *LIBL/DIHMSGF)
+000900010607     A  72
+000910010607     AO 73
+000920010607     AO 75                                  SFLMSGID(DIH0027 *LIBL/DIHMSGF)
+000930010607     A                                 22 21'F3=End'
+000940010607     A                                      DSPATR(HI)
+000950010607     A                                 22 52'F15=Confirm'
+000960010607     A                                      COLOR(RED)
+000970010607     A                                      DSPATR(RI)
+000980010607     A                                 22 33'F4=Add a Line'
+000990010607     A                                      DSPATR(HI)
+001000010607     A            ERRMSG        75A  O 23  3COLOR(RED)
+001010010607     A                                      DSPATR(BL)

@@ -1,0 +1,39 @@
+000010960419     A*%%TS  SD  19960419  105639  ANTHONY     REL-V3R1M0  5763-PW1
+000020960419     A*%%EC
+000030960419     A                                      DSPSIZ(24 80 *DS3)
+000040960419     A          R KROND1
+000050960419     A*%%TS  SD  19960419  105639  ANTHONY     REL-V3R1M0  5763-PW1
+000060960419     A                                      CF01(01 'lists accrual fields')
+000070960419     A                                      CF03(03 'exits program')
+000080960419     A                                  1 69SYSNAME
+000090960419     A                                      DSPATR(HI)
+000100960419     A                                      DSPATR(UL)
+000110960419     A                                  1  3USER
+000120960419     A                                      DSPATR(HI)
+000130960419     A                                  2 69DATE
+000140960419     A                                      EDTCDE(Y)
+000150960419     A                                      DSPATR(HI)
+000160960419     A                                  2 33'ACCRUAL PROFILES'
+000170960419     A                                      DSPATR(HI)
+000180960419     A                                      DSPATR(UL)
+000190960419     A                                 24 20'F1 - List'
+000200960419     A                                      DSPATR(HI)
+000210960419     A                                 24 41'F3 - Exit'
+000220960419     A                                      DSPATR(HI)
+000230960419     A                                  1 31'BANKS D.I.H LIMITED'
+000240960419     A                                      DSPATR(HI)
+000250960419     A                                      DSPATR(UL)
+000260960419     A            @PGM          10A  O  2  3
+000270960419     A                                  6 46'A = add new accrual field'
+000280960419     A                                      DSPATR(HI)
+000290960419     A                                  7 46'D = delete accrual field'
+000300960419     A                                      DSPATR(HI)
+000310960419     A                                 10 17'Enter selection ->'
+000320960419     A            AED            1A  I 10 46DSPATR(RI)
+000330960419     A                                      DSPATR(CS)
+000340960419     A                                 13 14'Kronos Accrual Field:'
+000350960419     A            KACCFD    R        B 13 38REFFLD(KACRU/KACCFD PAYLIB/KRONACRU)
+000360960419     A  05                                  ERRMSG('Duplicate record not allowe-
+000370960419     A                                      d.')
+000380960419     A  06                                  ERRMSG('Record for deletion cannot -
+000390960419     A                                      be allocated')

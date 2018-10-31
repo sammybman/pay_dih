@@ -1,0 +1,5 @@
+000100010426     A          R PRDFFMT                   PFILE(PAYRDEF)
+000200010426     A          K PRDFPTYPE
+000300010426     A          K PRDFTYPE
+000400010426     A          S PRDFSTS                   VALUES('A')
+000500020111     A            PRDFFLAG                  VALUES('Y' 'X')

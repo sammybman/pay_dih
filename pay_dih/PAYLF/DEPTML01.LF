@@ -1,0 +1,28 @@
+000100950905     A* ********************************************************
+000200950905     A*              B A N K S    D I H    L T D.              *
+000300950905     A*                INVENTORY CONTROL SYSTEM                *
+000400950905     A*                                                        *
+000500950905     A*                         BY                             *
+000600950905     A*                                                        *
+000700970927     A*                    I.S. DEPARTMENT                     *
+000800950905     A*                                                        *
+000900950905     A*                                                        *
+001000971012     A*       LOGICAL FILE NAME:  DEPTML01                     *
+001100971011     A*       RECORD FORMAT NAME: DEFMT                        *
+001200971011     A*       FILE PREFIX.......: DE                           *
+001300950905     A*                                                        *
+001400971011     A*       PROGRAMMER NAME: CHRIS WILLIAMS                  *
+001500971011     A*       DESIGN DATE....: 1997/10/11                      *
+001600950905     A*                                                        *
+001700971012     A*  FILE DESCRIPTION: DEPT TRANSACTION MASTER             *
+001800950905     A*                                                        *
+001900971011     A*  THIS FILE IS DESIGNED TO RECORD THE DEPARTMENTAL      *
+002000971012     A*  VARIOUS ACCOUNTS TRANSACTIONS.                        *
+002100950905     A*                                                        *
+002200950905     A*                                                        *
+002300950905     A**********************************************************
+002400971011     A                                      UNIQUE
+002500971012     A          R DEFMT                     PFILE(DEPTMF)
+002600971011     A          K DENUMB
+002700971011     A          K DETYP
+002800971011     A          S DESTS                     COMP(EQ 'A')

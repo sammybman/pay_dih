@@ -1,0 +1,54 @@
+000100000000.*-----------------------------------------------------------------------**
+000200000000.*
+000300000000.*  Compile options:
+000400000000.*
+000500150930.*    CrtPnlGrp PnlGrp( PAYUTL01H )
+000600151003.*              SrcFile( PAYPNL )
+000700150930.*              SrcMbr( PAYUTL01H )
+000800000000.*
+000900000000.*-----------------------------------------------------------------------**
+001000000000:PNLGRP.
+001100150930:HELP NAME='ADJTAXGRO'.Adjust Taxable Gross - Help
+001200000000:P.
+001300151001The Adjust Taxable Gross  (ADJTAXGRO) command allows changes to employees'
+001400151002Year-to-date earnings when Govt./Budget/reform Laws enabling tax exemption for
+001500151002certain payroll transaction types are changed within the calender year.
+001600000000:P.
+001700000000:NT.
+001800151003Payroll System Control authorization is required to run this command.
+001900000000:ENT.
+002000000000:EHELP.
+002100151001:HELP NAME='ADJTAXGRO/YEAR'.Effective year (YEAR) - Help
+002200151001:XH3.Effective Year (YEAR)
+002300000000:P.
+002400151001Specify the year of income  that identifies the period for payroll
+002500151001type changes to be effected.
+002600000000:P.
+002700000000This is a required parameter.
+002800000000:P.
+002900000000:EHELP.
+003000151001:HELP NAME='ADJTAXGRO/PAYTYPE'.Payroll Type (PAYTYPE) - Help
+003100151001:XH3.Payroll Type (PAYTYPE)
+003200000000:P.
+003300151001Specify the payroll type.
+003400000000:P.
+003500000000This is a required parameter.
+003600000000:P.
+003700000000:EHELP.
+003800151001:HELP NAME='ADJTAXGRO/STRDATE'.Start date (STRDATE) - Help
+003900151001:XH3.Start date (STRDATE)
+004000000000:P.
+004100151001Specify the start date of payroll transactions.
+004200000000:P.
+004300000000This is a required parameter.
+004400000000:P.
+004500000000:EHELP.
+004600151001:HELP NAME='ADJTAXGRO/ENDDATE'.End date (ENDDATE) - Help
+004700151001:XH3.End date (ENDDATE)
+004800000000:P.
+004900151001Specify the end date of payroll transactions.
+005000000000:P.
+005100000000This is a required parameter.
+005200000000:P.
+005300000000:EHELP.
+005400000000:EPNLGRP.

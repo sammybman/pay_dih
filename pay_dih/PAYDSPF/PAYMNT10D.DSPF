@@ -1,0 +1,104 @@
+000010050612     A*%%TS  SD  20050612  100908  SBRITTON    REL-V5R3M0  5722-WDS
+000020950530     A* ********************************************************
+000030950905     A*              B A N K S    D I H    L T D.              *
+000040950905     A*                INVENTORY CONTROL SYSTEM                *
+000050950905     A*                                                        *
+000060950905     A*                         BY                             *
+000070950905     A*                                                        *
+000080950905     A*       ONE PLUS COMPUTER SERVICES (GUYANA) LIMITED      *
+000090950905     A*             P.O BOX 10501, GEORGETOWN,GUYANA           *
+000100950905     A*                                                        *
+000110950905     A*                                                        *
+000120951024     A*       DISPLAY FILE  NAME: INV011D                      *
+000130950906     A*       RECORD FORMAT NAME: FMT1                         *
+000140950906     A*                           FMT2                         *
+000150950905     A*                                                        *
+000160951024     A*       PROGRAMMER NAME: CHRIS WILLIAMS                  *
+000170951024     A*       DESIGN DATE....: 1995/10/24                      *
+000180950905     A*                                                        *
+000190950905     A*  FILE DESCRIPTION:                                     *
+000200950905     A*                                                        *
+000210951024     A*  THIS FILE IS DESIGNED TO DISPLAY THE DETAILS OF THE   *
+000220951024     A*  CALENDER MASTER FILE ENABLING IT TO BE UPDATED AND    *
+000230951024     A*  AMENDED.                                              *
+000240950905     A*                                                        *
+000250950905     A*                                                        *
+000260950905     A*                                                        *
+000270950905     A*                                                        *
+000280950905     A*                                                        *
+000290950905     A*                                                        *
+000300950905     A*                                                        *
+000310950905     A*                                                        *
+000320950530     A**********************************************************
+000330050612     A*%%EC
+000340050612     A                                      DSPSIZ(24 80 *DS3)
+000350050612     A                                      REF(*LIBL/FLDREF)
+000360050612     A                                      PRINT
+000370050612     A                                      HELP(77)
+000380050612     A                                      CA03(03)
+000390050612     A          R FMT1
+000400050612     A*%%TS  SD  20050612  100908  SBRITTON    REL-V5R3M0  5722-WDS
+000410050612     A                                      CA05(05)
+000420050612     A                                      CA04(04)
+000430050612     A            @PGM      R        O  1  2REFFLD(NAME10)
+000440050612     A                                      DSPATR(HI)
+000450050612     A            CONAME    R        O  1 24REFFLD(NAME30)
+000460050612     A                                      DSPATR(HI)
+000470050612     A                                      DSPATR(UL)
+000480050612     A            @MODE          6A  O  1 58DSPATR(ND)
+000490050612     A            @DATE     R        O  1 70REFFLD(NAME10)
+000500050612     A                                      DSPATR(HI)
+000510050612     A            @TITLE    R        O  2 20REFFLD(NAME40)
+000520050612     A                                      DSPATR(HI)
+000530050612     A            @TIME          6Y 0O  2 70DSPATR(HI)
+000540050612     A                                      EDTWRD('  :  :  ')
+000550050612     A                                  5  8'Enter Date of Month.:'
+000560050612     A                                      COLOR(BLU)
+000570050612     A            HODATE#        8Y 0B  5 30DSPATR(HI)
+000580050612     A                                      DSPATR(UL)
+000590050612     A                                      EDTCDE(W)
+000600050612     A                                      TEXT('DATE FIELD')
+000610050612     A                                 22  2'F3 = End Program'
+000620050612     A                                      DSPATR(HI)
+000630050612     A                                 22 22'F4 = Prompt Callender'
+000640050612     A                                      DSPATR(HI)
+000650050612     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000660050612     A                                  2  2USER
+000670050612     A                                      DSPATR(HI)
+000680050612     A                                  5 43'(YYYYMMDD)'
+000690050612     A                                 22 48'F5 = Holiday Enquiry'
+000700050612     A                                      DSPATR(HI)
+000710951025     A**
+000720010813     A          R FMT2
+000730010813     A*%%TS  SD  20010813  191831  SAMMY       REL-V4R4M0  5769-PW1
+000740010813     A                                      CA02(02)
+000750010813     A  99                                  CA20(20)
+000760010813     A                                      CHANGE(40)
+000770010813     A            @PGM      R        O  1  2REFFLD(NAME10)
+000780010813     A                                      DSPATR(HI)
+000790010813     A            CONAME    R        O  1 24REFFLD(NAME30)
+000800010813     A                                      DSPATR(HI)
+000810010813     A                                      DSPATR(UL)
+000820010813     A            @MODE          6A  O  1 58DSPATR(RI)
+000830010813     A            @DATE     R        O  1 70REFFLD(NAME10)
+000840010813     A                                      DSPATR(HI)
+000850010813     A            @TITLE    R        O  2 20REFFLD(NAME40)
+000860010813     A                                      DSPATR(HI)
+000870010813     A            @TIME          6Y 0O  2 70DSPATR(HI)
+000880010813     A                                      EDTWRD('  :  :  ')
+000890010813     A                                  5  6'Holiday Date..........:'
+000900010813     A                                      COLOR(BLU)
+000910010813     A            HODATE#        8Y 0O  5 31EDTCDE(W)
+000920010813     A            DAY#           9A  O  5 43DSPATR(HI)
+000930010813     A                                  9  6'Holiday Description...:'
+000940010813     A                                      COLOR(BLU)
+000950010813     A                                 23  2'F2 = Cancel Entry'
+000960010813     A                                      DSPATR(HI)
+000970010813     A                                 23 24'F3 = End Program'
+000980010813     A                                      DSPATR(HI)
+000990010813     A  99                             23 45'F20 = Delete'
+001000010813     A                                      DSPATR(HI)
+001010010813     A            ERRMSG        75A  O 24  2DSPATR(HI)
+001020010813     A                                  2  2USER
+001030010813     A                                      DSPATR(HI)
+001040010813     A            HODESC        25A  B  9 31

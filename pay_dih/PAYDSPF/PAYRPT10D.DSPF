@@ -1,0 +1,70 @@
+000010020924     A*%%TS  SD  20020924  184156  SBRITTON    REL-V5R1M0  5722-WDS
+000020960802     A*
+000030960802     A*
+000040960802     A* ********************************************************
+000050960802     A*              B A N K S    D I H    L T D.              *
+000060960802     A*                                                        *
+000070960802     A*                                                        *
+000080010117     A*       DISPLAY FILE  NAME: PUR01D                       *
+000090000816     A*       RECORD FORMAT NAME:                              *
+000100000816     A*                                                        *
+000110000816     A*                                                        *
+000120960802     A*                                                        *
+000130000816     A*       PROGRAMMER NAME: ALLISON FUNG                    *
+000140000816     A*       DATE ..........: 16/08/2000                      *
+000150960802     A*                                                        *
+000160001120     A*       FILE DESCRIPTION:                                *
+000170001120     A*       THIS FILE IS USED TO RUN THE MONTHLY             *
+000180001120     A*       PURCHASE LISTINGS WITH TRANSACTIONS              *
+000190001120     A*       PASSING THROUGH THE SALES/WAREHOUSE              *
+000200001120     A*       SYSTEM.                                          *
+000210960802     A*                                                        *
+000220960802     A**********************************************************
+000230020924     A*%%EC
+000240020924     A                                      DSPSIZ(24 80 *DS3)
+000250020924     A                                      REF(*LIBL/FLDREF)
+000260020924     A                                      PRINT
+000270020924     A                                      ERRSFL
+000280020924     A                                      CF02(02)
+000290020924     A                                      CF03(03)
+000300020924     A                                      CF15(15)
+000310960802     A**
+000320020924     A          R FMT1
+000330020924     A*%%TS  SD  20020924  184156  SBRITTON    REL-V5R1M0  5722-WDS
+000340020924     A            CONAME        30A  O  1 26DSPATR(HI)
+000350020924     A                                      DSPATR(UL)
+000360020924     A            @TITLE        40A  O  2 21DSPATR(HI)
+000370020924     A                                 23  3'F3 = End Program'
+000380020924     A                                      DSPATR(HI)
+000390020924     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000400020924     A                                  5  5'Enter Payroll Run Type.........:'
+000410020924     A                                      COLOR(BLU)
+000420020924     A                                 12  5'Select department(s) for report:'
+000430020924     A                                      DSPATR(HI)
+000440020924     A                                      COLOR(BLU)
+000450020924     A                                 23 34'F15 = Confirm'
+000460020924     A                                      DSPATR(HI)
+000470020924     A            DEPT#          3D 0B 12 41DSPATR(HI)
+000480020924     A                                  1  2USER
+000490020924     A                                      DSPATR(HI)
+000500020924     A            @PGM          10A  O  2  2DSPATR(HI)
+000510020924     A            @DATE         10A  O  2 70DSPATR(HI)
+000520020924     A                                 10  5'Select Hours above dept. dft...:'
+000530020924     A                                      COLOR(BLU)
+000540020924     A                                  8  5'Enter Payroll Type.............:'
+000550020924     A                                      COLOR(BLU)
+000560020924     A                                 10 50'(Y = Yes)'
+000570020924     A            PAY_TYPE       2D 0B  8 41DSPATR(HI)
+000580020924     A                                  8 50'(Zeros = all)'
+000590020924     A                                 12 50'(Zeros = all)'
+000600020924     A            SELHRS         1A  B 10 41DSPATR(HI)
+000610020924     A            RUN_TYPE       1A  B  5 41DSPATR(HI)
+000620020924     A                                  1 72SYSNAME
+000630020924     A                                      DSPATR(HI)
+000640020924     A            SEQ#           1D 0B 18 41DSPATR(HI)
+000650020924     A                                 18  5'Select Report Sequence.........:'
+000660020924     A                                      DSPATR(HI)
+000670020924     A                                      COLOR(BLU)
+000680020924     A                                 15 50'1. Hours'
+000690020924     A                                 16 50'2. Emp'
+000700020924     A                                 17 50'3. Dept'

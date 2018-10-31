@@ -1,0 +1,171 @@
+000100990403     A*%%TS  SD  19990403  131753  SAMMY       REL-V3R7M0  5716-PW1
+000200990403     A*%%EC
+000300990403     A                                      DSPSIZ(24 80 *DS3)
+000400990403     A                                      REF(PAYLIB/EMPREF EMPRREC)
+000500110523     A***                                   HLPDOC('GENERAL' 'HLPEMP' 'BANKS')
+000600990403     A                                      INDARA
+000700990403     A                                      ERRSFL
+000800990403     A                                      HELP
+000900990403     A                                      CF03(03)
+001000990403     A          R BEGDSP
+001100990403     A*%%TS  SD  19990403  131753  SAMMY       REL-V3R7M0  5716-PW1
+001200110523     A***       H                           HLPDOC('NAME' 'HLPEMP' 'BANKS')
+001300110523     A***                                   HLPARA(15 007 19 053)
+001400990403     A                                  9  7'Enter employee number ------'
+001500990403     A                                 11 16'OR'
+001600990403     A                                 13 15'Surname ------------'
+001700990403     A            NAMSRH    R     A  I 13 38REFFLD(SURNAM PAYLIB/EMPREF)
+001800990403     A  05                                  ERRMSGID(MSG0018 PAYLIB/PAYMESS)
+001900990403     A                                      DSPATR(HI)
+002000990403     A            NUMSRH         6D 0I  9 38
+002100990403     A  01                                  ERRMSGID(MSG0008 PAYLIB/PAYMESS)
+002200990403     A  02                                  ERRMSGID(MSG0001 PAYLIB/PAYMESS)
+002300990403     A N03N01N02
+002400990403     A N05N08N09                            ERRMSGID(MSG0003 PAYLIB/PAYMESS)
+002500990403     A  08                                  ERRMSGID(MSG0019 PAYLIB/PAYMESS)
+002600990403     A  09                                  ERRMSGID(MSG0022 PAYLIB/PAYMESS)
+002700990403     A                                      DSPATR(HI)
+002800990403     A                                 23 37'F3 - END'
+002900990403     A                                      DSPATR(HI)
+003000990403     A                                 23 59'Help available'
+003100990403     A                                      DSPATR(HI)
+003200990403     A                                  1  3USER
+003300990403     A                                      DSPATR(HI)
+003400990403     A                                  2 65TIME
+003500990403     A                                      DSPATR(HI)
+003600990403     A            CONAME        30A  O  1 26DSPATR(HI)
+003700990403     A                                      DSPATR(UL)
+003800990403     A            @DATE         10A  O  1 65DSPATR(HI)
+003900990403     A            @TITLE        40A  O  2 22DSPATR(HI)
+004000990403     A            $PGM          10A  O  2  3DSPATR(HI)
+004100990403     A            ERRMSG        75   O 24  3DSPATR(HI)
+004200970105     A          R RECSF                     SFL
+004300970105     A*%%TS  SD  19970105  134001  SAMMY       REL-V3R1M0  5763-PW1
+004400970105     A                                      KEEP
+004500970105     A            STYPE     R        B  9 10REFFLD(EMPRREC/TYPE PAYLIB/EMPREF)
+004600970105     A                                      EDTCDE(4)
+004700970105     A  20                                  DSPATR(PC)
+004800970105     A N20                                  DSPATR(PR)
+004900970105     A  30                                  DSPATR(RI)
+005000970105     A            SDEDU     R        B  9 25REFFLD(EMPRREC/DEDU PAYLIB/EMPREF)
+005100970105     A                                      EDTCDE(J $)
+005200970105     A N20                                  DSPATR(PC)
+005300970105     A  88                                  DSPATR(PR)
+005400970105     A            SDESC1    R        O  9 46REFFLD(FIXMREC/DESC1 PAYLIB/FIXMAS)
+005500970105     A                                      DSPATR(HI)
+005600970105     A            DELCOD         1A  I  9 70CHECK(AB)
+005700970105     A                                      COMP(EQ 'D')
+005800970105     A  20                                  DSPATR(ND)
+005900970105     A  20
+006000970105     AO 88                                  DSPATR(PR)
+006100990213     A          R RECCTL                    SFLCTL(RECSF)
+006200990213     A*%%TS  SD  19990213  101408  CWILLIAMS   REL-V3R7M0  5716-PW1
+006300990213     A                                      SFLSIZ(0010)
+006400990213     A                                      SFLPAG(0010)
+006500990213     A                                      CF01(01)
+006600990213     A                                      ASSUME
+006700990213     A                                      OVERLAY
+006800990213     A  13                                  SFLDSP
+006900990213     A                                      SFLDSPCTL
+007000990213     A  12                                  SFLCLR
+007100990213     A  04                                  SFLMSG('Deduction type is incorrect-
+007200990213     A                                      ')
+007300990213     A  13                              8 27'Deduction'
+007400990213     A                                      DSPATR(UL)
+007500990213     A                                      DSPATR(HI)
+007600990213     A  13                              8  9'Type'
+007700990213     A                                      DSPATR(UL)
+007800990213     A                                      DSPATR(HI)
+007900990213     A  13                              8 65'(D-delete)'
+008000990213     A                                      DSPATR(UL)
+008100990213     A                                      DSPATR(HI)
+008200990213     A  13                              8 47'Name'
+008300990213     A                                      DSPATR(UL)
+008400990213     A                                      DSPATR(HI)
+008500990213     A            $PGM          10A  O  2  3DSPATR(HI)
+008600990213     A                                  1  3USER
+008700990213     A                                      DSPATR(HI)
+008800990213     A                                  5  6'Employee Number:'
+008900990213     A            EMP       R        O  5 24REFFLD(EMP)
+009000990213     A  01                                  ERRMSGID(MSG0001 PAYLIB/PAYMESS)
+009100990213     A                                      DSPATR(HI)
+009200990213     A                                  2 32'Deduction Display'
+009300990213     A                                      DSPATR(UL)
+009400990213     A                                      DSPATR(HI)
+009500990213     A                                  5 33'Name:'
+009600990213     A            NAME          26A  O  5 40DSPATR(HI)
+009700990213     A            CONAME        30   O  1 26DSPATR(HI)
+009800990213     A                                      DSPATR(UL)
+009900990213     A            @DATE         10   O  1 65DSPATR(HI)
+010000990213     A                                  2 65TIME
+010100990213     A                                      DSPATR(HI)
+010200960314     A          R FOOTER
+010300960314     A*%%TS  SD  19960314  143540  SAMMY       REL-V3R1M0  5763-PW1
+010400960314     A                                      SLNO(23)
+010500960314     A                                  1 21'Use Blank Lines to enter new Deduc-
+010600960314     A                                      tions'
+010700960314     A                                      DSPATR(HI)
+010800960314     A                                  2 12'F1 = List Types      F3 = END     -
+010900960314     A                                        ENTER = Continue'
+011000960314     A                                      DSPATR(HI)
+011100960307     A          R NAMDSP                    SFL
+011200960307     A*%%TS  SD  19950316  155938  SAMMY       REL-V2R3M0  5738-PW1
+011300960307     A            SELECT         1A  I  5  3COMP(EQ 'X')
+011400960307     A                                      CHECK(ER)
+011500960307     A            CHRIST    R        O  5  5
+011600960307     A            SURNAM    R        O  5 18
+011700960307     A            CLASS     R        O  5 33
+011800960307     A            DEPT      R     D  O  5 38
+011900960307     A            EMP       R        O  5 43EDTCDE(4)
+012000990213     A          R NAMCTL                    SFLCTL(NAMDSP)
+012100990213     A*%%TS  SD  19990213  101408  CWILLIAMS   REL-V3R7M0  5716-PW1
+012200990213     A                                      SFLSIZ(4000)
+012300990213     A                                      SFLPAG(0008)
+012400990213     A                                      WINDOW(5 25 15 50)
+012500990213     A N15                                  ROLLUP(30)
+012600990213     A                                      OVERLAY
+012700990213     A                                      PUTRETAIN
+012800990213     A                                      SFLDSP
+012900990213     A                                      SFLDSPCTL
+013000990213     A  12                                  SFLCLR
+013100990213     A  15                                  SFLEND(*MORE)
+013200990213     A                                  3 15'N  A  M  E'
+013300990213     A                                      DSPATR(UL)
+013400990213     A                                      DSPATR(HI)
+013500990213     A                                  3 32'Grd.'
+013600990213     A                                      DSPATR(UL)
+013700990213     A                                      DSPATR(HI)
+013800990213     A                                  3 38'Dpt.'
+013900990213     A                                      DSPATR(UL)
+014000990213     A                                      DSPATR(HI)
+014100990213     A                                  3  1'Select'
+014200990213     A                                      DSPATR(UL)
+014300990213     A                                      DSPATR(HI)
+014400990213     A                                  4  2'(X)'
+014500990213     A                                  3 44'Num.'
+014600990213     A                                      DSPATR(UL)
+014700990213     A                                      DSPATR(HI)
+014800990213     A            REC            4S 0H      SFLRCDNBR
+014900950316     A          R FXTPDSP                   SFL
+015000950316     A*%%TS  SD  19950316  154956  SAMMY       REL-V2R3M0  5738-PW1
+015100950316     A            TYPE1     R        O  4  4REFFLD(FIXMREC/TYPE1 PAYLIB/FIXMAS)
+015200950316     A                                      EDTCDE(4)
+015300950316     A                                      DSPATR(HI)
+015400950316     A            DESC1     R        O  4 14REFFLD(FIXMREC/DESC1 PAYLIB/FIXMAS)
+015500990213     A          R FXTCTL                    SFLCTL(FXTPDSP)
+015600990213     A*%%TS  SD  19990213  101408  CWILLIAMS   REL-V3R7M0  5716-PW1
+015700990213     A                                      SFLSIZ(0020)
+015800990213     A                                      SFLPAG(0008)
+015900990213     A                                      WINDOW(5 30 13 30)
+016000990213     A                                      OVERLAY
+016100990213     A                                      PROTECT
+016200990213     A                                      SFLDSP
+016300990213     A                                      SFLDSPCTL
+016400990213     A  12                                  SFLCLR
+016500990213     A N13                                  SFLEND(*MORE)
+016600990213     A                                  2 14'Description'
+016700990213     A                                      DSPATR(UL)
+016800990213     A                                      DSPATR(HI)
+016900990213     A                                  2  3'Type'
+017000990213     A                                      DSPATR(UL)
+017100990213     A                                      DSPATR(HI)

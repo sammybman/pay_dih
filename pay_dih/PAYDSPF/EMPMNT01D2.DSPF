@@ -1,0 +1,84 @@
+000010050626     A*%%TS  SD  20050626  103210  SBRITTON    REL-V5R3M0  5722-WDS
+000020050626     A*%%EC
+000030050626     A                                      DSPSIZ(24 80 *DS3)
+000040050531     A          R SFILE                     SFL
+000050050531     A*%%TS  SD  20050531  134207  AFUNG       REL-V5R3M0  5722-WDS
+000060050531     A            ESMCLSDES R        O 13 11REFFLD(ESMFMT/ESMCLSDES *LIBL/EMPSM-
+000070050531     A                                      F)
+000080050531     A                                      DSPATR(HI)
+000090050531     A            ESMCLASS  R        O 13  5REFFLD(ESMFMT/ESMCLASS *LIBL/EMPSMF)
+000100050531     A                                      DSPATR(HI)
+000110050531     A            LRUL3DED  R     Y  B 13 43REFFLD(LRUL3FMT/LRUL3DED *LIBL/LIAB-
+000120050531     A                                      RULE3)
+000130050531     A                                      DSPATR(HI)
+000140050531     A                                      EDTCDE(Z)
+000150050626     A          R SFCTL                     SFLCTL(SFILE)
+000160050626     A*%%TS  SD  20050626  103210  SBRITTON    REL-V5R3M0  5722-WDS
+000170050626     A                                      SFLSIZ(0100)
+000180050626     A                                      SFLPAG(0008)
+000190050626     A                                      CF02(02)
+000200050626     A                                      CF15(15)
+000210050626     A                                      OVERLAY
+000220050626     A  75                                  SFLDSP
+000230050626     A                                      SFLDSPCTL
+000240050626     A  33                                  SFLCLR
+000250050626     A  55                                  SFLEND(*MORE)
+000260050626     A            @PGM          10A  O  2  4DSPATR(HI)
+000270050626     A                                  1  4USER
+000280050626     A                                      DSPATR(HI)
+000290050626     A                                  1 71SYSNAME
+000300050626     A                                      DSPATR(HI)
+000310050626     A            CONAME        30A  O  1 26DSPATR(HI)
+000320050626     A                                      DSPATR(UL)
+000330050626     A            @TITLE        40A  O  2 21DSPATR(HI)
+000340050626     A            @DATE         10A  O  2 69DSPATR(HI)
+000350050626     A                                 12  4'Class'
+000360050626     A                                      DSPATR(HI)
+000370050626     A                                      DSPATR(UL)
+000380050626     A                                      COLOR(BLU)
+000390050626     A                                  4  3'Liability Type......:'
+000400050626     A                                      COLOR(BLU)
+000410050626     A            LRUL3TYP#      2Y 0O  4 26DSPATR(HI)
+000420050626     A                                      EDTCDE(Z)
+000430050626     A            EMDSP     R        O  4 31REFFLD(EMFMT/EMDSP *LIBL/EMATF)
+000440050626     A                                      DSPATR(HI)
+000450050626     A            EADSP     R        O  5 31REFFLD(EAFMT/EADSP *LIBL/EASTF)
+000460050626     A                                      DSPATR(HI)
+000470050626     A                                  5  3'Liability Sub-Type..:'
+000480050626     A                                      COLOR(BLU)
+000490050626     A            LRUL3STYP#R        O  5 26REFFLD(EAFMT/EASUBTYP *LIBL/EASTF)
+000500050626     A                                      DSPATR(HI)
+000510050626     A                                      EDTCDE(Z)
+000520050626     A                                 12 12'Description'
+000530050626     A                                      COLOR(BLU)
+000540050626     A                                      DSPATR(UL)
+000550050626     A                                 12 42'Type'
+000560050626     A                                      COLOR(BLU)
+000570050626     A                                      DSPATR(UL)
+000580050626     A                                  7 22'1 -Deduct when yearly allowance ex-
+000590050626     A                                      pire'
+000600050626     A                                  8 22'2 -Do not automatically deduct'
+000610050626     A                                  9 22'3 -Deduct when over monthly allowa-
+000620050626     A                                      nce'
+000630050626     A                                 10 22'4 -Deduct when over year-to-date a-
+000640050626     A                                      llowance'
+000650050626     A                                  6  3'DEDUCTION TYPES -'
+000660050626     A                                      DSPATR(HI)
+000670050626     A                                  6 22'0 -Always deduct'
+000680050626     A                                 11  3'Note: Deduction applied every pay--
+000690050626     A                                      period liability type appears'
+000700050626     A                                      DSPATR(HI)
+000710050621     A          R FOOTER
+000720050621     A*%%TS  SD  20050621  201612  SBRITTON    REL-V5R3M0  5722-WDS
+000730050621     A                                      FRCDTA
+000740050621     A                                      SLNO(22)
+000750050621     A                                      CLRL(*NO)
+000760050621     A                                      OVERLAY
+000770050621     A            ERRMSG        75A  O  3  3DSPATR(BL)
+000780050621     A                                  2  8'F2=Cancel'
+000790050621     A                                      DSPATR(HI)
+000800050621     A                                  2 55'F15=Update File'
+000810050621     A                                      DSPATR(HI)
+000820050621     A                                  1  4'WARNING: Improper configuration ca-
+000830050621     A                                      n adversely affect employee Net pay'
+000840050621     A                                      COLOR(RED)

@@ -1,0 +1,85 @@
+000010980805     A*%%TS  SD  19980805  151959  SAMMY       REL-V3R7M0  5716-PW1
+000020980805     A*%%EC
+000030980805     A                                      DSPSIZ(24 80 *DS3)
+000040980805     A                                      CF03(03)
+000050980805     A          R SELOPT
+000060980805     A*%%TS  SD  19980805  151959  SAMMY       REL-V3R7M0  5716-PW1
+000070980805     A                                  1 32'BANKS DIH LIMITED'
+000080980805     A                                      DSPATR(HI)
+000090980805     A                                      DSPATR(UL)
+000100980805     A                                  2 27'Mortgage Master File Update'
+000110980805     A                                      DSPATR(UL)
+000120980805     A                                      DSPATR(HI)
+000130980805     A                                  2 65DATE
+000140980805     A                                      EDTCDE(Y)
+000150980805     A                                  2  3USER
+000160980805     A                                 24 24'F3 - End'
+000170980805     A                                      DSPATR(HI)
+000180980805     A                                  1 65SYSNAME
+000190980805     A            @PGM          10A  O  1  3
+000200980805     A            MOEMP     R     D  B  6 34REFFLD(MOREC/MOEMP PRGPROGS/MOM)
+000210980805     A  02                                  ERRMSGID(GLR0008 PRGPROGS/GLEDMESS)
+000220980805     A  05                                  ERRMSGID(GLR0027 PRGPROGS/GLEDMESS)
+000230980805     A                                  6  7'ENTER EMPLOYEE NUMBER =>'
+000240980805     A            ERRMSG        75   O 23  4DSPATR(HI)
+000250960122     A          R REC
+000260960122     A*%%TS  SD  19960122  174716  SAMMY       REL-V2R3M0  5738-PW1
+000270960122     A                                      CF04(04)
+000280960122     A                                      SLNO(08)
+000290960122     A                                      CLRL(*NO)
+000300960122     A                                      OVERLAY
+000310960122     A                                 17 35'F4 - Delete'
+000320960122     A                                      DSPATR(HI)
+000330960122     A                                 17 51'Enter to continue'
+000340960122     A                                      DSPATR(HI)
+000350960122     A                                  2 22'COST OF HOUSE:'
+000360960122     A            MOHAMT    R        B  2 38REFFLD(MOREC/MOHAMT PRGPROGS/MOM)
+000370960122     A                                      EDTCDE(1 $)
+000380960122     A                                  3 23'COST OF LAND:'
+000390960122     A            MOLAMT    R        B  3 38REFFLD(MOREC/MOLAMT PRGPROGS/MOM)
+000400960122     A                                      EDTCDE(1 $)
+000410960122     A                                  4 19'AMOUNT DEPOSITED:'
+000420960122     A            MODAMT    R        B  4 38REFFLD(MOREC/MODAMT PRGPROGS/MOM)
+000430960122     A                                      EDTCDE(1 $)
+000440960122     A                                  5 19'MORTGAGE GRANTED:'
+000450960122     A            MOGAMT    R        B  5 38REFFLD(MOREC/MOGAMT PRGPROGS/MOM)
+000460960122     A                                      EDTCDE(1 $)
+000470960122     A                                  6 18'MONTHLY REPAYMENT:'
+000480960122     A            MOMPAY    R        B  6 38REFFLD(MOREC/MOMPAY PRGPROGS/MOM)
+000490960122     A                                      EDTCDE(1 $)
+000500960122     A                                 10  3'FIRE POLICY NUMBER:'
+000510960122     A            MOFPO#    R        B 10 26REFFLD(MOREC/MOFPO# PRGPROGS/MOM)
+000520960122     A                                 10 40'FIRE POLICY PREMIUM:'
+000530960122     A            MOFPRM    R        B 10 65REFFLD(MOREC/MOFPRM PRGPROGS/MOM)
+000540960122     A                                      EDTCDE(1 $)
+000550960122     A                                 12  3'LIFE INSURANCE NUMBER:'
+000560960122     A            MOLPO#    R        B 12 26REFFLD(MOREC/MOLPO# PRGPROGS/MOM)
+000570960122     A                                 12 40'LIFE INSURANCE PREMIUM:'
+000580960122     A            MOLPRM    R        B 12 65REFFLD(MOREC/MOLPRM PRGPROGS/MOM)
+000590960122     A                                      EDTCDE(1 $)
+000600960122     A                                  7 21'ADDRESS LINE#1:'
+000610960122     A            MOADR1    R        B  7 38REFFLD(MOREC/MOADR1 PRGPROGS/MOM)
+000620960122     A                                  8 21'ADDRESS LINE#2:'
+000630960122     A            MOADR2    R        B  8 38REFFLD(MOREC/MOADR2 PRGPROGS/MOM)
+000640960122     A          R RECSFL                    SFL
+000650960122     A*%%TS  SD  19960122  155822  SAMMY       REL-V2R3M0  5738-PW1
+000660960122     A            MOEMP     R        O  3 11REFFLD(MOREC/MOEMP PRGPROGS/MOM)
+000670960122     A                                      DSPATR(HI)
+000680960122     A                                      EDTCDE(Z)
+000690960122     A            OPT#           1A  I  3  3
+000700960122     A            NAME          26A  O  3 22DSPATR(HI)
+000710960122     A          R RECCTL                    SFLCTL(RECSFL)
+000720960122     A*%%TS  SD  19960122  155822  SAMMY       REL-V2R3M0  5738-PW1
+000730960122     A                                      SFLSIZ(0100)
+000740960122     A                                      SFLPAG(0008)
+000750960122     A                                      WINDOW(9 15 13 50)
+000760960122     A                                      SFLDSP
+000770960122     A                                      SFLDSPCTL
+000780960122     A  12                                  SFLCLR
+000790960122     A N20                                  SFLEND(*MORE)
+000800960122     A                                  2 12'Emp.'
+000810960122     A                                      DSPATR(UL)
+000820960122     A                                  2  3'X'
+000830960122     A                                      DSPATR(UL)
+000840960122     A                                  2 30'Name'
+000850960122     A                                      DSPATR(UL)

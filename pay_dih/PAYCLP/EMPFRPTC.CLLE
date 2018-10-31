@@ -1,0 +1,74 @@
+000100951103/* ******************************************************** */
+000200990218/*  MENU   PROGRAM FOR THE EMPLOYEE ACCOUNTS FINAL          */
+000300990218/*  UPDATE                                                  */
+000400951103/* ******************************************************** */
+000500020312             PGM        PARM(&ANS &PRNO)
+000600980109             DCL        VAR(&SEL#) TYPE(*CHAR) LEN(1)
+000700980415             DCL        VAR(&PRNO) TYPE(*dec) LEN(6 0)
+000800990104             DCL        VAR(&NUM_CHK) TYPE(*DEC) LEN(2 0) VALUE(1)
+000900951103             DCL        VAR(&UDATE) TYPE(*DEC)  LEN(6 0)
+001000951103             DCL        VAR(&DATE) TYPE(*CHAR) LEN(6)
+001100951103             DCL        VAR(&@PGM) TYPE(*CHAR) LEN(10)
+001200951103             DCL        VAR(&@USER) TYPE(*CHAR) LEN(10)
+001300951103             DCL        VAR(&NO) TYPE(*CHAR) LEN(1) VALUE(' ')
+001400020206             DCLF       FILE(EMPRPTSD) RCDFMT(FMT2)
+001500980109             DCL        VAR(&@TITLE) TYPE(*CHAR) LEN(40) +
+001600981016                          VALUE('     Employees Reports Final Update')
+001700951103             /*                                           */
+001800951103             DCL        VAR(&CONAME) TYPE(*CHAR) LEN(30)
+001900951103             DCL        VAR(&@DATE) TYPE(*CHAR) LEN(10)
+002000980415             DCL        VAR(&AREA) TYPE(*DEC) LEN(2 0)
+002100980415             DCL        VAR(&@PRN) TYPE(*CHAR) LEN(2)
+002200021005             DCL        VAR(&CK_ISYS) TYPE(*CHAR) LEN(3) VALUE('EMT')
+002300951103             /*                                           */
+002400951103
+002500951103/*                                                          */
+002600980108             RTVJOBA    JOB(&@PGM) USER(&@USER) DATE(&DATE)
+002700021005             CHGVAR     VAR(&@PGM) VALUE('EMPFRPTC')
+002800981016             CHGVAR     VAR(&AREA) VALUE(0)
+002900951103             CHGVAR     VAR(&UDATE) VALUE(&DATE)
+003000980416             chgvar (&ans) value('   ')
+003100980416             chgvar var(&@title) +
+003200981016              VALUE('     Employees Reports Final Update')
+003300951103/*                                                          */
+003400981003top:
+003500021005             CALLPRC    PRC(DISAUT01R) PARM(&CK_ISYS &@PGM)
+003600060618             CALLPRC    PRC(GET_CONAME) RTNVAL(&CONAME)
+003700060618             CALLPRC    PRC(GET_SYS_DATE) RTNVAL(&@DATE)
+003800980416             SNDRCVF    RCDFMT(FMT2)
+003900021005             IF         COND(&IN01 = '1') THEN(DO)
+004000981003                          CALL PGM(CUSENQ02R) +
+004100981003                          PARM(&AREA)
+004200981003                          goto   top
+004300981003                          enddo
+004400980930             IF         COND(&IN03 = '1') THEN(GOTO CMDLBL(ENDPGM))
+004500980930             IF         COND((&ANS ¬= 'YES') *OR (&IN21 = '0')) +
+004600980930                          THEN(DO)
+004700980930             CHGVAR     VAR(&ANS) VALUE('NO ')
+004800980930             GOTO       CMDLBL(ENDPGM)
+004900980930             ENDDO
+005000041003             /* Payroll Deduction Changes          */
+005100041003             CLRPFM     FILE(PAYDEDCHG)
+005200021005             /*  Liability  Interest Calc  */
+005300021005             CALLPRC    PRC(EMPFRPT01) PARM(&PRNO)
+005400021005             /*  ALLOWANCE reset                   */
+005500030313             CALLPRC    PRC(EMPFRPT02) PARM(&PRNO)
+005600021005             /*  PAYROLL DEDUCTION SETUP           */
+005700021005             CLRPFM     FILE(PAYSETUP)
+005800021005             CALLPRC    PRC(EMPFRPT03) PARM(&PRNO 'U')
+005900010920             /*  Update for savings transactions   */
+006000021219             CALLPRC    PRC(EMPFRPT04) PARM(&PRNO)
+006100030912             CALLPRC    PRC(EMPFRPT05) PARM(&PRNO)
+006200021219             CALLPRC    PRC(EMPFRPT06) PARM(&PRNO)
+006300030221             CPYF       FROMFILE(SAVMAST) +
+006400030221                          TOFILE(PYSAVMAST) MBROPT(*REPLACE) +
+006500021114                          CRTFILE(*YES)
+006600031006             CALLPRC    PRC(EMPFRPT07) PARM(&PRNO 'A')
+006700040818             /* Share Scheme Master Update        */
+006800040818             CALLPRC    PRC(EMPFRPT08) PARM(&PRNO)
+006900990218             /*                                    */
+007000021005             CALLPRC    PRC(EMPFRPTFIN) PARM(&PRNO)
+007100021219             COMMIT
+007200980930 ENDPGM:     RETURN
+007300951103/*     */
+007400980415             ENDPGM

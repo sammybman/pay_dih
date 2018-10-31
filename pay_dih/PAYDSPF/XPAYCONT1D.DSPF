@@ -1,0 +1,97 @@
+000010020927     A*%%TS  SD  20020927  134808  SBRITTON    REL-V5R1M0  5722-WDS
+000020950530     A* ********************************************************
+000030950905     A*              B A N K S    D I H    L T D.              *
+000040950905     A*                INVENTORY CONTROL SYSTEM                *
+000050950905     A*                                                        *
+000060950905     A*                         BY                             *
+000070950905     A*                                                        *
+000080950905     A*       ONE PLUS COMPUTER SERVICES (GUYANA) LIMITED      *
+000090950905     A*             P.O BOX 10501, GEORGETOWN,GUYANA           *
+000100950905     A*                                                        *
+000110950905     A*                                                        *
+000120951019     A*       DISPLAY FILE  NAME: SYS002D                      *
+000130950906     A*       RECORD FORMAT NAME: FMT1                         *
+000140950906     A*                           FMT2                         *
+000150950905     A*                                                        *
+000160950906     A*       PROGRAMMER NAME: LORAINE INNISS                  *
+000170951019     A*       DESIGN DATE....: 9995/10/18                      *
+000180950905     A*                                                        *
+000190951019     A*  FILE DESCRIPTION: AUTHORITY MASTER FILE               *
+000200950905     A*                                                        *
+000210950905     A*  THIS FILE IS DESIGNED TO                              *
+000220950905     A*                                                        *
+000230950905     A*                                                        *
+000240950530     A**********************************************************
+000250020927     A*%%EC
+000260020927     A                                      DSPSIZ(24 80 *DS3)
+000270020927     A                                      REF(*LIBL/SYSAUT AUTFMT)
+000280020927     A                                      PRINT
+000290020927     A                                      CA01(01)
+000300020927     A                                      CF03(03)
+000310020927     A          R FMT1
+000320020927     A*%%TS  SD  20020927  134808  SBRITTON    REL-V5R1M0  5722-WDS
+000330020927     A            @PGM          10A  O  1  2DSPATR(HI)
+000340020927     A            CONAME        30A  O  1 24DSPATR(UL)
+000350020927     A                                      DSPATR(HI)
+000360020927     A            @DATE         10A  O  2 70DSPATR(HI)
+000370020927     A            @TITLE        40A  O  2 20DSPATR(HI)
+000380020927     A                                 23 33'F3=End Program'
+000390020927     A                                      DSPATR(HI)
+000400020927     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000410020927     A                                      DSPATR(BL)
+000420020927     A                                  1 70SYSNAME
+000430020927     A                                      DSPATR(HI)
+000440020927     A                                  2  2USER
+000450020927     A                                      DSPATR(HI)
+000460020927     A                                  7 24'Pay Type.....:'
+000470020927     A                                      COLOR(BLU)
+000480020927     A            XMPTYPE#  R        B  7 40REFFLD(XMPTYPE *LIBL/XMASFCAST)
+000490020927     A                                      DSPATR(HI)
+000500020927     A                                      EDTCDE(Z)
+000510020927     A                                 10 24'Class........:'
+000520020927     A                                      COLOR(BLU)
+000530020927     A            XMCLASS#  R        B 10 40REFFLD(XMCLASS *LIBL/XMASFCAST)
+000540020927     A                                      DSPATR(HI)
+000550020927     A                                      CHECK(RB)
+000560020927     A                                 23  5'F1=Pay Types'
+000570020927     A                                      DSPATR(HI)
+000580020927     A          R FMT2
+000590020927     A*%%TS  SD  20020927  134808  SBRITTON    REL-V5R1M0  5722-WDS
+000600020927     A                                      CA02(02)
+000610020927     A                                      CA05(05)
+000620020927     A                                      CF15(15)
+000630020927     A            @PGM          10A  O  1  2DSPATR(HI)
+000640020927     A            CONAME        30A  O  1 24DSPATR(UL)
+000650020927     A                                      DSPATR(HI)
+000660020927     A            @DATE         10A  O  2 70DSPATR(HI)
+000670020927     A            @TITLE        40A  O  2 20DSPATR(HI)
+000680020927     A                                 23 21'F2=Cancel'
+000690020927     A                                      DSPATR(HI)
+000700020927     A                                 23 33'F3=End Program'
+000710020927     A                                      DSPATR(HI)
+000720020927     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000730020927     A                                      DSPATR(BL)
+000740020927     A                                  1 70SYSNAME
+000750020927     A                                      DSPATR(HI)
+000760020927     A                                 23  3'F1=Runtypes'
+000770020927     A                                      DSPATR(HI)
+000780020927     A                                  2  2USER
+000790020927     A                                      DSPATR(HI)
+000800020927     A                                  7 24'Pay Type.....:'
+000810020927     A                                      COLOR(BLU)
+000820020927     A            XMPTYPE#  R        O  7 40REFFLD(XMPTYPE *LIBL/XMASFCAST)
+000830020927     A                                      DSPATR(HI)
+000840020927     A                                      EDTCDE(Z)
+000850020927     A                                  9 24'Class........:'
+000860020927     A                                      COLOR(BLU)
+000870020927     A            XMCLASS#  R        O  9 40REFFLD(XMCLASS *LIBL/XMASFCAST)
+000880020927     A                                      DSPATR(HI)
+000890020927     A                                 13 24'Class Default:'
+000900020927     A                                      COLOR(BLU)
+000910020927     A            XMAMOUNT# R        B 13 40REFFLD(XMSFMT/XMAMOUNT *LIBL/XMASFC-
+000920020927     A                                      AST)
+000930020927     A                                      DSPATR(HI)
+000940020927     A                                      EDTCDE(1 $)
+000950020927     A            TYPE_NAME     20A  O  7 47
+000960020927     A                                 23 62'F15=Confirm'
+000970020927     A                                      DSPATR(HI)

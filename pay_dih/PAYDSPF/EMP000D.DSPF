@@ -1,0 +1,141 @@
+000100030308     A*%%TS  SD  20030308  204834  SBRITTON    REL-V5R2M0  5722-WDS
+000200030308     A*%%EC
+000300030308     A                                      DSPSIZ(24 80 *DS3)
+000400030308     A                                      MNUBARSW
+000500030308     A                                      CF04(04)
+000600030308     A                                      CF07(07)
+000700000205     A          R FMT1
+000800000205     A                                      CF03(03)
+000900000205     A            @PGM          10A  O  1  4DSPATR(HI)
+001000000205     A                                  2  4USER
+001100000205     A                                      DSPATR(HI)
+001200000205     A                                  1 69SYSNAME
+001300000205     A                                      DSPATR(HI)
+001400000205     A            CONAME    R        O  1 26REFFLD(RFLDFMT/NAME30 *LIBL/FLDREF)
+001500000205     A                                      DSPATR(HI)
+001600000205     A                                      DSPATR(UL)
+001700000205     A            @TITLE    R        O  2 21REFFLD(RFLDFMT/NAME40 *LIBL/FLDREF)
+001800000205     A                                      DSPATR(HI)
+001900000205     A                                 12 11'Please Key In I.D. Code-->'
+002000000205     A                                      DSPATR(HI)
+002100000205     A            PASSWORD  R        B 12 38REFFLD(CAFMT/CAURID *LIBL/CASHCON)
+002200000205     A                                      DSPATR(ND)
+002300000205     A                                      DSPATR(PC)
+002400000205     A                                      DSPATR(CS)
+002500000205     A  50                                  ERRMSG('Invalid User I.D.Code Enter-
+002600000205     A                                      ed, Please Try Again.')
+002700000205     A  52                                  ERRMSG('Next Not Valid Attempt Sign-
+002800000205     A                                      s Off User.')
+002900000205     A  54                                  ERRMSG('Cannot sign-on from this di-
+003000000205     A                                      splay')
+003100000205     A  51                                  ERRMSGID(DIH0022 *LIBL/DIHMSGF)
+003200000205     A            @DATE         10A  O  2 69DSPATR(HI)
+003300000205     A            ERRMSG        75   O 24  3DSPATR(BL)
+003400000205     A                                      COLOR(RED)
+003500010227     A          R MENUBAR
+003600010227     A                                      OVERLAY
+003700010227     A                                      PROTECT
+003800010227     A                                      MNUBAR
+003900010227     A                                      MNUBARDSP
+004000010227     A                                      MNUCNL(CA12 12)
+004100010227     A            MNUFLD         2Y 0B  1  2CHCSLT((*COLOR TRQ))
+004200020204     A                                      MNUBARCHC(1 OPTS '>Daily Jobs')
+004300010227     A                                      MNUBARCHC(2 MAINT '>Maintenance')
+004400010424     A                                      MNUBARCHC(3 VIEW '>View')
+004500010424     A                                      MNUBARCHC(4 REPORT '>Reports')
+004600030308     A                                      MNUBARCHC(5 UTILCTL '>Utilities')
+004700030308     A                                      MNUBARCHC(6 EXIT '>Exit')
+004800010227     A          R SYSTEMS
+004900010227     A*%%TS  SD  20010227  095630  SAMMY       REL-V4R4M0  5769-PW1
+005000010227     A                                      PULLDOWN(*RSTCSR)
+005100010227     A            F1             2Y 0B  1  1SNGCHCFLD
+005200010227     A                                      CHECK(ER)
+005300010227     A                                      CHOICE(1 '>Stores Menu')
+005400010227     A                                      CHOICE(2 '>Voucher Menu')
+005500010816     A          R OPTS
+005600010816     A*%%TS  SD  20010816  185250  SAMMY       REL-V4R4M0  5769-PW1
+005700010816     A                                      PULLDOWN(*RSTCSR)
+005800010816     A            F1             2Y 0B  1  1SNGCHCFLD
+005900010816     A                                      CHECK(ER)
+006000020206     A                                      CHOICE(1 '>Setup Fixed Deduction')
+006100020206     A                                      CHOICE(2 'Se>t Payroll Deduction')
+006200020206     A                                      CHOICE(3 '>Employee Liability')
+006300020206     A                                      CHOICE(4 '>Handling Small Balances')
+006400050627     A                                      CHOICE(5 '>Authorise Liab. Trans.')
+006500010816     A          R MAINT
+006600010816     A*%%TS  SD  20010816  123550  SAMMY       REL-V4R4M0  5769-PW1
+006700010816     A                                      PULLDOWN(*RSTCSR)
+006800010816     A            F1             2Y 0B  1  1SNGCHCFLD
+006900010816     A                                      CHECK(ER)
+007000010816     A                                      DSPATR(ND)
+007100010816     A                                      CHOICE(1 '>System Control')
+007200020206     A                                      CHOICE(2 '>Type Maintenance'   *SPA-
+007300010816     A                                      CEB)
+007301071018     A                                      CHOICE(3 '>Employee Bank Loan Rec')
+007400010424     A*
+007500010424     A          R VIEW
+007600010424     A                                      PULLDOWN(*RSTCSR)
+007700010424     A            F1             2Y 0B  1  1SNGCHCFLD
+007800010227     A                                      CHECK(ER)
+007900020206     A                                      CHOICE(1 '>Employee Enquiry')
+008000980629     A*
+008100011003     A          R REPORT
+008200011003     A*%%TS  SD  20011003  215024  CWILLIAMS   REL-V4R4M0  5769-PW1
+008300011003     A                                      PULLDOWN(*RSTCSR)
+008400011003     A            F1             2Y 0B  1  1SNGCHCFLD
+008500011003     A                                      CHECK(ER)
+008600020204     A                                      CHOICE(1 '>General Reports')
+008700020204     A                                      CHOICE(2 '>Period CLose ')
+008800020206     A                                      CHOICE(3 '>Liability Transactions ')
+008900050627     A                                      CHOICE(4 'A>utomatic Applied Ded.')
+009000020204     A
+009100010227     A          R EXIT
+009200010227     A                                      PULLDOWN(*RSTCSR)
+009300010227     A            F5             2Y 0B  1  1SNGCHCFLD
+009400010227     A                                      CHECK(ER)
+009500010227     A                                      CHOICE(1 '>EXIT')
+009600030308     A          R UTILSFL                   SFL
+009700030308     A*%%TS  SD  20011018  134923  SAMMY       REL-V4R4M0  5769-PW1
+009800030308     A            UTILCCTL       1Y 0H      SFLCHCCTL
+009900030308     A            UTILNAME      25A  O  1  2
+010000030308     A            UTILORG        3A  H
+010100030308     A            UTILOBJ       10A  H
+010200030308     A            UTILOBJT       1A  H
+010300030308     A          R UTILCTL                   SFLCTL(UTILSFL)
+010400030308     A*%%TS  SD  20011018  145540  SAMMY       REL-V4R4M0  5769-PW1
+010500030308     A                                      CSRLOC(SETROW     SETCOL)
+010600030308     A                                      SFLCSRRRN(&GETRRN)
+010700030308     A                                      SFLSNGCHC
+010800030308     A  20                                  SFLDSP
+010900030308     A                                      SFLDSPCTL
+011000030308     A  33                                  SFLCLR
+011100030308     A  55                                  SFLEND(*MORE)
+011200030308     A                                      SFLSIZ(0020)
+011300030308     A                                      SFLPAG(0010)
+011400030308     A                                      PULLDOWN(*SLTIND *RSTCSR)
+011500030308     A            GETRRN         5S 0H
+011600030308     A            SETROW         3S 0H
+011700030308     A            SETCOL         3S 0H
+011800030308     A          R FMT2
+011900030308     A*%%TS  SD  20030308  204834  SBRITTON    REL-V5R2M0  5722-WDS
+012000030308     A                                      OVERLAY
+012100030308     A                                      PROTECT
+012200030308     A                                 24  8'(C)Copyright Diserv Systems, 2001'
+012300030308     A                                      DSPATR(HI)
+012400030308     A                                  7 16'This Application Was Designed And -
+012500030308     A                                      Written'
+012600030308     A                                      COLOR(BLU)
+012700030308     A                                  8 16'For Use in the Credit Control Depa-
+012800030308     A                                      rtment in'
+012900030308     A                                      COLOR(BLU)
+013000030308     A                                  9 16'Conjunction with the Payroll & HR -
+013100030308     A                                      Departments.'
+013200030308     A                                      COLOR(BLU)
+013300030308     A            ERRMSG        75A  O 23  2DSPATR(BL)
+013400030308     A                                      COLOR(RED)
+013500030308     A                                 21  4'EMPLOYEE RECEIVABLES'
+013600030308     A                                      COLOR(BLU)
+013700030308     A                                 21 28'EMPLOYEE RECEIVABLES'
+013800030308     A                                      COLOR(BLU)
+013900030308     A                                 21 53'EMPLOYEE RECEIVABLES'
+014000030308     A                                      COLOR(BLU)

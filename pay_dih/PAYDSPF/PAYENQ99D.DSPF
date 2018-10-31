@@ -1,0 +1,79 @@
+000010160409     A*%%TS  SD  20160409  145920  SBRITTON    REL-V7R1M0  5770-WDS
+000020021014     A* ********************************************************
+000030021014     A*              B A N K S    D I H    L T D.              *
+000040021014     A*                  M.I.S. DEPARTMENT                     *
+000050021014     A*                                                        *
+000060021014     A*                                                        *
+000070021018     A*       DISPLAY FILE NAME :  ASETMNT03D                  *
+000080021014     A*                                                        *
+000090021014     A*       PROGRAMMER NAME...:  ALLISON FUNG                *
+000100021014     A*       DATE..............:  14.10.2002                  *
+000110021014     A*                                                        *
+000120021018     A*  FILE DESCRIPTION: ASSETS LOCATION MAINTENANCE         *
+000130021014     A*                    DISPLAY                             *
+000140021014     A*                                                        *
+000150021014     A**********************************************************
+000160941122     A*
+000170160409     A*%%EC
+000180160409     A                                      DSPSIZ(24 80 *DS3)
+000190160409     A                                      REF(*LIBL/PICODEM)
+000200160409     A                                      CA03(03)
+000210160409     A                                      CA01(01)
+000220160409     A                                      CA15(15)
+000230151013     A          R PROMPT
+000240151013     A*%%TS  SD  20151013  174619  SBRITTON    REL-V7R1M0  5770-WDS
+000250151013     A            @PGM          10A  O  1  2DSPATR(HI)
+000260151013     A                                  5  6'Enter Incentive Type..:'
+000270151013     A                                      COLOR(BLU)
+000280151013     A                                 23 35'F3 = End Program'
+000290151013     A                                      DSPATR(HI)
+000300151013     A            @TITLE        40A  O  2 21DSPATR(HI)
+000310151013     A            CONAME        30A  O  1 26DSPATR(HI)
+000320151013     A                                      DSPATR(UL)
+000330151013     A                                  1 72SYSNAME
+000340151013     A                                      DSPATR(HI)
+000350151013     A                                  2  2USER
+000360151013     A                                      DSPATR(HI)
+000370151013     A            @DATE         10A  O  2 70DSPATR(HI)
+000380151013     A                                 23  6'F1 = P.I. Types'
+000390151013     A                                      DSPATR(HI)
+000400151013     A            PICCODE   R        B  5 31REFFLD(PICFMT/PICCODE *LIBL/PICODEM)
+000410941120     A**
+000420151013     A          R DETAIL
+000430151013     A*%%TS  SD  20151013  174619  SBRITTON    REL-V7R1M0  5770-WDS
+000440151013     A                                      CA02(02)
+000450151013     A                                      CF20(20)
+000460151013     A                                      CF04(04)
+000470151013     A            @PGM          10A  O  1  2DSPATR(HI)
+000480151013     A                                  6  6'P.I. Type.............:'
+000490151013     A                                      COLOR(BLU)
+000500151013     A                                 23  7'F2 = Cancel'
+000510151013     A                                      DSPATR(HI)
+000520151013     A            @TITLE        40A  O  2 21DSPATR(HI)
+000530151013     A            CONAME        30A  O  1 26DSPATR(HI)
+000540151013     A                                      DSPATR(UL)
+000550151013     A                                  2  2USER
+000560151013     A                                      DSPATR(HI)
+000570151013     A            @DATE         10A  O  2 70DSPATR(HI)
+000580151013     A                                  1 72SYSNAME
+000590151013     A                                      DSPATR(HI)
+000600151013     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000610151013     A                                  3 64'Mode:'
+000620151013     A                                      DSPATR(HI)
+000630151013     A            #MODE          7A  O  3 70DSPATR(HI)
+000640151013     A                                  8  6'Type Description......:'
+000650151013     A                                      COLOR(BLU)
+000660151013     A                                 23 46'F15 = Confirm'
+000670151013     A                                      DSPATR(HI)
+000680151013     A                                 23 25'F4 = Prompt'
+000690151013     A                                      DSPATR(HI)
+000700151013     A                                 23 66'F20 = Delete'
+000710151013     A                                      DSPATR(HI)
+000720151013     A            PICCODE   R        O  6 32REFFLD(PICFMT/PICCODE *LIBL/PICODEM)
+000730151013     A            PICDESC   R        O  8 32REFFLD(PICFMT/PICDESC *LIBL/PICODEM)
+000740160409     A
+000750160409     A          R MESSAGE
+000760160409     A*%%TS  SD  20160409  145920  SBRITTON    REL-V7R1M0  5770-WDS
+000770160409     A                                      WINDOW(10 15 10 40)
+000780160409     A            MSGTEXT      256A  B  2  2DSPATR(HI)
+000790160409     A                                      CNTFLD(035)

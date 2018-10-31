@@ -1,0 +1,82 @@
+000010140313     A*%%TS  SD  20140313  081955  CWILLIAMS   REL-V7R1M0  5770-WDS
+000020140313     A*%%EC
+000030140313     A                                      DSPSIZ(24 80 *DS3)
+000040140313     A                                      CF03(03)
+000050140313     A          R FMT1
+000060140313     A*%%TS  SD  20140313  081955  CWILLIAMS   REL-V7R1M0  5770-WDS
+000070140313     A                                      CF05(05)
+000080140313     A                                  1  3USER
+000090140313     A                                      DSPATR(HI)
+000100140313     A                                 23 31'F3 = End'
+000110140313     A                                      DSPATR(HI)
+000120140313     A                                  1 70SYSNAME
+000130140313     A                                      DSPATR(HI)
+000140140313     A                                  4  9'Enter Year Required...:'
+000150140313     A                                      COLOR(BLU)
+000160140313     A            PAY_YEAR       4D 0B  4 35
+000170140313     A N28                                  DSPATR(HI)
+000180140313     A  28                                  DSPATR(RI)
+000190140313     A            CONAME        30A  O  1 26DSPATR(HI)
+000200140313     A                                      DSPATR(UL)
+000210140313     A            @TITLE        40A  O  2 21DSPATR(HI)
+000220140313     A            @DATE         10A  O  2 68DSPATR(HI)
+000230140313     A            @PGM          10A  O  2  3DSPATR(HI)
+000240140313     A            ERRMSG        75A  O 24  3DSPATR(BL)
+000250140313     A                                  9  9'Set Sequence..........:'
+000260140313     A                                      COLOR(BLU)
+000270140313     A            SEQ            1Y 0B  9 35EDTCDE(4)
+000280140313     A                                      DSPATR(HI)
+000290140313     A                                      RANGE(1 2)
+000300140313     A                                  8 42'1. by Emp no.'
+000310140313     A                                  9 42'2. by Surname ,Christ'
+000320140313     A                                 13  9'Pay-type selection....:'
+000330140313     A                                      COLOR(BLU)
+000340140313     A                                 11 42'1. Use payroll default'
+000350140313     A                                 12 42'2. Print all types'
+000360140313     A            SEL            1Y 0B 13 35EDTCDE(4)
+000370140313     A                                      DSPATR(HI)
+000380140313     A                                      RANGE(1 3)
+000390140313     A                                 13 42'3. Use Modified dft. list'
+000400140313     A                                 17  9'Ytd Origin............:'
+000410140313     A                                      COLOR(BLU)
+000420140313     A            ORG            1Y 0B 17 35EDTCDE(4)
+000430140313     A                                      DSPATR(HI)
+000440140313     A                                      RANGE(0 2)
+000450140313     A                                 16 42'1. Payroll System only'
+000460140313     A                                 17 42'2. All Non-Payroll systems'
+000470140313     A                                 15 42'0. All Systems'
+000480140313     A                                 19  9'List Employee types...:'
+000490140313     A                                      COLOR(BLU)
+000500140313     A                                 20 17'or'
+000510140313     A                                 21  9'Select employee class.:'
+000520140313     A                                      COLOR(BLU)
+000530140313     A            LIST          20A  B 19 35DSPATR(HI)
+000540140313     A            EMP_CLASS      3A  B 21 35DSPATR(HI)
+000550140313     A                                      CHECK(RB)
+000560140313     A                                 19 57'(*ALLACTIVE ,*ALL)'
+000570140313     A                                 20 34'(start from left , leave no spaces-
+000580140313     A                                      )'
+000590140313     A                                  6  9'Generate I.R.D. FORM2A:'
+000600140313     A                                      COLOR(BLU)
+000610140313     A            IRDFLAG        1A  B  6 35DSPATR(HI)
+000620140313     A                                  6 42'(Y = Yes)'
+000630021029     A          R FMTWIN
+000640021029     A*%%TS  SD  20021029  172008  SBRITTON    REL-V5R1M0  5722-WDS
+000650021029     A                                      WINDOW(10 20 10 40)
+000660021029     A                                  2 15'PAY-TYPE LIST'
+000670021029     A                                      DSPATR(UL)
+000680021029     A            P_TYPE1        2Y 0B  3  9DSPATR(HI)
+000690021029     A                                      EDTCDE(1)
+000700021029     A            P_TYPE2        2Y 0B  3 14DSPATR(HI)
+000710021029     A                                      EDTCDE(1)
+000720021029     A            P_TYPE3        2Y 0B  3 19DSPATR(HI)
+000730021029     A                                      EDTCDE(1)
+000740021029     A            P_TYPE4        2Y 0B  3 24DSPATR(HI)
+000750021029     A                                      EDTCDE(1)
+000760021029     A            P_TYPE5        2Y 0B  3 29DSPATR(HI)
+000770021029     A                                      EDTCDE(1)
+000780021029     A                                  7  2'Notes: 1. Types are not verified'
+000790021029     A                                  8  9'2. A zero type is interpreted'
+000800021029     A                                  9 12'as all taxable types'
+000810021029     A                                  5 10'Press Enter to Continue'
+000820021029     A                                      DSPATR(HI)

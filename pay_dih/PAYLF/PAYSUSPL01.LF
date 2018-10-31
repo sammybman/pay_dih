@@ -1,0 +1,8 @@
+000100951012     A* ********************************************************
+000200010726     A* SUSPENDED PAYMENTS MASTER FILE (EMPLOYEE)              *
+000300010430     A*   S. BRITTON, C. WILLIAMS                              *
+000400010726     A*           FILENAME = PAYSUSPL01         26/07/2001     *
+000500951012     A**********************************************************
+000600010726     A          R SUSFMT                    PFILE(PAYSUSPF)
+000700010726     A          K SUSEMP
+000800010726     A          K SUSPTYPE

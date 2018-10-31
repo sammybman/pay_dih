@@ -1,0 +1,68 @@
+000010020607     A*%%TS  SD  20020607  164408  SAMMY       REL-V4R4M0  5769-PW1
+000020941122     A*
+000030020607     A*%%EC
+000040020607     A                                      DSPSIZ(24 80 *DS3)
+000050020607     A                                      CA03(03)
+000060941120     A*
+000070020606     A          R FMT1
+000080020606     A*%%TS  SD  20020606  164851  SAMMY       REL-V4R4M0  5769-PW1
+000090020606     A                                      CA01(01)
+000100020606     A            @PGM          10A  O  1  2DSPATR(HI)
+000110020606     A                                 11 14'Employee No..'
+000120020606     A                                      COLOR(BLU)
+000130020606     A            EMP#           6Y 0B 11 30EDTCDE(Z)
+000140020606     A                                      DSPATR(HI)
+000150020606     A                                 23 33'F3 = End Program'
+000160020606     A                                      DSPATR(HI)
+000170020606     A                                  1 71SYSNAME
+000180020606     A                                      DSPATR(HI)
+000190020606     A                                  2  2USER
+000200020606     A                                      DSPATR(HI)
+000210020606     A            CONAME        30A  O  1 26DSPATR(HI)
+000220020606     A                                      DSPATR(UL)
+000230020606     A            @TITLE        40A  O  2 21DSPATR(HI)
+000240020606     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000250020606     A            @DATE         10A  O  2 69DSPATR(HI)
+000260941120     A**
+000270020607     A          R FMT2
+000280020607     A*%%TS  SD  20020607  164408  SAMMY       REL-V4R4M0  5769-PW1
+000290020607     A                                      CA02(02)
+000300020607     A N99                                  CA04(04)
+000310020607     A                                      CHANGE(88)
+000320020607     A            #MODE          6A  O  3 35DSPATR(RI)
+000330020607     A                                      COLOR(YLW)
+000340020607     A            @PGM          10A  O  1  2DSPATR(HI)
+000350020607     A                                  5 10'Employee ...........'
+000360020607     A                                      COLOR(BLU)
+000370020607     A            EMP#           6Y 0O  5 32EDTCDE(Z)
+000380020607     A                                      DSPATR(HI)
+000390020607     A                                 23  2'F2 = Cancel'
+000400020607     A                                      DSPATR(HI)
+000410020607     A            CONAME        30A  O  1 26DSPATR(HI)
+000420020607     A                                      DSPATR(UL)
+000430020607     A            @TITLE        40A  O  2 21DSPATR(HI)
+000440020607     A                                  2  2USER
+000450020607     A                                      DSPATR(HI)
+000460020607     A                                  1 71SYSNAME
+000470020607     A                                      DSPATR(HI)
+000480020607     A                                 23 16'F3 = End Program'
+000490020607     A                                      DSPATR(HI)
+000500020607     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000510020607     A            EMPNAME#      40A  O  5 40DSPATR(HI)
+000520020607     A                                      TEXT('Type Description')
+000530020607     A                                 11 10'Agent ..............'
+000540020607     A                                      COLOR(BLU)
+000550020607     A            AGENT#         6Y 0B 11 32EDTCDE(Z)
+000560020607     A                                      DSPATR(HI)
+000570020607     A            AGNAME#       40A  O 11 40DSPATR(HI)
+000580020607     A                                      TEXT('TYPE DESCRIPTION')
+000590020607     A N99                             23 36'F4 = Delete Record'
+000600020607     A                                      DSPATR(HI)
+000610020607     A  90                             19 28'PRESS F4 TO CONFIRM DELETE'
+000620020607     A                                      DSPATR(RI)
+000630020607     A                                      DSPATR(HI)
+000640020607     A            @DATE         10A  O  2 69DSPATR(HI)
+000650020607     A                                  9 10'Company Code........'
+000660020607     A                                      COLOR(BLU)
+000670020607     A            COMPCODE#      3Y 0B  9 32DSPATR(HI)
+000680020607     A                                      EDTCDE(Z)

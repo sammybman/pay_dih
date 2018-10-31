@@ -1,0 +1,148 @@
+000010070622     A*%%TS  SD  20070622  132916  SBRITTON    REL-V5R4M0  5722-WDS
+000020070622     A*%%EC
+000030070622     A                                      DSPSIZ(24 80 *DS3)
+000040070622     A                                      CF03(03)
+000050010806     A          R FMT0
+000060010806     A*%%TS  SD  20010806  163756  SAMMY       REL-V4R4M0  5769-PW1
+000070010806     A  99                                  CA02(02)
+000080010806     A                                 10 13'Enter Payroll Run Type....:'
+000090010806     A                                      COLOR(BLU)
+000100010806     A  99                             23  8'F2= Go back'
+000110010806     A                                      DSPATR(HI)
+000120010806     A                                  1 73SYSNAME
+000130010806     A                                      DSPATR(HI)
+000140010806     A                                  2  3USER
+000150010806     A                                      DSPATR(HI)
+000160010806     A            @PGM          10A  O  1  3DSPATR(HI)
+000170010806     A            CONAME        30A  O  1 26DSPATR(HI)
+000180010806     A                                      DSPATR(UL)
+000190010806     A            @TITLE        40A  O  2 21DSPATR(HI)
+000200010806     A            @DATE         10A  O  2 71DSPATR(HI)
+000210010806     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000220010806     A                                      COLOR(RED)
+000230010806     A            RUN_TYPE       1A  B 10 42DSPATR(HI)
+000240010806     A  99                                  DSPATR(PR)
+000250010806     A  99                             15 13'Mimic Payroll Run Type....:'
+000260010806     A                                      COLOR(BLU)
+000270010806     A  99        MIM_TYPE       1A  B 15 42DSPATR(HI)
+000280010806     A                                 23 34'F3= End Program'
+000290010806     A                                      DSPATR(HI)
+000300010806     A  99                             17  9'Warning ! - Creating Entries for A-
+000310010806     A                                      nother Payroll Type is valid'
+000320010806     A                                      COLOR(RED)
+000330010806     A  99                             18  9'only for the Previous Pay Period o-
+000340010806     A                                      f the type being mimicked'
+000350010806     A                                      COLOR(RED)
+000360070622     A          R FMT1
+000370070622     A*%%TS  SD  20070622  132916  SBRITTON    REL-V5R4M0  5722-WDS
+000380070622     A  77                                  CF21(21)
+000390070622     A                                  8 13'Enter Employee number.....:'
+000400070622     A                                      COLOR(BLU)
+000410070622     A                                 23 33'F3 = End Program'
+000420070622     A                                      DSPATR(HI)
+000430070622     A            EMP#      R     D  B  8 41REFFLD(EMPRREC/EMP *LIBL/EMPREF)
+000440070622     A                                      CHECK(ER)
+000450070622     A                                      DSPATR(PC)
+000460070622     A                                      DSPATR(HI)
+000470070622     A                                  1 73SYSNAME
+000480070622     A                                      DSPATR(HI)
+000490070622     A                                  2  3USER
+000500070622     A                                      DSPATR(HI)
+000510070622     A            @PGM          10A  O  1  3DSPATR(HI)
+000520070622     A            CONAME        30A  O  1 26DSPATR(HI)
+000530070622     A                                      DSPATR(UL)
+000540070622     A            @TITLE        40A  O  2 21DSPATR(HI)
+000550070622     A            @DATE         10A  O  2 71DSPATR(HI)
+000560070622     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000570070622     A                                      COLOR(RED)
+000580070622     A                                 12 22'or'
+000590070622     A                                 14 13'For Global Changes Enter..:'
+000600070622     A                                      COLOR(BLU)
+000610070622     A            GLOBAL_TYP     2Y 0B 19 42EDTCDE(Z)
+000620070622     A                                      DSPATR(HI)
+000630070622     A            GLOBAL_COD     1A  B 16 42DSPATR(HI)
+000640070622     A                                      CHECK(AB)
+000650070622     A                                      VALUES('+' '-' 'C')
+000660070622     A            GLOBAL_AMT    11Y 2B 18 42EDTCDE(1)
+000670070622     A                                      DSPATR(HI)
+000680070622     A                                 19 13'Payment Type..............:'
+000690070622     A                                      COLOR(BLU)
+000700070622     A                                 18 13'Payment Amount............:'
+000710070622     A                                      COLOR(BLU)
+000720070622     A                                 16 13'Transaction Code..........:'
+000730070622     A                                      COLOR(BLU)
+000740070622     A                                 16 46'(+ = add , - = subtract)'
+000750070622     A                                 17 46'(C = change )'
+000760070622     A  77                             21 24'PRESS F21 to Confirm Global Update'
+000770070622     A                                      DSPATR(HI)
+000780070622     A                                 20 13'Employee Class............:'
+000790070622     A                                      COLOR(BLU)
+000800070622     A            GLOBAL_CLS     3A  B 20 42DSPATR(HI)
+000810070622     A                                      CHECK(RB)
+000820070622     A                                 20 46'(optional)'
+000830070622     A                                 10 13'Override calculated values:'
+000840070622     A                                      COLOR(BLU)
+000850070622     A            OVRFLAG        1   B 10 41DSPATR(HI)
+000860070622     A                                 10 46'(Y = Yes)'
+000870070622     A          R SFLREC                    SFL
+000880070622     A*%%TS  SD  20070622  132916  SBRITTON    REL-V5R4M0  5722-WDS
+000890070622     A            EMOL_TYP# R        O  8 11REFFLD(WRKFMT/WRKTYP *LIBL/PAYWORKF)
+000900070622     A                                      DSPATR(HI)
+000910070622     A            WRKAMT#   R        B  8 64REFFLD(WRKFMT/WRKAMT *LIBL/PAYWORKF)
+000920070622     A                                      EDTCDE(J)
+000930070622     A            WRKHRS#   R        B  8 54REFFLD(EMPRREC/NRHRS *LIBL/EMPREF)
+000940070622     A                                      EDTWRD('   :  ')
+000950070622     A  88                                  DSPATR(ND)
+000960070622     A  88                                  DSPATR(PR)
+000970070622     A            EMOL_NAME     20A  O  8 18DSPATR(HI)
+000980070622     A            CHECK_OPT      1A  B  8 45
+000990070622     A            PTYPRIOR#      2S 0H
+001000070622     A            PTYRTYPE#      1A  H
+001010070622     A            HRS_IND        1A  H
+001020070622     A          R SFLCTL                    SFLCTL(SFLREC)
+001030070622     A*%%TS  SD  20070622  132916  SBRITTON    REL-V5R4M0  5722-WDS
+001040070622     A                                      SFLSIZ(0100)
+001050070622     A                                      SFLPAG(0010)
+001060070622     A                                      CF15(15)
+001070070622     A                                      CA02(02)
+001080070622     A                                      OVERLAY
+001090070622     A                                      SFLDSP
+001100070622     A                                      SFLDSPCTL
+001110070622     A  33                                  SFLCLR
+001120070622     A  60                                  SFLEND(*MORE)
+001130070622     A            @PGM          10A  O  1  2DSPATR(HI)
+001140070622     A                                  2  2USER
+001150070622     A                                      DSPATR(HI)
+001160070622     A            CONAME        30A  O  1 26DSPATR(UL)
+001170070622     A                                      DSPATR(HI)
+001180070622     A            @TITLE        40A  O  2 21DSPATR(HI)
+001190070622     A                                  1 72SYSNAME
+001200070622     A                                      DSPATR(HI)
+001210070622     A            @DATE         10A  O  2 70DSPATR(HI)
+001220070622     A                                  6 73'Value'
+001230070622     A                                      COLOR(BLU)
+001240070622     A                                  6 54'Hours'
+001250070622     A                                      COLOR(BLU)
+001260070622     A                                  6 19'Description'
+001270070622     A                                      COLOR(BLU)
+001280070622     A                                  6 11'Code'
+001290070622     A                                      COLOR(BLU)
+001300070622     A                                  4  7'Employee..:'
+001310070622     A                                      COLOR(BLU)
+001320070622     A            EMP#      R        O  4 21REFFLD(EMPRREC/EMP *LIBL/EMPREF)
+001330070622     A                                      DSPATR(HI)
+001340070622     A            EMP_NAME      30A  O  4 31DSPATR(HI)
+001350070622     A                                  6 41'Check for'
+001360070622     A                                      COLOR(BLU)
+001370070622     A                                  7 41'Payments(Y)'
+001380070622     A                                      COLOR(BLU)
+001390010427     A          R FOOTER
+001400010427     A*%%TS  SD  20010427  153729  SAMMY       REL-V4R4M0  5769-PW1
+001410010427     A                                      OVERLAY
+001420010427     A                                      PROTECT
+001430010427     A                                 23 47'F15 - Confirm Posting'
+001440010427     A                                      DSPATR(HI)
+001450010427     A                                 23 23'F3= End Program'
+001460010427     A                                      DSPATR(HI)
+001470010427     A                                 23  2'F2= Go Back'
+001480010427     A                                      DSPATR(HI)

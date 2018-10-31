@@ -1,0 +1,201 @@
+000010021014     A*%%TS  SD  20021014  171647  SBRITTON    REL-V5R1M0  5722-WDS
+000020941222     A*
+000030950909     A*
+000040950909     A* ********************************************************
+000050950909     A*              B A N K S    D I H    L T D.              *
+000060990517     A*                CREDIT CONTROL SYSTEM                   *
+000070950909     A*                                                        *
+000080950909     A*                         BY                             *
+000090950909     A*                                                        *
+000100990517     A*                BANKS DIH LTD. I.S. DEPARTMENT          *
+000110990517     A*             P.O BOX 10140, GEORGETOWN,GUYANA           *
+000120950909     A*                                                        *
+000130950909     A*                                                        *
+000140990517     A*       DISPLAY FILE  NAME: EMPM25D                      *
+000150950909     A*       RECORD FORMAT NAME: FMT1                         *
+000160950925     A*                           SFLREC  SFLCTL               *
+000170950909     A*                                                        *
+000180990517     A*       PROGRAMMER NAME: SAMUEL BRITTON                  *
+000190990517     A*       DESIGN DATE....: 1999/05/17                      *
+000200950909     A*                                                        *
+000210950927     A*  FILE DESCRIPTION: CLOSE/AMEND PURCHASE ORDER.         *
+000220950909     A*                                                        *
+000230951220     A*  THIS FILE IS DESIGNED TO  CLOSE AND OR AMEND          *
+000240951220     A*  PURCHASE ORDER                                        *
+000250950909     A*                                                        *
+000260950909     A*                                                        *
+000270950909     A**********************************************************
+000280021014     A*%%EC
+000290021014     A                                      DSPSIZ(24 80 *DS3)
+000300021014     A                                      REF(*LIBL/FLDREF)
+000310021014     A                                      PRINT
+000320021014     A                                      HELP(77)
+000330021014     A                                      CA03(03)
+000340950925     A**
+000350960102     A*                                     CA06(05)
+000360021014     A          R FMT1
+000370021014     A*%%TS  SD  20021014  171647  SBRITTON    REL-V5R1M0  5722-WDS
+000380021014     A                                      CF05(05)
+000390021014     A                                      CF21(21)
+000400021014     A            @PGM      R        O  1  2REFFLD(NAME10)
+000410021014     A                                      DSPATR(HI)
+000420021014     A            CONAME    R        O  1 24REFFLD(NAME30)
+000430021014     A                                      DSPATR(HI)
+000440021014     A                                      DSPATR(UL)
+000450021014     A            @MODE          6A  O  1 58DSPATR(ND)
+000460021014     A            @DATE     R        O  2 70REFFLD(NAME10)
+000470021014     A                                      DSPATR(HI)
+000480021014     A            @USER     R        O  2  2REFFLD(NAME10)
+000490021014     A                                      DSPATR(HI)
+000500021014     A            @TITLE    R        O  2 20REFFLD(NAME40)
+000510021014     A                                      DSPATR(HI)
+000520021014     A            PRDNUMB#       6Y 0B  5 35EDTCDE(Z)
+000530021014     A                                  5 11'Enter Period..........'
+000540021014     A                                      COLOR(BLU)
+000550021014     A            AMT#      R        B  7 35REFFLD(LTFMT/LTAMT *LIBL/LIABT)
+000560021014     A                                      EDTCDE(1)
+000570021014     A                                 23  3'F3 = End Program'
+000580021014     A                                      DSPATR(HI)
+000590021014     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000600021014     A                                  7 11'Enter Control Total...'
+000610021014     A                                      COLOR(BLU)
+000620021014     A                                  1 72SYSNAME
+000630021014     A                                      DSPATR(HI)
+000640021014     A                                  9 11'Enter Control Gl.A/c..'
+000650021014     A                                      COLOR(BLU)
+000660021014     A            GL#           25A  B  9 35
+000670021014     A                                 11 11'Enter Control Type....'
+000680021014     A                                      COLOR(BLU)
+000690021014     A            C_TYPE         1A  B 11 35VALUES('D' 'C')
+000700021014     A                                 11 39'(D=debit ,C=credit)'
+000710021014     A                                 13 11'Enter Text Desc.......'
+000720021014     A                                      COLOR(BLU)
+000730021014     A            DESC#         30A  B 13 35
+000740021014     A            DESC2#        30A  B 14 35
+000750951220     A*************************************************************
+000760021014     A          R SFLREC                    SFL
+000770021014     A*%%TS  SD  20021014  164649  SBRITTON    REL-V5R1M0  5722-WDS
+000780021014     A            LINE#     R        O  9  2REFFLD(VAL30)
+000790021014     A                                      DSPATR(HI)
+000800021014     A                                      EDTCDE(Z)
+000810021014     A            NAME          25A  O  9 16DSPATR(HI)
+000820021014     A                                      TEXT('NAME OF 35')
+000830021014     A            LTAMT#    R        O  9 66REFFLD(LTFMT/LTAMT *LIBL/LIABT)
+000840021014     A                                      DSPATR(HI)
+000850021014     A                                      EDTCDE(J)
+000860021014     A            CALAMT#       11S 2H
+000870021014     A            DEP       R        H      REFFLD(VAL30)
+000880021014     A            LTTYPE#   R        O  9 47REFFLD(LTFMT/LTTYPE *LIBL/LIABT)
+000890021014     A                                      DSPATR(HI)
+000900021014     A                                      EDTCDE(1)
+000910021014     A            LTSTYP#   R        O  9 59REFFLD(LTFMT/LTSTYP *LIBL/LIABT)
+000920021014     A                                      DSPATR(HI)
+000930021014     A                                      EDTCDE(1)
+000940021014     A            LTEMP#    R        O  9  6REFFLD(LTFMT/LTEMP *LIBL/LIABT)
+000950021014     A                                      DSPATR(HI)
+000960021014     A                                      EDTCDE(Z)
+000970021014     A            DEPT#          3S 0H
+000980021014     A          R SFLCTL                    SFLCTL(SFLREC)
+000990021014     A*%%TS  SD  20021014  171647  SBRITTON    REL-V5R1M0  5722-WDS
+001000021014     A                                      SFLSIZ(0056)
+001010021014     A                                      SFLPAG(0007)
+001020021014     A                                      CA15(15)
+001030021014     A                                      OVERLAY
+001040021014     A                                      PROTECT
+001050021014     A  10                                  SFLDSP
+001060021014     A                                      SFLDSPCTL
+001070021014     A  33                                  SFLCLR
+001080021014     A  55
+001090021014     AON60                                  SFLEND(*MORE)
+001100021014     A            @PGM      R        O  1  2REFFLD(NAME10)
+001110021014     A                                      DSPATR(HI)
+001120021014     A            CONAME    R        O  1 24REFFLD(NAME30)
+001130021014     A                                      DSPATR(HI)
+001140021014     A                                      DSPATR(UL)
+001150021014     A            @DATE     R        O  2 70REFFLD(NAME10)
+001160021014     A                                      DSPATR(HI)
+001170021014     A            @USER     R        O  2  2REFFLD(NAME10)
+001180021014     A                                      DSPATR(HI)
+001190021014     A            @TITLE    R        O  2 20REFFLD(NAME40)
+001200021014     A                                      DSPATR(HI)
+001210021014     A                                  3 50'Transaction No...:'
+001220021014     A            LTNUMB#   R        O  3 70REFFLD(LTFMT/LTNUMB *LIBL/LIABT)
+001230021014     A                                      DSPATR(HI)
+001240021014     A                                      EDTCDE(Z)
+001250021014     A                                  8  1'Line'
+001260021014     A                                      COLOR(BLU)
+001270021014     A                                  8  8'Emp#'
+001280021014     A                                      COLOR(BLU)
+001290021014     A                                  8 16'Name'
+001300021014     A                                      COLOR(BLU)
+001310021014     A                                  8 46'Type'
+001320021014     A                                      COLOR(BLU)
+001330021014     A                                  8 58'Sub-type'
+001340021014     A                                      COLOR(BLU)
+001350021014     A                                  8 74'Amount'
+001360021014     A                                      COLOR(BLU)
+001370021014     A                                  1 72SYSNAME
+001380021014     A                                      DSPATR(HI)
+001390021014     A                                  5  3'Note: The Control type of debit or-
+001400021014     A                                       credit is handled internally, ther-
+001410021014     A                                      efore,'
+001420021014     A                                  6  9'in order to balance this transacti-
+001430021014     A                                      on, the control total and the'
+001440021014     A                                  7  9'overall total calculated'
+001450021014     A                                  7 34'MUST'
+001460021014     A                                      DSPATR(HI)
+001470021014     A                                  7 39'be the same.'
+001480951220     A*************************************************************
+001490941215     A*
+001500020208     A          R FOOTER
+001510020208     A*%%TS  SD  20020208  181531  SAMMY       REL-V4R4M0  5769-PW1
+001520020208     A                                      CA02(02)
+001530020208     A                                      CA06(06)
+001540020208     A                                      CA07(07)
+001550020208     A                                      CA08(08)
+001560020208     A  10                                  CA15(15)
+001570020208     A                                      OVERLAY
+001580020208     A                                      PROTECT
+001590020208     A                                 17  2' '
+001600020208     A                                 18  2'Line No.:'
+001610020208     A                                      COLOR(BLU)
+001620020208     A            LIN       R     Y  B 18 12REFFLD(VAL30)
+001630020208     A                                      EDTCDE(Z)
+001640020208     A                                      DSPATR(HI)
+001650020208     A                                      DSPATR(UL)
+001660020208     A                                 19  2'Enter Emp#.:'
+001670020208     A                                      COLOR(BLU)
+001680020208     A                                 19 24'Type:'
+001690020208     A                                      COLOR(BLU)
+001700020208     A                                 19 36'S.type:'
+001710020208     A                                      COLOR(BLU)
+001720020208     A            OUTTOT    R        O 20 61REFFLD(VAL112)
+001730020208     A                                      DSPATR(HI)
+001740020208     A                                      EDTCDE(1 $)
+001750020208     A                                 23 23'F8 = Sub-type enq'
+001760020208     A                                      DSPATR(HI)
+001770020208     A  10                             23 47'F15 = End Transaction'
+001780020208     A                                      DSPATR(HI)
+001790020208     A                                      DSPATR(BL)
+001800020208     A            ERRMSG        75A  O 24  3DSPATR(HI)
+001810020208     A                                 23  3'F7 = Type Enq'
+001820020208     A                                      DSPATR(HI)
+001830020208     A                                 19 51'Amount:'
+001840020208     A                                      COLOR(BLU)
+001850020208     A            LTAMT##   R        B 19 60REFFLD(LTFMT/LTAMT *LIBL/LIABT)
+001860020208     A                                      EDTCDE(J)
+001870020208     A            LTSTYP##  R        B 19 44REFFLD(LTFMT/LTSTYP *LIBL/LIABT)
+001880020208     A                                      EDTCDE(1)
+001890020208     A            LTTYPE##  R        B 19 30REFFLD(LTFMT/LTTYPE *LIBL/LIABT)
+001900020208     A                                      EDTCDE(1)
+001910020208     A            LTEMP##   R        B 19 15REFFLD(LTFMT/LTEMP *LIBL/LIABT)
+001920020208     A                                      EDTCDE(Z)
+001930020208     A                                      DSPATR(PC)
+001940020208     A                                 20 50'Total..:'
+001950020208     A                                      DSPATR(HI)
+001960020208     A                                 22  3'F2 = Go Back'
+001970020208     A                                      DSPATR(HI)
+001980020208     A                                 22 23'F3 = End Program'
+001990020208     A                                      DSPATR(HI)
+002000020208     A                                 22 47'F6 = Employee Enq'
+002010020208     A                                      DSPATR(HI)

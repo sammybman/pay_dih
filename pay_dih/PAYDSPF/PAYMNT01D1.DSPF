@@ -1,0 +1,82 @@
+000010010612     A*%%TS  SD  20010612  103652  SAMMY       REL-V4R4M0  5769-PW1
+000020010612     A*%%EC
+000030010612     A                                      DSPSIZ(24 80 *DS3)
+000040010612     A                                      REF(*LIBL/FLDREF)
+000050010201     A**
+000060010612     A          R SFLREC                    SFL
+000070010612     A*%%TS  SD  20010612  103652  SAMMY       REL-V4R4M0  5769-PW1
+000080010612     A            LIN_DIS       11S 2H
+000090010612     A            DISPER         3S 0H
+000100010612     A            DESC#         20A  O 10 19DSPATR(HI)
+000110010612     A                                      TEXT('NAME OF 30')
+000120010612     A            CODE#          2S 0O 10 12DSPATR(HI)
+000130010612     A            DFT#           1A  B 10 46
+000140010612     A            SEL            1A  B 10  4
+000150010612     A            PEN#           4Y 2B 10 55EDTCDE(1)
+000160010201     A*
+000170010612     A          R SFLCTL                    SFLCTL(SFLREC)
+000180010612     A*%%TS  SD  20010612  103652  SAMMY       REL-V4R4M0  5769-PW1
+000190010612     A                                      CF15(15)
+000200010612     A                                      CF02(02)
+000210010612     A                                      OVERLAY
+000220010612     A                                      PROTECT
+000230010612     A                                      SFLDSP
+000240010612     A                                      SFLDSPCTL
+000250010612     A  33                                  SFLCLR
+000260010612     A                                      SFLSIZ(0056)
+000270010612     A                                      SFLPAG(0010)
+000280010612     A            @PGM      R        O  1  2REFFLD(NAME10)
+000290010612     A                                      DSPATR(HI)
+000300010612     A            CONAME    R        O  1 24REFFLD(NAME30)
+000310010612     A                                      DSPATR(HI)
+000320010612     A                                      DSPATR(UL)
+000330010612     A            @DATE     R        O  1 70REFFLD(NAME10)
+000340010612     A                                      DSPATR(HI)
+000350010612     A            @USER     R        O  2  2REFFLD(NAME10)
+000360010612     A                                      DSPATR(HI)
+000370010612     A            @TITLE    R        O  2 20REFFLD(NAME40)
+000380010612     A                                      DSPATR(HI)
+000390010612     A            @TIME          6Y 0O  2 70DSPATR(HI)
+000400010612     A                                      EDTWRD('  :  :  ')
+000410010612     A                                  7 11'Absent'
+000420010612     A                                      COLOR(BLU)
+000430010612     A                                  8 11'Code'
+000440010612     A                                      DSPATR(UL)
+000450010612     A                                      COLOR(BLU)
+000460010612     A                                  8 18'Description'
+000470010612     A                                      DSPATR(UL)
+000480010612     A                                      COLOR(BLU)
+000490010612     A                                  7 18'Code'
+000500010612     A                                      COLOR(BLU)
+000510010612     A                                  5  1'Pay Type....:'
+000520010612     A                                      COLOR(BLU)
+000530010612     A            PAYTYPE        2Y 0O  5 15DSPATR(HI)
+000540010612     A                                      EDTCDE(Z)
+000550010612     A            TYPE_NAME     25   O  5 19DSPATR(HI)
+000560010612     A                                      TEXT('NAME OF 30')
+000570010612     A                                  7 42'Use'
+000580010612     A                                      COLOR(BLU)
+000590010612     A                                  8 42'Defaults'
+000600010612     A                                      DSPATR(UL)
+000610010612     A                                      COLOR(BLU)
+000620010612     A                                  9 42'(Y = Yes)'
+000630010612     A                                  7 54'Penalty'
+000640010612     A                                      COLOR(BLU)
+000650010612     A                                  8 51'or'
+000660010612     A                                  8 54'Percentage'
+000670010612     A                                      DSPATR(UL)
+000680010612     A                                      COLOR(BLU)
+000690010612     A                                  7  2'Select'
+000700010612     A                                      COLOR(BLU)
+000710010612     A                                  8  3'(X)'
+000720010612     A          R FOOTER
+000730010612     A*%%TS  SD  20010612  103652  SAMMY       REL-V4R4M0  5769-PW1
+000740010612     A                                      OVERLAY
+000750010612     A                                      PROTECT
+000760010612     A            UOM       R        H      REFFLD(WHSE)
+000770010612     A                                 23  8'F2= Go Back'
+000780010612     A                                      DSPATR(HI)
+000790010612     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000800010612     A                                      COLOR(RED)
+000810010612     A                                 23 57'F15 = Confirm'
+000820010612     A                                      DSPATR(HI)

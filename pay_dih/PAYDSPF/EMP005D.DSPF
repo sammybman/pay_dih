@@ -1,0 +1,88 @@
+000010050531     A*%%TS  SD  20050531  134608  SBRITTON    REL-V5R3M0  5722-WDS
+000020941222     A*
+000030950909     A*
+000040950909     A* ********************************************************
+000050950909     A*              B A N K S    D I H    L T D.              *
+000060950909     A*                INVENTORY CONTROL SYSTEM                *
+000070950909     A*                                                        *
+000080950909     A*                         BY                             *
+000090950909     A*                                                        *
+000100950909     A*       ONE PLUS COMPUTER SERVICES (GUYANA) LIMITED      *
+000110950909     A*             P.O BOX 10501, GEORGETOWN,GUYANA           *
+000120950909     A*                                                        *
+000130950909     A*                                                        *
+000140951010     A*       DISPLAY FILE  NAME: ENQ017D                      *
+000150950909     A*       RECORD FORMAT NAME: FMT1                         *
+000160951010     A*                           SFLREC SFLCTL                *
+000170950909     A*                                                        *
+000180951010     A*       PROGRAMMER NAME: CHRIS WILLIAMS                  *
+000190951010     A*       DESIGN DATE....: 1995/10/10                      *
+000200950909     A*                                                        *
+000210950909     A*  FILE DESCRIPTION:                                     *
+000220950909     A*                                                        *
+000230951010     A*  THIS FILE IS DESIGNED TO ENQUIRE ON VEHICLE           *
+000240951002     A*  RECORDED FOR BANKS DIH TO TRANSACT WIHT.              *
+000250950909     A*                                                        *
+000260950909     A**********************************************************
+000270050531     A*%%EC
+000280050531     A                                      DSPSIZ(24 80 *DS3)
+000290050531     A                                      REF(*LIBL/FLDREF)
+000300050531     A                                      PRINT
+000310050531     A                                      ERRSFL
+000320050531     A                                      HELP
+000330050531     A                                      CA02(02)
+000340050531     A                                      CA03(03)
+000350050531     A                                      CF20(20)
+000360050531     A          R SFLREC                    SFL
+000370050531     A*%%TS  SD  20050531  134608  SBRITTON    REL-V5R3M0  5722-WDS
+000380050531     A            EMSELTYP#      2S 0O  7 12DSPATR(HI)
+000390050531     A                                      COLOR(BLU)
+000400050531     A            SUB_TP         1A  H
+000410050531     A            EMDSP#        30A  O  7 20DSPATR(HI)
+000420050531     A                                      COLOR(BLU)
+000430050531     A            SEL#           1A  I  7  4DSPATR(HI)
+000440050531     A                                      VALUES('X')
+000450050531     A                                      COLOR(BLU)
+000460050531     A            EMACCT#       25A  O  7 51COLOR(BLU)
+000470050531     A          R SFLCTL                    SFLCTL(SFLREC)
+000480050531     A*%%TS  SD  20050531  134608  SBRITTON    REL-V5R3M0  5722-WDS
+000490050531     A                                      SFLSIZ(0050)
+000500050531     A                                      SFLPAG(0012)
+000510050531     A                                      OVERLAY
+000520050531     A                                      PROTECT
+000530050531     A                                      SFLDSP
+000540050531     A                                      SFLDSPCTL
+000550050531     A  33                                  SFLCLR
+000560050531     A  55                                  SFLEND(*MORE)
+000570050531     A  24                                  SFLMSG('No Record Was Selected.')
+000580050531     A  69                                  SFLMSG('Employee Is Not An Executiv-
+000590050531     A                                      e.')
+000600050531     A            @PGM      R        O  1  2REFFLD(NAME10)
+000610050531     A                                      DSPATR(HI)
+000620050531     A            CONAME    R        O  1 24REFFLD(NAME30)
+000630050531     A                                      DSPATR(HI)
+000640050531     A                                      DSPATR(UL)
+000650050531     A            @DATE     R        O  2 70REFFLD(NAME10)
+000660050531     A                                      DSPATR(HI)
+000670050531     A            @USER     R        O  2  2REFFLD(NAME10)
+000680050531     A                                      DSPATR(HI)
+000690050531     A            @TITLE    R        O  2 20REFFLD(NAME40)
+000700050531     A                                      DSPATR(HI)
+000710050531     A                                  6 20'Description'
+000720050531     A                                      DSPATR(UL)
+000730050531     A                                      DSPATR(HI)
+000740050531     A                                  6 51'Account Codes'
+000750050531     A                                      DSPATR(UL)
+000760050531     A                                      DSPATR(HI)
+000770050531     A                                  6 11'Type'
+000780050531     A                                      DSPATR(UL)
+000790050531     A                                      DSPATR(HI)
+000800050531     A                                  6  2'Select'
+000810050531     A                                      DSPATR(UL)
+000820050531     A                                      DSPATR(HI)
+000830050531     A                                  4  3'Make Selection Below - '
+000840050531     A                                      DSPATR(HI)
+000850050531     A                                      COLOR(BLU)
+000860050531     A                                  4 27'X'
+000870050531     A                                  1 72SYSNAME
+000880050531     A                                      DSPATR(HI)

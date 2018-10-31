@@ -1,0 +1,105 @@
+000100980128             PGM        PARM(&AREA)
+000200980209             DCL        VAR(&AREA) TYPE(*CHAR) LEN(2)
+000300980128             DCL        VAR(&@TITLE) TYPE(*CHAR) LEN(40) VALUE('     +
+000400981007                         Employee Control Main Menu  ')
+000500980128 /*          DCL        VAR(&@TIME) TYPE(*CHAR) LEN(6)     */
+000600980128             DCL        VAR(&CONAME) TYPE(*CHAR) LEN(30)
+000700980128             DCL        VAR(&@DATE) TYPE(*CHAR) LEN(10)
+000800980128             DCL        VAR(&@PRN) TYPE(*CHAR) LEN(2)
+000900980416             DCL        VAR(&SU1) TYPE(*DEC) LEN(5 0) VALUE(00000)
+001000980416             DCL        VAR(&ans) TYPE(*CHAR) LEN(3)
+001100981003             DCL        VAR(&opta) TYPE(*CHAR) LEN(1)
+001200981003             DCL        VAR(&IND) TYPE(*CHAR) LEN(1)
+001300981001             DCL        VAR(&IND1) TYPE(*CHAR) LEN(1)
+001400981001             DCL        VAR(&IND2) TYPE(*CHAR) LEN(1)
+001500980128             DCL        VAR(&UDATE) TYPE(*DEC)  LEN(6 0)
+001600980128             DCL        VAR(&DATE) TYPE(*CHAR) LEN(6)
+001700990219             /*                                           */
+001800981016             DCLF       FILE(EMP000D) RCDFMT(FMT1)
+001900020131             COPYRIGHT  TEXT('Diserv Systems 1999')
+002000990415 START:      RTVJOBA    JOB(&@PGM) USER(&@USER) DATE(&DATE)
+002100980128             RTVDTAARA  DTAARA(STRLIB/MTHENDA) RTNVAR(&IND)
+002200981016             RTVDTAARA  DTAARA(QGPL/MNTENDEMP) RTNVAR(&IND1)
+002300981001             RTVDTAARA  DTAARA(STRLIB/MNTENDGL) RTNVAR(&IND2)
+002400980128             CHGVAR     VAR(&UDATE) VALUE(&DATE)
+002500020131             CALLPRC    PRC(GET_CONAME) RTNVAL(&CONAME)
+002600020131             CALLPRC    PRC(GET_SYS_DATE) RTNVAL(&@DATE)
+002700990415             CHGVAR     VAR(&OPT) VALUE(0)
+002800980416             CHGVAR     vAR(&ans) VALUE('   ')
+002900980128             SNDRCVF    RCDFMT(FMT1)
+003000001206             STRCMTCTL  LCKLVL(*CHG)
+003100001206             MONMSG     MSGID(CPF8351)
+003200980128            /*  90 TO SIGNOFF           */
+003300980415             IF         COND(&IN03 = '1') THEN(RETURN)
+003400980415             IF         COND(&OPT = 90) THEN(SIGNOFF)
+003500981013/* Employee Fixed Deduction  */
+003600981013             IF         COND(&OPT = 1) THEN(CALL PGM(EMPMNT4))
+003700981013/* Setup Payroll Fixed Deductions */
+003800981003             IF         COND(&OPT = 2) THEN(DO)
+003900981003             CHGVAR     VAR(&OPTA) VALUE('2')
+004000990219             CALL       PGM(EMPM20R)
+004100981003             enddo
+004200981013/* Setup Payroll Deduction  */
+004300981017             IF         COND(&OPT = 3) THEN(CALL PGM(EMPM21R))
+004400981013/* Employee Accounts Maintenance */
+004500981013             IF         COND(&OPT = 4) THEN(CALL PGM(EMPM18R))
+004600981013/* Handling Small Balances */
+004700990401  /*         IF         COND(&OPT = 5) THEN(CALL PGM(EMPM19R))   */
+004800990401             IF         COND(&OPT = 5) THEN(do)
+004900990401             CALL       PGM(EMPM19R)
+005000990401             MONMSG     MSGID(DIH0054) EXEC(SNDPGMMSG MSGID(DIH0054) +
+005100990401                          MSGF(QGPL/DIHMSGF) MSGTYPE(*ESCAPE))
+005200990401             ENDDO
+005300990512/* Maintain Employee transaction Types  */
+005400990512             IF         COND(&OPT = 6) THEN(DO)
+005500990512             CALL       PGM(EMPM24R)
+005600990512             MONMSG     MSGID(DIH0054) EXEC(SNDPGMMSG MSGID(DIH0054) +
+005700990512                          MSGF(QGPL/DIHMSGF) MSGTYPE(*ESCAPE))
+005800990512             ENDDO
+005900990219/* Authorise Employee Transactions */
+006000990219/*           IF         COND(&OPT = 8) THEN(CALL PGM(EMPM23R)) */
+006100990219             IF         COND(&OPT = 8) THEN(DO)
+006200990219             /*                                           */
+006300001102             CALL       PGM(EMPM23C)
+006400990219             MONMSG     MSGID(DIH0054) EXEC(SNDPGMMSG MSGID(DIH0054) +
+006500990219                          MSGF(QGPL/DIHMSGF) MSGTYPE(*ESCAPE))
+006600990219             MONMSG     MSGID(DIH0125) EXEC(SNDPGMMSG MSGID(DIH0125) +
+006700990219                          MSGF(QGPL/DIHMSGF) MSGTYPE(*ESCAPE))
+006800990219             ENDDO
+006900990219             /*                                           */
+007000981017/* Customers main Menu */
+007100981017             IF         COND(&OPT = 9) THEN(CALL PGM(CUST000C))
+007200981007/* employee enquiry   */
+007300990213             IF         COND(&OPT = 10) THEN(CALL PGM(EMPPRF))
+007400980416/* main enquiry       */
+007500981013             IF         COND(&OPT = 11) THEN(GO MENU(QGPL/INQUIRY))
+007600981013/* Apply Club/L.Store Balances to Ded. file       */
+007700990213             IF         COND(&OPT = 25) THEN(CALL PGM(EMPM22R))
+007800990512/* Employee transactions  */
+007900990304             IF         COND(&OPT = 26) THEN(CALL PGM(EMP_TRNR))
+008000980416/* main reports       */
+008100981007             IF         COND(&OPT = 40) THEN(CALL PGM(EMPRPTSC))
+008200980416/* final updating     */
+008300981016             IF         COND((&OPT = 41) *AND (&IND1 = 'N') *AND +
+008400981016                          (&IND2 = 'N')) THEN(CALL PGM(EMPFRPTC) +
+008500981016                          PARM(&ANS))
+008600981001/* Error message      */
+008700981001             IF         COND((&OPT = 41) *AND (&IND1 ¬= 'N') *AND +
+008800981001                          (&IND2 ¬= 'N')) THEN(DO)
+008900981001             CHGVAR     VAR(&ERRMSG) VALUE('Option Not Available At +
+009000981001                          This Time')
+009100981001             GOTO       CMDLBL(TOP)
+009200981001             enddo
+009300981001             IF         COND((&ANS ¬= 'YES') *AND (&ANS ¬= '   ')) +
+009400981001                          THEN(DO)
+009500980416             CHGVAR     VAR(&ERRMSG) VALUE('Previous Request +
+009600980416                          Terminated.')
+009700980416             enddo
+009800980416             else do
+009900980416                    CHGVAR     VAR(&ERRMSG) VALUE('                 +
+010000980416                                     ')
+010100980416             enddo
+010200001206             endcmtctl
+010300010214             MONMSG     MSGID(CPF8350)
+010400980209 TOP:        GOTO       CMDLBL(start)
+010500960307             ENDPGM

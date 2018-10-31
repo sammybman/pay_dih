@@ -1,0 +1,27 @@
+000100971012     A* ********************************************************
+000200971012     A*              B A N K S    D I H    L T D.              *
+000300010405     A*                PAYROLL CONTROL SYSTEM                  *
+000400971012     A*                                                        *
+000500971012     A*                         BY                             *
+000600971012     A*                                                        *
+000700971012     A*                    I.S. DEPARTMENT                     *
+000800971012     A*                                                        *
+000900971012     A*                                                        *
+001000010427     A*      PHYSICAL FILE NAME:  PAYTIMFL01                   *
+001100010427     A*       RECORD FORMAT NAME: TIMFMT                       *
+001200010427     A*       FILE PREFIX.......: TIM                          *
+001300971012     A*                                                        *
+001400971012     A*       PROGRAMMER NAME: SAMUEL BRITTON                  *
+001500010427     A*                        CHRISTOPHER WILLIAMS            *
+001600010405     A*       DESIGN DATE....: 2001/04/05                      *
+001700971012     A*                                                        *
+001800010427     A*  FILE DESCRIPTION: PAYROLL TIME SHEET MASTER           *
+001900971012     A*                                                        *
+002000010405     A*  THIS FILE IS DESIGNED TO RECORD THE PAYROLL TRANSACTI-*
+002100010405     A*  ON TYPE DEFINITIONS.                                  *
+002200971012     A*                                                        *
+002300971012     A*                                                        *
+002400971012     A**********************************************************
+002500010628     A          R PSTFMT                    PFILE(PAYSETUP)
+002600010628     A          K PSTTYPE
+002700010628     A          K PSTEMP

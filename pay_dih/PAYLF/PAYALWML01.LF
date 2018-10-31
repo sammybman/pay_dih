@@ -1,0 +1,9 @@
+000100951012     A* ********************************************************
+000200951012     A* DIH ALLOWANCES ALLOCATION MASTER FILE                  *
+000300010430     A*   S. BRITTON, C. WILLIAMS                              *
+000400010430     A*           FILENAME = PAYALWML01         30/04/2001     *
+000500951012     A**********************************************************
+000600010430     A          R ALWFMT                    PFILE(PAYALWMF)
+000700981119     A          K ALWTYP
+000800981119     A          K ALWGRD
+000900981119     A          S ALWSTS                    COMP(EQ 'A')

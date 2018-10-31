@@ -1,0 +1,128 @@
+000010161222     A*%%TS  SD  20161222  145424  SBRITTON    REL-V7R1M0  5770-WDS
+000020950909     A* ********************************************************
+000030990617     A*                   C R E A T E D                        *
+000040990617     A*                       B Y                              *
+000050990617     A*          B A N K S   D I H   L I M I T E D             *
+000060950909     A*                                                        *
+000070990617     A*               I.S   D E P A R T M E N T                *
+000080950909     A*                                                        *
+000090990617     A*       DISPLAY FILE  NAME: WENQ001D                     *
+000100990617     A*
+000110950909     A*                                                        *
+000120990617     A*       PROGRAMMER NAME: WINSTON ROBINSON                *
+000130990617     A*       DESIGN DATE....: 1998/10/06                      *
+000140950909     A*                                                        *
+000150950909     A**********************************************************
+000160161222     A*%%EC
+000170161222     A                                      DSPSIZ(24 80 *DS3)
+000180161222     A                                      REF(*LIBL/FLDREF)
+000190161222     A                                      PRINT
+000200161222     A                                      CF03(03)
+000210161130     A          R FMT1
+000220161130     A*%%TS  SD  20161130  085903  SBRITTON    REL-V7R1M0  5770-WDS
+000230161130     A                                      CF05(05)
+000240161130     A                                      KEEP
+000250161130     A            CONAME        30A  O  1 26DSPATR(UL)
+000260161130     A                                      DSPATR(HI)
+000270161130     A            @TITLE        40A  O  2 21DSPATR(HI)
+000280161130     A            @PGM          10A  O  1  2DSPATR(HI)
+000290161130     A            @USER         10A  O  2  2DSPATR(HI)
+000300161130     A            @DATE         10A  O  2 70DSPATR(HI)
+000310161130     A                                 23 38'F3=End'
+000320161130     A                                      DSPATR(HI)
+000330161130     A                                 23 57'F5=Cycle Codes'
+000340161130     A                                      DSPATR(HI)
+000350161130     A                                  9 10'Enter Pay Cycle Code........:'
+000360161130     A                                      DSPATR(HI)
+000370161130     A            ERRMSG        75A  O 24  3COLOR(RED)
+000380161130     A            PTXCYC#   R        B  9 40REFFLD(PTXFMT/PTXCYC *LIBL/PAYTAXCT-
+000390161130     A                                      L)
+000400161130     A                                  1 72SYSNAME
+000410161130     A                                      DSPATR(HI)
+000420161222     A          R FMT2
+000430161222     A*%%TS  SD  20161222  145424  SBRITTON    REL-V7R1M0  5770-WDS
+000440161222     A                                      CF15(15)
+000450161222     A                                      CF02(02)
+000460161222     A            CONAME        30A  O  1 26DSPATR(UL)
+000470161222     A                                      DSPATR(HI)
+000480161222     A            @TITLE        40A  O  2 21DSPATR(HI)
+000490161222     A            @PGM          10A  O  1  2DSPATR(HI)
+000500161222     A            @USER         10A  O  2  2DSPATR(HI)
+000510161222     A            @DATE         10A  O  2 70DSPATR(HI)
+000520161222     A                                  5 11'Pay Cycle....................:'
+000530161222     A                                      DSPATR(HI)
+000540161222     A                                  9 11'Default Tax Percentage.......:'
+000550161222     A                                      COLOR(BLU)
+000560161222     A                                  8 11'Default Free Pay.............:'
+000570161222     A                                      COLOR(BLU)
+000580161222     A            DESC#         30A  O  5 46COLOR(BLU)
+000590161222     A                                      TEXT('DESCRIPTION')
+000600161222     A            PTXFREE#  R        B  8 43REFFLD(PTXFMT/PTXFREE *LIBL/PAYTAXC-
+000610161222     A                                      TL)
+000620161222     A                                      EDTCDE(1 $)
+000630161222     A                                      DSPATR(HI)
+000640161222     A            PTXDFTPER#R        B  9 43REFFLD(PTXFMT/PTXDFTPER *LIBL/PAYTA-
+000650161222     A                                      XCTL)
+000660161222     A                                      EDTCDE(1)
+000670161222     A                                      DSPATR(HI)
+000680161222     A            PTXCYC#   R        O  5 43REFFLD(PTXFMT/PTXCYC *LIBL/PAYTAXCT-
+000690161222     A                                      L)
+000700161222     A                                      COLOR(BLU)
+000710161222     A                                 10 11'Modify  Tax Ranges...........:'
+000720161222     A                                      COLOR(BLU)
+000730161222     A            RANGEFLG       1A  B 10 43DSPATR(HI)
+000740161222     A                                 23 33'F3 = End Program'
+000750161222     A                                      DSPATR(HI)
+000760161222     A                                 23 63'F15 = Confirm'
+000770161222     A                                      DSPATR(HI)
+000780161222     A                                 23 12'F2 = Go Back'
+000790161222     A                                      DSPATR(HI)
+000800161222     A                                  1 72SYSNAME
+000810161222     A                                      DSPATR(HI)
+000820161222     A                                 15 11'If'
+000830161222     A                                      COLOR(BLU)
+000840161222     A            PTXPER#   R     Y  B 15 15REFFLD(PTXFMT/PTXPER *LIBL/PAYTAXCT-
+000850161222     A                                      L)
+000860161222     A                                      DSPATR(HI)
+000870161222     A                                      EDTCDE(1)
+000880161222     A                                 15 22'%  of'
+000890161222     A                                      COLOR(BLU)
+000900161222     A            PTXTYPE1# R     Y  B 15 29REFFLD(PTXFMT/PTXTYPE1 *LIBL/PAYTAX-
+000910161222     A                                      CTL)
+000920161222     A                                      DSPATR(HI)
+000930161222     A                                      EDTCDE(1)
+000940161222     A                                 15 32'(1 = Taxable Gross, 2 = Basic Wage-
+000950161222     A                                      )'
+000960161222     A                                 16 11'is greater than the default free p-
+000970161222     A                                      ay specified above.'
+000980161222     A                                      COLOR(BLU)
+000990161222     A                                 17 11'Set Tax percentage as'
+001000161222     A                                      COLOR(BLU)
+001010161222     A            PTXTAXPER#R     Y  B 17 34REFFLD(PTXFMT/PTXTAXPER *LIBL/PAYTA-
+001020161222     A                                      XCTL)
+001030161222     A                                      DSPATR(HI)
+001040161222     A                                      EDTCDE(1)
+001050161222     A                                 18 11'Select to modify Tax range....:'
+001060161222     A                                      COLOR(BLU)
+001070161222     A            RANGEFLG2      1A  B 18 43DSPATR(HI)
+001080161222     A                                 12 11'Use the  following configuration t-
+001090161222     A                                      o setup dynamic tax calculation'
+001100161222     A                                 13 11'criteria.'
+001110161222     A                                 10 46'(Y = Yes)'
+001120161222     A                                 17 41'.'
+001130161222     A                                      COLOR(BLU)
+001140161222     A                                 18 46'(Y = Yes)'
+001150161222     A            DFTRNG_TXT    25A  O 10 56COLOR(RED)
+001160161222     A            DYNRNG_TXT    25A  O 18 56COLOR(RED)
+001170161222     A            ERRMSG        75A  O 24  3COLOR(RED)
+001180161222     A                                 20 11'Set calculation type for range:'
+001190161222     A                                      COLOR(BLU)
+001200161222     A            PTXDRNGTY#R     Y  B 20 43REFFLD(PTXFMT/PTXDRNGTYP *LIBL/PAYT-
+001210161222     A                                      AXCTL)
+001220161222     A                                      DSPATR(HI)
+001230161222     A                                      EDTCDE(1)
+001240161222     A                                 19 46'1 = As Amounts above tax Free(Dft)'
+001250161222     A                                 20 46'2 = As percent of taxable'
+001260000331     A          R NEW
+001270000331     A*%%TS  SD  20000331  144734  WROBINSON   REL-V4R4M0  5769-PW1
+001280000331     A                                  1  3' '

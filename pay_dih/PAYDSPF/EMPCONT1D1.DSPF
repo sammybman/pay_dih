@@ -1,0 +1,106 @@
+000010021010     A*%%TS  SD  20021010  155308  SBRITTON    REL-V5R1M0  5722-WDS
+000020950909     A* ********************************************************
+000030990617     A*                   C R E A T E D                        *
+000040990617     A*                       B Y                              *
+000050990617     A*          B A N K S   D I H   L I M I T E D             *
+000060950909     A*                                                        *
+000070990617     A*               I.S   D E P A R T M E N T                *
+000080950909     A*                                                        *
+000090990617     A*       DISPLAY FILE  NAME: WENQ001D                     *
+000100990617     A*
+000110950909     A*                                                        *
+000120990617     A*       PROGRAMMER NAME: WINSTON ROBINSON                *
+000130990617     A*       DESIGN DATE....: 1998/10/06                      *
+000140950909     A*                                                        *
+000150950909     A**********************************************************
+000160021010     A*%%EC
+000170021010     A                                      DSPSIZ(24 80 *DS3)
+000180021010     A                                      REF(*LIBL/FLDREF)
+000190021010     A                                      PRINT
+000200021010     A                                      CF03(03)
+000210021010     A                                      CF02(02)
+000220021010     A          R FMT1
+000230021010     A*%%TS  SD  20021010  155308  SBRITTON    REL-V5R1M0  5722-WDS
+000240021010     A                                      CF05(05)
+000250021010     A            CONAME        30A  O  1 26DSPATR(UL)
+000260021010     A                                      DSPATR(HI)
+000270021010     A            @TITLE        40A  O  2 21DSPATR(HI)
+000280021010     A            @PGM          10A  O  1  2DSPATR(HI)
+000290021010     A            @USER         10A  O  1 70DSPATR(HI)
+000300021010     A            @DATE         10A  O  2  2DSPATR(HI)
+000310021010     A            @TIME          6Y 0O  2 70DSPATR(HI)
+000320021010     A                                      EDTWRD('  :  :  ')
+000330021010     A                                  8  7'Lower'
+000340021010     A                                      DSPATR(HI)
+000350021010     A                                  9  7'Range'
+000360021010     A                                      DSPATR(HI)
+000370021010     A                                  8 16'Upper'
+000380021010     A                                      DSPATR(HI)
+000390021010     A                                  9 16'Range'
+000400021010     A                                      DSPATR(HI)
+000410021010     A                                  8 25'Range'
+000420021010     A                                      DSPATR(HI)
+000430021010     A                                  9 27'%'
+000440021010     A                                      DSPATR(HI)
+000450021010     A                                  4 33'Mode.:'
+000460021010     A                                      DSPATR(HI)
+000470021010     A            MODE           6A  O  4 40DSPATR(RI)
+000480021010     A                                      COLOR(RED)
+000490021010     A                                  8  2'Del'
+000500021010     A                                      DSPATR(HI)
+000510021010     A                                  9  3'X'
+000520021010     A                                      DSPATR(HI)
+000530021010     A                                  6 19'Configuration Type.:'
+000540021010     A                                      DSPATR(HI)
+000550021010     A            SAV_DESC      25   O  6 40
+000560021010     A                                 10  6'Years of Service'
+000570021010     A                                      DSPATR(HI)
+000580021010     A          R SUB1                      SFL
+000590021010     A*%%TS  SD  20021010  155308  SBRITTON    REL-V5R1M0  5722-WDS
+000600021010     A                                      SFLNXTCHG
+000610021010     A            NEWREC         1A  H
+000620021010     A            DELOPT         1A  I 11  3
+000630021010     A            SAC2LWSRV@R        B 11  8REFFLD(SAC2FMT/SAC2LWSRV *LIBL/SAVC-
+000640021010     A                                      ONF2)
+000650021010     A  70
+000660021010     AO 76                                  DSPATR(RI)
+000670021010     A                                      EDTCDE(Z)
+000680021010     A            SAC2PER@  R        B 11 25REFFLD(SAC2FMT/SAC2PER *LIBL/SAVCON-
+000690021010     A                                      F2)
+000700021010     A  74
+000710021010     AO 75                                  DSPATR(RI)
+000720021010     A                                      EDTCDE(3)
+000730021010     A            SAC2UPSRV@R        B 11 18REFFLD(SAC2FMT/SAC2UPSRV *LIBL/SAVC-
+000740021010     A                                      ONF2)
+000750021010     A  70                                  DSPATR(RI)
+000760021010     A                                      EDTCDE(Z)
+000770000607     A          R SUBCTL1                   SFLCTL(SUB1)
+000780000607     A*%%TS  SD  20000607  150735  WROBINSON   REL-V4R4M0  5769-PW1
+000790000607     A                                      CF15(15)
+000800000607     A                                      CF04(04)
+000810000607     A                                      OVERLAY
+000820000607     A                                      PUTRETAIN
+000830000607     A                                      SFLDSP
+000840000607     A                                      SFLDSPCTL
+000850000607     A  33                                  SFLCLR
+000860000607     A  30                                  SFLEND(*MORE)
+000870000607     A                                      SFLFOLD(CF05)
+000880000607     A                                      SFLSIZ(0100)
+000890000607     A                                      SFLPAG(0009)
+000900000607     A  76                                  SFLMSG('Invalid Range Sequence  Ent-
+000910000607     A                                      ered !')
+000920000607     A  71
+000930000607     AO 70
+000940000607     AO 74                                  SFLMSGID(DIH0022 *LIBL/DIHMSGF)
+000950000607     A  72
+000960000607     AO 73
+000970000607     AO 75                                  SFLMSGID(DIH0027 *LIBL/DIHMSGF)
+000980000607     A                                 22 21'F3=End'
+000990000607     A                                      DSPATR(HI)
+001000000607     A                                 22 52'F15=Confirm'
+001010000607     A                                      COLOR(RED)
+001020000607     A                                      DSPATR(RI)
+001030000607     A                                 22 33'F4=Add a Line'
+001040000607     A                                      DSPATR(HI)
+001050000607     A            MSGLINE       75A  O 23  3COLOR(RED)
+001060000607     A                                      DSPATR(BL)

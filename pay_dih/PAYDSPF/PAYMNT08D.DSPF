@@ -1,0 +1,119 @@
+000010100309     A*%%TS  SD  20100309  132855  CWILLIAMS   REL-V6R1M0  5761-WDS
+000020100309     A*%%EC
+000030100309     A                                      DSPSIZ(24 80 *DS3)
+000040100309     A                                      CF03(03)
+000050010726     A          R SELOPT
+000060010726     A*%%TS  SD  20010726  083612  SAMMY       REL-V4R4M0  5769-PW1
+000070010726     A            @PGM          10A  O  1  3DSPATR(HI)
+000080010726     A                                  9  5'ENTER EMPLOYEE NUMBER     =>'
+000090010726     A                                      COLOR(BLU)
+000100010726     A            @TITLE        40A  O  2 21DSPATR(HI)
+000110010726     A            CONAME        30A  O  1 26DSPATR(HI)
+000120010726     A                                      DSPATR(UL)
+000130010726     A            @DATE         10A  O  2 70DSPATR(HI)
+000140010726     A                                 23 38'F3-End'
+000150010726     A                                      DSPATR(HI)
+000160010726     A                                  2  3USER
+000170010726     A                                      DSPATR(HI)
+000180010726     A                                  1 72SYSNAME
+000190010726     A                                      DSPATR(HI)
+000200100309     A            SUSEMP#   R        B  9 35REFFLD(SUSFMT/SUSEMP *LIBL/PAYSUSP-
+000210010726     A                                      F)
+000220010726     A                                      DSPATR(HI)
+000230010726     A                                      EDTCDE(Z)
+000240010726     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000250100309     A          R SFLREC                    SFL
+000260100309     A*%%TS  SD  20100309  132855  CWILLIAMS   REL-V6R1M0  5761-WDS
+000270100309     A            ALTTYP#        2S 0H
+000280100309     A            SUSPTYPE# R        O 10  5REFFLD(SUSFMT/SUSPTYPE *LIBL/PAYSUS-
+000290100309     A                                      PF)
+000300100309     A            RUN_DESC      20A  O 10  7
+000310100309     A            SUSPRD#   R        B 10 31REFFLD(SUSFMT/SUSPRD *LIBL/PAYSUSPF)
+000320100309     A                                      EDTCDE(4)
+000330100309     A N99                                  DSPATR(PR)
+000340100309     A            SUSSDATE# R        B 10 45REFFLD(SUSFMT/SUSSDATE *LIBL/PAYSUS-
+000350100309     A                                      PF)
+000360100309     A                                      EDTCDE(W)
+000370100309     A N99                                  DSPATR(PR)
+000380100309     A            SUSEDATE# R        O 10 59REFFLD(SUSFMT/SUSEDATE *LIBL/PAYSUS-
+000390100309     A                                      PF)
+000400100309     A                                      EDTCDE(W)
+000410100309     A                                 10 56'-'
+000420100309     A            DELSEL         1A  B 10 75
+000430100309     A  99                                  DSPATR(PR)
+000440100309     A            PRTYNDATE      8S 0H
+000450100309     A            PRTYCYCODE     2A  H
+000460100309     A            PRTYCYCQTY     2S 0H
+000470100309     A            PROTECTED      1A  H
+000480100309     A            SUSPERC#  R        B 10 39REFFLD(SUSFMT/SUSPERC *LIBL/PAYSUSP-
+000490100309     A                                      F)
+000500100309     A                                      EDTCDE(Z)
+000510100309     A          R SFLCTL                    SFLCTL(SFLREC)
+000520100309     A*%%TS  SD  20100309  132855  CWILLIAMS   REL-V6R1M0  5761-WDS
+000530100309     A                                      SFLSIZ(0099)
+000540100309     A                                      SFLPAG(0012)
+000550100309     A                                      CF04(04)
+000560100309     A                                      CF15(15)
+000570100309     A                                      CF02(02)
+000580100309     A                                      OVERLAY
+000590100309     A                                      PROTECT
+000600100309     A  75                                  SFLDSP
+000610100309     A                                      SFLDSPCTL
+000620100309     A  33                                  SFLCLR
+000630100309     A  55                                  SFLEND(*MORE)
+000640100309     A            @PGM          10A  O  1  3DSPATR(HI)
+000650100309     A                                  2  3USER
+000660100309     A                                      DSPATR(HI)
+000670100309     A            CONAME        30A  O  1 26DSPATR(HI)
+000680100309     A                                      DSPATR(UL)
+000690100309     A            @TITLE        40A  O  2 21DSPATR(HI)
+000700100309     A            @DATE         10A  O  2 69DSPATR(HI)
+000710100309     A                                  5  4'Employee ==>'
+000720100309     A                                      COLOR(BLU)
+000730100309     A            @MODE          6A  O  3 38DSPATR(HI)
+000740100309     A                                      DSPATR(RI)
+000750100309     A                                      DSPATR(BL)
+000760100309     A                                  1 71SYSNAME
+000770100309     A                                      DSPATR(HI)
+000780100309     A            SUSEMP#   R        O  5 18REFFLD(SUSFMT/SUSEMP *LIBL/PAYSUSPF)
+000790100309     A                                      EDTCDE(Z)
+000800100309     A                                      DSPATR(HI)
+000810100309     A            EMP_NAME      30A  O  5 27DSPATR(HI)
+000820100309     A                                  9  7'Description'
+000830100309     A                                      DSPATR(HI)
+000840100309     A                                      DSPATR(UL)
+000850100309     A                                  8 29'No. of'
+000860100309     A                                      DSPATR(HI)
+000870100309     A                                  9 29'Periods'
+000880100309     A                                      DSPATR(HI)
+000890100309     A                                      DSPATR(UL)
+000900100309     A                                  8 50'Effective Period'
+000910100309     A                                      DSPATR(HI)
+000920100309     A                                  9 47'Starting'
+000930100309     A                                      DSPATR(HI)
+000940100309     A                                      DSPATR(UL)
+000950100309     A                                  9 63'Ending'
+000960100309     A                                      DSPATR(HI)
+000970100309     A                                      DSPATR(UL)
+000980100309     A                                  8 73'Delete'
+000990100309     A                                      DSPATR(HI)
+001000100309     A                                  9 74'(D)'
+001010100309     A                                      DSPATR(HI)
+001020100309     A                                      DSPATR(UL)
+001030100309     A                                  8 37'Suspended'
+001040100309     A                                      DSPATR(HI)
+001050100309     A                                  9 41'%'
+001060100309     A                                      DSPATR(HI)
+001070100309     A                                      DSPATR(UL)
+001080010726     A          R FOOTER
+001090010726     A*%%TS  SD  20010726  083612  SAMMY       REL-V4R4M0  5769-PW1
+001100010726     A                                      SLNO(08)
+001110010726     A                                      CLRL(*NO)
+001120010726     A                                      OVERLAY
+001130010726     A                                 17 59'F15-Confirm'
+001140010726     A                                      COLOR(RED)
+001150010726     A                                      DSPATR(RI)
+001160010726     A                                 17 12'F2-Cancel'
+001170010726     A                                      DSPATR(HI)
+001180010726     A                                 17 35'F3-End'
+001190010726     A                                      DSPATR(HI)

@@ -1,0 +1,178 @@
+000010081119     A*%%TS  SD  20081119  140919  SBRITTON    REL-V6R1M0  5761-WDS
+000020081119     A*%%EC
+000030030828     A*%%FD Payroll Electronic data transfer
+000040081119     A                                      DSPSIZ(24 80 *DS3)
+000050081119     A                                      CF03(03)
+000060081119     A          R FMT1
+000070081119     A*%%TS  SD  20081119  140919  SBRITTON    REL-V6R1M0  5761-WDS
+000080081119     A                                  2  3USER
+000090081119     A                                      DSPATR(HI)
+000100081119     A                                  1 71SYSNAME
+000110081119     A                                      DSPATR(HI)
+000120081119     A            @PGM          10A  O  1  3DSPATR(HI)
+000130081119     A            CONAME        30A  O  1 26DSPATR(HI)
+000140081119     A                                      DSPATR(UL)
+000150081119     A            @TITLE        40A  O  2 21DSPATR(HI)
+000160081119     A                                 23 33'F3 = End Program'
+000170081119     A                                      DSPATR(HI)
+000180081119     A            @DATE         10A  O  2 69DSPATR(HI)
+000190081119     A                                 13  6'Enter your choice .........'
+000200081119     A                                      COLOR(BLU)
+000210081119     A            ERRMSG        75A  O 24  3COLOR(RED)
+000220081119     A                                 11 42'1. Setup bank Parameters'
+000230081119     A                                 12 42'2. Process Transactions'
+000240081119     A            OPTION         1Y 0B 13 38DSPATR(HI)
+000250081119     A                                      EDTCDE(Z)
+000260030828     A*%%GP SCREEN1    01
+000270081119     A          R FMT2
+000280081119     A*%%TS  SD  20081119  140919  SBRITTON    REL-V6R1M0  5761-WDS
+000290081119     A                                      CA02(02)
+000300081119     A                                  2  3USER
+000310081119     A                                      DSPATR(HI)
+000320081119     A                                  1 71SYSNAME
+000330081119     A                                      DSPATR(HI)
+000340081119     A            @PGM          10A  O  1  3DSPATR(HI)
+000350081119     A            CONAME        30A  O  1 26DSPATR(HI)
+000360081119     A                                      DSPATR(UL)
+000370081119     A            @TITLE        40A  O  2 21DSPATR(HI)
+000380081119     A            @DATE         10A  O  2 69DSPATR(HI)
+000390081119     A                                  7 49'1. Citizen''s bank'
+000400081119     A                                 13 16'Select Bank...........'
+000410081119     A                                      COLOR(BLU)
+000420081119     A            BANKSEL        2Y 0B 13 44DSPATR(HI)
+000430081119     A                                      EDTCDE(Z)
+000440081119     A                                  8 49'2. Republic bank'
+000450081119     A            ERRMSG        75A  O 24  3COLOR(RED)
+000460081119     A                                 23  5'F2 =  Go back'
+000470081119     A                                      DSPATR(HI)
+000480030828     A*%%GP SCREEN2    01
+000490081119     A                                  9 49'3. ScotiaBank'
+000500081119     A                                 10 49'4. GBTI'
+000510081119     A                                 11 49'4. --------------'
+000520081119     A          R FMT3
+000530081119     A*%%TS  SD  20081119  140919  SBRITTON    REL-V6R1M0  5761-WDS
+000540081119     A                                      CA02(02)
+000550081119     A                                  2  3USER
+000560081119     A                                      DSPATR(HI)
+000570081119     A                                  1 71SYSNAME
+000580081119     A                                      DSPATR(HI)
+000590081119     A            @PGM          10A  O  1  3DSPATR(HI)
+000600081119     A            CONAME        30A  O  1 26DSPATR(HI)
+000610081119     A                                      DSPATR(UL)
+000620081119     A            @TITLE        40A  O  2 21DSPATR(HI)
+000630081119     A            @DATE         10A  O  2 69DSPATR(HI)
+000640081119     A                                  9 16'Select Bank....'
+000650081119     A                                      COLOR(BLU)
+000660081119     A                                 11 16'List Payment Divisions...'
+000670081119     A                                      COLOR(BLU)
+000680081119     A            BANKSEL        2S 0O  9 44DSPATR(HI)
+000690081119     A                                 13 16'Specify Account No.......'
+000700081119     A                                      COLOR(BLU)
+000710081119     A            PEACCT        25A  B 13 44DSPATR(HI)
+000720081119     A                                 15 16'List range of batch no...'
+000730081119     A                                      COLOR(BLU)
+000740081119     A            PEDIV         10Y 0B 11 44EDTWRD('  -  -  -  -  ')
+000750081119     A                                      DSPATR(HI)
+000760081119     A            PELOWER        6Y 0B 15 44EDTCDE(Z)
+000770081119     A                                      DSPATR(HI)
+000780081119     A                                 15 51'-'
+000790081119     A                                      COLOR(BLU)
+000800081119     A                                      DSPATR(HI)
+000810081119     A            PEUPPER        6Y 0B 15 53EDTCDE(Z)
+000820081119     A                                      DSPATR(HI)
+000830081119     A            ERRMSG        75A  O 24  3COLOR(RED)
+000840081119     A                                 23  5'F2 = Go Back'
+000850081119     A                                      DSPATR(HI)
+000860030828     A*%%GP SCREEN4    01
+000870060626     A          R FMT4
+000880060626     A*%%TS  SD  20060626  210152  SBRITTON    REL-V5R4M0  5722-WDS
+000890060626     A                                      CA21(21)
+000900060626     A                                      FRCDTA
+000910060626     A                                  2  3USER
+000920060626     A                                      DSPATR(HI)
+000930060626     A                                  1 71SYSNAME
+000940060626     A                                      DSPATR(HI)
+000950060626     A            @PGM          10A  O  1  3DSPATR(HI)
+000960060626     A            CONAME        30A  O  1 26DSPATR(HI)
+000970060626     A                                      DSPATR(UL)
+000980060626     A            @TITLE        40A  O  2 21DSPATR(HI)
+000990060626     A            @DATE         10A  O  2 69DSPATR(HI)
+001000060626     A                                  6  9'X----------------------------------
+001010060626     A                                      -------------------X'
+001020060626     A                                      COLOR(BLU)
+001030060626     A            VALSLIDER     50   O  7 11COLOR(WHT)
+001040060626     A                                      DSPATR(RI)
+001050060626     A                                  8  9'X----------------------------------
+001060060626     A                                      -------------------X'
+001070060626     A                                      COLOR(BLU)
+001080060626     A                                  7  9'|'
+001090060626     A                                      COLOR(BLU)
+001100060626     A                                  7 62'|'
+001110060626     A                                      COLOR(BLU)
+001120060626     A            PROMESS       60A  O 18  9COLOR(RED)
+001130060626     A                                 13  9'X----------------------------------
+001140060626     A                                      -------------------X'
+001150060626     A                                      COLOR(BLU)
+001160060626     A                                 14  9'|'
+001170060626     A                                      COLOR(BLU)
+001180060626     A                                 15  9'X----------------------------------
+001190060626     A                                      -------------------X'
+001200060626     A                                      COLOR(BLU)
+001210060626     A            PROSLIDER     50   O 14 11DSPATR(RI)
+001220060626     A                                      COLOR(WHT)
+001230060626     A                                 14 62'|'
+001240060626     A                                      COLOR(BLU)
+001250060626     A            VALMESS       60A  O 11  9COLOR(RED)
+001260060626     A            VALPER         4Y 1B  9 59EDTCDE(1)
+001270060626     A                                  9 65'% complete'
+001280060626     A            PROPER         4Y 1B 16 59EDTCDE(1)
+001290060626     A                                 16 65'% complete'
+001300030317     A          R WINDOW
+001310030317     A*%%TS  SD  20030317  145136  SBRITTON    REL-V5R2M0  5722-WDS
+001320030317     A                                      WINDOW(5 12 17 60)
+001330030317     A*%%GP SCREEN5    03
+001340030317     A          R WINREC
+001350030317     A*%%TS  SD  20030317  145136  SBRITTON    REL-V5R2M0  5722-WDS
+001360030317     A                                      SFL
+001370030317     A            PAYEMP         6Y 0O  6  2EDTCDE(Z)
+001380030317     A            PAYACC        12   B  6 10
+001390030317     A            PAYCRD         6Y 0O  6 23EDTCDE(Y)
+001400030317     A            PAYNAME       26   O  6 33
+001410030317     A            OLDPAYACC     12   H
+001420030317     A*%%GP SCREEN5    01
+001430030317     A          R WDWCTL
+001440030317     A*%%TS  SD  20030317  154754  SBRITTON    REL-V5R2M0  5722-WDS
+001450030317     A                                      SFLCTL(WINREC)
+001460030317     A                                      CF05(05)
+001470030317     A                                      OVERLAY
+001480030317     A                                      SFLDSP
+001490030317     A                                      SFLDSPCTL
+001500030317     A  33                                  SFLCLR
+001510030317     A  55                                  SFLEND(*MORE)
+001520030317     A                                      SFLSIZ(100)
+001530030317     A                                      SFLPAG(10)
+001540030317     A                                      WINDOW(WINDOW)
+001550030317     A                                      WDWBORDER((*COLOR BLU) (*CHAR '...:-
+001560030317     A                                      ::.:'))
+001570030317     A                                      RMVWDW
+001580030317     A                                  5 33'Name'
+001590030317     A                                      DSPATR(UL)
+001600030317     A                                      COLOR(BLU)
+001610030317     A                                  3 17'F5= Print List'
+001620030317     A                                      DSPATR(HI)
+001630030317     A                                  1 16'Invalid Account List'
+001640030317     A                                      DSPATR(HI)
+001650030317     A                                      DSPATR(UL)
+001660030317     A                                      COLOR(BLU)
+001670030317     A                                  3  3'F3= Exit'
+001680030317     A                                      DSPATR(HI)
+001690030317     A                                  5 27'Date'
+001700030317     A                                      COLOR(BLU)
+001710030317     A                                      DSPATR(UL)
+001720030317     A                                  5 11'Account No.'
+001730030317     A                                      COLOR(BLU)
+001740030317     A                                      DSPATR(UL)
+001750030317     A                                  5  4'Emp.'
+001760030317     A                                      COLOR(BLU)
+001770030317     A                                      DSPATR(UL)
+001780030317     A*%%GP SCREEN5    02

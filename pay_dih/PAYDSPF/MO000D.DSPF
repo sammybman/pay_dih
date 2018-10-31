@@ -1,0 +1,161 @@
+000010970112     A*%%TS  SD  19970112  180036  SAMMY       REL-V3R1M0  5763-PW1
+000020970112     A*%%EC
+000030970112     A                                      DSPSIZ(24 80 *DS3)
+000040970112     A                                      CF03(03)
+000050960122     A          R NAMSFL                    SFL
+000060960122     A*%%TS  SD  19960122  165220  SAMMY       REL-V2R3M0  5738-PW1
+000070960122     A            EMP       R        O  7 13REFFLD(EMPRREC/EMP PAYLIB/EMPREF)
+000080960122     A                                      EDTCDE(Z)
+000090960122     A            DEPT      R        O  7 20REFFLD(EMPRREC/DEPT PAYLIB/EMPREF)
+000100960122     A                                      EDTCDE(Z)
+000110960122     A            CHRIST    R        O  7 25REFFLD(EMPRREC/CHRIST PAYLIB/EMPREF)
+000120960122     A            SURNAM    R        O  7 39REFFLD(EMPRREC/SURNAM PAYLIB/EMPREF)
+000130960122     A            OPT            1A  I  7  7CHECK(AB)
+000140960122     A                                      VALUES('X' 'P')
+000150960122     A          R NAMCTL                    SFLCTL(NAMSFL)
+000160960122     A*%%TS  SD  19960122  165220  SAMMY       REL-V2R3M0  5738-PW1
+000170960122     A                                      SFLSIZ(0300)
+000180960122     A                                      SFLPAG(0015)
+000190960122     A                                      CF05(05)
+000200960122     A                                      OVERLAY
+000210960122     A  10                                  SFLDSP
+000220960122     A  11                                  SFLDSPCTL
+000230960122     A  12                                  SFLCLR
+000240960122     A N20                                  SFLEND(*MORE)
+000250960122     A                                  1 32'Banks DiH Limited'
+000260960122     A                                      DSPATR(UL)
+000270960122     A                                      DSPATR(HI)
+000280960122     A                                  2 26'DiH Mortgage Ledger Selection'
+000290960122     A                                      DSPATR(UL)
+000300960122     A                                      DSPATR(HI)
+000310960122     A            @PGM          10A  O  1  2
+000320960122     A                                  2  2USER
+000330960122     A                                  1 64SYSNAME
+000340960122     A                                  2 64DATE
+000350960122     A                                      EDTCDE(Y)
+000360960122     A                                  4  3'Enter Employee Number ->'
+000370960122     A            EMP       R     D  I  4 28REFFLD(EMPRREC/EMP PAYLIB/EMPREF)
+000380960122     A  10                                  DSPATR(PR)
+000390960122     A  10                              5 33'N  A  M  E'
+000400960122     A  10                              5 14'Num.'
+000410960122     A  10                              5 20'Dept'
+000420960122     A  10                              5  4'Sel.(X)'
+000430960122     A  10                              6  4'Prt.(P)'
+000440970112     A          R DSPSFL                    SFL
+000450970112     A*%%TS  SD  19970112  180036  SAMMY       REL-V3R1M0  5763-PW1
+000460970112     A            MOBILN    R        O 14 13REFFLD(MOTREC/MOBILN PRGPROGS/MOT)
+000470970112     A                                      EDTCDE(Z)
+000480970112     A  99                                  DSPATR(HI)
+000490970112     A            MOTEXT    R        O 14 27REFFLD(MOTREC/MOTEXT PRGPROGS/MOT)
+000500970112     A  99                                  DSPATR(HI)
+000510970112     A            MOAMT     R        O 14 66REFFLD(MOTREC/MOAMT PRGPROGS/MOT)
+000520970112     A                                      EDTCDE(J)
+000530970112     A  99                                  DSPATR(HI)
+000540970112     A            MODATE    R        O 14  2REFFLD(MOTREC/MODATE PRGPROGS/MOT)
+000550970112     A  99                                  DSPATR(HI)
+000560970112     A                                      EDTWRD('  /  /    ')
+000570970112     A            MOTRCD    R        O 14 22REFFLD(MOTREC/MOTRCD PRGPROGS/MOT)
+000580970112     A  99                                  DSPATR(HI)
+000590960306     A          R DSPCTL                    SFLCTL(DSPSFL)
+000600960306     A*%%TS  SD  19960306  132956  SAMMY       REL-V3R1M0  5763-PW1
+000610960306     A                                      SFLSIZ(1000)
+000620960306     A                                      SFLPAG(0008)
+000630960306     A                                      OVERLAY
+000640960306     A N88                                  SFLDSP
+000650960306     A                                      SFLDSPCTL
+000660960306     A  12                                  SFLCLR
+000670960306     A N13                                  SFLEND(*MORE)
+000680960306     A                                  1 32'Banks DiH Limited'
+000690960306     A                                      DSPATR(UL)
+000700960306     A                                      DSPATR(HI)
+000710960306     A            @PGM          10A  O  1  3
+000720960306     A                                  2  3USER
+000730960306     A                                  1 65SYSNAME
+000740960306     A                                  2 65DATE
+000750960306     A                                      EDTCDE(Y)
+000760960306     A                                  3  4'Name:'
+000770960306     A            CHRIST    R        O  3 10REFFLD(EMPREC/CHRIST PAYLIB/EMPMAST)
+000780960306     A            SURNAM    R        O  3 23REFFLD(EMPREC/SURNAM PAYLIB/EMPMAST)
+000790960306     A                                  2 28'DiH Mortgage Detail Ledger'
+000800960306     A                                      DSPATR(UL)
+000810960306     A                                      DSPATR(HI)
+000820960306     A                                 13 36'Description'
+000830960306     A                                      DSPATR(HI)
+000840960306     A                                 13 67'Amount'
+000850960306     A                                      DSPATR(HI)
+000860960306     A                                 13 12'Bill no.'
+000870960306     A                                      DSPATR(HI)
+000880960306     A                                 13  4'Date'
+000890960306     A                                      DSPATR(HI)
+000900960306     A                                  3 38'-'
+000910960306     A            EMP       R        O  3 40REFFLD(EMPRREC/EMP PAYLIB/EMPREF)
+000920960306     A                                      EDTCDE(Z)
+000930960306     A                                  4  4'Cost of house:'
+000940960306     A            MOHAMT    R        O  4 23REFFLD(MOREC/MOHAMT PRGPROGS/MOM)
+000950960306     A                                      EDTCDE(1 $)
+000960960306     A                                      DSPATR(HI)
+000970960306     A                                  4 41'Cost of land:'
+000980960306     A            MOLAMT    R        O  4 65REFFLD(MOREC/MOLAMT PRGPROGS/MOM)
+000990960306     A                                      EDTCDE(1 $)
+001000960306     A                                      DSPATR(HI)
+001010960306     A                                  5  4'Amount Deposited:'
+001020960306     A            MODAMT    R        O  5 23REFFLD(MOREC/MODAMT PRGPROGS/MOM)
+001030960306     A                                      EDTCDE(1 $)
+001040960306     A                                      DSPATR(HI)
+001050960306     A                                  5 41'Mortgage Granted:'
+001060960306     A            MOGAMT    R        O  5 65REFFLD(MOREC/MOGAMT PRGPROGS/MOM)
+001070960306     A                                      EDTCDE(1 $)
+001080960306     A                                      DSPATR(HI)
+001090960306     A                                  6 41'Monthly Repayment:'
+001100960306     A            MOMPAY    R        O  6 65REFFLD(MOREC/MOMPAY PRGPROGS/MOM)
+001110960306     A                                      EDTCDE(1 $)
+001120960306     A                                      DSPATR(HI)
+001130960306     A                                 10  4'Fire Policy #:'
+001140960306     A            MOFPO#    R        O 10 23REFFLD(MOREC/MOFPO# PRGPROGS/MOM)
+001150960306     A                                      DSPATR(HI)
+001160960306     A                                 10 41'Fire Policy Premium:'
+001170960306     A            MOFPRM    R        O 10 65REFFLD(MOREC/MOFPRM PRGPROGS/MOM)
+001180960306     A                                      EDTCDE(1 $)
+001190960306     A                                      DSPATR(HI)
+001200960306     A                                 11 41'Life Insurance Premium:'
+001210960306     A            MOLPRM    R        O 11 65REFFLD(MOREC/MOLPRM PRGPROGS/MOM)
+001220960306     A                                      EDTCDE(1 $)
+001230960306     A                                      DSPATR(HI)
+001240960306     A                                 11  4'Life Insurance #:'
+001250960306     A            MOLPO#    R        O 11 23REFFLD(MOREC/MOLPO# PRGPROGS/MOM)
+001260960306     A                                      DSPATR(HI)
+001270960306     A                                  6  4'Cost of property:'
+001280960306     A            MOADR1    R        O  7 23REFFLD(MOREC/MOADR1 PRGPROGS/MOM)
+001290960306     A                                      DSPATR(HI)
+001300960306     A            MOADR2    R        O  8 23REFFLD(MOREC/MOADR2 PRGPROGS/MOM)
+001310960306     A                                      DSPATR(HI)
+001320960306     A                                  7  4'Address:'
+001330960306     A            CSTPRO        11Y 2O  6 23EDTCDE(1 $)
+001340960306     A                                      DSPATR(HI)
+001350960306     A                                 12 36'- ***** -'
+001360960306     A                                      DSPATR(HI)
+001370960306     A N99                              9  4'T/fer to Loan:'
+001380960306     A N99        MLIAMT    R        O  9 23REFFLD(MLREC/MLIAMT PRGPROGS/MLM)
+001390960306     A                                      EDTCDE(1 $)
+001400960306     A                                      DSPATR(HI)
+001410960306     A N99                              9 41'Monthly Loan Repayment:'
+001420960306     A N99        MLMAMT    R        O  9 65REFFLD(MLREC/MLMAMT PRGPROGS/MLM)
+001430960306     A                                      EDTCDE(1 $)
+001440960306     A                                      DSPATR(HI)
+001450951106     A          R FOOTER
+001460951106     A*%%TS  SD  19951106  103025  SAMMY       REL-V2R3M0  5738-PW1
+001470951106     A                                      SLNO(23)
+001480951106     A                                  2 37'F3 - End'
+001490951106     A                                      DSPATR(HI)
+001500951106     A                                  1 49'Balance ->'
+001510951106     A            BALANC    R        O  1 60REFFLD(CPREC/CPIAMT PRGPROGS/CPM)
+001520951106     A                                      EDTCDE(A)
+001530951106     A                                      DSPATR(RI)
+001540951109     A          R FOOTER2
+001550951109     A*%%TS  SD  19951109  132449  SAMMY       REL-V2R3M0  5738-PW1
+001560951109     A                                      SLNO(23)
+001570951109     A                                  2 37'F3 - End'
+001580951109     A                                      DSPATR(HI)
+001590951109     A                                  2 49'F5 - Print All'
+001600951109     A                                      DSPATR(HI)
+001610951109     A            ERRMSG        75   O  1  3

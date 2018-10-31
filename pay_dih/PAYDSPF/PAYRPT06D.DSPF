@@ -1,0 +1,68 @@
+000010081017     A*%%TS  SD  20081017  103010  CWILLIAMS   REL-V5R4M0  5722-WDS
+000020081017     A*%%EC
+000030081017     A                                      DSPSIZ(24 80 *DS3)
+000040081017     A                                      CF03(03)
+000050080512     A          R FMT1
+000060080512     A*%%TS  SD  20080512  165418  SBRITTON    REL-V5R4M0  5722-WDS
+000070080512     A                                      CF01(01)
+000080080512     A                                      CF05(05)
+000090080512     A                                      CA07(07)
+000100080512     A                                  1  3USER
+000110080512     A                                      DSPATR(HI)
+000120080512     A                                 23 30'F3 = End'
+000130080512     A                                      DSPATR(HI)
+000140080512     A                                  5  9'Select Payroll Type .....:'
+000150080512     A                                      COLOR(BLU)
+000160080512     A            PAY_TYPE       1A  B  5 42DSPATR(HI)
+000170080512     A                                 10  9'Enter Payroll Run Date...:'
+000180080512     A                                      COLOR(BLU)
+000190080512     A                                 10 54'(YYYY/MM/DD)'
+000200080512     A                                      COLOR(BLU)
+000210080512     A                                  1 70SYSNAME
+000220080512     A                                      DSPATR(HI)
+000230080512     A                                  9  9'Enter Transaction Period.:'
+000240080512     A                                      COLOR(BLU)
+000250080512     A            PRD            6D 0B  9 42
+000260080512     A N28                                  DSPATR(HI)
+000270080512     A  28                                  DSPATR(RI)
+000280080512     A                                  9 54'(YYYYMM)'
+000290080512     A                                      COLOR(BLU)
+000300080512     A            CONAME        30A  O  1 26DSPATR(HI)
+000310080512     A                                      DSPATR(UL)
+000320080512     A            @TITLE        40A  O  2 21DSPATR(HI)
+000330080512     A            @DATE         10A  O  2 68DSPATR(HI)
+000340080512     A            @PGM          10A  O  2  3DSPATR(HI)
+000350080512     A                                 23  3'F1 = Payroll Type'
+000360080512     A                                      DSPATR(HI)
+000370080512     A            PAY_DATE       8Y 0B 10 42EDTCDE(W)
+000380080512     A N27                                  DSPATR(HI)
+000390080512     A  27                                  DSPATR(RI)
+000400080512     A            ERRMSG        75A  O 24  3DSPATR(BL)
+000410080512     A                                 18 12'To Run NIS Soft Copy, Ensure ALL N-
+000420080512     A                                      IS reports have been run'
+000430080512     A                                      COLOR(RED)
+000440080512     A                                 19 34'THEN press F5 '
+000450080512     A                                      DSPATR(RI)
+000460080512     A                                      COLOR(RED)
+000470080512     A                                 23 46'F7 = Create/Modify Mailing List'
+000480080512     A                                      DSPATR(HI)
+000490081017     A          R WINNISFMT1
+000500081017     A*%%TS  SD  20081017  103010  CWILLIAMS   REL-V5R4M0  5722-WDS
+000510081017     A                                      CF02(02)
+000520081017     A                                      WINDOW(7 19 10 50)
+000530081017     A                                  9 19'F2= Cancel'
+000540081017     A                                      DSPATR(HI)
+000550081017     A                                  4  2'Report Period...'
+000560081017     A                                      DSPATR(HI)
+000570081017     A            NISPRD#        6Y 0B  4 25EDTCDE(Z)
+000580081017     A                                      COLOR(TRQ)
+000590081017     A                                  6  2'Pay Cycle for Report..'
+000600081017     A                                      DSPATR(HI)
+000610081017     A            PRTYCYCOD#R        B  6 25REFFLD(PRTYFMT/PRTYCYCODE *LIBL/PAY-
+000620081017     A                                      RTYP)
+000630081017     A                                      COLOR(TRQ)
+000640081017     A                                      VALUES('*D' '*Y' '*M' 'FN' 'WK')
+000650081017     A                                  6 31'(*D WK FN *M *Y)'
+000660081017     A                                      DSPATR(HI)
+000670081017     A                                  2  2'Enter The following...'
+000680081017     A                                      DSPATR(HI)

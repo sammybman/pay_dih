@@ -1,0 +1,58 @@
+000010050816     A*%%TS  SD  20050816  133909  SBRITTON    REL-V5R3M0  5722-WDS
+000020050816     A*%%EC
+000030050816     A                                      DSPSIZ(24 80 *DS3)
+000040050816     A                                      ERRSFL
+000050050816     A                                      CF03(03)
+000060050816     A          R FMT1
+000070050816     A*%%TS  SD  20050816  133909  SBRITTON    REL-V5R3M0  5722-WDS
+000080050816     A            DATE#          8Y 0B 13 36DSPATR(HI)
+000090050816     A                                      EDTWRD('    /  /  ')
+000100050816     A  60                                  ERRMSG('INVALID DATE ENTERED')
+000110050816     A  50                                  ERRMSGID(DIH0022 *LIBL/DIHMSGF)
+000120050816     A            @PGM          10A  O  1  3DSPATR(HI)
+000130050816     A                                  2  3USER
+000140050816     A                                      DSPATR(HI)
+000150050816     A            @DATE         10A  O  2 69DSPATR(HI)
+000160050816     A            CONAME        30A  O  1 26DSPATR(HI)
+000170050816     A                                      DSPATR(UL)
+000180050816     A            @TITLE        40A  O  2 21DSPATR(HI)
+000190050816     A                                 23 37'F3 = End'
+000200050816     A                                      DSPATR(HI)
+000210050816     A            DATE1#         8Y 0B 15 36EDTWRD('    /  /  ')
+000220050816     A                                      DSPATR(HI)
+000230050816     A  41                                  ERRMSG('INVALID DATE ENTERED')
+000240050816     A  40                                  ERRMSG('End Date Must Be Greater Th-
+000250050816     A                                      an Start Date')
+000260050816     A  70                                  ERRMSGID(DIH0022 *LIBL/DIHMSGF)
+000270050816     A                                 13  7'Enter'
+000280050816     A                                      COLOR(BLU)
+000290050816     A                                 13 14'START DATE'
+000300050816     A                                      DSPATR(HI)
+000310050816     A                                 13 26'Here->>'
+000320050816     A                                      COLOR(BLU)
+000330050816     A                                 15  7'Enter'
+000340050816     A                                      COLOR(BLU)
+000350050816     A                                 15 14' END DATE'
+000360050816     A                                      DSPATR(HI)
+000370050816     A                                 15 26'Here->>'
+000380050816     A                                      COLOR(BLU)
+000390050816     A                                 13 47'(YYYY/MM/DD)'
+000400050816     A                                      COLOR(BLU)
+000410050816     A                                 15 47'(YYYY/MM/DD)'
+000420050816     A                                      COLOR(BLU)
+000430050816     A                                 10 17'or'
+000440050816     A                                  8  7'Enter'
+000450050816     A                                      COLOR(BLU)
+000460050816     A                                  8 15'PERIOD'
+000470050816     A                                      DSPATR(HI)
+000480050816     A                                  8 26'Here->>'
+000490050816     A                                      COLOR(BLU)
+000500050816     A            PRD#           6Y 0B  8 36EDTCDE(Z)
+000510050816     A                                      DSPATR(HI)
+000520050816     A                                  8 47'(YYYY/MM)'
+000530050816     A                                      COLOR(BLU)
+000540050816     A                                  1 71SYSNAME
+000550050816     A                                      DSPATR(HI)
+000560050816     A            ERRMSG        75A  O 24  3COLOR(RED)
+000570050816     A                                 12 12'Transaction creation date'
+000580050816     A                                  7 12'Posting Period'

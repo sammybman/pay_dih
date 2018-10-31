@@ -1,0 +1,17 @@
+000100000629     A* ********************************************************
+000200000629     A*                  BANKS DIH LIMITED                     *
+000300000629     A*                     I.S. DEPT.                         *
+000400000629     A*                                                        *
+000500000629     A*      FORMAT      : PAY                                 *
+000600100922     A*      FILENAME    : GENPYSUML1                          *
+000700100922     A*      DESCRIPTION : BANK DATA SUMMARY LOGICAL FILE      *
+000800100922     A*      DATE        : 23.09.2010                          *
+000900000629     A*                                                        *
+001000000629     A**********************************************************
+001100100922     A          R PAYFMT                    PFILE(GENPYSUM)
+001200100922     A          K PAYORG
+001300000629     A          K PAYDIV
+001400000629     A          K PAYEMP
+001500000629     A          K PAYDATE
+001600000714     A          S PAYSTS                    VALUES('A' 'V')
+001700030430     A            PAYAMT                    COMP(GT 0)

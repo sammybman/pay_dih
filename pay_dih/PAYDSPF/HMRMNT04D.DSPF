@@ -1,0 +1,146 @@
+000010110701     A*%%TS  SD  20110701  092930  CWILLIAMS   REL-V7R1M0  5770-WDS
+000020110701     A*%%EC
+000030110701     A                                      DSPSIZ(24 80 *DS3)
+000040110701     A                                      CF03(03)
+000050010901     A          R SELOPT
+000060010901     A*%%TS  SD  20010901  115901  CWILLIAMS   REL-V4R4M0  5769-PW1
+000070010901     A                                      CF01(01)
+000080010901     A                                      OVERLAY
+000090010901     A                                 10  4'Enter Department Number =>>'
+000100010901     A                                      DSPATR(HI)
+000110010901     A                                      COLOR(BLU)
+000120010901     A                                  1  3USER
+000130010901     A                                      DSPATR(HI)
+000140010901     A                                  1 68SYSNAME
+000150010901     A                                      DSPATR(HI)
+000160110607     A            DEPT      R        B 10 34REFFLD(DHREC/DEPT *LIBL/DEPTM)
+000170010901     A                                      EDTCDE(4)
+000180010901     A                                      DSPATR(HI)
+000190010901     A            @PGM          10A  O  2  3DSPATR(HI)
+000200010901     A            @TITLE        40A  O  2 21DSPATR(HI)
+000210010901     A            CONAME        30A  O  1 26DSPATR(UL)
+000220010901     A                                      DSPATR(HI)
+000230010901     A            @DATE         10A  O  2 66DSPATR(HI)
+000240110701     A          R REC
+000250110701     A*%%TS  SD  20110701  092930  CWILLIAMS   REL-V7R1M0  5770-WDS
+000260110701     A                                      CHANGE(88)
+000270110701     A                                      CF02(02)
+000280110701     A                                      CF20(20)
+000290110701     A                                      SLNO(04)
+000300110701     A                                      CLRL(*NO)
+000310110701     A                                      OVERLAY
+000320110701     A                                      PROTECT
+000330110701     A                                  3 10'NUMBER OF HOURS:'
+000340110701     A                                      COLOR(BLU)
+000350110701     A                                  2 10'DEPARTMENT NAME:'
+000360110701     A                                      COLOR(BLU)
+000370110701     A            DNAME     R        B  2 27REFFLD(DHREC/DNAME *LIBL/DEPTM)
+000380110701     A                                      DSPATR(HI)
+000390110701     A                                  3 43'ESTABLISHMENT:'
+000400110701     A                                      COLOR(BLU)
+000410110701     A            DEST      R     D  B  3 59REFFLD(DHREC/DEST *LIBL/DEPTM)
+000420110701     A                                      DSPATR(HI)
+000430110701     A                                  7 11'DEPARTMENT TYPE:'
+000440110701     A                                      COLOR(BLU)
+000450110701     A            DTYPE     R        B  7 28REFFLD(DHREC/DTYPE *LIBL/DEPTM)
+000460110701     A                                      DSPATR(HI)
+000470110701     A  36                                  ERRMSG('Invalid department type')
+000480110701     A                                  6 10'DEFAULT DIVISION:'
+000490110701     A                                      COLOR(BLU)
+000500110701     A            DDIVIS    R     D  B  6 28REFFLD(DHREC/DDIVIS *LIBL/DEPTM)
+000510110701     A                                      DSPATR(HI)
+000520110701     A                                  6 41'DEFAULT LOCATION:'
+000530110701     A                                      COLOR(BLU)
+000540110701     A            DLOCAT    R     D  B  6 60REFFLD(DHREC/DLOCAT *LIBL/DEPTM)
+000550110701     A                                      DSPATR(HI)
+000560110701     A                                 10 19'MANAGER:'
+000570110701     A                                      COLOR(BLU)
+000580110701     A            DCEMP     R        B 10 28REFFLD(DHREC/DCEMP *LIBL/DEPTM)
+000590110701     A                                      EDTCDE(4)
+000600110701     A  37                                  ERRMSGID(DIH0010 *LIBL/DIHMSGF)
+000610110701     A                                      DSPATR(HI)
+000620110701     A                                 11  7'EXECUTIVE IN CHARGE:'
+000630110701     A                                      COLOR(BLU)
+000640110701     A            DEEMP     R        B 11 28REFFLD(DHREC/DEEMP *LIBL/DEPTM)
+000650110701     A                                      EDTCDE(4)
+000660110701     A  30                                  ERRMSGID(DIH0010 *LIBL/DIHMSGF)
+000670110701     A                                      DSPATR(HI)
+000680110701     A            ENAME         25A  O 11 35COLOR(BLU)
+000690110701     A                                  8  9'DEFAULT WAREHOUSE:'
+000700110701     A                                      COLOR(BLU)
+000710110701     A            WNAME         20A  O  8 31COLOR(BLU)
+000720110701     A            DWHSE     R        B  8 28REFFLD(DHREC/DWHSE *LIBL/DEPTM)
+000730110701     A  31                                  ERRMSG('Warehouse entered is incorr-
+000740110701     A                                      ect')
+000750110701     A                                      DSPATR(HI)
+000760110701     A                                 14  9'Kronos Class Name:'
+000770110701     A                                      COLOR(BLU)
+000780110701     A            DKCLAS    R        B 14 28REFFLD(DHREC/DKCLAS *LIBL/DEPTM)
+000790110701     A                                      DSPATR(HI)
+000800110701     A  32                                  ERRMSGID(DIH0064 *LIBL/DIHMSGF)
+000810110701     A                                 15  3'Kronos Restriction''Name:'
+000820110701     A                                      COLOR(BLU)
+000830110701     A            DKRST     R        B 15 28REFFLD(DHREC/DKRST *LIBL/DEPTM)
+000840110701     A  33                                  ERRMSGID(DIH0064 *LIBL/DIHMSGF)
+000850110701     A                                      DSPATR(HI)
+000860110701     A                                 16  5'Kronos Terminal Group:'
+000870110701     A                                      COLOR(BLU)
+000880110701     A            DKTERM    R        B 16 28REFFLD(DHREC/DKTERM *LIBL/DEPTM)
+000890110701     A  34                                  ERRMSGID(DIH0064 *LIBL/DIHMSGF)
+000900110701     A                                      DSPATR(HI)
+000910110701     A                                 14 44'Schedule Name:'
+000920110701     A                                      COLOR(BLU)
+000930110701     A            DKSCHD        15A  B 14 60
+000940110701     A  35                                  ERRMSGID(DIH0064 *LIBL/DIHMSGF)
+000950110701     A                                      TEXT('Kronos Schedule Name')
+000960110701     A                                      DSPATR(HI)
+000970110701     A            DHOURS    R        B  3 27REFFLD(DHREC/DHOURS *LIBL/DEPTM)
+000980110701     A                                      EDTCDE(1)
+000990110701     A  29                                  ERRMSGID(DIH0013 *LIBL/DIHMSGF)
+001000110701     A                                      DSPATR(HI)
+001010110701     A            TYNAME        20A  O  7 31COLOR(BLU)
+001020110701     A            MNAME         25A  O 10 35COLOR(BLU)
+001030110701     A                                 12  8'DIRECTOR IN CHARGE:'
+001040110701     A                                      COLOR(BLU)
+001050110701     A            DDEMP     R        B 12 28REFFLD(DHREC/DDEMP *LIBL/DEPTM)
+001060110701     A                                      EDTCDE(Z)
+001070110701     A                                      DSPATR(HI)
+001080110701     A            DIR_NAME      25A  O 12 35COLOR(BLU)
+001090110701     A                                  4  7'HRS. CALC ON CYCLE:'
+001100110701     A                                      COLOR(BLU)
+001110110701     A            DHRCODE   R        B  4 27REFFLD(DHREC/DHRCODE *LIBL/DEPTM)
+001120110701     A N40                                  DSPATR(HI)
+001130110701     A  40                                  DSPATR(RI)
+001140110701     A                                  4 37'NO. WORK DAYS/WEEK:'
+001150110701     A                                      COLOR(BLU)
+001160110701     A            DDYWEEK   R        B  4 59REFFLD(DHREC/DDYWEEK *LIBL/DEPTM)
+001170110701     A                                      EDTCDE(Z)
+001180110701     A N41                                  DSPATR(HI)
+001190110701     A  41                                  DSPATR(RI)
+001200110701     A            REC           10   H
+001210110701     A            FLD           10   M
+001220010901     A          R FOOTER
+001230010901     A*%%TS  SD  20010901  115901  CWILLIAMS   REL-V4R4M0  5769-PW1
+001240010901     A                                      SLNO(23)
+001250010901     A                                      CLRL(*END)
+001260010901     A                                      OVERLAY
+001270010901     A                                  1 34'F20 = Delete'
+001280010901     A                                      DSPATR(HI)
+001290010901     A                                  1 51'Enter to continue'
+001300010901     A                                      DSPATR(HI)
+001310010901     A                                  1 21'F3 = End'
+001320010901     A                                      DSPATR(HI)
+001330010901     A            ERRMSG        75   O  2  3DSPATR(BL)
+001340010901     A                                  1  5'F2 = Go Back'
+001350010901     A                                      DSPATR(HI)
+001360010901     A          R FOOTER2
+001370010901     A*%%TS  SD  20010901  115901  CWILLIAMS   REL-V4R4M0  5769-PW1
+001380010901     A                                      CF01(99)
+001390010901     A                                      SLNO(23)
+001400010901     A                                      CLRL(*END)
+001410010901     A                                      OVERLAY
+001420010901     A                                  1 37'F3 = End Program'
+001430010901     A                                      DSPATR(HI)
+001440010901     A                                  1 10'F1= List Dept No.'
+001450010901     A                                      DSPATR(HI)
+001460010901     A            ERRMSG        75   O  2  3DSPATR(BL)

@@ -1,0 +1,298 @@
+000010020206     A*%%TS  SD  20020206  130102  SAMMY       REL-V4R4M0  5769-PW1
+000020941222     A*
+000030950909     A*
+000040950909     A* ********************************************************
+000050950909     A*              B A N K S    D I H    L T D.              *
+000060950909     A*                INVENTORY CONTROL SYSTEM                *
+000070950909     A*                                                        *
+000080950909     A*                         BY                             *
+000090950909     A*                                                        *
+000100950909     A*       ONE PLUS COMPUTER SERVICES (GUYANA) LIMITED      *
+000110950909     A*             P.O BOX 10501, GEORGETOWN,GUYANA           *
+000120950909     A*                                                        *
+000130950909     A*                                                        *
+000140951010     A*       DISPLAY FILE  NAME: ENQ017D                      *
+000150950909     A*       RECORD FORMAT NAME: FMT1                         *
+000160951010     A*                           SFLREC SFLCTL                *
+000170950909     A*                                                        *
+000180951010     A*       PROGRAMMER NAME: CHRIS WILLIAMS                  *
+000190951010     A*       DESIGN DATE....: 1995/10/10                      *
+000200950909     A*                                                        *
+000210950909     A*  FILE DESCRIPTION:                                     *
+000220950909     A*                                                        *
+000230951010     A*  THIS FILE IS DESIGNED TO ENQUIRE ON VEHICLE           *
+000240951002     A*  RECORDED FOR BANKS DIH TO TRANSACT WIHT.              *
+000250950909     A*                                                        *
+000260950909     A**********************************************************
+000270020206     A*%%EC
+000280020206     A                                      DSPSIZ(24 80 *DS3)
+000290020206     A                                      REF(*LIBL/FLDREF)
+000300020206     A                                      PRINT
+000310020206     A                                      ERRSFL
+000320020206     A                                      HELP
+000330020206     A                                      CA02(02)
+000340020206     A                                      CA03(03)
+000350020206     A                                      CF20(20)
+000360020206     A          R FMTSEL
+000370020206     A*%%TS  SD  20020206  130102  SAMMY       REL-V4R4M0  5769-PW1
+000380020206     A            @DATE         10A  O  2 71DSPATR(HI)
+000390020206     A            @USER         10A  O  2  2DSPATR(HI)
+000400020206     A            @PGM          10A  O  1  2DSPATR(HI)
+000410020206     A            CONAME        30A  O  1 26DSPATR(UL)
+000420020206     A                                      DSPATR(HI)
+000430020206     A            @TITLE        40A  O  2 21DSPATR(HI)
+000440020206     A                                 23 33'F3-Exit Program'
+000450020206     A                                      DSPATR(HI)
+000460020206     A                                  6 23'1. Add Employee Record'
+000470020206     A                                      DSPATR(HI)
+000480020206     A                                  8 23'2. Change Employee Charge Record'
+000490020206     A                                      DSPATR(HI)
+000500020206     A                                 10 23'3. Delete Employee Charge Record'
+000510020206     A                                      DSPATR(HI)
+000520020206     A                                 13 23'Your Choice Here:'
+000530020206     A                                      DSPATR(HI)
+000540020206     A                                      DSPATR(UL)
+000550020206     A            OPT            1D 0I 13 41DSPATR(RI)
+000560020206     A                                      RANGE(1 3)
+000570020206     A                                  1 73SYSNAME
+000580020206     A                                      DSPATR(HI)
+000590020206     A          R FMT1
+000600020206     A*%%TS  SD  20020206  130102  SAMMY       REL-V4R4M0  5769-PW1
+000610020206     A            @DATE         10A  O  1 71DSPATR(HI)
+000620020206     A            @USER         10A  O  2  2DSPATR(HI)
+000630020206     A            @PGM          10A  O  1  2DSPATR(HI)
+000640020206     A            @TIME          6Y 0O  2 71EDTWRD('  :  :  ')
+000650020206     A                                      DSPATR(HI)
+000660020206     A            CONAME        30A  O  1 26DSPATR(UL)
+000670020206     A                                      DSPATR(HI)
+000680020206     A            @TITLE        40A  O  2 21DSPATR(HI)
+000690020206     A                                 23 12'F2-Cancel Job'
+000700020206     A                                      DSPATR(HI)
+000710020206     A                                 23 54'F3-Exit Program'
+000720020206     A                                      DSPATR(HI)
+000730020206     A                                  5 22'Deduction  Type:'
+000740020206     A                                      COLOR(BLU)
+000750020206     A                                  6 22'Deduction  Name:'
+000760020206     A                                      COLOR(BLU)
+000770020206     A            DEDNAM    R        O  6 39REFFLD(EMFMT/EMDSP *LIBL/EMATF)
+000780020206     A                                      DSPATR(HI)
+000790020206     A            SELTYP    R        O  5 39REFFLD(EMFMT/EMSELTYP *LIBL/EMATF)
+000800020206     A                                      DSPATR(HI)
+000810020206     A                                  8 22'Employee Number:'
+000820020206     A                                      COLOR(BLU)
+000830020206     A            EMP#           6D 0I  8 39DSPATR(HI)
+000840020206     A  27                                  ERRMSG('Employee number not valid.')
+000850020206     A  25                                  ERRMSG('Blank employee number not a-
+000860020206     A                                      llowed.')
+000870020206     A N28                                  ERRMSG('Cannot duplicate charge typ-
+000880020206     A                                      e for same employee.')
+000890020206     A            EMPNAM        26A  O  8 46
+000900020206     A  20                                  DSPATR(ND)
+000910020206     A            MODE           6A  O  3 38DSPATR(HI)
+000920020206     A                                      DSPATR(RI)
+000930020206     A                                      DSPATR(BL)
+000940020206     A          R FMT2
+000950020206     A*%%TS  SD  20020206  130102  SAMMY       REL-V4R4M0  5769-PW1
+000960020206     A            @DATE         10A  O  2 71DSPATR(HI)
+000970020206     A            @USER         10A  O  2  2DSPATR(HI)
+000980020206     A            @PGM          10A  O  1  2DSPATR(HI)
+000990020206     A            CONAME        30A  O  1 26DSPATR(UL)
+001000020206     A                                      DSPATR(HI)
+001010020206     A            @TITLE        40A  O  2 21DSPATR(HI)
+001020020206     A                                 23 12'F2 = Cancel'
+001030020206     A                                      DSPATR(HI)
+001040020206     A                                 23 54'F3 = End Program'
+001050020206     A                                      DSPATR(HI)
+001060020206     A                                  5 22'Deduction  Type:'
+001070020206     A                                      COLOR(BLU)
+001080020206     A                                  6 22'Deduction  Name:'
+001090020206     A                                      COLOR(BLU)
+001100020206     A            DEDNAM    R        O  6 39REFFLD(EMFMT/EMDSP *LIBL/EMATF)
+001110020206     A                                      DSPATR(HI)
+001120020206     A            SELTYP    R        O  5 39REFFLD(EMFMT/EMSELTYP *LIBL/EMATF)
+001130020206     A                                      DSPATR(HI)
+001140020206     A                                  8 22'Employee Number:'
+001150020206     A                                      COLOR(BLU)
+001160020206     A                                 10 17'Key Amount To Deduct:'
+001170020206     A                                      COLOR(BLU)
+001180020206     A            DEDAMT         6Y 0B 10 39EDTWRD('      ')
+001190020206     A                                      DSPATR(HI)
+001200020206     A            EMP#           6S 0O  8 39DSPATR(HI)
+001210020206     A            EMPNAM        26A  O  8 46
+001220020206     A  20                                  DSPATR(ND)
+001230020206     A            MODE           6A  O  3 38DSPATR(HI)
+001240020206     A                                      DSPATR(RI)
+001250020206     A                                      DSPATR(BL)
+001260020206     A                                  1 73SYSNAME
+001270020206     A                                      DSPATR(HI)
+001280020206     A          R SFLREC                    SFL
+001290020206     A*%%TS  SD  20020206  130102  SAMMY       REL-V4R4M0  5769-PW1
+001300020206     A            TYPE           2S 0O  7 12DSPATR(HI)
+001310020206     A            SUB_TP         1A  H
+001320020206     A            DESCRIPT#     20A  O  7 20DSPATR(HI)
+001330020206     A            SEL#           1A  I  7  4DSPATR(HI)
+001340020206     A            ACCT#         25   O  7 44DSPATR(HI)
+001350020206     A          R SFLCTL                    SFLCTL(SFLREC)
+001360020206     A*%%TS  SD  20020206  130102  SAMMY       REL-V4R4M0  5769-PW1
+001370020206     A                                      SFLSIZ(0050)
+001380020206     A                                      SFLPAG(0012)
+001390020206     A                                      OVERLAY
+001400020206     A                                      PROTECT
+001410020206     A                                      SFLDSP
+001420020206     A                                      SFLDSPCTL
+001430020206     A  33                                  SFLCLR
+001440020206     A  55                                  SFLEND(*MORE)
+001450020206     A  24                                  SFLMSG('No Record Was Selected.')
+001460020206     A  69                                  SFLMSG('Employee Is Not An Executiv-
+001470020206     A                                      e.')
+001480020206     A            @PGM      R        O  1  2REFFLD(NAME10)
+001490020206     A                                      DSPATR(HI)
+001500020206     A            CONAME    R        O  1 24REFFLD(NAME30)
+001510020206     A                                      DSPATR(HI)
+001520020206     A                                      DSPATR(UL)
+001530020206     A            @DATE     R        O  2 69REFFLD(NAME10)
+001540020206     A                                      DSPATR(HI)
+001550020206     A            @USER     R        O  2  2REFFLD(NAME10)
+001560020206     A                                      DSPATR(HI)
+001570020206     A            @TITLE    R        O  2 20REFFLD(NAME40)
+001580020206     A                                      DSPATR(HI)
+001590020206     A                                  6 20'Description'
+001600020206     A                                      DSPATR(UL)
+001610020206     A                                      DSPATR(HI)
+001620020206     A                                  6 44'Account Codes'
+001630020206     A                                      DSPATR(UL)
+001640020206     A                                      DSPATR(HI)
+001650020206     A                                  6 11'Type'
+001660020206     A                                      DSPATR(UL)
+001670020206     A                                      DSPATR(HI)
+001680020206     A                                  6  2'Select'
+001690020206     A                                      DSPATR(UL)
+001700020206     A                                      DSPATR(HI)
+001710020206     A                                  4  3'Make Selection Below - '
+001720020206     A                                      DSPATR(HI)
+001730020206     A                                  4 27'X'
+001740020206     A                                  1 71SYSNAME
+001750020206     A                                      DSPATR(HI)
+001760020206     A          R FMT3
+001770020206     A*%%TS  SD  20020206  130102  SAMMY       REL-V4R4M0  5769-PW1
+001780020206     A            @DATE         10A  O  2 71DSPATR(HI)
+001790020206     A            @USER         10A  O  2  2DSPATR(HI)
+001800020206     A            @PGM          10A  O  1  2DSPATR(HI)
+001810020206     A            CONAME        30A  O  1 26DSPATR(UL)
+001820020206     A                                      DSPATR(HI)
+001830020206     A            @TITLE        40A  O  2 21DSPATR(HI)
+001840020206     A                                 23 12'F2 = Cancel'
+001850020206     A                                      DSPATR(HI)
+001860020206     A                                 23 54'F3 = End Program'
+001870020206     A                                      DSPATR(HI)
+001880020206     A                                  5 22'Deduction  Type:'
+001890020206     A                                      COLOR(BLU)
+001900020206     A                                  6 22'Deduction  Name:'
+001910020206     A                                      COLOR(BLU)
+001920020206     A            DEDNAM    R        O  6 39REFFLD(EMFMT/EMDSP *LIBL/EMATF)
+001930020206     A                                      DSPATR(HI)
+001940020206     A            SELTYP    R        O  5 39REFFLD(EMFMT/EMSELTYP *LIBL/EMATF)
+001950020206     A                                      DSPATR(HI)
+001960020206     A                                  8 22'Employee Number:'
+001970020206     A                                      COLOR(BLU)
+001980020206     A            EMP#           6D 0I  8 39DSPATR(HI)
+001990020206     A  27                                  ERRMSG('Employee number not valid.')
+002000020206     A  25                                  ERRMSG('Blank employee number not a-
+002010020206     A                                      llowed.')
+002020020206     A N28                                  ERRMSG('Cannot duplicate charge typ-
+002030020206     A                                      e for same employee.')
+002040020206     A            EMPNAM        26A  O  8 46
+002050020206     A  20                                  DSPATR(ND)
+002060020206     A            MODE           6A  O  3 38DSPATR(RI)
+002070020206     A                                      DSPATR(BL)
+002080020206     A                                  1 73SYSNAME
+002090020206     A                                      DSPATR(HI)
+002100020206     A          R FMTCHG
+002110020206     A*%%TS  SD  20020206  130102  SAMMY       REL-V4R4M0  5769-PW1
+002120020206     A            @DATE         10A  O  2 71DSPATR(HI)
+002130020206     A            @USER         10A  O  2  2DSPATR(HI)
+002140020206     A            @PGM          10A  O  1  2DSPATR(HI)
+002150020206     A            CONAME        30A  O  1 26DSPATR(UL)
+002160020206     A                                      DSPATR(HI)
+002170020206     A            @TITLE        40A  O  2 21DSPATR(HI)
+002180020206     A                                 23 12'F2 = Cancel'
+002190020206     A                                      DSPATR(HI)
+002200020206     A                                 23 54'F3 = End Program'
+002210020206     A                                      DSPATR(HI)
+002220020206     A                                  6 22'Deduction  Type:'
+002230020206     A                                      COLOR(BLU)
+002240020206     A            SELTYP    R     D  O  6 39REFFLD(EMFMT/EMSELTYP *LIBL/EMATF)
+002250020206     A                                      DSPATR(HI)
+002260020206     A                                  8 22'Employee Number:'
+002270020206     A                                      COLOR(BLU)
+002280020206     A            EMP#           6D 0I  8 39DSPATR(HI)
+002290020206     A  30                                  ERRMSG('Employee deduction type not-
+002300020206     A                                       in file.')
+002310020206     A            MODE           6A  O  3 38DSPATR(RI)
+002320020206     A                                      DSPATR(BL)
+002330020206     A            DEDNAM        30A  O  6 42
+002340020206     A                                  1 73SYSNAME
+002350020206     A                                      DSPATR(HI)
+002360020206     A          R FMTCHG2
+002370020206     A*%%TS  SD  20020206  130102  SAMMY       REL-V4R4M0  5769-PW1
+002380020206     A            @DATE         10A  O  2 71DSPATR(HI)
+002390020206     A            @USER         10A  O  2  2DSPATR(HI)
+002400020206     A            @PGM          10A  O  1  2DSPATR(HI)
+002410020206     A            CONAME        30A  O  1 26DSPATR(UL)
+002420020206     A                                      DSPATR(HI)
+002430020206     A            @TITLE        40A  O  2 21DSPATR(HI)
+002440020206     A                                 23 12'F2 = Cancel'
+002450020206     A                                      DSPATR(HI)
+002460020206     A                                 23 56'F3 = End program'
+002470020206     A                                      DSPATR(HI)
+002480020206     A                                  6 22'Deduction  Type:'
+002490020206     A                                      COLOR(BLU)
+002500020206     A            SELTYP    R     D  O  6 39REFFLD(EMFMT/EMSELTYP *LIBL/EMATF)
+002510020206     A                                      DSPATR(HI)
+002520020206     A                                  8 22'Employee Number:'
+002530020206     A                                      COLOR(BLU)
+002540020206     A            EMP#           6D 0O  8 39DSPATR(HI)
+002550020206     A  30                                  ERRMSG('Employee deduction type not-
+002560020206     A                                       in file.')
+002570020206     A            MODE           6A  O  3 38DSPATR(RI)
+002580020206     A                                      DSPATR(BL)
+002590020206     A                                 10 21'Amount to Deduct:'
+002600020206     A                                      COLOR(BLU)
+002610020206     A            DEDAMT         6Y 0B 10 39EDTCDE(Z)
+002620020206     A                                      DSPATR(HI)
+002630020206     A            DEDNAM        30A  O  6 42
+002640020206     A                                  1 73SYSNAME
+002650020206     A                                      DSPATR(HI)
+002660020206     A          R FMTDEL
+002670020206     A*%%TS  SD  20020206  130102  SAMMY       REL-V4R4M0  5769-PW1
+002680020206     A            @DATE         10A  O  2 71DSPATR(HI)
+002690020206     A            @USER         10A  O  2  2DSPATR(HI)
+002700020206     A            @PGM          10A  O  1  2DSPATR(HI)
+002710020206     A            CONAME        30A  O  1 26DSPATR(UL)
+002720020206     A                                      DSPATR(HI)
+002730020206     A            @TITLE        40A  O  2 21DSPATR(HI)
+002740020206     A                                 23 12'F2 = Cancel'
+002750020206     A                                      DSPATR(HI)
+002760020206     A                                 23 33'F3 = End Program'
+002770020206     A                                      DSPATR(HI)
+002780020206     A                                  6 22'Deduction  Type:'
+002790020206     A                                      COLOR(BLU)
+002800020206     A            SELTYP    R     D  O  6 39REFFLD(EMFMT/EMSELTYP *LIBL/EMATF)
+002810020206     A                                      DSPATR(HI)
+002820020206     A                                  8 22'Employee Number:'
+002830020206     A                                      COLOR(BLU)
+002840020206     A            EMP#           6D 0O  8 39DSPATR(HI)
+002850020206     A  30                                  ERRMSG('Employee deduction type not-
+002860020206     A                                       in file.')
+002870020206     A            MODE           6A  O  3 38DSPATR(RI)
+002880020206     A                                      DSPATR(BL)
+002890020206     A                                 10 21'Amount to Deduct:'
+002900020206     A                                      COLOR(BLU)
+002910020206     A            DEDAMT         6Y 0O 10 39EDTCDE(Z)
+002920020206     A                                      DSPATR(HI)
+002930020206     A            DEDNAM        30A  O  6 42
+002940020206     A                                 23 55'F20 = Delete record'
+002950020206     A                                      DSPATR(HI)
+002960020206     A                                      DSPATR(BL)
+002970020206     A                                  1 73SYSNAME
+002980020206     A                                      DSPATR(HI)

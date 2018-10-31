@@ -1,0 +1,68 @@
+000010020606     A*%%TS  SD  20020606  184816  SAMMY       REL-V4R4M0  5769-PW1
+000020960802     A*
+000030960802     A*
+000040960802     A* ********************************************************
+000050960802     A*              B A N K S    D I H    L T D.              *
+000060960802     A*                                                        *
+000070960802     A*                                                        *
+000080010117     A*       DISPLAY FILE  NAME: PUR01D                       *
+000090000816     A*       RECORD FORMAT NAME:                              *
+000100000816     A*                                                        *
+000110000816     A*                                                        *
+000120960802     A*                                                        *
+000130000816     A*       PROGRAMMER NAME: ALLISON FUNG                    *
+000140000816     A*       DATE ..........: 16/08/2000                      *
+000150960802     A*                                                        *
+000160001120     A*       FILE DESCRIPTION:                                *
+000170001120     A*       THIS FILE IS USED TO RUN THE MONTHLY             *
+000180001120     A*       PURCHASE LISTINGS WITH TRANSACTIONS              *
+000190001120     A*       PASSING THROUGH THE SALES/WAREHOUSE              *
+000200001120     A*       SYSTEM.                                          *
+000210960802     A*                                                        *
+000220960802     A**********************************************************
+000230020606     A*%%EC
+000240020606     A                                      DSPSIZ(24 80 *DS3)
+000250020606     A                                      REF(*LIBL/FLDREF)
+000260020606     A                                      PRINT
+000270020606     A                                      ERRSFL
+000280020606     A                                      CF02(02)
+000290020606     A                                      CF03(03)
+000300020606     A                                      CF15(15)
+000310960802     A**
+000320020606     A          R FMT1
+000330020606     A*%%TS  SD  20020606  184816  SAMMY       REL-V4R4M0  5769-PW1
+000340020606     A            CONAME        30A  O  1 26DSPATR(HI)
+000350020606     A                                      DSPATR(UL)
+000360020606     A            @TITLE        40A  O  2 21DSPATR(HI)
+000370020606     A                                 23  3'F3 = End Program'
+000380020606     A                                      DSPATR(HI)
+000390020606     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000400020606     A                                  5  5'Enter Payroll Run Type.........:'
+000410020606     A                                      COLOR(BLU)
+000420020606     A                                 23 34'F15 = Confirm'
+000430020606     A                                      DSPATR(HI)
+000440020606     A                                  1  2USER
+000450020606     A                                      DSPATR(HI)
+000460020606     A            @PGM          10A  O  2  2DSPATR(HI)
+000470020606     A            @DATE         10A  O  2 70DSPATR(HI)
+000480020606     A                                 11  5'Enter Company Code.............:'
+000490020606     A                                      COLOR(BLU)
+000500020606     A                                  8  5'Enter Payroll Type.............:'
+000510020606     A                                      COLOR(BLU)
+000520020606     A            PAY_TYPE       2D 0B  8 41DSPATR(HI)
+000530020606     A            RUN_TYPE       1A  B  5 41DSPATR(HI)
+000540020606     A                                  1 72SYSNAME
+000550020606     A                                      DSPATR(HI)
+000560020606     A            STAT_DATE      8Y 0B 14 41DSPATR(HI)
+000570020606     A                                      EDTCDE(W)
+000580020606     A  99                                  DSPATR(PC)
+000590020606     A                                 14 54'(YYYY/MM/DD)'
+000600020606     A            CROSSFLAG      1A  B 20 41DSPATR(HI)
+000610020606     A                                 20  5'Use Commission Cross ref.......:'
+000620020606     A                                      COLOR(BLU)
+000630020606     A                                 20 54'(Y = Yes)'
+000640020606     A                                 14  5'Enter Statment Date............:'
+000650020606     A                                      COLOR(BLU)
+000660020606     A            COMPCODE#      3Y 0B 11 41EDTCDE(Z)
+000670020606     A                                      DSPATR(HI)
+000680020606     A  99                                  DSPATR(PR)

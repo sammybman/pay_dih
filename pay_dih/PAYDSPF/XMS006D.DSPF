@@ -1,0 +1,51 @@
+000010041002     A*%%TS  SD  20041002  111353  SBRITTON    REL-V5R2M0  5722-WDS
+000020041002     A*%%EC
+000030041002     A                                      DSPSIZ(24 80 *DS3)
+000040041002     A                                      CF03(03)
+000050041002     A          R SELOPT
+000060041002     A*%%TS  SD  20041002  111353  SBRITTON    REL-V5R2M0  5722-WDS
+000070041002     A                                      CF10(10)
+000080041002     A                                  1 32'BANKS DIH LIMITED'
+000090041002     A                                      DSPATR(HI)
+000100041002     A                                      DSPATR(UL)
+000110041002     A                                  2 29'E n t r y  D i s p l a y'
+000120041002     A                                      DSPATR(UL)
+000130041002     A                                      DSPATR(HI)
+000140041002     A                                  5  6'ENTER EMPLOYEE NUMBER =>>'
+000150041002     A                                      COLOR(BLU)
+000160041002     A                                  2 65DATE
+000170041002     A                                      EDTCDE(Y)
+000180041002     A                                  2  3USER
+000190041002     A                                 24 12'F3 = End'
+000200041002     A                                      DSPATR(HI)
+000210041002     A                                  1 65SYSNAME
+000220041002     A            EMP       R     D  I  5 33REFFLD(EMPRREC/EMP *LIBL/EMPREF)
+000230041002     A  31                                  ERRMSG('Function terminated')
+000240041002     A  30                                  ERRMSG('Request completed sucessful-
+000250041002     A                                      ly')
+000260041002     A                                      CHECK(ER)
+000270041002     A  01                                  ERRMSGID(DIH0035 *LIBL/DIHMSGF)
+000280041002     A            @PGM          10A  O  1  3
+000290041002     A                                 24 52'F10 = Clear Prev. Awards'
+000300041002     A                                      DSPATR(HI)
+000310041002     A          R REC
+000320041002     A*%%TS  SD  20041002  111353  SBRITTON    REL-V5R2M0  5722-WDS
+000330041002     A                                      CF04(04)
+000340041002     A                                      SLNO(08)
+000350041002     A                                      CLRL(*NO)
+000360041002     A                                      OVERLAY
+000370041002     A                                  1 10'MANAGERIAL AWARD:'
+000380041002     A                                      COLOR(BLU)
+000390041002     A            XAWARD    R        B  1 33REFFLD(XMAREC/XAWARD *LIBL/XMSWARD)
+000400041002     A                                      EDTCDE(3)
+000410041002     A                                      RANGE(1.0 10.0)
+000420041002     A                                 17 30'F4 = Delete'
+000430041002     A                                      DSPATR(HI)
+000440041002     A          R CONREC
+000450041002     A*%%TS  SD  20041002  103824  SBRITTON    REL-V5R2M0  5722-WDS
+000460041002     A                                      WINDOW(10 30 8 25)
+000470041002     A                                  3  2'Enter'
+000480041002     A                                  3  8'CLEAN'
+000490041002     A                                      DSPATR(HI)
+000500041002     A                                  3 14'to Confirm'
+000510041002     A            CONOPT         5   I  5 11

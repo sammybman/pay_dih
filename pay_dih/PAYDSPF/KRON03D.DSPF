@@ -1,0 +1,108 @@
+000010150321     A*%%TS  SD  20150321  110351  SBRITTON    REL-V7R1M0  5770-WDS
+000020150321     A*%%EC
+000030150321     A                                      DSPSIZ(24 80 *DS3)
+000040150321     A                                      CF03(03)
+000050020304     A          R BEGDSP
+000060020304     A*%%TS  SD  20020304  104938  SAMMY       REL-V4R4M0  5769-PW1
+000070020304     A                                      CA05(05)
+000080020304     A                                  9  7'Enter employee number ------'
+000090020304     A                                      COLOR(BLU)
+000100020304     A                                 11 16'OR'
+000110020304     A                                 13 14'Press F5 for Employee Search Facil-
+000120020304     A                                      ity'
+000130020304     A                                      COLOR(BLU)
+000140110222     A            NUMSRH    R     D  B  9 38REFFLD(EMP *LIBL/EMPREF)
+000150020315     A  01                                  ERRMSGID(DIH0022 *LIBL/DIHMSGF)
+000160020315     A  02                                  ERRMSGID(DIH0010 *LIBL/DIHMSGF)
+000170020304     A                                      DSPATR(HI)
+000180020304     A                                 23 37'F3 = End'
+000190020304     A                                      DSPATR(HI)
+000200020304     A                                  2  4USER
+000210020304     A                                      DSPATR(HI)
+000220020304     A                                  1 70SYSNAME
+000230020304     A                                      DSPATR(HI)
+000240020304     A            @PGM          10A  O  1  4DSPATR(HI)
+000250020304     A            CONAME        30A  O  1 26DSPATR(HI)
+000260020304     A                                      DSPATR(UL)
+000270020304     A            @TITLE        40A  O  2 21DSPATR(HI)
+000280020304     A            @DATE         10   O  2 68DSPATR(HI)
+000290150321     A          R UPDDSP
+000300150321     A*%%TS  SD  20150321  110351  SBRITTON    REL-V7R1M0  5770-WDS
+000310150321     A                                      CA04(04)
+000320150321     A                                      RTNCSRLOC(*RECNAME &REC &FLD)
+000330150321     A                                      CHANGE(98)
+000340150321     A                                      OVERLAY
+000350150321     A                                  2  3USER
+000360150321     A                                      DSPATR(HI)
+000370150321     A            @PGM          10A  O  1  3DSPATR(HI)
+000380150321     A                                  1 71SYSNAME
+000390150321     A                                      DSPATR(HI)
+000400150321     A                                  4  3'Employee Number:'
+000410150321     A                                      COLOR(BLU)
+000420150321     A            KEMP      R        O  4 22REFFLD(KEREC/KEMP *LIBL/KEMPM)
+000430150321     A                                      DSPATR(HI)
+000440150321     A                                  9 19'Kronos Class Name:'
+000450150321     A                                      COLOR(BLU)
+000460150321     A            KCLASS    R        B  9 46REFFLD(KEREC/KCLASS *LIBL/KEMPM)
+000470150321     A                                 10 19'Kronos Restriction Name:'
+000480150321     A                                      COLOR(BLU)
+000490150321     A            KRST      R        B 10 46REFFLD(KEREC/KRST *LIBL/KEMPM)
+000500150321     A                                 11 19'Kronos Terminal Group:'
+000510150321     A                                      COLOR(BLU)
+000520150321     A            KTERMG    R        B 11 46REFFLD(KEREC/KTERMG *LIBL/KEMPM)
+000530150321     A                                  5  3'Employee Name:'
+000540150321     A                                      COLOR(BLU)
+000550150321     A            KENAME    R        O  5 22REFFLD(KEREC/KENAME *LIBL/KEMPM)
+000560150321     A                                      DSPATR(HI)
+000570150321     A                                  7 20'Kronos Schedule Name:'
+000580150321     A                                      COLOR(BLU)
+000590150321     A            KSCHDE    R        B  7 46REFFLD(KEREC/KSCHDE *LIBL/KEMPM)
+000600150321     A                                      DSPATR(PR)
+000610150321     A                                      DSPATR(HI)
+000620150321     A                                  4 37'Kronos Badge Number:'
+000630150321     A                                      COLOR(BLU)
+000640150321     A            KBADGE    R        O  4 59REFFLD(KEREC/KBADGE *LIBL/KEMPM)
+000650150321     A                                      DSPATR(HI)
+000660150321     A                                 23 33'F3 = End Program'
+000670150321     A                                      DSPATR(HI)
+000680150321     A                                  7 62'(protected field)'
+000690150321     A            CONAME        30A  O  1 26DSPATR(HI)
+000700150321     A                                      DSPATR(UL)
+000710150321     A            @TITLE        40A  O  2 21DSPATR(HI)
+000720150321     A            @DATE         10A  O  2 69DSPATR(HI)
+000730150321     A            REC           10A  H
+000740150321     A            FLD           10A  H
+000750150321     A                                 23 58'F4 = Prompt'
+000760150321     A                                      DSPATR(HI)
+000770150321     A                                 12 19'Kronos Terminal Group 2:'
+000780150321     A                                      COLOR(BLU)
+000790150321     A                                 13 19'Kronos Terminal Group 3:'
+000800150321     A                                      COLOR(BLU)
+000810150321     A                                 14 19'Kronos Terminal Group 4:'
+000820150321     A                                      COLOR(BLU)
+000830150321     A                                 15 19'Kronos Terminal Group 5:'
+000840150321     A                                      COLOR(BLU)
+000850150321     A                                 16 19'Kronos Terminal Group 6:'
+000860150321     A                                      COLOR(BLU)
+000870150321     A                                 17 19'Kronos Terminal Group 7:'
+000880150321     A                                      COLOR(BLU)
+000890150321     A                                 18 19'Kronos Terminal Group 8:'
+000900150321     A                                      COLOR(BLU)
+000910150321     A                                 19 19'Kronos Terminal Group 9:'
+000920150321     A                                      COLOR(BLU)
+000930150321     A                                 20 19'Kronos Terminal Group 10:'
+000940150321     A                                      COLOR(BLU)
+000950150321     A            KTERMG2   R        B 12 46REFFLD(KEREC/KTERMG *LIBL/KEMPM)
+000960150321     A                                      DSPATR(PR)
+000970150321     A            KTERMG3   R        B 13 46REFFLD(KEREC/KTERMG *LIBL/KEMPM)
+000980150321     A                                      DSPATR(PR)
+000990150321     A            KTERMG4   R        B 14 46REFFLD(KEREC/KTERMG *LIBL/KEMPM)
+001000150321     A            KTERMG5   R        B 15 46REFFLD(KEREC/KTERMG *LIBL/KEMPM)
+001010150321     A            KTERMG6   R        B 16 46REFFLD(KEREC/KTERMG *LIBL/KEMPM)
+001020150321     A            KTERMG7   R        B 17 46REFFLD(KEREC/KTERMG *LIBL/KEMPM)
+001030150321     A            KTERMG8   R        B 18 46REFFLD(KEREC/KTERMG *LIBL/KEMPM)
+001040150321     A            KTERMG9   R        B 19 46REFFLD(KEREC/KTERMG *LIBL/KEMPM)
+001050150321     A            KTERMG10  R        B 20 46REFFLD(KEREC/KTERMG *LIBL/KEMPM)
+001060150321     A                                 12 62'(Reserved)'
+001070150321     A                                 13 62'(Reserved)'
+001080150321     A            ERRMSG        75A  O 24  3COLOR(RED)

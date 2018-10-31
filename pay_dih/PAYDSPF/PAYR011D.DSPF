@@ -1,0 +1,60 @@
+000010061101     A*%%TS  SD  20061101  101724  SBRITTON    REL-V5R4M0  5722-WDS
+000020960802     A*
+000030960802     A*
+000040960802     A* ********************************************************
+000050960802     A*              B A N K S    D I H    L T D.              *
+000060960802     A*                                                        *
+000070960802     A*                                                        *
+000080010117     A*       DISPLAY FILE  NAME: PUR01D                       *
+000090000816     A*       RECORD FORMAT NAME:                              *
+000100000816     A*                                                        *
+000110000816     A*                                                        *
+000120960802     A*                                                        *
+000130000816     A*       PROGRAMMER NAME: ALLISON FUNG                    *
+000140000816     A*       DATE ..........: 16/08/2000                      *
+000150960802     A*                                                        *
+000160001120     A*       FILE DESCRIPTION:                                *
+000170011205     A*       THIS FILE IS USED TO RE-GENERATE PAYSLIP         *
+000180011205     A*       INFORMATION .                                    *
+000190960802     A*                                                        *
+000200960802     A**********************************************************
+000210061101     A*%%EC
+000220061101     A                                      DSPSIZ(24 80 *DS3)
+000230061101     A                                      REF(*LIBL/FLDREF)
+000240061101     A                                      PRINT
+000250061101     A                                      ERRSFL
+000260061101     A                                      CF03(03)
+000270960802     A**
+000280061101     A          R FMT1
+000290061101     A*%%TS  SD  20061101  101724  SBRITTON    REL-V5R4M0  5722-WDS
+000300061101     A                                      CF15(15)
+000310061101     A            CONAME        30A  O  1 26DSPATR(HI)
+000320061101     A                                      DSPATR(UL)
+000330061101     A            @TITLE        40A  O  2 21DSPATR(HI)
+000340061101     A                                 23 33'F3 = End Program'
+000350061101     A                                      DSPATR(HI)
+000360061101     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000370061101     A                                  9  5'Enter Run Date for Report .....:'
+000380061101     A                                      COLOR(BLU)
+000390061101     A                                  9 54'(YYYYMMDD)'
+000400061101     A                                      COLOR(BLU)
+000410061101     A            RUN_DATE       8Y 0B  9 41EDTCDE(W)
+000420061101     A                                  2  2USER
+000430061101     A                                      DSPATR(HI)
+000440061101     A            @PGM          10A  O  1  2DSPATR(HI)
+000450061101     A            @DATE         10A  O  2 70DSPATR(HI)
+000460061101     A                                 11  5'Enter Payroll Run Type.........:'
+000470061101     A                                      COLOR(BLU)
+000480061101     A            RUN_TYPE       1A  B 11 41
+000490061101     A                                  1 70SYSNAME
+000500061101     A                                      DSPATR(HI)
+000510061101     A                                 23 62'F15 = Confirm'
+000520061101     A                                      DSPATR(HI)
+000530061101     A                                  7  5'Enter Log Date of Payroll .....:'
+000540061101     A                                      COLOR(BLU)
+000550061101     A            LOG_DATE       8Y 0B  7 41EDTCDE(W)
+000560061101     A  24                                  ERRMSG('Start date cannot be greate-
+000570061101     A                                      r than end date')
+000580061101     A  22                                  ERRMSGID(DIH0023 *LIBL/DIHMSGF)
+000590061101     A                                  7 54'(YYYYMMDD)'
+000600061101     A                                      COLOR(BLU)

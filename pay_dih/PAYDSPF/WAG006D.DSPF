@@ -1,0 +1,79 @@
+000010961118     A*%%TS  SD  19961118  170353  SAMMY       REL-V3R1M0  5763-PW1
+000020961118     A*%%EC
+000030961118     A                                      DSPSIZ(24 80 *DS3)
+000040961118     A                                      CF03(03)
+000050961118     A                                      CF07(07)
+000060961118     A                                      CF08(08)
+000070961116     A          R SFILE                     SFL
+000080961116     A*%%TS  SD  19961116  125834  SAMMY       REL-V3R1M0  5763-PW1
+000090961116     A            FDATE          6Y 0B 10 13TEXT('Fortnight date')
+000100961116     A                                      DSPATR(PC)
+000110961116     A  11
+000120961116     AO 22                                  DSPATR(RI)
+000130961116     A            RRN            3Y 0O 10  3DSPATR(HI)
+000140961116     A                                      EDTCDE(Z)
+000150961118     A          R SFCTL                     SFLCTL(SFILE)
+000160961118     A*%%TS  SD  19961118  170353  SAMMY       REL-V3R1M0  5763-PW1
+000170961118     A                                      OVERLAY
+000180961118     A N77                                  ERASE(SFILE)
+000190961118     A  77                                  SFLDSP
+000200961118     A                                      SFLDSPCTL
+000210961118     A  12                                  SFLCLR
+000220961118     A N20                                  SFLEND(*MORE)
+000230961118     A                                      SFLSIZ(0100)
+000240961118     A                                      SFLPAG(0012)
+000250961118     A                                      SFLLIN(0004)
+000260961118     A  22                                  SFLMSG('Date entered is not found i-
+000270961118     A                                      n payroll database')
+000280961118     A  11                                  SFLMSGID(MSG0038 PAYLIB/PAYMESS)
+000290961118     A            @PGM          10A  O  1  4
+000300961118     A                                  2  4USER
+000310961118     A                                  1 32'Banks DiH Limited'
+000320961118     A                                      DSPATR(UL)
+000330961118     A                                      DSPATR(HI)
+000340961118     A                                  1 64SYSNAME
+000350961118     A                                  2 64DATE
+000360961118     A                                      EDTCDE(Y)
+000370961118     A                                  2 22'Employee difference in payment Pro-
+000380961118     A                                      gram'
+000390961118     A                                      DSPATR(UL)
+000400961118     A                                      DSPATR(HI)
+000410961118     A  77                              8 10'Fortnight date'
+000420961118     A  77                              9 12'(DD/MM/YY)'
+000430961118     A                                  4  2'Enter number of fortnights for ret-
+000440961118     A                                      roactive payment ->'
+000450961118     A                                  5 23'... and payroll date to start ->'
+000460961118     A            FNUM           2D 0I  4 57
+000470961118     A            SDATE          6D 0I  5 57
+000480961118     A  10                                  ERRMSGID(MSG0038 PAYLIB/PAYMESS)
+000490961118     A  77                              8 29'Fortnight date'
+000500961118     A  77                              8 48'Fortnight date'
+000510961118     A  77                              8 67'Fortnight date'
+000520961118     A  77                              9 31'(DD/MM/YY)'
+000530961118     A  77                              9 51'(DD/MM/YY)'
+000540961118     A  77                              9 71'(DD/MM/YY)'
+000550961118     A            RETTYP         1A  B  6 57
+000560961118     A                                  6 15'E = Execs , R = Regular , C = Casu-
+000570961118     A                                      al  ->'
+000580961115     A          R FOOTER
+000590961115     A*%%TS  SD  19961115  081406  SAMMY       REL-V3R1M0  5763-PW1
+000600961115     A                                      FRCDTA
+000610961115     A                                      SLNO(23)
+000620961115     A                                      OVERLAY
+000630961115     A                                  1 14'F3 - End'
+000640961115     A                                      DSPATR(HI)
+000650961115     A            MSGLIN        64A  O  2  9DSPATR(HI)
+000660961115     A                                      DSPATR(BL)
+000670961115     A                                  1 24'F7 - Generate Pay File'
+000680961115     A                                      DSPATR(HI)
+000690961115     A                                  1 48'F8 - Reset data'
+000700961115     A                                      DSPATR(HI)
+000710961116     A          R MSGDSP
+000720961116     A*%%TS  SD  19961116  141251  SAMMY       REL-V3R1M0  5763-PW1
+000730961116     A                                      FRCDTA
+000740961116     A                                      SLNO(15)
+000750961116     A                                      OVERLAY
+000760961116     A                                  1 22'Processing record -'
+000770961116     A                                      DSPATR(HI)
+000780961116     A            EMPCNT         6Y 0O  1 43DSPATR(RI)
+000790961116     A                                      EDTCDE(1)

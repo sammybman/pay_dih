@@ -1,0 +1,224 @@
+000010000105     A*%%TS  SD  20000105  110036  ANTHONY     REL-V4R2M0  5769-PW1
+000020000105     A*%%EC
+000030000105     A                                      DSPSIZ(24 80 *DS3)
+000040000105     A                                      CA03(03)
+000050950814     A          R MONTH
+000060950814     A*%%TS  SD  19950814  131134  SAMMY       REL-V2R3M0  5738-PW1
+000070950814     A                                  1 32'BANKS DIH LIMITED'
+000080950814     A                                      DSPATR(HI)
+000090950814     A                                      DSPATR(UL)
+000100950814     A                                  2 31'Information Display'
+000110950814     A                                      DSPATR(HI)
+000120950814     A                                      DSPATR(UL)
+000130950814     A                                 12  3'Enter month-end date  to extract f-
+000140950814     A                                      or absenteeism ->'
+000150950814     A                                 23 21'F3 - exit        Press enter to co-
+000160950814     A                                      ntinue'
+000170950814     A                                      DSPATR(HI)
+000180950814     A            MTH            6D  I 12 56DFT('000000')
+000190950814     A                                  1  3USER
+000200950814     A                                  2  3DATE
+000210950814     A                                      EDTCDE(Y)
+000220950814     A                                  2 65TIME
+000230950814     A                                  1 65SYSNAME
+000240000105     A          R SELECT
+000250000105     A*%%TS  SD  20000105  110036  ANTHONY     REL-V4R2M0  5769-PW1
+000260000105     A                                  1 32'BANKS DIH LIMITED'
+000270000105     A                                      DSPATR(HI)
+000280000105     A                                      DSPATR(UL)
+000290000105     A                                  2 31'Information Display'
+000300000105     A                                      DSPATR(HI)
+000310000105     A                                      DSPATR(UL)
+000320000105     A                                 12  1'Enter 1 if Coe fortnight   or '
+000330000105     A                                 23 20'F3 - end          Press enter to c-
+000340000105     A                                      ontinue'
+000350000105     A                                      DSPATR(HI)
+000360000105     A                                 13  7'2 if Performance Incentive fortnig-
+000370000105     A                                      ht->'
+000380000105     A            SELE           1D 0I 13 47DSPATR(RI)
+000390000105     A                                      VALUES(0 1 2)
+000400000105     A                                      DFT('0')
+000410000105     A                                 16  6'And payroll date  here            -
+000420000105     A                                         ->'
+000430000105     A            PAYDAT         6D  I 16 47DSPATR(RI)
+000440000105     A                                  9  2'If running All Payrolls enter (ALL-
+000450000105     A                                      )      ->'
+000460000105     A            RUNALL         3A  I  9 47
+000470000105     A                                  9 52'(for any other entry only  )'
+000480000105     A                                 19  5'Payroll loans changes being done (-
+000490000105     A                                      YES)->'
+000500000105     A            CHG            3A  I 19 47
+000510000105     A                                  5 26'Enter Fields where applicable'
+000520000105     A                                      DSPATR(HI)
+000530000105     A                                      DSPATR(UL)
+000540000105     A                                 10 52'(casual payroll is run     )'
+000550000105     A                                  1  3USER
+000560000105     A                                  2  3DATE
+000570000105     A                                      EDTCDE(Y)
+000580000105     A                                  1 65SYSNAME
+000590000105     A                                  2 65TIME
+000600950814     A          R REPDAT
+000610950814     A*%%TS  SD  19950814  131134  SAMMY       REL-V2R3M0  5738-PW1
+000620950814     A                                  1 32'BANKS DIH LIMITED'
+000630950814     A                                      DSPATR(HI)
+000640950814     A                                      DSPATR(UL)
+000650950814     A                                  2 31'Information Display'
+000660950814     A                                      DSPATR(HI)
+000670950814     A                                      DSPATR(UL)
+000680950814     A                                 12  3'Key report date here ->>'
+000690950814     A                                 23 33'Press F3 to exit'
+000700950814     A                                      DSPATR(HI)
+000710950814     A            DATE           6D  I 12 30CHECK(RZ)
+000720950814     A                                  1  3USER
+000730950814     A                                  2  3DATE
+000740950814     A                                      EDTCDE(Y)
+000750950814     A                                  1 65SYSNAME
+000760950814     A                                  2 65TIME
+000770950814     A          R BATCH
+000780950814     A*%%TS  SD  19950814  131134  SAMMY       REL-V2R3M0  5738-PW1
+000790950814     A                                  1 32'BANKS DIH LIMITED'
+000800950814     A                                      DSPATR(HI)
+000810950814     A                                      DSPATR(UL)
+000820950814     A                                  2 31'Information Display'
+000830950814     A                                      DSPATR(HI)
+000840950814     A                                      DSPATR(UL)
+000850950814     A                                 12  3'If keying new batch enter Y here --
+000860950814     A                                      >'
+000870950814     A                                 23 29'Press Enter to continue'
+000880950814     A                                      DSPATR(HI)
+000890950814     A            BTCH           1A  I 12 41DSPATR(RI)
+000900950814     A                                      CHECK(AB)
+000910950814     A                                      VALUES('Y')
+000920950814     A                                  1  3USER
+000930950814     A                                  2  3DATE
+000940950814     A                                      EDTCDE(Y)
+000950950814     A                                  1 65SYSNAME
+000960950814     A                                  2 65TIME
+000970950814     A          R SELDPGM
+000980950814     A*%%TS  SD  19950814  131134  SAMMY       REL-V2R3M0  5738-PW1
+000990950814     A                                  1 32'BANKS DIH LIMITED'
+001000950814     A                                      DSPATR(HI)
+001010950814     A                                      DSPATR(UL)
+001020950814     A                                  2 27'Payroll deduction selection'
+001030950814     A                                      DSPATR(HI)
+001040950814     A                                      DSPATR(UL)
+001050950814     A                                 23 20'F3 - End           Press Enter to -
+001060950814     A                                      continue'
+001070950814     A                                      DSPATR(HI)
+001080950814     A                                  7 24'1. Retail & Sports Club Deduction'
+001090950814     A                                  9 24'2. Loans deduction Changes'
+001100950814     A                                 11 24'3. C.o.e. deduction Changes'
+001110950814     A                                 18 21'Enter your choice - >'
+001120950814     A            OPTION         1D 0I 18 45CHECK(ER)
+001130950814     A                                      RANGE(1 5)
+001140950814     A                                 13 24'4. Casual Loans Deductions'
+001150950814     A                                 15 24'5. Casual Shortages Deduction'
+001160950814     A                                  1  3USER
+001170950814     A                                  2  3DATE
+001180950814     A                                      EDTCDE(Y)
+001190950814     A                                  1 65SYSNAME
+001200950814     A                                  2 65TIME
+001210950814     A          R CONFIRM
+001220950814     A*%%TS  SD  19950814  131134  SAMMY       REL-V2R3M0  5738-PW1
+001230950814     A                                  1 32'BANKS DIH LIMITED'
+001240950814     A                                      DSPATR(HI)
+001250950814     A                                      DSPATR(UL)
+001260950814     A                                  2 31'Information Display'
+001270950814     A                                      DSPATR(HI)
+001280950814     A                                      DSPATR(UL)
+001290950814     A            CONFIR         3A  I 12 51DSPATR(HI)
+001300950814     A                                      CHECK(AB)
+001310950814     A                                      VALUES('YES')
+001320950814     A                                 23 29'Press enter to continue'
+001330950814     A                                      DSPATR(HI)
+001340950814     A                                 12 20'Enter'
+001350950814     A                                 12 26'Yes'
+001360950814     A                                      DSPATR(HI)
+001370950814     A                                      DSPATR(UL)
+001380950814     A                                 12 30'to Confirm Choice->'
+001390950814     A                                  1  3USER
+001400950814     A                                  2  3DATE
+001410950814     A                                      EDTCDE(Y)
+001420950814     A                                  1 65SYSNAME
+001430950814     A                                  2 65TIME
+001440950814     A          R SPCDAT
+001450950814     A*%%TS  SD  19950814  131134  SAMMY       REL-V2R3M0  5738-PW1
+001460950814     A                                  1 32'BANKS DIH LIMITED'
+001470950814     A                                      DSPATR(HI)
+001480950814     A                                      DSPATR(UL)
+001490950814     A                                  2 31'Information Display'
+001500950814     A                                      DSPATR(HI)
+001510950814     A                                      DSPATR(UL)
+001520950814     A                                 12  3'Key report date here ->>'
+001530950814     A                                 23 19'Press F3 to exit   or  Enter to co-
+001540950814     A                                      ntinue...'
+001550950814     A                                      DSPATR(HI)
+001560950814     A            RLDATE         6D  I 12 30CHECK(RZ)
+001570950814     A            SPDATE         6D  I 14 30CHECK(RZ)
+001580950814     A                                 14 15'&   here ->>'
+001590950814     A                                 12 41'(Retail liquor store)'
+001600950814     A                                 14 41'(Sports Club)'
+001610950814     A            BSDATE         6D  I 16 30CHECK(RZ)
+001620950814     A                                 16 15'&   here ->>'
+001630950814     A                                 16 41'(Berbice Sports Club)'
+001640950814     A                                  1  3USER
+001650950814     A                                  2  3DATE
+001660950814     A                                      EDTCDE(Y)
+001670950814     A                                  1 65SYSNAME
+001680950814     A                                  2 65TIME
+001690970104     A          R SELDED
+001700970104     A*%%TS  SD  19970104  150726  SAMMY       REL-V3R1M0  5763-PW1
+001710970104     A                                  1 32'BANKS DIH LIMITED'
+001720970104     A                                      DSPATR(HI)
+001730970104     A                                      DSPATR(UL)
+001740970104     A                                 23 21'F3 - exit        Press enter to co-
+001750970104     A                                      ntinue'
+001760970104     A                                      DSPATR(HI)
+001770970104     A                                  2 32'Selection Display'
+001780970104     A                                      DSPATR(UL)
+001790970104     A                                      DSPATR(HI)
+001800970104     A                                  7 31'1. Savings Deduction'
+001810970104     A                                  8 31'2. Union Deduction'
+001820970104     A                                 12 30'Enter choice here->'
+001830970104     A            OPT            1D 0I 12 53RANGE(1 5)
+001840970104     A                                      CHECK(ME)
+001850970104     A                                  9 31'3. Medical Deduction'
+001860970104     A                                 15  5'Enter current deductions here ->'
+001870970104     A                                 15 49'<- New deductions here'
+001880970104     A            NWDED1         8Y 2I 17 47
+001890970104     A            NWDED2         8Y 2I 18 47
+001900970104     A            NWDED3         8Y 2I 19 47
+001910970104     A            OLDED1         8Y 2I 17 30
+001920970104     A            OLDED2         8Y 2I 18 30
+001930970104     A            OLDED3         8Y 2I 19 30
+001940970104     A            OLDED4         8Y 2I 20 30
+001950970104     A            NWDED4         8Y 2I 20 47
+001960970104     A                                 13 28'For Medical Deductions Only'
+001970970104     A                                      DSPATR(HI)
+001980970104     A                                      DSPATR(UL)
+001990970104     A                                 10 31'4. Free Pay Re-calculation'
+002000970104     A                                  1  3USER
+002010970104     A                                  2  3DATE
+002020970104     A                                      EDTCDE(Y)
+002030970104     A                                  1 65SYSNAME
+002040970104     A                                  2 65TIME
+002050970104     A                                 11 31'5. Sports Club Fixed Deduction'
+002060950814     A          R RERUN
+002070950814     A*%%TS  SD  19950814  131134  SAMMY       REL-V2R3M0  5738-PW1
+002080950814     A                                  1 32'BANKS DIH LIMITED'
+002090950814     A                                      DSPATR(HI)
+002100950814     A                                      DSPATR(UL)
+002110950814     A                                  2 31'Information Display'
+002120950814     A                                      DSPATR(HI)
+002130950814     A                                      DSPATR(UL)
+002140950814     A                                 23 20'F3 - end          Press enter to c-
+002150950814     A                                      ontinue'
+002160950814     A                                      DSPATR(HI)
+002170950814     A                                 14  6'If this is a rerun enter YES  ->'
+002180950814     A            RERUNJ         3A  I 14 43
+002190950814     A                                 14 50'(any other entry is ignored)'
+002200950814     A                                  1  3USER
+002210950814     A                                  2  3DATE
+002220950814     A                                      EDTCDE(Y)
+002230950814     A                                  1 65SYSNAME
+002240950814     A                                  2 65TIME

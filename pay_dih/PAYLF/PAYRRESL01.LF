@@ -1,0 +1,3 @@
+000100010426     A          R PRREFMT                   PFILE(PAYRRES)
+000200010426     A          K PRREPTYPE
+000300010426     A          S PRRESTS                   VALUES('A')

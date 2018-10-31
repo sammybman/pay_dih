@@ -1,0 +1,260 @@
+000010021014     A*%%TS  SD  20021014  160641  SBRITTON    REL-V5R1M0  5722-WDS
+000020021014     A*%%EC
+000030021014     A                                      DSPSIZ(24 80 *DS3)
+000040021014     A                                      ERRSFL
+000050021014     A                                      CA15(15)
+000060021014     A                                      CA03(03)
+000070021014     A                                      CF01(01)
+000080021014     A                                      CF05(05)
+000090021014     A                                      CF02(02)
+000100020204     A          R FMT1
+000110020204     A*%%TS  SD  20020204  175725  SAMMY       REL-V4R4M0  5769-PW1
+000120020204     A                                  1  2USER
+000130020204     A                                      DSPATR(HI)
+000140020204     A            @PGM          10A  O  2  2DSPATR(HI)
+000150020204     A                                  1 71SYSNAME
+000160020204     A                                      DSPATR(HI)
+000170020204     A                                 24 52'F15 = Confirm'
+000180020204     A                                      DSPATR(RI)
+000190020204     A                                      COLOR(WHT)
+000200020204     A                                  5  6'Amount:'
+000210020204     A                                      DSPATR(UL)
+000220020204     A                                      DSPATR(HI)
+000230020204     A            LTAMT#    R        O  5 15REFFLD(LTFMT/LTAMT *LIBL/LIABT)
+000240020204     A                                      EDTCDE(1)
+000250020204     A            LTNUMB#1  R        O  4 65REFFLD(LTFMT/LTNUMB *LIBL/LIABT)
+000260020204     A                                      DSPATR(RI)
+000270020204     A                                      EDTCDE(Z)
+000280020204     A                                  4 48'Transaction No:'
+000290020204     A                                      DSPATR(HI)
+000300020204     A            LTTYPE#1  R        O 12 16REFFLD(LTFMT/LTTYPE *LIBL/LIABT)
+000310020204     A                                      EDTCDE(Z)
+000320020204     A                                 21 18'Particulars...:'
+000330020204     A                                      DSPATR(HI)
+000340020204     A            LTTEXT#   R        O 21 34REFFLD(LTFMT/LTTEXT *LIBL/LIABT)
+000350020204     A            DBNAME        35A  O 19  3TEXT('TYPE DESCRIPTION')
+000360020204     A            CRNAME        35A  O 19 44TEXT('TYPE DESCRIPTION')
+000370020204     A            EASUBTYP#1R        O 12 21REFFLD(EAFMT/EASUBTYP *LIBL/EASTF)
+000380020204     A                                      EDTCDE(Z)
+000390020204     A                                  7  3'          Debit                   -
+000400020204     A                                       '
+000410020204     A                                      DSPATR(UL)
+000420020204     A                                      COLOR(BLU)
+000430020204     A                                      DSPATR(HI)
+000440020204     A                                  7 41'              Credit              -
+000450020204     A                                          '
+000460020204     A                                      DSPATR(UL)
+000470020204     A                                      COLOR(RED)
+000480020204     A                                 14 11'OR'
+000490020204     A                                      COLOR(WHT)
+000500020204     A                                 14 60'OR'
+000510020204     A                                      COLOR(WHT)
+000520020204     A            LTTYPE#2  R        O 12 56REFFLD(LTFMT/LTTYPE *LIBL/LIABT)
+000530020204     A                                      EDTCDE(Z)
+000540020204     A            EASUBTYP#2R        O 12 61REFFLD(EAFMT/EASUBTYP *LIBL/EASTF)
+000550020204     A                                      EDTCDE(Z)
+000560020204     A                                 16  3'Account No.'
+000570020204     A                                      DSPATR(UL)
+000580020204     A                                      DSPATR(HI)
+000590020204     A                                 16 43'Account No.'
+000600020204     A                                      DSPATR(UL)
+000610020204     A                                      DSPATR(HI)
+000620020204     A                                 11  3'Transaction'
+000630020204     A                                      DSPATR(UL)
+000640020204     A                                      DSPATR(HI)
+000650020204     A                                 12  3'Typ/Sub-Typ'
+000660020204     A                                      DSPATR(UL)
+000670020204     A                                      DSPATR(HI)
+000680020204     A                                 11 43'Transaction'
+000690020204     A                                      DSPATR(UL)
+000700020204     A                                      DSPATR(HI)
+000710020204     A                                 12 43'Typ/Sub-Typ'
+000720020204     A                                      DSPATR(UL)
+000730020204     A                                      DSPATR(HI)
+000740020204     A                                  4  6'Period:'
+000750020204     A                                      DSPATR(UL)
+000760020204     A                                      DSPATR(HI)
+000770020204     A            PRDNUMB#       6Y 0O  4 15EDTCDE(Z)
+000780020204     A                                  9  3'Employee No.:'
+000790020204     A                                      DSPATR(HI)
+000800020204     A                                  9 43'Employee No.:'
+000810020204     A                                      DSPATR(HI)
+000820020204     A            LTEMP#1   R        O  9 17REFFLD(LTFMT/LTEMP *LIBL/LIABT)
+000830020204     A                                      EDTCDE(Z)
+000840020204     A            LTEMP#2   R        O  9 57REFFLD(LTFMT/LTEMP *LIBL/LIABT)
+000850020204     A                                      EDTCDE(Z)
+000860020204     A                                  9 66'(Optional)'
+000870020204     A                                      COLOR(WHT)
+000880020204     A                                  6 39'|'
+000890020204     A                                      COLOR(BLU)
+000900020204     A                                  7 39'|'
+000910020204     A                                      COLOR(BLU)
+000920020204     A                                  8 39'|'
+000930020204     A                                      COLOR(BLU)
+000940020204     A                                  9 39'|'
+000950020204     A                                      COLOR(BLU)
+000960020204     A                                 10 39'|'
+000970020204     A                                      COLOR(BLU)
+000980020204     A                                 11 39'|'
+000990020204     A                                      COLOR(BLU)
+001000020204     A                                 12 39'|'
+001010020204     A                                      COLOR(BLU)
+001020020204     A                                 13 39'|'
+001030020204     A                                      COLOR(BLU)
+001040020204     A                                 14 39'|'
+001050020204     A                                      COLOR(BLU)
+001060020204     A                                 15 39'|'
+001070020204     A                                      COLOR(BLU)
+001080020204     A                                 16 39'|'
+001090020204     A                                      COLOR(BLU)
+001100020204     A                                 17 39'|'
+001110020204     A                                      COLOR(BLU)
+001120020204     A                                 18 39'|'
+001130020204     A                                      COLOR(BLU)
+001140020204     A                                 19 39'|'
+001150020204     A                                      COLOR(BLU)
+001160020204     A                                 20 39'|'
+001170020204     A                                      COLOR(BLU)
+001180020204     A                                 24  5'F2 = Go Back'
+001190020204     A                                      COLOR(WHT)
+001200020204     A                                 24 25'F3 = End Program'
+001210020204     A                                      COLOR(WHT)
+001220020204     A            CONAME        30A  O  1 26DSPATR(HI)
+001230020204     A                                      DSPATR(UL)
+001240020204     A            @TITLE        40A  O  2 21DSPATR(HI)
+001250020204     A            EMP_NAME1     35A  O 10  3
+001260020204     A            EMP_NAME2     35A  O 10 43
+001270020204     A            LTTEXT#2  R        O 22 34REFFLD(LTFMT/LTTEXT *LIBL/LIABT)
+001280020204     A            @DATE         10A  O  2 69DSPATR(HI)
+001290020204     A            DACCT1        25   O 17 12
+001300020204     A            CACCT1        25   O 17 53
+001310021014     A          R SFLREC                    SFL
+001320021014     A*%%TS  SD  20021014  103159  SBRITTON    REL-V5R1M0  5722-WDS
+001330021014     A            SEL#           1A  B  6  3CHECK(AB)
+001340021014     A                                      VALUES('A' 'C' 'X')
+001350021014     A            JRNUMB#        9Y 0O  6  6EDTCDE(Z)
+001360021014     A  44                                  DSPATR(HI)
+001370021014     A            JRTEXT#   R        O  6 18REFFLD(JRFMT/JRTEXT *LIBL/JRNM)
+001380021014     A  44                                  DSPATR(HI)
+001390021014     A            JRAMT#    R        O  6 64REFFLD(JRFMT/JRAMT *LIBL/JRNM)
+001400021014     A                                      EDTCDE(1)
+001410021014     A  44                                  DSPATR(HI)
+001420021014     A          R SFLCTL                    SFLCTL(SFLREC)
+001430021014     A*%%TS  SD  20021014  103159  SBRITTON    REL-V5R1M0  5722-WDS
+001440021014     A                                      SFLSIZ(0975)
+001450021014     A                                      SFLPAG(0015)
+001460021014     A                                      OVERLAY
+001470021014     A                                      SFLDSP
+001480021014     A                                      SFLDSPCTL
+001490021014     A  33                                  SFLCLR
+001500021014     A  55                                  SFLEND(*SCRBAR *SCRBAR)
+001510021014     A                                      SFLDROP(CF16)
+001520021014     A            @PGM          10A  O  2  5DSPATR(HI)
+001530021014     A                                  1  5USER
+001540021014     A                                      DSPATR(HI)
+001550021014     A                                  1 71SYSNAME
+001560021014     A                                      DSPATR(HI)
+001570021014     A            CONAME        30A  O  1 26DSPATR(HI)
+001580021014     A                                      DSPATR(UL)
+001590021014     A            @TITLE        40A  O  2 23DSPATR(HI)
+001600021014     A                                  5  2'Sel'
+001610021014     A                                      COLOR(BLU)
+001620021014     A                                      DSPATR(HI)
+001630021014     A                                      DSPATR(UL)
+001640021014     A                                  5  9'Number'
+001650021014     A                                      COLOR(BLU)
+001660021014     A                                      DSPATR(HI)
+001670021014     A                                      DSPATR(UL)
+001680021014     A                                  5 18'Description'
+001690021014     A                                      COLOR(BLU)
+001700021014     A                                      DSPATR(HI)
+001710021014     A                                      DSPATR(UL)
+001720021014     A                                  5 72'Amount'
+001730021014     A                                      COLOR(BLU)
+001740021014     A                                      DSPATR(HI)
+001750021014     A                                      DSPATR(UL)
+001760021014     A            @DATE         10A  O  2 69DSPATR(HI)
+001770021014     A          R FOOTER
+001780021014     A*%%TS  SD  20021014  150939  SBRITTON    REL-V5R1M0  5722-WDS
+001790021014     A                                      SLNO(21)
+001800021014     A                                      OVERLAY
+001810021014     A                                      PROTECT
+001820021014     A                                  2 33'F3 = End Program'
+001830021014     A                                      DSPATR(HI)
+001840021014     A                                  1  4'X - View Transaction'
+001850021014     A                                      DSPATR(HI)
+001860021014     A                                  1 27'A - Authorise Transaction'
+001870021014     A                                      DSPATR(HI)
+001880021014     A                                  1 56'C - Cancel Transaction'
+001890021014     A                                      DSPATR(HI)
+001900021014     A          R SFLREC2                   SFL
+001910021014     A*%%TS  SD  20021014  160641  SBRITTON    REL-V5R1M0  5722-WDS
+001920021014     A            JRAMT     R        O 10 61REFFLD(JRFMT/JRAMT *LIBL/JRNM)
+001930021014     A                                      EDTCDE(A)
+001940021014     A  99                                  DSPATR(HI)
+001950021014     A            JRACCT        25A  O 12 24
+001960021014     A  99                                  DSPATR(HI)
+001970021014     A                                 12  9'Account......'
+001980021014     A  99                                  DSPATR(HI)
+001990021014     A            GLNAME        25A  O 12 50
+002000021014     A  99                                  DSPATR(HI)
+002010021014     A            JREMP     R        O 10 12REFFLD(JRFMT/JREMP *LIBL/JRNM)
+002020021014     A  99                                  DSPATR(HI)
+002030021014     A                                      EDTCDE(Z)
+002040021014     A            TYPENAME      40A  O 11 24
+002050021014     A  99                                  DSPATR(HI)
+002060021014     A            EMP_NAME      30A  O 10 24
+002070021014     A  99                                  DSPATR(HI)
+002080021014     A                                 11  9'Trans. Type..'
+002090021014     A  99                                  DSPATR(HI)
+002100021014     A          R SFLCTL2                   SFLCTL(SFLREC2)
+002110021014     A*%%TS  SD  20021014  154844  SBRITTON    REL-V5R1M0  5722-WDS
+002120021014     A                                      SFLSIZ(0975)
+002130021014     A                                      SFLPAG(0003)
+002140021014     A                                      OVERLAY
+002150021014     A                                      SFLDSP
+002160021014     A                                      SFLDSPCTL
+002170021014     A  33                                  SFLCLR
+002180021014     A  55                                  SFLEND(*SCRBAR *SCRBAR)
+002190021014     A                                      SFLDROP(CF16)
+002200021014     A            @PGM          10A  O  2  5DSPATR(HI)
+002210021014     A                                  1  5USER
+002220021014     A                                      DSPATR(HI)
+002230021014     A                                  1 71SYSNAME
+002240021014     A                                      DSPATR(HI)
+002250021014     A            CONAME        30A  O  1 26DSPATR(HI)
+002260021014     A                                      DSPATR(UL)
+002270021014     A            @TITLE        40A  O  2 23DSPATR(HI)
+002280021014     A                                  8 69'Amount'
+002290021014     A                                      COLOR(BLU)
+002300021014     A                                      DSPATR(HI)
+002310021014     A                                      DSPATR(UL)
+002320021014     A            @DATE         10A  O  2 69DSPATR(HI)
+002330021014     A                                  4  5'Period.:'
+002340021014     A                                      COLOR(BLU)
+002350021014     A            JRPRNO    R        O  4 14REFFLD(JRFMT/JRPRNO *LIBL/JRNM)
+002360021014     A            JRNUMB#   R        O  4 67REFFLD(JRFMT/JRNUMB *LIBL/JRNM)
+002370021014     A                                      EDTCDE(1)
+002380021014     A            JRTEXT    R        O  5 28REFFLD(JRFMT/JRTEXT *LIBL/JRNM)
+002390021014     A            JRTEXT2   R        O  6 28REFFLD(JRFMT/JRTEXT2 *LIBL/JRNM)
+002400021014     A                                  4 45'Transaction no...:'
+002410021014     A                                      COLOR(BLU)
+002420021014     A                                  5  5'Transaction Desc...:'
+002430021014     A                                      COLOR(BLU)
+002440021014     A                                  8 24'Employee Name'
+002450021014     A                                      COLOR(BLU)
+002460021014     A                                      DSPATR(UL)
+002470021014     A                                  8 10'Employee'
+002480021014     A                                      COLOR(BLU)
+002490021014     A                                      DSPATR(UL)
+002500021014     A          R FOOTER2
+002510021014     A*%%TS  SD  20021014  152932  SBRITTON    REL-V5R1M0  5722-WDS
+002520021014     A                                      SLNO(21)
+002530021014     A                                      OVERLAY
+002540021014     A                                      PROTECT
+002550021014     A                                  2 13'F2 = Cancel'
+002560021014     A                                      DSPATR(HI)
+002570021014     A                                  2 31'F15 = Confirm'
+002580021014     A                                      DSPATR(HI)
+002590021014     A                                  2 51'F16 = Show/Hide Details'
+002600021014     A                                      DSPATR(HI)

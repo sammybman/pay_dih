@@ -1,0 +1,29 @@
+000100971012     A* ********************************************************
+000200971012     A*              B A N K S    D I H    L T D.              *
+000300010405     A*                PAYROLL CONTROL SYSTEM                  *
+000400971012     A*                                                        *
+000500971012     A*                         BY                             *
+000600971012     A*                                                        *
+000700971012     A*                    I.S. DEPARTMENT                     *
+000800971012     A*                                                        *
+000900971012     A*                                                        *
+001000010411     A*      PHYSICAL FILE NAME:  PAYTDEFL01                   *
+001100010405     A*       RECORD FORMAT NAME: PYTFMT                       *
+001200010405     A*       FILE PREFIX.......: PYT                          *
+001300971012     A*                                                        *
+001400971012     A*       PROGRAMMER NAME: SAMUEL BRITTON                  *
+001500010405     A*       DESIGN DATE....: 2001/04/05                      *
+001600971012     A*                                                        *
+001700010405     A*  FILE DESCRIPTION: PAYROLL TRANSACTION TYPE MASTER     *
+001800971012     A*                                                        *
+001900010405     A*  THIS FILE IS DESIGNED TO RECORD THE PAYROLL TRANSACTI-*
+002000010405     A*  ON TYPE DEFINITIONS.                                  *
+002100971012     A*                                                        *
+002200971012     A*                                                        *
+002300971012     A**********************************************************
+002400010411     A          R PYTFMT                    PFILE(PAYTDEF)
+002500010411     A          K PYTCODE
+002600010425     A          K PYTRTYPE
+002700010411     A          K PYTDEPT
+002800010411     A          K PYTEMP
+002900010411     A          S PYTSTS                    COMP(EQ 'A')

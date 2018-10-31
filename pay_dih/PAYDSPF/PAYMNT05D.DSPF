@@ -1,0 +1,162 @@
+000010040621     A*%%TS  SD  20040621  164118  SBRITTON    REL-V5R2M0  5722-WDS
+000020941122     A*
+000030040621     A*%%EC
+000040040621     A                                      DSPSIZ(24 80 *DS3)
+000050040621     A                                      CA03(03)
+000060941120     A*
+000070010917     A          R FMT1
+000080010917     A*%%TS  SD  20010917  120231  SAMMY       REL-V4R4M0  5769-PW1
+000090010917     A                                      CF01(01)
+000100010917     A            @PGM          10A  O  1  2DSPATR(HI)
+000110010917     A                                 10 11'Payroll Run Type..'
+000120010917     A                                      COLOR(BLU)
+000130010917     A                                 23 33'F3 = End Program'
+000140010917     A                                      DSPATR(HI)
+000150010917     A            CONAME        30A  O  1 26DSPATR(HI)
+000160010917     A                                      DSPATR(UL)
+000170010917     A            @TITLE        40A  O  2 21DSPATR(HI)
+000180010917     A                                  2  2USER
+000190010917     A                                      DSPATR(HI)
+000200010917     A                                  1 73SYSNAME
+000210010917     A                                      DSPATR(HI)
+000220010917     A            @DATE         10A  O  2 71DSPATR(HI)
+000230010917     A            PRTYPTYPE#     1A  B 10 32DSPATR(HI)
+000240010917     A                                 23  2'F1 = Run Type Enquiry'
+000250010917     A                                      DSPATR(HI)
+000260941120     A**
+000270040621     A          R FMT2
+000280040621     A*%%TS  SD  20040621  164118  SBRITTON    REL-V5R2M0  5722-WDS
+000290040621     A                                      CA02(02)
+000300040621     A                                      CF01(01)
+000310040621     A                                      CF15(15)
+000320040621     A N80                                  CF04(04)
+000330040621     A N80                                  CF09(09)
+000340040621     A            #MODE          6A  O  3 38DSPATR(RI)
+000350040621     A                                      COLOR(YLW)
+000360040621     A            @PGM          10A  O  1  3DSPATR(HI)
+000370040621     A                                  4  4'Payroll Run Type..'
+000380040621     A                                      COLOR(BLU)
+000390040621     A                                 23 22'F2 = Cancel'
+000400040621     A                                      DSPATR(HI)
+000410040621     A            CONAME        30A  O  1 26DSPATR(HI)
+000420040621     A                                      DSPATR(UL)
+000430040621     A            @TITLE        40A  O  2 21DSPATR(HI)
+000440040621     A                                  2  3USER
+000450040621     A                                      DSPATR(HI)
+000460040621     A                                  1 73SYSNAME
+000470040621     A                                      DSPATR(HI)
+000480040621     A            @DATE         10A  O  2 71DSPATR(HI)
+000490040621     A                                 23 38'F3 = End Program'
+000500040621     A                                      DSPATR(HI)
+000510040621     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000520040621     A                                  7  5'Payroll Periods ....'
+000530040621     A                                      COLOR(BLU)
+000540040621     A            PRTYPRNO  R        B  7 29REFFLD(PRTYFMT/PRTYPRNO *LIBL/PAYRT-
+000550040621     A                                      YP)
+000560040621     A                                      DSPATR(HI)
+000570040621     A                                      EDTCDE(4)
+000580040621     A N80                                  DSPATR(PR)
+000590040621     A                                  9  5'Type Description....'
+000600040621     A                                      COLOR(BLU)
+000610040621     A            PRTYDESC  R        B  9 29REFFLD(PRTYFMT/PRTYDESC *LIBL/PAYRT-
+000620040621     A                                      YP)
+000630040621     A                                      DSPATR(HI)
+000640040621     A                                 18  5'Last Run Date.......'
+000650040621     A                                      COLOR(BLU)
+000660040621     A            PRTYLDATE R        B 18 29REFFLD(PRTYFMT/PRTYLDATE *LIBL/PAYR-
+000670040621     A                                      TYP)
+000680040621     A                                      EDTCDE(W)
+000690040621     A  80                                  DSPATR(HI)
+000700040621     A N80                                  DSPATR(PR)
+000710040621     A                                 20  5'Next Run Date.......'
+000720040621     A                                      COLOR(BLU)
+000730040621     A            PRTYNDATE R        O 20 29REFFLD(PRTYFMT/PRTYNDATE *LIBL/PAYR-
+000740040621     A                                      TYP)
+000750040621     A                                      EDTCDE(W)
+000760040621     A            PRTYPTYPE#R        O  4 29REFFLD(PRTYFMT/PRTYPTYPE *LIBL/PAYR-
+000770040621     A                                      TYP)
+000780040621     A N80                             23 59'F4 = Delete Record'
+000790040621     A                                      DSPATR(HI)
+000800040621     A                                  7 34'(0 - 99)'
+000810040621     A                                 11  5'Periods Completed...'
+000820040621     A                                      COLOR(BLU)
+000830040621     A            PRTYPROLL#R        B 11 29REFFLD(PRTYFMT/PRTYPROLL# *LIBL/PAY-
+000840040621     A                                      RTYP)
+000850040621     A  80                                  DSPATR(HI)
+000860040621     A N80                                  DSPATR(PR)
+000870040621     A                                      EDTCDE(4)
+000880040621     A                                 13  5'Payroll Cycle.......'
+000890040621     A                                      COLOR(BLU)
+000900040621     A            PRTYCYCQTYR        B 13 29REFFLD(PRTYFMT/PRTYCYCQTY *LIBL/PAY-
+000910040621     A                                      RTYP)
+000920040621     A                                      EDTCDE(4)
+000930040621     A  80                                  DSPATR(HI)
+000940040621     A N80                                  DSPATR(PR)
+000950040621     A                                 14  5'Payroll Cycle Code..'
+000960040621     A                                      COLOR(BLU)
+000970040621     A            PRTYCYCODER        B 14 29REFFLD(PRTYFMT/PRTYCYCODE *LIBL/PAY-
+000980040621     A                                      RTYP)
+000990040621     A  80                                  DSPATR(HI)
+001000040621     A N80                                  DSPATR(PR)
+001010040621     A                                 15  5'Days Available......'
+001020040621     A                                      COLOR(BLU)
+001030040621     A            PRTYAVAIL R        B 15 29REFFLD(PRTYFMT/PRTYAVAIL *LIBL/PAYR-
+001040040621     A                                      TYP)
+001050040621     A                                      EDTCDE(4)
+001060040621     A                                      DSPATR(HI)
+001070040621     A                                 16  5'Grace Period........'
+001080040621     A                                      COLOR(BLU)
+001090040621     A            PRTYLATE  R        B 16 29REFFLD(PRTYFMT/PRTYLATE *LIBL/PAYRT-
+001100040621     A                                      YP)
+001110040621     A                                      EDTCDE(4)
+001120040621     A                                      DSPATR(HI)
+001130040621     A                                 13 34'(0 - 99)'
+001140040621     A                                 16 34'(0 - 99)'
+001150040621     A                                 15 34'(0 - 99)'
+001160040621     A                                 23  3'F1 = Cycle Code'
+001170040621     A                                      DSPATR(HI)
+001180040621     A N80                             22 22'F9 = Set Period Payment %'
+001190040621     A                                      DSPATR(HI)
+001200040621     A                                 22 57'F15 = Confirm Record'
+001210040621     A                                      DSPATR(HI)
+001220010425     A          R WIN1
+001230010425     A*%%TS  SD  20010425  151314  SAMMY       REL-V4R4M0  5769-PW1
+001240010425     A                                      WINDOW(10 15 10 40)
+001250010425     A                                  2  2'WARNING! PLEASE ENSURE THE DATA EN-
+001260010425     A                                      TERED'
+001270010425     A                                      COLOR(RED)
+001280010425     A                                  3  2'IS CORRECT - THE PROGRAM WILL NOT -
+001290010425     A                                      ALLOW'
+001300010425     A                                      COLOR(RED)
+001310010425     A                                  4  2'YOU TO CHANGE ANY OF ITS VALUES EX-
+001320010425     A                                      CEPT'
+001330010425     A                                      COLOR(RED)
+001340010425     A                                  5  2'THE TYPE DESCRIPTION AFTER THE REC-
+001350010425     A                                      ORD'
+001360010425     A                                      COLOR(RED)
+001370010425     A                                  6  2'IS CONFIRMED.'
+001380010425     A                                      COLOR(RED)
+001390010425     A                                  8  2'CONFIRM ?'
+001400010425     A                                      COLOR(RED)
+001410010425     A            CONFIRM        1   B  8 14DSPATR(HI)
+001420010425     A                                      DFTVAL('N')
+001430010425     A                                  8 18'(Y = YES)'
+001440020613     A          R WIN2
+001450020613     A*%%TS  SD  20020613  130814  SAMMY       REL-V4R4M0  5769-PW1
+001460020613     A                                      WINDOW(10 15 10 40)
+001470020613     A                                  2  2'WARNING! ALL TRANSACTIONS ASSOCIAT-
+001480020613     A                                      ED'
+001490020613     A                                      COLOR(RED)
+001500020613     A                                  3  2'WITH THIS TYPE MIGHT BE LOST.'
+001510020613     A                                      COLOR(RED)
+001520020613     A                                  5  7'PROCEED WITH EXTREME CAUTION.'
+001530020613     A                                      COLOR(RED)
+001540020613     A                                  8  2'DELETE TYPE-'
+001550020613     A                                      COLOR(RED)
+001560020613     A            DELETE         1A  B  8 17DSPATR(HI)
+001570020613     A                                      DFTVAL('N')
+001580020613     A                                  8 20'(Y = YES)'
+001590020613     A                                  9  2'KEEP DATA  -'
+001600020613     A                                      COLOR(RED)
+001610020613     A            KEEP           1   B  9 17DSPATR(HI)
+001620020613     A                                  9 20'(Y = YES)'

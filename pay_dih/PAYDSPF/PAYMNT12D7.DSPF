@@ -1,0 +1,108 @@
+000010151109     A*%%TS  SD  20151109  201419  SBRITTON    REL-V7R1M0  5770-WDS
+000020060327     A*
+000030060327     A* ********************************************************
+000040060327     A*              B A N K S    D I H    L T D.              *
+000050060327     A*                                                        *
+000060060327     A*                         BY                             *
+000070060327     A*                                                        *
+000080151109     A*       DISPLAY FILE  NAME: PAYMNT12D7                   *
+000090060327     A*       RECORD FORMAT NAME: FMT1                         *
+000100060327     A*                                                        *
+000110060327     A*       PROGRAMMER NAME..: ALLISON FUNG                  *
+000120060327     A*       DESIGN DATE......: 24.03.2006                    *
+000130060327     A*                                                        *
+000140060327     A*  FILE DESCRIPTION:                                     *
+000150060327     A*                                                        *
+000160151110     A*  THIS FILE IS DESIGNED TO DUPLICATE THE P.I.  TARGETS  *
+000170060327     A*                                                        *
+000180060327     A**********************************************************
+000190151109     A*%%EC
+000200060327     A*%%FD Duplicate Route Targets Display       n/f
+000221151110     A                                      DSPSIZ(27 132 *DS4                 -
+000222151110     A                                             24 80 *DS3)
+000230151109     A                                      REF(*LIBL/FLDREF)
+000240151109     A                                      PRINT
+000250151109     A                                      ERRSFL
+000260151109     A                                      CA03(03)
+000270151109     A                                      CA09(09)
+000280151109     A                                      CA05(05)
+000290151109     A          R FMT1
+000300151109     A*%%TS  SD  20151109  114542  SBRITTON    REL-V7R1M0  5770-WDS
+000310151109     A                                      CF01(01)
+000320151109     A                                      CF15(15)
+000330151109     A            @PGM      R        O  1  2REFFLD(NAME10)
+000340151109     A                                      DSPATR(HI)
+000350151109     A            CONAME    R        O  1 26REFFLD(NAME30)
+000360151109     A                                      DSPATR(HI)
+000370151109     A                                      DSPATR(UL)
+000380151109     A            @MODE          6A  O  1 58DSPATR(ND)
+000390151109     A            @DATE     R        O  1 70REFFLD(NAME10)
+000400151109     A                                      DSPATR(HI)
+000410151109     A            @USER     R        O  2  2REFFLD(NAME10)
+000420151109     A                                      DSPATR(HI)
+000430151109     A            @TITLE    R        O  2 21REFFLD(NAME40)
+000440151109     A                                      DSPATR(HI)
+000450151109     A            @TIME          6Y 0O  2 70DSPATR(HI)
+000460151109     A                                      EDTWRD('  :  :  ')
+000470151109     A                                 24 34'F3 = End Program'
+000480151109     A                                      DSPATR(HI)
+000490151109     A            ERRMSG        75A  O 23  3COLOR(RED)
+000500151109     A                                  5  5'Duplicate Targets ................-
+000510151109     A                                      ....:'
+000520151109     A                                      COLOR(BLU)
+000530151109     A            CHOICE         1N 0B  5 46DSPATR(HI)
+000540151109     A  99                                  DSPATR(PR)
+000550151109     A                                  5 49'1-by period'
+000560151109     A                                  6 49'2-by year'
+000570151109     A                                  8  5'Enter  Y  to replace found records-
+000580151109     A                                      ....:'
+000590151109     A                                      COLOR(BLU)
+000600151109     A            REPLACEFLG     1A  B  8 46DSPATR(HI)
+000610151109     A                                 11  5'Enter ''Y'' to Change Specific Per-
+000620151109     A                                      iod...:'
+000630151109     A                                      COLOR(BLU)
+000640151109     A            CHGPRD         1A  B 11 46DSPATR(HI)
+000650060327     A*%%GP SCREEN1    01
+000660151109     A                                 24 58'F15 = Confirm'
+000670151109     A                                      DSPATR(HI)
+000680151109     A          R WINFMT1
+000690151109     A*%%TS  SD  20151109  201419  SBRITTON    REL-V7R1M0  5770-WDS
+000700151109     A  *DS3                                WINDOW(8 10 10 40)
+000710151109     A  *DS4                                WINDOW(8 10 10 40)
+000720151109     A                                      CF01(01)
+000730151109     A                                      CF02(02)
+000740151109     A                                  3  2'Duplicate from .....:'
+000750151109     A                                      DSPATR(HI)
+000760151109     A                                      COLOR(BLU)
+000770151109     A                                  9 16'F2 = Cancel'
+000780151109     A                                      DSPATR(HI)
+000790151109     A            PRNO#          6Y 0B  3 25EDTCDE(W)
+000800151109     A                                      DSPATR(HI)
+000810151109     A  99                                  DSPATR(PR)
+000820151109     A                                  3 33'(YYYYMM)'
+000830151109     A                                  5  2'To Periods..........:'
+000840151109     A                                      COLOR(BLU)
+000850151109     A                                  5 32'to'
+000860151109     A            TOPRD2         6Y 0B  5 35DSPATR(HI)
+000870151109     A            TOPRD1         6Y 0B  5 25DSPATR(HI)
+000880981004     A          R RECORD
+000890981004     A*%%TS  SD  19981004  183437  CWILLIAMS   REL-V3R7M0  5716-PW1
+000900981004     A                                      ASSUME
+000910981004     A                                  1  3'  '
+000920151109     A          R WINFMT2
+000930151109     A*%%TS  SD  20151109  114542  SBRITTON    REL-V7R1M0  5770-WDS
+000940151109     A                                      CF01(01)
+000950151109     A                                      CF02(02)
+000960151109     A  *DS3                                WINDOW(8 10 10 40)
+000970151109     A  *DS4                                WINDOW(8 10 10 40)
+000980151109     A                                  3  6'Duplicate from year.:'
+000990151109     A                                      DSPATR(HI)
+001000151109     A                                      COLOR(BLU)
+001010151109     A                                  5  6'To Year.............:'
+001020151109     A                                      COLOR(BLU)
+001030151109     A            FRYEAR         4Y 0B  3 30EDTCDE(Z)
+001040151109     A                                      DSPATR(HI)
+001050151109     A            TOYEAR         4Y 0B  5 30DSPATR(HI)
+001060151109     A                                      EDTCDE(Z)
+001070151109     A                                  9 16'F2 = Cancel'
+001080151109     A                                      DSPATR(HI)

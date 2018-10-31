@@ -1,0 +1,114 @@
+000010000619     A*%%TS  SD  20000619  102425  SAMMY       REL-V4R4M0  5769-PW1
+000020000619     A*%%EC
+000030000619     A                                      DSPSIZ(24 80 *DS3)
+000040000619     A                                      CF03(03)
+000050000619     A N99                                  CF12
+000060000619     A                                      CF06(66)
+000070980211     A          R REC2
+000080980211     A*%%TS  SD  19980211  153614  SAMMY       REL-V3R2M0  5763-PW1
+000090980211     A                                  1 32'Banks DiH Limited'
+000100980211     A                                      DSPATR(UL)
+000110980211     A                                      DSPATR(HI)
+000120980211     A                                  2 28'Timecard selection screen'
+000130980211     A                                      DSPATR(UL)
+000140980211     A                                      DSPATR(HI)
+000150980211     A                                  7 14'1. Enter Time Card'
+000160980211     A                                  9 14'2. Change Time Card Entry'
+000170980211     A                                 11 14'3. Delete Time Card Entry'
+000180980211     A                                 16 14'Enter option here->'
+000190980211     A            OPTION         1Y 0I 16 35CHECK(ER)
+000200980211     A                                      VALUES(1 2 3)
+000210980211     A                                 23 37'F3 - end'
+000220980211     A                                      DSPATR(HI)
+000230980211     A                                  1 73SYSNAME
+000240980211     A                                  2 73DATE
+000250980211     A                                      EDTCDE(Y)
+000260980211     A                                  1  2USER
+000270980211     A            @PGM          10A  O  2  2
+000280990831     A          R REC1
+000290990831     A*%%TS  SD  19990831  140420  WROBINSON   REL-V4R2M0  5769-PW1
+000300990831     A                                  1 32'Banks DiH Limited'
+000310990831     A                                      DSPATR(UL)
+000320990831     A                                      DSPATR(HI)
+000330990831     A                                  2 29'Time Card Entry Program'
+000340990831     A                                      DSPATR(UL)
+000350990831     A                                      DSPATR(HI)
+000360990831     A                                 14 13'Enter Employee number.....:'
+000370990831     A                                 23 29'F12 - Select new option'
+000380990831     A                                      DSPATR(HI)
+000390990831     A                                  3 31'(Casual and Regular)'
+000400990831     A            EMP       R     D  B 14 41REFFLD(EMPRREC/EMP PAYLIB/EMPREF)
+000410990831     A  99                                  DSPATR(PR)
+000420990831     A                                      CHECK(ER)
+000430990831     A  05                                  ERRMSGID(MSG0001 PAYLIB/PAYMESS)
+000440990831     A  06                                  ERRMSGID(MSG0002 PAYLIB/PAYMESS)
+000450990831     A  12                                  ERRMSGID(MSG0003 PAYLIB/PAYMESS)
+000460990831     A  07                                  ERRMSGID(MSG0004 PAYLIB/PAYMESS)
+000470990831     A  19                                  ERRMSGID(MSG0028 PAYLIB/PAYMESS)
+000480990831     A                                      DSPATR(PC)
+000490990831     A                                      DSPATR(HI)
+000500990831     A                                  1 73SYSNAME
+000510990831     A                                  2 73DATE
+000520990831     A                                      EDTCDE(Y)
+000530990831     A                                  1  2USER
+000540990831     A            @PGM          10A  O  2  2
+000550990831     A                                 11 13'Enter Department number...:'
+000560990831     A            DEPT#     R        B 11 41REFFLD(EMPREC/DEPT PAYLIB/EMPMASL3)
+000570990831     A                                      EDTCDE(Z)
+000580990831     A  25                                  ERRMSG('DEPARTMENT NUMBER INCORRECT-
+000590990831     A                                       !')
+000600990831     A                                      DSPATR(HI)
+000610980512     A          R REC3
+000620980512     A*%%TS  SD  19980512  105739  SAMMY       REL-V3R7M0  5716-PW1
+000630980512     A                                  1 32'Banks DiH Limited'
+000640980512     A                                      DSPATR(UL)
+000650980512     A                                      DSPATR(HI)
+000660980512     A                                  2 29'Time Card Entry Program'
+000670980512     A                                      DSPATR(UL)
+000680980512     A                                      DSPATR(HI)
+000690980512     A                                 11  6'Enter Employee number:'
+000700980512     A                                 23 29'F12 - Select new option'
+000710980512     A                                      DSPATR(HI)
+000720980512     A                                 14 14'Normal Time Hours:'
+000730980512     A                                 16 16'Over-time Hours:'
+000740980512     A                                 11 39'Name:'
+000750980512     A            NAME          26A  O 11 46
+000760980512     A            EMP       R        O 11 30REFFLD(EMPRREC/EMP PAYLIB/EMPREF)
+000770980512     A                                      DSPATR(RI)
+000780980512     A            NRHRS     R        B 14 34REFFLD(EMPRREC/NRHRS PAYLIB/EMPREF)
+000790980512     A                                      EDTCDE(3)
+000800980512     A                                      COMP(LE 200.00)
+000810980512     A            OTHRS     R        B 16 34REFFLD(EMPRREC/OTHRS PAYLIB/EMPREF)
+000820980512     A                                      EDTCDE(3)
+000830980512     A                                      COMP(LE 200.00)
+000840980512     A                                  1  2USER
+000850980512     A            @PGM          10A  O  2  2
+000860980512     A                                  1 71SYSNAME
+000870980512     A                                  2 71DATE
+000880980512     A                                      EDTCDE(Y)
+000890000619     A          R RECCAS
+000900000619     A*%%TS  SD  20000619  102425  SAMMY       REL-V4R4M0  5769-PW1
+000910000619     A                                  1 32'Banks DiH Limited'
+000920000619     A                                      DSPATR(UL)
+000930000619     A                                      DSPATR(HI)
+000940000619     A                                  2 29'Time Card Entry Program'
+000950000619     A                                      DSPATR(UL)
+000960000619     A                                      DSPATR(HI)
+000970000619     A                                 11  7'Enter Employee number:'
+000980000619     A                                  2 63TIME
+000990000619     A                                 23 22'F12 - change option          F3 - -
+001000000619     A                                      end'
+001010000619     A                                      DSPATR(HI)
+001020000619     A                                 14 12'Department number:'
+001030000619     A                                 15 12'Normal time hours:'
+001040000619     A                                 16 14'Over time hours:'
+001050000619     A            NAME          26A  O 11 40
+001060000619     A            NRHRS     R        B 15 33REFFLD(EMPRREC/NRHRS PAYLIB/EMPREF)
+001070000619     A                                      EDTCDE(3)
+001080000619     A                                      COMP(LE 160.00)
+001090000619     A            OTHRS     R        B 16 33REFFLD(EMPRREC/OTHRS PAYLIB/EMPREF)
+001100000619     A                                      EDTCDE(3)
+001110000619     A                                      COMP(LE 100.00)
+001120000619     A            EMP       R        O 11 31REFFLD(EMPRREC/EMP PAYLIB/EMPREF)
+001130000619     A            DEPT      R        B 14 33REFFLD(EMPRREC/DEPT PAYLIB/EMPREF)
+001140000619     A                                      EDTCDE(3)

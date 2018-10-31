@@ -1,0 +1,173 @@
+000010160416     A*%%TS  SD  20160416  141847  SBRITTON    REL-V7R1M0  5770-WDS
+000020021014     A* ********************************************************
+000030021014     A*              B A N K S    D I H    L T D.              *
+000040021014     A*                  M.I.S. DEPARTMENT                     *
+000050021014     A*                                                        *
+000060021014     A*                                                        *
+000070160414     A*       DISPLAY FILE NAME :  PAYMNT12D3                  *
+000080021014     A*                                                        *
+000090160414     A*       PROGRAMMER NAME...:  SAMUEL BRITTON              *
+000100160414     A*       DATE..............:  14.04.2016                  *
+000110021014     A*                                                        *
+000120160414     A*  FILE DESCRIPTION: PI DEPARTMENT   MAINTENANCE         *
+000130021014     A*                    DISPLAY                             *
+000140021014     A*                                                        *
+000150021014     A**********************************************************
+000160941122     A*
+000170160416     A*%%EC
+000180160416     A                                      DSPSIZ(27 132 *DS4                 -
+000190160416     A                                             24 80 *DS3)
+000200151021     A          R FMT1
+000210160415     A                                      CA01(01)
+000220160415     A                                      CA03(03)
+000230151021     A*%%TS  SD  20151021  182951  SBRITTON    REL-V7R1M0  5770-WDS
+000240151021     A            @PGM          10A  O  1  2DSPATR(HI)
+000250151021     A                                  5  6'Enter Department No...:'
+000260151021     A                                      COLOR(BLU)
+000270151021     A            PIDEPT#        3Y 0B  5 31EDTCDE(Z)
+000280151021     A                                      DSPATR(HI)
+000290151021     A  25                                  ERRMSGID(DIH0022 *LIBL/DIHMSGF)
+000300151021     A                                 23 35'F3 = End Program'
+000310151021     A                                      DSPATR(HI)
+000320151021     A            @TITLE        40A  O  2 21DSPATR(HI)
+000330151021     A            CONAME        30A  O  1 26DSPATR(HI)
+000340151021     A                                      DSPATR(UL)
+000350151021     A                                  1 72SYSNAME
+000360151021     A                                      DSPATR(HI)
+000370151021     A                                  2  2USER
+000380151021     A                                      DSPATR(HI)
+000390151021     A            @DATE         10A  O  2 70DSPATR(HI)
+000400151021     A                                 23  6'F1 = Departments'
+000410151021     A                                      DSPATR(HI)
+000420151021     A            ERRMSG        75A  O 24  3COLOR(RED)
+000430941120     A**
+000440160416     A          R FMT2
+000450160416     A*%%TS  SD  20160416  140602  SBRITTON    REL-V7R1M0  5770-WDS
+000460160416     A                                      CA02(02)
+000470160416     A                                      CF20(20)
+000480160416     A                                      CF04(04)
+000490160416     A                                      CA07(07)
+000500160416     A                                      CA03(03)
+000510160416     A                                      CA15(15)
+000520160416     A            @PGM          10A  O  1  2DSPATR(HI)
+000530160416     A                                  6  6'Department Number.....:'
+000540160416     A                                      COLOR(BLU)
+000550160416     A            PIDEPT#        3Y 0O  6 32EDTCDE(Z)
+000560160416     A                                      DSPATR(HI)
+000570160416     A            CDLIST        30A  B 10 32DSPATR(HI)
+000580160416     A                                 23  6'F2 = Cancel'
+000590160416     A                                      DSPATR(HI)
+000600160416     A            @TITLE        40A  O  2 21DSPATR(HI)
+000610160416     A            CONAME        30A  O  1 26DSPATR(HI)
+000620160416     A                                      DSPATR(UL)
+000630160416     A                                  2  2USER
+000640160416     A                                      DSPATR(HI)
+000650160416     A            @DATE         10A  O  2 70DSPATR(HI)
+000660160416     A                                  1 72SYSNAME
+000670160416     A                                      DSPATR(HI)
+000680160416     A            ERRMSG        75A  O 24  3COLOR(RED)
+000690160416     A                                  3 64'Mode:'
+000700160416     A                                      DSPATR(HI)
+000710160416     A            #MODE          7A  O  3 70DSPATR(HI)
+000720160416     A                                 10  6'Transaction Type List.:'
+000730160416     A                                      COLOR(BLU)
+000740160416     A                                 23 60'F15 = Confirm'
+000750160416     A                                      DSPATR(HI)
+000760160416     A                                 23 23'F4 = Prompt'
+000770160416     A                                      DSPATR(HI)
+000780160416     A                                 11  6'Location List.........:'
+000790160416     A                                      COLOR(BLU)
+000800160416     A                                 23 78'F20 = Delete'
+000810160416     A                                      DSPATR(HI)
+000820160416     A                                 16  6'Calculate on revenue?.:'
+000830160416     A                                      COLOR(BLU)
+000840160416     A            REVFLAG        1A  B 16 32DSPATR(HI)
+000850160416     A            WHLIST        75A  B 11 32DSPATR(HI)
+000860160416     A                                 16 35'Y = Yes'
+000870160416     A                                  8  6'P.I. Type.............:'
+000880160416     A                                      COLOR(BLU)
+000890160416     A            PITYPE#        2Y 0B  8 32EDTCDE(Z)
+000900160416     A                                      DSPATR(HI)
+000910160416     A                                 13 15'or'
+000920160416     A                                 14  6'W/house from Dept Defn:'
+000930160416     A                                      COLOR(BLU)
+000940160416     A            DEPTFLAG       1A  B 14 32DSPATR(HI)
+000950160416     A                                 14 35'Y = Yes'
+000960160416     A                                 18  6'Application Origin....:'
+000970160416     A                                      COLOR(BLU)
+000980160416     A            ORIGIN         3A  B 18 32DSPATR(HI)
+000990160416     A                                 18 63'optional'
+001000160416     A            DEPTNAME      40A  O  6 36DSPATR(HI)
+001010160416     A                                 23 39'F7 = Switch View'
+001020160416     A                                      DSPATR(HI)
+001030160416     A            ORIGINDESC    25   O 18 37
+001040160416     A          R SUB1                      SFL
+001050160416     A*%%TS  SD  20160416  140602  SBRITTON    REL-V7R1M0  5770-WDS
+001060160416     A            ORIGINDESC    25A  O  8  8
+001070160416     A            HSEQ           2S 0H
+001080160416     A                                  9  2'Trans. List.:'
+001090160416     A                                      COLOR(BLU)
+001100160416     A                                 10  2'Location Lst:'
+001110160416     A                                      COLOR(BLU)
+001120160416     A            CDLIST        30A  B  9 16
+001130160416     A  41                                  DSPATR(RI)
+001140160416     A  41                                  COLOR(RED)
+001150160416     A            ORIGIN         3A  B  8  2DSPATR(HI)
+001160160416     A  40                                  COLOR(RED)
+001170160416     A            WHLIST        75A  B 10 16
+001180160416     A  42                                  DSPATR(RI)
+001190160416     A  42                                  COLOR(RED)
+001200160415     A          R SUBCTL1                   SFLCTL(SUB1)
+001210160415     A*%%TS  SD  20160415  131345  SBRITTON    REL-V7R1M0  5770-WDS
+001220160415     A  *DS4                                SFLSIZ(0100)
+001230160415     A  *DS3                                SFLSIZ(0100)
+001240160415     A  *DS4                                SFLPAG(0004)
+001250160415     A  *DS3                                SFLPAG(0003)
+001260160415     A  *DS4                                WINDOW(2 9 21 100)
+001270160415     A  *DS3                                WINDOW(2 9 21 59)
+001280160415     A                                      CF10(10)
+001290160415     A                                      CF11(11)
+001300160415     A                                      CA02(02)
+001310160415     A                                      CA07(07)
+001320160415     A                                      CA15(15)
+001330160415     A                                      SFLCSRRRN(&GETRRN)
+001340160415     A  20                                  SFLDSP
+001350160415     A                                      SFLDSPCTL
+001360160415     A  33                                  SFLCLR
+001370160415     A  55                                  SFLEND(*MORE)
+001380160415     A                                      SFLFOLD(CA16)
+001390160415     A                                      RMVWDW
+001400160415     A                                  7  2'Origin'
+001410160415     A                                      DSPATR(HI)
+001420160415     A                                      DSPATR(UL)
+001430160415     A                                      COLOR(BLU)
+001440160415     A                                  4  2'F2=Cancel'
+001450160415     A                                      DSPATR(HI)
+001460160415     A                                  4 64'F11=Ins.Line'
+001470160415     A                                      DSPATR(HI)
+001480160415     A                                  2  2'Department........:'
+001490160415     A                                      COLOR(BLU)
+001500160415     A            ERRMSG        75A  O  6  3COLOR(RED)
+001510160415     A                                  4 47'F10=Add Line'
+001520160415     A                                      DSPATR(HI)
+001530160415     A                                  4 14'F4=Locations'
+001540160415     A                                      DSPATR(HI)
+001550160415     A                                  5 21'F16 = Edit/Hide Location Lists'
+001560160415     A                                      DSPATR(HI)
+001570160415     A            GETRRN         5S 0H
+001580160415     A                                  5  1'F15=Confirm'
+001590160415     A                                      DSPATR(HI)
+001600160415     A            DEPTNAME      40A  O  2 27DSPATR(HI)
+001610160415     A            PIDEPT#        3S 0O  2 23DSPATR(HI)
+001620160415     A                                  3  2'PI Type.....:'
+001630160415     A                                      COLOR(BLU)
+001640160415     A            PITYPE#        2D 0B  3 17
+001650160415     A                                  3 23'Calculate on revenue ?...:'
+001660160415     A                                      COLOR(BLU)
+001670160415     A            REVFLAG        1A  B  3 51
+001680160415     A                                  4 29'F7=Switch View'
+001690160415     A                                      DSPATR(HI)
+001700160414     A          R FMT31
+001710160414     A*%%TS  DD  20040622  143547  afung       REL-V5.0.1  WDSc
+001720160414     A                                      ASSUME
+001730160414     A            FIELD1         1   B 12  7DSPATR(PR)

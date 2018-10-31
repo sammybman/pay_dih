@@ -1,0 +1,73 @@
+000100050514     A*%%TS  SD  20050514  182601  AFUNG       REL-V5R3M0  5722-WDS
+000200050514     A*%%EC
+000300050514     A                                      DSPSIZ(24 80 *DS3)
+000400050514     A                                      ERRSFL
+000500050514     A                                      CF03(03)
+000600050514     A          R SUB1                      SFL
+000700050514     A*%%TS  SD  20050514  174932  AFUNG       REL-V5R3M0  5722-WDS
+000800050514     A            EMSELTYP  R        O  5  8REFFLD(EMFMT/EMSELTYP *LIBL/EMATF)
+000900050514     A                                      DSPATR(HI)
+001000050514     A            EMDSP     R        O  5 12REFFLD(EMFMT/EMDSP *LIBL/EMATF)
+001100050514     A                                      DSPATR(HI)
+001200050514     A            SEL            1A  B  5  4
+001300050514     A          R SUBCTL1                   SFLCTL(SUB1)
+001400050514     A*%%TS  SD  20050514  182601  AFUNG       REL-V5R3M0  5722-WDS
+001500050514     A  20                                  SFLDSP
+001600050514     A                                      SFLDSPCTL
+001700050514     A  33                                  SFLCLR
+001800050514     A  55                                  SFLEND(*MORE)
+001900050514     A                                      SFLSIZ(0120)
+002000050514     A                                      SFLPAG(0008)
+002100050514     A                                      WINDOW(6 5 15 45)
+002200050514     A                                  3  7'Type'
+002300050514     A                                      DSPATR(UL)
+002400050514     A                                      COLOR(BLU)
+002500050514     A                                  3 12'Description'
+002600050514     A                                      DSPATR(UL)
+002700050514     A                                      COLOR(BLU)
+002800050514     A                                  3  3'Sel'
+002900050514     A                                      DSPATR(UL)
+003000050514     A                                      COLOR(BLU)
+003100050514     A                                  1  4'Charge Types for Employee Transact-
+003200050514     A                                      ions'
+003300050514     A                                      COLOR(BLU)
+003400050514     A                                      DSPATR(UL)
+003500050514     A                                  3 37'F3=Exit'
+003600050514     A                                      DSPATR(HI)
+003700050514     A          R SUB2                      SFL
+003800050514     A*%%TS  SD  20050514  174932  AFUNG       REL-V5R3M0  5722-WDS
+003900050514     A            SEL            1A  B  5  2
+004000050514     A            EASUBTYP  R        O  5  6REFFLD(EAFMT/EASUBTYP *LIBL/EASTF)
+004100050514     A                                      DSPATR(HI)
+004200050514     A            EADSP     R        O  5 11REFFLD(EAFMT/EADSP *LIBL/EASTF)
+004300050514     A                                      DSPATR(HI)
+004400050514     A          R SUBCTL2                   SFLCTL(SUB2)
+004500050514     A*%%TS  SD  20050514  182505  AFUNG       REL-V5R3M0  5722-WDS
+004600050514     A  20                                  SFLDSP
+004700050514     A                                      SFLDSPCTL
+004800050514     A  33                                  SFLCLR
+004900050514     A  55                                  SFLEND(*MORE)
+005000050514     A                                      SFLSIZ(0120)
+005100050514     A                                      SFLPAG(0008)
+005200050514     A                                      WINDOW(6 5 15 45)
+005300050514     A                                  3  6'Type'
+005400050514     A                                      DSPATR(HI)
+005500050514     A                                      DSPATR(UL)
+005600050514     A                                      COLOR(BLU)
+005700050514     A                                  3 12'Description'
+005800050514     A                                      DSPATR(HI)
+005900050514     A                                      DSPATR(UL)
+006000050514     A                                      COLOR(BLU)
+006100050514     A                                  3  1'Sel.'
+006200050514     A                                      DSPATR(UL)
+006300050514     A                                      COLOR(BLU)
+006400050514     A                                  4  1'(X)'
+006500050514     A                                      COLOR(BLU)
+006600050514     A                                  1  7'Sub-Types for Employee Transations'
+006700050514     A                                      COLOR(BLU)
+006800050514     A                                      DSPATR(UL)
+006900050514     A                                  3 36'F3=Exit'
+007000050514     A                                      DSPATR(HI)
+007100980123     A          R FMT2
+007200980123     A                                      ASSUME
+007300980123     A                                 22  5'  '

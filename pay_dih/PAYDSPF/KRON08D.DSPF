@@ -1,0 +1,40 @@
+000010960416     A*%%TS  SD  19960416  140457  ANTHONY     REL-V3R1M0  5763-PW1
+000020960416     A*%%EC
+000030960416     A                                      DSPSIZ(24 80 *DS3)
+000040960416     A          R KROND1
+000050960416     A*%%TS  SD  19960416  140457  ANTHONY     REL-V3R1M0  5763-PW1
+000060960416     A                                      CF01(01 'lists restriction profiles-
+000070960416     A                                      ')
+000080960416     A                                      CF03(03 'exits program')
+000090960416     A                                  1 69SYSNAME
+000100960416     A                                      DSPATR(HI)
+000110960416     A                                      DSPATR(UL)
+000120960416     A                                  1  3USER
+000130960416     A                                      DSPATR(HI)
+000140960416     A                                  2 69DATE
+000150960416     A                                      EDTCDE(Y)
+000160960416     A                                      DSPATR(HI)
+000170960416     A                                  2 31'RESTRICTION PROFILES'
+000180960416     A                                      DSPATR(HI)
+000190960416     A                                      DSPATR(UL)
+000200960416     A                                 24 20'F1 - List'
+000210960416     A                                      DSPATR(HI)
+000220960416     A                                 24 41'F3 - Exit'
+000230960416     A                                      DSPATR(HI)
+000240960416     A                                  1 31'BANKS D.I.H LIMITED'
+000250960416     A                                      DSPATR(HI)
+000260960416     A                                      DSPATR(UL)
+000270960416     A            @PGM          10A  O  2  3
+000280960416     A                                  6 46'A = add new restriction profile'
+000290960416     A                                      DSPATR(HI)
+000300960416     A                                  7 46'D = delete resctriction profile'
+000310960416     A                                      DSPATR(HI)
+000320960416     A                                 10 17'Enter selection ->'
+000330960416     A            AED            1A  I 10 46DSPATR(RI)
+000340960416     A                                      DSPATR(CS)
+000350960416     A                                 13 17'Kronos Restriction Name:'
+000360960416     A            KRST      R        B 13 46REFFLD(KRPREC/KRST PAYLIB/KRONRF)
+000370960416     A  05                                  ERRMSG('Cannot enter duplicate reco-
+000380960416     A                                      rd.')
+000390960416     A  06                                  ERRMSG('Requested record cannot be -
+000400960416     A                                      found.')

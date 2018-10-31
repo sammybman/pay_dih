@@ -1,0 +1,70 @@
+000010010905     A*%%TS  SD  20010905  162113  SAMMY       REL-V4R4M0  5769-PW1
+000020960802     A*
+000030960802     A*
+000040960802     A* ********************************************************
+000050960802     A*              B A N K S    D I H    L T D.              *
+000060960802     A*                                                        *
+000070960802     A*                                                        *
+000080010117     A*       DISPLAY FILE  NAME: PUR01D                       *
+000090000816     A*       RECORD FORMAT NAME:                              *
+000100000816     A*                                                        *
+000110000816     A*                                                        *
+000120960802     A*                                                        *
+000130000816     A*       PROGRAMMER NAME: ALLISON FUNG                    *
+000140000816     A*       DATE ..........: 16/08/2000                      *
+000150960802     A*                                                        *
+000160001120     A*       FILE DESCRIPTION:                                *
+000170001120     A*       THIS FILE IS USED TO RUN THE MONTHLY             *
+000180001120     A*       PURCHASE LISTINGS WITH TRANSACTIONS              *
+000190001120     A*       PASSING THROUGH THE SALES/WAREHOUSE              *
+000200001120     A*       SYSTEM.                                          *
+000210960802     A*                                                        *
+000220960802     A**********************************************************
+000230010905     A*%%EC
+000240010905     A                                      DSPSIZ(24 80 *DS3)
+000250010905     A                                      REF(*LIBL/FLDREF)
+000260010905     A                                      PRINT
+000270010905     A                                      ERRSFL
+000280010905     A                                      CF03(03)
+000290960802     A**
+000300010905     A          R FMT1
+000310010905     A*%%TS  SD  20010905  162113  SAMMY       REL-V4R4M0  5769-PW1
+000320010905     A                                      CF01(01)
+000330010905     A                                      CF04(04)
+000340010905     A            CONAME        30A  O  1 26DSPATR(HI)
+000350010905     A                                      DSPATR(UL)
+000360010905     A            @TITLE        40A  O  2 21DSPATR(HI)
+000370010905     A                                 23 31'F3=End Program'
+000380010905     A                                      DSPATR(HI)
+000390010905     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000400010905     A                                  6  5'Enter Payroll Pay Date.........:'
+000410010905     A                                      COLOR(BLU)
+000420010905     A                                  6 54'(YYYYMMDD)'
+000430010905     A                                      COLOR(BLU)
+000440010905     A            PAY_DATE       8Y 0B  6 41EDTCDE(W)
+000450010905     A  24                                  ERRMSG('Start date cannot be greate-
+000460010905     A                                      r than end date')
+000470010905     A  22                                  ERRMSGID(DIH0023 *LIBL/DIHMSGF)
+000480010905     A N25                                  DSPATR(HI)
+000490010905     A  25                                  DSPATR(RI)
+000500010905     A                                  1  2USER
+000510010905     A                                      DSPATR(HI)
+000520010905     A            @PGM          10A  O  2  2DSPATR(HI)
+000530010905     A            @DATE         10A  O  2 70DSPATR(HI)
+000540010905     A                                 23  9'F1= Run Type List'
+000550010905     A                                      DSPATR(HI)
+000560010905     A                                  8  5'Enter Payroll Run Type.........:'
+000570010905     A                                      COLOR(BLU)
+000580010905     A                                  1 72SYSNAME
+000590010905     A                                      DSPATR(HI)
+000600010905     A            RUN_TYPE       1A  B  8 41
+000610010905     A N26                                  DSPATR(HI)
+000620010905     A  26                                  DSPATR(RI)
+000630010905     A                                 10  5'Enter Payroll Devision.........:'
+000640010905     A                                      COLOR(BLU)
+000650010905     A            PAY_DIV   R        B 10 41REFFLD(PHISFMT/PHISDIV *LIBL/PAYHIS)
+000660010905     A N27                                  DSPATR(HI)
+000670010905     A  26                                  DSPATR(RI)
+000680010905     A                                      EDTCDE(Z)
+000690010905     A                                 23 47'F4= Division List'
+000700010905     A                                      DSPATR(HI)

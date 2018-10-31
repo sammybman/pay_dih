@@ -1,0 +1,31 @@
+000010011008     A*%%TS  SD  20011008  111436  SAMMY       REL-V4R4M0  5769-PW1
+000020011008     A*%%EC
+000030011008     A                                      DSPSIZ(24 80 *DS3)
+000040011008     A                                      CF03(03)
+000050011008     A          R FMT1
+000060011008     A*%%TS  SD  20011008  111436  SAMMY       REL-V4R4M0  5769-PW1
+000070011008     A                                      CA01(01)
+000080011008     A                                  1  3USER
+000090011008     A                                      DSPATR(HI)
+000100011008     A                                 23 37'F3 = End'
+000110011008     A                                      DSPATR(HI)
+000120011008     A                                  1 70SYSNAME
+000130011008     A                                      DSPATR(HI)
+000140011008     A                                  9  9'Enter Year Required...:'
+000150011008     A                                      COLOR(BLU)
+000160011008     A            PAY_YEAR       4D 0B  9 35
+000170011008     A N28                                  DSPATR(HI)
+000180011008     A  28                                  DSPATR(RI)
+000190011008     A            CONAME        30A  O  1 26DSPATR(HI)
+000200011008     A                                      DSPATR(UL)
+000210011008     A            @TITLE        40A  O  2 21DSPATR(HI)
+000220011008     A            @DATE         10A  O  2 68DSPATR(HI)
+000230011008     A            @PGM          10A  O  2  3DSPATR(HI)
+000240011008     A            ERRMSG        75A  O 24  3DSPATR(BL)
+000250011008     A                                 12 10'and Employee Type....:'
+000260011008     A                                      COLOR(BLU)
+000270011008     A            EMP_TYPE       1A  B 12 35
+000280011008     A N29                                  DSPATR(HI)
+000290011008     A  29                                  DSPATR(RI)
+000300011008     A                                 23  4'F1 = Employee Types'
+000310011008     A                                      DSPATR(HI)

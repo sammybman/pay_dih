@@ -1,0 +1,62 @@
+000100001122     A*%%TS  SD  20001122  142100  SAMMY       REL-V4R4M0  5769-PW1
+000200001122     A*%%EC
+000300001122     A                                      DSPSIZ(24 80 *DS3)
+000400001122     A                                      CF03(03)
+000500951025     A          R REC                       SFL
+000600951025     A*%%TS  SD  19951025  105907  ANTHONY     REL-V2R3M0  5738-PW1
+000700951025     A            CLASS     R        O  8  3REFFLD(EMPDREC/CLASS PAYLIB/EMPSM)
+000800951025     A                                      DSPATR(HI)
+000900951025     A            GROSS     R        O  8 11REFFLD(EMPDREC/GROSS PAYLIB/EMPSM)
+001000951025     A                                      EDTCDE(1)
+001100951025     A            GROSSM    R        O  8 25REFFLD(EMPDREC/GROSSM PAYLIB/EMPSM)
+001200951025     A                                      EDTCDE(1)
+001300951025     A            INCR      R        O  8 40REFFLD(EMPDREC/INCR PAYLIB/EMPSM)
+001400951025     A                                      EDTCDE(1)
+001500001122     A          R RECCTL                    SFLCTL(REC)
+001600001122     A*%%TS  SD  20001122  142100  SAMMY       REL-V4R4M0  5769-PW1
+001700001122     A                                      SFLSIZ(0020)
+001800001122     A                                      SFLPAG(0012)
+001900001122     A                                      OVERLAY
+002000001122     A                                      SFLDSP
+002100001122     A                                      SFLDSPCTL
+002200001122     A  33                                  SFLCLR
+002300001122     A  55                                  SFLEND(*MORE)
+002400001122     A                                  1 32'BANKS DIH LIMITED'
+002500001122     A                                      DSPATR(HI)
+002600001122     A                                      DSPATR(UL)
+002700001122     A                                  2 25'D''aguiar''s Industries & Holdings'
+002800001122     A                                      DSPATR(UL)
+002900001122     A                                      DSPATR(HI)
+003000001122     A                                  3 28'Salary Scale & Increments'
+003100001122     A                                      DSPATR(HI)
+003200001122     A                                      DSPATR(UL)
+003300001122     A            @PGM          10A  O  1  3
+003400001122     A                                  2  3USER
+003500001122     A                                  1 65SYSNAME
+003600001122     A                                  2 65DATE
+003700001122     A                                      EDTCDE(Y)
+003800001122     A                                  5  5'BELOW ARE FORTNIGHTLY RATES, MONTH-
+003900001122     A                                      LY C.O.E. & MINIMUM SWEETENER FIGUR-
+004000001122     A                                      ES'
+004100001122     A                                      DSPATR(RI)
+004200001122     A                                  7  2'GRADES'
+004300001122     A                                      DSPATR(UL)
+004400001122     A                                  7 14'MINIMUM'
+004500001122     A                                      DSPATR(UL)
+004600001122     A                                  7 28'MAXIMUM'
+004700001122     A                                      DSPATR(UL)
+004800001122     A                                  7 40'INCREMENTS'
+004900001122     A                                      DSPATR(UL)
+005000001122     A                                  7 55'SWEETENER'
+005100001122     A                                      DSPATR(UL)
+005200001122     A                                  7 70'C.O.E.'
+005300001122     A                                      DSPATR(UL)
+005400001122     A                                  6 28'EFFECTIVE OCTOBER 1, 2000'
+005500001122     A                                      DSPATR(RI)
+005600951025     A          R FOOTER
+005700951025     A*%%TS  SD  19951025  075002  SAMMY       REL-V2R3M0  5738-PW1
+005800951025     A                                      SLNO(23)
+005900951025     A                                      CLRL(*NO)
+006000951025     A                                  2 37'F3 - END'
+006100951025     A                                      DSPATR(HI)
+006200951025     A            ERRMSG        75   O  1  3DSPATR(HI)

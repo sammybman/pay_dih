@@ -1,0 +1,158 @@
+000010150817     A*%%TS  SD  20150817  171937  SBRITTON    REL-V7R1M0  5770-WDS
+000020950530     A* ********************************************************
+000030950905     A*              B A N K S    D I H    L T D.              *
+000040950905     A*                INVENTORY CONTROL SYSTEM                *
+000050950905     A*                                                        *
+000060950905     A*                         BY                             *
+000070950905     A*                                                        *
+000080950905     A*       ONE PLUS COMPUTER SERVICES (GUYANA) LIMITED      *
+000090950905     A*             P.O BOX 10501, GEORGETOWN,GUYANA           *
+000100950905     A*                                                        *
+000110950905     A*                                                        *
+000120951019     A*       DISPLAY FILE  NAME: SYS002D                      *
+000130950906     A*       RECORD FORMAT NAME: FMT1                         *
+000140950906     A*                           FMT2                         *
+000150950905     A*                                                        *
+000160950906     A*       PROGRAMMER NAME: LORAINE INNISS                  *
+000170951019     A*       DESIGN DATE....: 9995/10/18                      *
+000180950905     A*                                                        *
+000190951019     A*  FILE DESCRIPTION: AUTHORITY MASTER FILE               *
+000200950905     A*                                                        *
+000210950905     A*  THIS FILE IS DESIGNED TO                              *
+000220950905     A*                                                        *
+000230950905     A*                                                        *
+000240950530     A**********************************************************
+000250150817     A*%%EC
+000260150817     A                                      DSPSIZ(24 80 *DS3)
+000270150817     A                                      REF(*LIBL/SYSAUT AUTFMT)
+000280150817     A                                      PRINT
+000290150817     A                                      HELP(77)
+000300150817     A                                      CA03(03)
+000310150817     A                                      CA05(05)
+000320150817     A          R FMT1
+000330150817     A*%%TS  SD  20150817  171937  SBRITTON    REL-V7R1M0  5770-WDS
+000340150817     A                                      CA01(01)
+000350150817     A                                      CA02(02)
+000360150817     A                                      CA20(20)
+000370150817     A                                      CA15(15)
+000380150817     A            @PGM          10A  O  1  2DSPATR(HI)
+000390150817     A            CONAME        30A  O  1 24DSPATR(UL)
+000400150817     A                                      DSPATR(HI)
+000410150817     A            @DATE         10A  O  2 70DSPATR(HI)
+000420150817     A            @TITLE        40A  O  2 20DSPATR(HI)
+000430150817     A                                 23 21'F2=Cancel'
+000440150817     A                                      DSPATR(HI)
+000450150817     A                                 23 33'F3=End Program'
+000460150817     A                                      DSPATR(HI)
+000470150817     A                                 23 67'F20=Delete'
+000480150817     A                                      DSPATR(HI)
+000490150817     A N99                                  DSPATR(ND)
+000500150817     A            ERRMSG        75A  O 24  2DSPATR(HI)
+000510150817     A                                      DSPATR(BL)
+000520150817     A                                  1 70SYSNAME
+000530150817     A                                      DSPATR(HI)
+000540150817     A                                 23 51'F15=Confirm'
+000550150817     A                                      DSPATR(HI)
+000560150817     A                                  2  2USER
+000570150817     A                                      DSPATR(HI)
+000580150817     A                                  4  3'Years History to Keep.............-
+000590150817     A                                      ......:'
+000600150817     A                                      COLOR(BLU)
+000610150817     A            PCHIS#    R        B  4 48REFFLD(PCONFMT/PCHIS *LIBL/PAYCON)
+000620150817     A N26                                  DSPATR(HI)
+000630150817     A                                      EDTCDE(Z)
+000640150817     A  26                                  DSPATR(RI)
+000650150817     A  26                                  DSPATR(PC)
+000660150817     A                                  6  3'Year-to-Date to Keep in Years.....-
+000670150817     A                                      ......:'
+000680150817     A                                      COLOR(BLU)
+000690150817     A            PCYTD#    R        B  6 48REFFLD(PCONFMT/PCYTD *LIBL/PAYCON)
+000700150817     A N27                                  DSPATR(HI)
+000710150817     A                                      EDTCDE(Z)
+000720150817     A  27                                  DSPATR(RI)
+000730150817     A  27                                  DSPATR(PC)
+000740150817     A                                  8  3'Auto-synchronise Tax Cycle Configu-
+000750150817     A                                      ration:'
+000760150817     A                                      COLOR(BLU)
+000770150817     A            PCAUTOTAX#R        B  8 48REFFLD(PCONFMT/PCAUTOTAX *LIBL/PAYC-
+000780150817     A                                      ON)
+000790150817     A N28                                  DSPATR(HI)
+000800150817     A  28                                  DSPATR(RI)
+000810150817     A  28                                  DSPATR(PC)
+000820150817     A                                 10  3'Auto-synchronise NIS Cycle Configu-
+000830150817     A                                      ration:'
+000840150817     A                                      COLOR(BLU)
+000850150817     A            PCAUTONIS#R        B 10 48REFFLD(PCONFMT/PCAUTONIS *LIBL/PAYC-
+000860150817     A                                      ON)
+000870150817     A N29                                  DSPATR(HI)
+000880150817     A  29                                  DSPATR(RI)
+000890150817     A  29                                  DSPATR(PC)
+000900150817     A                                  4 54'(0-999)'
+000910150817     A                                      COLOR(BLU)
+000920150817     A                                  6 54'(1-999)'
+000930150817     A                                      COLOR(BLU)
+000940150817     A                                  8 54'(Y=YES)'
+000950150817     A                                      COLOR(BLU)
+000960150817     A                                 10 54'(Y=YES)'
+000970150817     A                                      COLOR(BLU)
+000980150817     A                                 19  3'Default Pay-types for YTD display/-
+000990150817     A                                      Print.:'
+001000150817     A                                      COLOR(BLU)
+001010150817     A                                 20 44'NOT'
+001020150817     A                                      DSPATR(HI)
+001030150817     A                                 20 48'Verified'
+001040150817     A                                      COLOR(RED)
+001050150817     A            P_TYPE3        2Y 0B 19 54EDTCDE(Z)
+001060150817     A                                      DSPATR(HI)
+001070150817     A            P_TYPE4        2Y 0B 19 57EDTCDE(Z)
+001080150817     A                                      DSPATR(HI)
+001090150817     A            P_TYPE5        2Y 0B 19 60EDTCDE(Z)
+001100150817     A                                      DSPATR(HI)
+001110150817     A            P_TYPEFX2      2S 0O 19 51
+001120150817     A            P_TYPEFX1      2S 0O 19 48
+001130150817     A                                 20  8'Warning: The types entered here ar-
+001140150817     A                                      e'
+001150150817     A                                      COLOR(RED)
+001160150817     A                                 19 64'*'
+001170150817     A                                 22  5'* - the 00 type is interpreted as -
+001180150817     A                                      all taxable types'
+001190150817     A                                 13  3'Calculate Tax on Pay Period info. -
+001200150817     A                                      ONLY..:'
+001210150817     A                                      COLOR(BLU)
+001220150817     A                                 13 54'(Y=YES)'
+001230150817     A                                      COLOR(BLU)
+001240150817     A            PCTXONPRD#R        B 13 48REFFLD(PCONFMT/PCTXONPRD *LIBL/PAYC-
+001250150817     A                                      ON)
+001260150817     A N30                                  DSPATR(HI)
+001270150817     A  30                                  DSPATR(PC)
+001280150817     A  30                                  DSPATR(RI)
+001290150817     A            PCTXPRATE#R        B 15 48REFFLD(PCONFMT/PCTXPRATE *LIBL/PAYC-
+001300150817     A                                      ON)
+001310150817     A N31                                  DSPATR(HI)
+001320150817     A  31                                  DSPATR(RI)
+001330150817     A  31                                  DSPATR(PC)
+001340150817     A                                 15 54'(Y=YES)'
+001350150817     A                                      COLOR(BLU)
+001360150817     A                                 15  3'Prorate Tax on number of periods c-
+001370150817     A                                      omplt.:'
+001380150817     A                                      COLOR(BLU)
+001390150817     A                                 17  3'Print Ytd. for types not proc. in -
+001400150817     A                                      period:'
+001410150817     A                                      COLOR(BLU)
+001420150817     A                                 17 54'(Y=YES)'
+001430150817     A                                      COLOR(BLU)
+001440150817     A            PCALLYTD# R        B 17 48REFFLD(PCONFMT/PCALLYTD *LIBL/PAYCO-
+001450150817     A                                      N)
+001460150817     A N32                                  DSPATR(HI)
+001470150817     A  32                                  DSPATR(RI)
+001480150817     A  32                                  DSPATR(PC)
+001490150817     A            PCNISTAXO#R        B 11 48REFFLD(PCONFMT/PCNISTAXO *LIBL/PAYC-
+001500150817     A                                      ON)
+001510150817     A N34                                  DSPATR(HI)
+001520150817     A  34                                  DSPATR(RI)
+001530150817     A  34                                  DSPATR(PC)
+001540150817     A                                 11 54'(Y=YES)'
+001550150817     A                                      COLOR(BLU)
+001560150817     A                                 11  3'Omit Nis Deductions from tax calcu-
+001570150817     A                                      lation:'
+001580150817     A                                      COLOR(BLU)

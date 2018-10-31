@@ -1,0 +1,3 @@
+000100010423     A          R PRTYFMT                   PFILE(PAYRTYP)
+000200010423     A          K PRTYPTYPE
+000300010423     A          S PRTYSTS                   VALUES('A')

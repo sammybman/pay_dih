@@ -1,0 +1,92 @@
+000010131203     A*%%TS  SD  20131203  131951  SBRITTON    REL-V7R1M0  5770-WDS
+000020131203     A*%%EC
+000030131203     A                                      DSPSIZ(24 80 *DS3)
+000040131203     A                                      CF03(03)
+000050010426     A          R FMT1
+000060010426     A*%%TS  SD  20010426  184149  SAMMY       REL-V4R4M0  5769-PW1
+000070010426     A                                 10 13'Enter RUN type ...........:'
+000080010426     A                                      COLOR(BLU)
+000090010426     A                                 23 29'F3= End Program'
+000100010426     A                                      DSPATR(HI)
+000110010426     A                                  1 73SYSNAME
+000120010426     A                                      DSPATR(HI)
+000130010426     A                                  2  3USER
+000140010426     A                                      DSPATR(HI)
+000150010426     A            @PGM          10A  O  1  3DSPATR(HI)
+000160010426     A            CONAME        30A  O  1 26DSPATR(HI)
+000170010426     A                                      DSPATR(UL)
+000180010426     A            @TITLE        40A  O  2 21DSPATR(HI)
+000190010426     A            @DATE         10A  O  2 71DSPATR(HI)
+000200010426     A            ERRMSG        75A  O 24  3DSPATR(HI)
+000210010426     A                                      COLOR(RED)
+000220010426     A            RUN_TYPE       1   B 10 42DSPATR(HI)
+000230131129     A          R SFLREC                    SFL
+000240131129     A*%%TS  SD  20131129  123842  SBRITTON    REL-V7R1M0  5770-WDS
+000250131129     A            EMOL_TYP# R        O  9 11REFFLD(WRKFMT/WRKTYP *LIBL/PAYWORKF)
+000260131129     A                                      DSPATR(HI)
+000270131129     A            EMOL_NAME     20A  O  9 23DSPATR(HI)
+000280131129     A            DFTOPT         1A  B  9 51
+000290131129     A  99                                  DSPATR(PR)
+000300131129     A            DESC#         20A  O  9 55
+000310020111     A          R SFLCTL                    SFLCTL(SFLREC)
+000320020111     A*%%TS  SD  20020111  125314  SAMMY       REL-V4R4M0  5769-PW1
+000330020111     A                                      SFLSIZ(0100)
+000340020111     A                                      SFLPAG(0010)
+000350020111     A                                      CF15(15)
+000360020111     A                                      CA02(02)
+000370020111     A                                      OVERLAY
+000380020111     A                                      SFLDSP
+000390020111     A                                      SFLDSPCTL
+000400020111     A  33                                  SFLCLR
+000410020111     A  60                                  SFLEND(*MORE)
+000420020111     A            @PGM          10A  O  1  2DSPATR(HI)
+000430020111     A                                  2  2USER
+000440020111     A                                      DSPATR(HI)
+000450020111     A            CONAME        30A  O  1 26DSPATR(UL)
+000460020111     A                                      DSPATR(HI)
+000470020111     A            @TITLE        40A  O  2 21DSPATR(HI)
+000480020111     A                                  1 72SYSNAME
+000490020111     A                                      DSPATR(HI)
+000500020111     A            @DATE         10A  O  2 70DSPATR(HI)
+000510020111     A                                  7 23'Description'
+000520020111     A                                      COLOR(BLU)
+000530020111     A                                  7 11'Code'
+000540020111     A                                      COLOR(BLU)
+000550020111     A                                  4  7'Run Type..:'
+000560020111     A                                      COLOR(BLU)
+000570020111     A            RUN_NAME      30A  O  4 25DSPATR(HI)
+000580020111     A            RUN_TYPE       1A  O  4 22DSPATR(HI)
+000590020111     A                                  7 45'Select Type for Payroll'
+000600020111     A                                      COLOR(BLU)
+000610020111     A                                  8 46'(X = select / Y = auto)'
+000620020111     A                                      COLOR(BLU)
+000630010427     A          R FOOTER
+000640010427     A*%%TS  SD  20010427  081611  SAMMY       REL-V4R4M0  5769-PW1
+000650010427     A                                      OVERLAY
+000660010427     A                                      PROTECT
+000670010427     A                                 23 47'F15 - Confirm Posting'
+000680010427     A                                      DSPATR(HI)
+000690010427     A                                 23  7'F2= Go Back'
+000700010427     A                                      DSPATR(HI)
+000710010427     A                                 23 26'F3= End Program'
+000720010427     A                                      DSPATR(HI)
+000730131203     A          R WINREC
+000740131203     A*%%TS  SD  20131203  131951  SBRITTON    REL-V7R1M0  5770-WDS
+000750131203     A                                      WINDOW(10 2 12 75)
+000760131203     A                                  1  2'Type'
+000770131203     A            TTEXT         60A  O  1  8
+000780131203     A                                  3  2'Make this change permanent ?'
+000790131203     A            PERMFLAG       3A  B  3 32
+000800131203     A                                  3 37'Type YES to confirm'
+000810131203     A                                  4 15'or'
+000820131203     A                                  5  2'Specify number of days  before rev-
+000830131203     A                                      erting to previous value'
+000840131203     A            NUMDAYS        2S 0B  5 62
+000850131203     A                                  6 15'or'
+000860131203     A                                 11 19'Type choice and press ENTER to con-
+000870131203     A                                      tinue'
+000880131203     A                                  7  2'Type Y here->'
+000890131203     A            REVERTFLAG     1A  B  7 16
+000900131203     A                                  7 18'to revert to previous value AFTER -
+000910131203     A                                      next normal or special'
+000920131203     A                                  8  2'payroll run.'
